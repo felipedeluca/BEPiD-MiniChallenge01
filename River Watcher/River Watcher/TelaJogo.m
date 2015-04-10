@@ -36,7 +36,7 @@
 @end
 //-----------------------------------------------------------------------
 @implementation TelaJogo {
-
+    
     SKSpriteNode* buttonPause;
     BOOL paused;
     SKSpriteNode *buttonAudio;
@@ -91,13 +91,13 @@
     telaInicial.position      = CGPointMake( self.size.width / 2, self.size.height / 2 );
     //    telaInicial.zPosition     = 1.0;
     [ telaInicial setScale: 0.50 ];
-
+    
     //imagem do guardreio na tela do jogo.
     SKSpriteNode *guardreio = [ SKSpriteNode spriteNodeWithImageNamed: @"guardreio" ];
     guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 200 );
     //    guardreio.zPosition     = 0.99;
     [ guardreio setScale: 0.55 ];
-
+    
     //animacao da lixeira
     SKTexture *lixeira1 = [ SKTexture textureWithImageNamed: @"lixeira" ];
     SKTexture *lixeira2 = [ SKTexture textureWithImageNamed: @"lixeira2" ];
@@ -107,9 +107,9 @@
     lixeira    = [ SKSpriteNode spriteNodeWithTexture: lixeira1 ];
     lixeira.position         = CGPointMake( 200, 130);
     lixeira.zPosition        = 1.0;
-  //  lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
+    //  lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
     //lixeira.physicsBody.affectedByGravity = NO;
- //   lixeira.physicsBody.allowsRotation    = NO;
+    //   lixeira.physicsBody.allowsRotation    = NO;
     //lixeira.physicsBody.linearDamping     = 0.8;
     
     SKAction *movimentoLixeira = [ SKAction animateWithTextures:texturesLixeira timePerFrame: 0.01 ];
@@ -211,7 +211,7 @@
     self.pontuacao.fontColor = [ SKColor redColor ];
     self.pontuacao.fontSize  = 25;
     self.pontuacao.position  = CGPointMake( CGRectGetMidX(self.frame), 720 );
-        //self.pontuacao.zPosition = 0.90;
+    //self.pontuacao.zPosition = 0.90;
     
     //texto do recorde
     _textoRecorde = [ SKLabelNode labelNodeWithFontNamed: @"Arial" ];
@@ -219,10 +219,10 @@
     _textoRecorde.fontColor = [ SKColor redColor ];
     _textoRecorde.fontSize  = 15;
     _textoRecorde.position  = CGPointMake( (CGRectGetMidX(self.frame) - 35), 695 );
-       //self.textoRecorde.zPosition = 0.89;
+    //self.textoRecorde.zPosition = 0.89;
     
     //adicionando os nodes na tela
-
+    
     [ self addChild: telaInicial ];
     [ self addChild: guardreio ];
     [ self addChild: esg1 ];
@@ -238,8 +238,8 @@
     [ self addChild: buttonAudio ];
     [ self addChild: lixeira ];
     //[ self addChild: self.pontuacao ];
-   // [ self addChild: _textoRecorde ];
-
+    // [ self addChild: _textoRecorde ];
+    
     
 }
 
@@ -247,15 +247,15 @@
 -(void)criaAgua {
     
     CGFloat offset = - 20.0;
-
+    
     self.waterTile2A = [ [WLWater2 alloc] init ];
     self.waterTile2B = [ [WLWater2 alloc] init ];
     self.waterTile2A.img.position = CGPointMake( 0, - (self.size.height / 2.0) + 50 + offset );
     self.waterTile2B.img.position = CGPointMake( self.waterTile2A.img.position.x + self.waterTile2B.img.size.width, self.waterTile2A.img.position.y );
     
-//    self.waterTile2A.img.zPosition = 1.0;
-//    self.waterTile2B.img.zPosition = 1.5;
-
+    //    self.waterTile2A.img.zPosition = 1.0;
+    //    self.waterTile2B.img.zPosition = 1.5;
+    
     [ self addChild: self.waterTile2A.img ];
     [ self addChild: self.waterTile2B.img ];
     
@@ -263,9 +263,9 @@
     self.waterTile1B = [ [WLWater1 alloc] init ];
     self.waterTile1A.img.position = CGPointMake( 0, - (self.size.height / 2.0) + 53 + offset );
     self.waterTile1B.img.position = CGPointMake( self.waterTile1A.img.position.x + self.waterTile1B.img.size.width, self.waterTile1A.img.position.y );
-
-//    self.waterTile1A.img.zPosition = 2.0;
-//    self.waterTile1B.img.zPosition = 2.5;
+    
+    //    self.waterTile1A.img.zPosition = 2.0;
+    //    self.waterTile1B.img.zPosition = 2.5;
     
     [ self addChild: self.waterTile1A.img ];
     [ self addChild: self.waterTile1B.img ];
@@ -273,7 +273,7 @@
     self.waterPhys = [ [SKSpriteNode alloc] init ];
     self.waterPhys = [[SKSpriteNode alloc] initWithColor:[UIColor cyanColor] size:CGSizeMake(self.size.width, 200)];
     self.waterPhys.zPosition = 1.0;
-
+    
     self.waterPhys.position = CGPointMake( (self.size.width / 2.0), + 20 + offset);
     self.waterPhys.alpha = 0.0;
     
@@ -284,15 +284,14 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
-
+    
     touch    = [ touches anyObject ];
     location = [ touch locationInNode: self ];
     node     = [ self nodeAtPoint: location ];
+    //NSLog(@"Toquei em %@", node.name);
+    
     
     //pegar objeto
-
-   // img.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garrafaVidro" ] size: self.size ];
-    //NSLog(@"-----OBJETO: %@", node);
     
     if ( [node.name isEqualToString: @"garrafaVidro" ] ){
         NSLog( @"pegou garrafa!" );
@@ -331,20 +330,19 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     
-   
+    
     SKNode *garrafa = node;
     
-    
+    touchFinger = [ touches anyObject ];
+    locObj = [ touch locationInNode: self];
     
     if ( [node.name isEqualToString: @"garrafaVidro" ] ){
-        touchFinger = [ touches anyObject ];
-        locObj = [ touch locationInNode: self];
-        node = [ self nodeAtPoint: locObj ];
-
+        //node = [ self nodeAtPoint: locObj ];
+        
         garrafa.position = locObj;
     }
     
-   
+    
     
     
 }
@@ -352,27 +350,26 @@
 
 
 //----------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-
-//    if ( [node.name isEqualToString: @"Spaceship"] ){
-//        WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
-//        
-//        [ self addChild: garrafaVidro.img ];
-//        
-//        [ self throwObject: garrafaVidro.img parent: node impulse: 4.0 ];
-//        
-//    }
-
-    SKNode *garrafa = node;
-    if((CGRectContainsPoint(lixeira.frame, garrafa.position))){
-        
-        [garrafa removeFromParent];
-        
-        [self runAction: [SKAction playSoundFileNamed:@"destroy.wav" waitForCompletion:YES]];
-        
-        garrafa = nil;
-    }
     
+    
+    SKNode *garrafa = node;
+    
+    if (node.name != nil && [node.name isEqualToString:@"garrafaVidro"]) {
+        
+        if((CGRectContainsPoint(lixeira.frame, garrafa.position))){
+            
+            [garrafa removeFromParent];
+            
+            [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
+            
+            //garrafa = nil;
+        }
+        
+    }
     NSLog( @"soltou objeto");
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
@@ -408,7 +405,7 @@
     }
     
     
-
+    
     
 }
 //----------------------------------------------------------------------------------------

@@ -437,12 +437,12 @@
     
     CGFloat sceneWidth = self.size.width + self.waterTile2A.img.size.width;
     
-    if ( self.waterTile2A.img.position.x > sceneWidth ) {
-        x2 = self.waterTile2B.img.position.x;
+    if ( self.waterTile2A.img.position.x + (self.waterTile2A.img.size.width / 2.0) > sceneWidth ) {
+        x2 = self.waterTile2B.img.position.x + 1;
         x1 = x2 - self.waterTile2A.img.size.width;
     }
-    else if ( self.waterTile2B.img.position.x > sceneWidth ) {
-        x1 = self.waterTile2A.img.position.x;
+    else if ( self.waterTile2B.img.position.x + (self.waterTile2B.img.size.width / 2.0) > sceneWidth ) {
+        x1 = self.waterTile2A.img.position.x + 1;
         x2 = x1 - self.waterTile2B.img.size.width;
     }
     else{
@@ -451,11 +451,11 @@
     }
     
     
-    if ( self.waterTile1A.img.position.x > sceneWidth ) {
+    if ( self.waterTile1A.img.position.x + (self.waterTile1A.img.size.width / 2.0) > sceneWidth ) {
         x4 = self.waterTile1B.img.position.x;
         x3 = x4 - self.waterTile1A.img.size.width;
     }
-    else if ( self.waterTile1B.img.position.x > sceneWidth ) {
+    else if ( self.waterTile1B.img.position.x + (self.waterTile1B.img.size.width / 2.0) > sceneWidth ) {
         x3 = self.waterTile1A.img.position.x;
         x4 = x3 - self.waterTile1B.img.size.width;
     }

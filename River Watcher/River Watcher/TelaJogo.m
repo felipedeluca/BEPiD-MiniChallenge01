@@ -38,8 +38,8 @@
     BOOL paused;
     SKSpriteNode *buttonAudio;
     BOOL audioPaused;
-    UITouch *touch;
-    CGPoint location;
+    UITouch *touch, *touchFinger;
+    CGPoint location, locObj;
     SKNode *node;
     SKNode *gui;
     SKNode *game;
@@ -60,10 +60,7 @@
         [ self createSceneContents ];
         self.contentCreated = YES;
         
-        gui = [[SKNode alloc] init];
-        [gui setName:@"gui"];
-        game = [[SKNode alloc] init];
-        [game setName:@"game"];
+        
 }
     
 }
@@ -72,15 +69,7 @@
 
     [ self criaCenario ];
     [ self criaAgua ];
-<<<<<<< HEAD
     [ self criaNave ];
-<<<<<<< HEAD
-    
-}
-//--------------------------------------------------------------
-=======
-=======
-//    [ self criaNave ];
     [ self criaAutomoveis ];
 }
 //--------------------------------------------------------------
@@ -110,6 +99,7 @@
         if ( automovel.img.position.x >= intervaloMinPosX && automovel.img.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
             NSLog(@"Arremessou!!");
             WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
+            garrafaVidro.img.name = @"garrafaVidro";
             
             [ self addChild: garrafaVidro.img ];
             [ self throwObject: garrafaVidro.img parent: automovel impulse: 50.0 ];
@@ -150,12 +140,12 @@
     
     [ automovel.img setXScale: imageFlip ];
     [ automovel.img runAction: movimentoAutomovel ];
-    NSLog( @"Pos X: %.2f", automovel.img.position.x );
->>>>>>> 0d18c2eeb560b147a656920be8cfe8d0f12c6d0c
+  //  NSLog( @"Pos X: %.2f", automovel.img.position.x );
+
     
 }
 //--------------------------------------------------------------
->>>>>>> 289dbc38ab2a91957b857edc13ec848303405401
+
 -(void)criaCenario {
 
     paused = YES;
@@ -180,13 +170,13 @@
     SKTexture *lixeira3 = [ SKTexture textureWithImageNamed: @"lixeira3" ];
     
     NSArray *texturesLixeira = @[ lixeira1,lixeira2,lixeira3 ];
-    SKSpriteNode *lixeira    = [ SKSpriteNode spriteNodeWithTexture: lixeira1 ];
+    lixeira    = [ SKSpriteNode spriteNodeWithTexture: lixeira1 ];
     lixeira.position         = CGPointMake( 200, 130);
     lixeira.zPosition        = 1.0;
-    lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
-    lixeira.physicsBody.affectedByGravity = NO;
-    lixeira.physicsBody.allowsRotation    = NO;
-    lixeira.physicsBody.linearDamping     = 0.8;
+  //  lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
+    //lixeira.physicsBody.affectedByGravity = NO;
+ //   lixeira.physicsBody.allowsRotation    = NO;
+    //lixeira.physicsBody.linearDamping     = 0.8;
     
     SKAction *movimentoLixeira = [ SKAction animateWithTextures:texturesLixeira timePerFrame: 0.01 ];
     SKAction *repeatLixeira    = [ SKAction repeatActionForever:movimentoLixeira ];
@@ -322,12 +312,12 @@
 //--------------------------------------------------------------
 -(void)criaNave {
 
-    SKSpriteNode *spaceShip = [ [SpaceShip alloc] init ];
-    spaceShip.position = CGPointMake( CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) );
-    spaceShip.zPosition = 0.1;
-    
-    [ self addChild: spaceShip ];
-    
+//    SKSpriteNode *spaceShip = [ [SpaceShip alloc] init ];
+//    spaceShip.position = CGPointMake( CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) );
+//    spaceShip.zPosition = 0.1;
+//    
+//    [ self addChild: spaceShip ];
+//    
 }
 //--------------------------------------------------------------
 -(void)criaAgua {
@@ -375,6 +365,26 @@
     location = [ touch locationInNode: self ];
     node     = [ self nodeAtPoint: location ];
     
+    //pegar objeto
+
+   // img.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garrafaVidro" ] size: self.size ];
+    //NSLog(@"-----OBJETO: %@", node);
+    
+    if ( [node.name isEqualToString: @"garrafaVidro" ] ){
+        NSLog( @"pegou garrafa!" );
+        SKNode *garrafa = node;
+        [garrafa removeAllActions];
+        garrafa.physicsBody.dynamic = NO;
+        garrafa.physicsBody.affectedByGravity = NO;
+        
+        
+        
+        
+        [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+    }
+
+
+    
      //ao clicar no botão irá alterar a imagem (Botão de pause/play)
     if ( [node.name isEqualToString:@"botaoPause"] ) {
         NSLog(@"botão pause pressionado");
@@ -396,6 +406,30 @@
     }
     
 }
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    
+   
+    SKNode *garrafa = node;
+    
+    
+    
+    if ( [node.name isEqualToString: @"garrafaVidro" ] ){
+        touchFinger = [ touches anyObject ];
+        locObj = [ touch locationInNode: self];
+        node = [ self nodeAtPoint: locObj ];
+
+        garrafa.position = locObj;
+    }
+    
+   
+    
+    
+}
+
+
+
 //----------------------------------------------------------------------------------------
 -(void)throwObject:(SKSpriteNode *)obj parent:(WLAutomovel *)parentNode impulse:(CGFloat)throwImpulse {
     //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
@@ -406,9 +440,11 @@
     CGFloat dx = throwImpulse * 5;//cosf(parentNode.zRotation);
     CGFloat dy = throwImpulse * 20;//sinf(parentNode.zRotation);
     
-  //  obj.physicsBody.velocity = CGVectorMake(dx, dy);
+ 
     [ obj.physicsBody applyForce: CGVectorMake(dx, dy) ];
 }
+
+
 //--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
@@ -421,6 +457,17 @@
 //        
 //    }
 
+    SKNode *garrafa = node;
+    if((CGRectContainsPoint(lixeira.frame, garrafa.position))){
+        
+        [garrafa removeFromParent];
+        
+        [self runAction: [SKAction playSoundFileNamed:@"destroy.wav" waitForCompletion:YES]];
+        
+        garrafa = nil;
+    }
+    
+    NSLog( @"soltou objeto");
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){

@@ -43,7 +43,7 @@
 //--------------------------------------------------------------------
 -(void)ativaTela{
     
-    [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+    //[self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
     
     //cenario da tela inicial
     SKSpriteNode *telaInicial = [SKSpriteNode spriteNodeWithImageNamed:@"tela1.png"];

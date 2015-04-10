@@ -16,3 +16,6 @@
 
 
 @end
+
+SKSpriteNode *img;
+SKSpriteNode *lixeira;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>01230340-6BA5-4E18-9F7B-306AAF2639E6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>River Watcher</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E3F3F9B841F09237213D9C9BAC37743D895F878A</key>
+		<string>https://github.com/felipedeluca/BEPiD-MiniChallenge01.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>River Watcher/River Watcher.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E3F3F9B841F09237213D9C9BAC37743D895F878A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/felipedeluca/BEPiD-MiniChallenge01.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E3F3F9B841F09237213D9C9BAC37743D895F878A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3F3F9B841F09237213D9C9BAC37743D895F878A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Mini%20Challenge%2001</string>
+		</dict>
+	</array>
+</dict>
+</plist>

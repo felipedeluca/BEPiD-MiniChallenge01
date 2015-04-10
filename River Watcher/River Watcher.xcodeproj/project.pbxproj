@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D695BCC01AD7581800DC3187 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCBF1AD7581800DC3187 /* main.m */; };
+		D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC21AD7581800DC3187 /* AppDelegate.m */; };
+		D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC51AD7581800DC3187 /* TelaInicio.m */; };
+		D695BCC81AD7581800DC3187 /* TelaInicio.sks in Resources */ = {isa = PBXBuildFile; fileRef = D695BCC71AD7581800DC3187 /* TelaInicio.sks */; };
+		D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCCA1AD7581800DC3187 /* GameViewController.m */; };
+		D695BCCE1AD7581800DC3187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D695BCCC1AD7581800DC3187 /* Main.storyboard */; };
+		D695BCD01AD7581800DC3187 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D695BCCF1AD7581800DC3187 /* Images.xcassets */; };
+		D695BCD31AD7581800DC3187 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D695BCD11AD7581800DC3187 /* LaunchScreen.xib */; };
+		D695BCDF1AD7581800DC3187 /* River_WatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCDE1AD7581800DC3187 /* River_WatcherTests.m */; };
+		D695BD2F1AD75D0900DC3187 /* Car Passing.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD221AD75D0900DC3187 /* Car Passing.wav */; };
+		D695BD301AD75D0900DC3187 /* CarHorn.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD231AD75D0900DC3187 /* CarHorn.wav */; };
+		D695BD311AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD241AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav */; };
+		D695BD321AD75D0900DC3187 /* Enjoy The Life - In Game.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD251AD75D0900DC3187 /* Enjoy The Life - In Game.wav */; };
+		D695BD331AD75D0900DC3187 /* Enjoy The Life - TI.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD261AD75D0900DC3187 /* Enjoy The Life - TI.wav */; };
+		D695BD341AD75D0900DC3187 /* Fall in water.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD271AD75D0900DC3187 /* Fall in water.wav */; };
+		D695BD351AD75D0900DC3187 /* Grab object.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD281AD75D0900DC3187 /* Grab object.wav */; };
+		D695BD361AD75D0900DC3187 /* OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD291AD75D0900DC3187 /* OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav */; };
+		D695BD371AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2A1AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav */; };
+		D695BD381AD75D0900DC3187 /* Put on trash can  - 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2B1AD75D0900DC3187 /* Put on trash can  - 2.wav */; };
+		D695BD391AD75D0900DC3187 /* Put on trash can - 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2C1AD75D0900DC3187 /* Put on trash can - 1.wav */; };
+		D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2D1AD75D0900DC3187 /* Smalltalk - End.wav */; };
+		D695BD3B1AD75D0900DC3187 /* throw object.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2E1AD75D0900DC3187 /* throw object.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D695BCD91AD7581800DC3187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D695BCB21AD7581700DC3187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D695BCB91AD7581700DC3187;
+			remoteInfo = "River Watcher";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D695BCBA1AD7581800DC3187 /* River Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "River Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D695BCBE1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D695BCBF1AD7581800DC3187 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D695BCC11AD7581800DC3187 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D695BCC21AD7581800DC3187 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D695BCC41AD7581800DC3187 /* TelaInicio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelaInicio.h; sourceTree = "<group>"; };
+		D695BCC51AD7581800DC3187 /* TelaInicio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelaInicio.m; sourceTree = "<group>"; };
+		D695BCC71AD7581800DC3187 /* TelaInicio.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TelaInicio.sks; sourceTree = "<group>"; };
+		D695BCC91AD7581800DC3187 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D695BCCA1AD7581800DC3187 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		D695BCCD1AD7581800DC3187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D695BCCF1AD7581800DC3187 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D695BCD21AD7581800DC3187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D695BCD81AD7581800DC3187 /* River WatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "River WatcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D695BCDD1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D695BCDE1AD7581800DC3187 /* River_WatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = River_WatcherTests.m; sourceTree = "<group>"; };
+		D695BD221AD75D0900DC3187 /* Car Passing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Car Passing.wav"; sourceTree = "<group>"; };
+		D695BD231AD75D0900DC3187 /* CarHorn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CarHorn.wav; sourceTree = "<group>"; };
+		D695BD241AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Click - Stapling Paper-SoundBible.com-238116558.wav"; sourceTree = "<group>"; };
+		D695BD251AD75D0900DC3187 /* Enjoy The Life - In Game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Enjoy The Life - In Game.wav"; sourceTree = "<group>"; };
+		D695BD261AD75D0900DC3187 /* Enjoy The Life - TI.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Enjoy The Life - TI.wav"; sourceTree = "<group>"; };
+		D695BD271AD75D0900DC3187 /* Fall in water.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Fall in water.wav"; sourceTree = "<group>"; };
+		D695BD281AD75D0900DC3187 /* Grab object.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Grab object.wav"; sourceTree = "<group>"; };
+		D695BD291AD75D0900DC3187 /* OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav"; sourceTree = "<group>"; };
+		D695BD2A1AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ON - bubble_gum_pop-Natalie_Wendt-772662403.wav"; sourceTree = "<group>"; };
+		D695BD2B1AD75D0900DC3187 /* Put on trash can  - 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Put on trash can  - 2.wav"; sourceTree = "<group>"; };
+		D695BD2C1AD75D0900DC3187 /* Put on trash can - 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Put on trash can - 1.wav"; sourceTree = "<group>"; };
+		D695BD2D1AD75D0900DC3187 /* Smalltalk - End.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Smalltalk - End.wav"; sourceTree = "<group>"; };
+		D695BD2E1AD75D0900DC3187 /* throw object.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "throw object.wav"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D695BCB71AD7581700DC3187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D695BCD51AD7581800DC3187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D695BCB11AD7581700DC3187 = {
+			isa = PBXGroup;
+			children = (
+				D695BCBC1AD7581800DC3187 /* River Watcher */,
+				D695BCDB1AD7581800DC3187 /* River WatcherTests */,
+				D695BCBB1AD7581800DC3187 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D695BCBB1AD7581800DC3187 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D695BCBA1AD7581800DC3187 /* River Watcher.app */,
+				D695BCD81AD7581800DC3187 /* River WatcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D695BCBC1AD7581800DC3187 /* River Watcher */ = {
+			isa = PBXGroup;
+			children = (
+				D695BCE91AD759E300DC3187 /* Telas */,
+				D695BCE81AD759D800DC3187 /* Media */,
+				D695BCC11AD7581800DC3187 /* AppDelegate.h */,
+				D695BCC21AD7581800DC3187 /* AppDelegate.m */,
+				D695BCC91AD7581800DC3187 /* GameViewController.h */,
+				D695BCCA1AD7581800DC3187 /* GameViewController.m */,
+				D695BCCC1AD7581800DC3187 /* Main.storyboard */,
+				D695BCD11AD7581800DC3187 /* LaunchScreen.xib */,
+				D695BCBD1AD7581800DC3187 /* Supporting Files */,
+			);
+			path = "River Watcher";
+			sourceTree = "<group>";
+		};
+		D695BCBD1AD7581800DC3187 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D695BCBE1AD7581800DC3187 /* Info.plist */,
+				D695BCBF1AD7581800DC3187 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D695BCDB1AD7581800DC3187 /* River WatcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				D695BCDE1AD7581800DC3187 /* River_WatcherTests.m */,
+				D695BCDC1AD7581800DC3187 /* Supporting Files */,
+			);
+			path = "River WatcherTests";
+			sourceTree = "<group>";
+		};
+		D695BCDC1AD7581800DC3187 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D695BCDD1AD7581800DC3187 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D695BCE81AD759D800DC3187 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				D695BD211AD75D0900DC3187 /* Audio */,
+				D695BCCF1AD7581800DC3187 /* Images.xcassets */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		D695BCE91AD759E300DC3187 /* Telas */ = {
+			isa = PBXGroup;
+			children = (
+				D695BCC41AD7581800DC3187 /* TelaInicio.h */,
+				D695BCC51AD7581800DC3187 /* TelaInicio.m */,
+				D695BCC71AD7581800DC3187 /* TelaInicio.sks */,
+			);
+			name = Telas;
+			sourceTree = "<group>";
+		};
+		D695BD211AD75D0900DC3187 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				D695BD221AD75D0900DC3187 /* Car Passing.wav */,
+				D695BD231AD75D0900DC3187 /* CarHorn.wav */,
+				D695BD241AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav */,
+				D695BD251AD75D0900DC3187 /* Enjoy The Life - In Game.wav */,
+				D695BD261AD75D0900DC3187 /* Enjoy The Life - TI.wav */,
+				D695BD271AD75D0900DC3187 /* Fall in water.wav */,
+				D695BD281AD75D0900DC3187 /* Grab object.wav */,
+				D695BD291AD75D0900DC3187 /* OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav */,
+				D695BD2A1AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav */,
+				D695BD2B1AD75D0900DC3187 /* Put on trash can  - 2.wav */,
+				D695BD2C1AD75D0900DC3187 /* Put on trash can - 1.wav */,
+				D695BD2D1AD75D0900DC3187 /* Smalltalk - End.wav */,
+				D695BD2E1AD75D0900DC3187 /* throw object.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D695BCB91AD7581700DC3187 /* River Watcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D695BCE21AD7581800DC3187 /* Build configuration list for PBXNativeTarget "River Watcher" */;
+			buildPhases = (
+				D695BCB61AD7581700DC3187 /* Sources */,
+				D695BCB71AD7581700DC3187 /* Frameworks */,
+				D695BCB81AD7581700DC3187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "River Watcher";
+			productName = "River Watcher";
+			productReference = D695BCBA1AD7581800DC3187 /* River Watcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D695BCD71AD7581800DC3187 /* River WatcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D695BCE51AD7581800DC3187 /* Build configuration list for PBXNativeTarget "River WatcherTests" */;
+			buildPhases = (
+				D695BCD41AD7581800DC3187 /* Sources */,
+				D695BCD51AD7581800DC3187 /* Frameworks */,
+				D695BCD61AD7581800DC3187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D695BCDA1AD7581800DC3187 /* PBXTargetDependency */,
+			);
+			name = "River WatcherTests";
+			productName = "River WatcherTests";
+			productReference = D695BCD81AD7581800DC3187 /* River WatcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D695BCB21AD7581700DC3187 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Bearded Men and The Lady";
+				TargetAttributes = {
+					D695BCB91AD7581700DC3187 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D695BCD71AD7581800DC3187 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D695BCB91AD7581700DC3187;
+					};
+				};
+			};
+			buildConfigurationList = D695BCB51AD7581700DC3187 /* Build configuration list for PBXProject "River Watcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D695BCB11AD7581700DC3187;
+			productRefGroup = D695BCBB1AD7581800DC3187 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D695BCB91AD7581700DC3187 /* River Watcher */,
+				D695BCD71AD7581800DC3187 /* River WatcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D695BCB81AD7581700DC3187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D695BD361AD75D0900DC3187 /* OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */,
+				D695BD341AD75D0900DC3187 /* Fall in water.wav in Resources */,
+				D695BD371AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */,
+				D695BD301AD75D0900DC3187 /* CarHorn.wav in Resources */,
+				D695BD3B1AD75D0900DC3187 /* throw object.wav in Resources */,
+				D695BD311AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav in Resources */,
+				D695BD2F1AD75D0900DC3187 /* Car Passing.wav in Resources */,
+				D695BD381AD75D0900DC3187 /* Put on trash can  - 2.wav in Resources */,
+				D695BCD31AD7581800DC3187 /* LaunchScreen.xib in Resources */,
+				D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */,
+				D695BD391AD75D0900DC3187 /* Put on trash can - 1.wav in Resources */,
+				D695BD321AD75D0900DC3187 /* Enjoy The Life - In Game.wav in Resources */,
+				D695BCD01AD7581800DC3187 /* Images.xcassets in Resources */,
+				D695BD331AD75D0900DC3187 /* Enjoy The Life - TI.wav in Resources */,
+				D695BD351AD75D0900DC3187 /* Grab object.wav in Resources */,
+				D695BCC81AD7581800DC3187 /* TelaInicio.sks in Resources */,
+				D695BCCE1AD7581800DC3187 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D695BCD61AD7581800DC3187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D695BCB61AD7581700DC3187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
+				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
+				D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */,
+				D695BCC01AD7581800DC3187 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D695BCD41AD7581800DC3187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D695BCDF1AD7581800DC3187 /* River_WatcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D695BCDA1AD7581800DC3187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D695BCB91AD7581700DC3187 /* River Watcher */;
+			targetProxy = D695BCD91AD7581800DC3187 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D695BCCC1AD7581800DC3187 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D695BCCD1AD7581800DC3187 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D695BCD11AD7581800DC3187 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D695BCD21AD7581800DC3187 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D695BCE01AD7581800DC3187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		D695BCE11AD7581800DC3187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D695BCE31AD7581800DC3187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "River Watcher/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D695BCE41AD7581800DC3187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "River Watcher/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D695BCE61AD7581800DC3187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "River WatcherTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/River Watcher.app/River Watcher";
+			};
+			name = Debug;
+		};
+		D695BCE71AD7581800DC3187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "River WatcherTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/River Watcher.app/River Watcher";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D695BCB51AD7581700DC3187 /* Build configuration list for PBXProject "River Watcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D695BCE01AD7581800DC3187 /* Debug */,
+				D695BCE11AD7581800DC3187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D695BCE21AD7581800DC3187 /* Build configuration list for PBXNativeTarget "River Watcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D695BCE31AD7581800DC3187 /* Debug */,
+				D695BCE41AD7581800DC3187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D695BCE51AD7581800DC3187 /* Build configuration list for PBXNativeTarget "River WatcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D695BCE61AD7581800DC3187 /* Debug */,
+				D695BCE71AD7581800DC3187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D695BCB21AD7581700DC3187 /* Project object */;
+}

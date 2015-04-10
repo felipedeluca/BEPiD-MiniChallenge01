@@ -42,5 +42,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Floraless.ttf</string>
+		<string>PressStart2P.ttf</string>
+	</array>
 </dict>
 </plist>

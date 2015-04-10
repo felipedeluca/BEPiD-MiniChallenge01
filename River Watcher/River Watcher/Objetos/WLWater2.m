@@ -25,7 +25,7 @@
     
     self.img.physicsBody.dynamic = NO;
     self.img.zPosition = 6.0;
-    self.img.alpha     = 0.8;
+    self.img.alpha     = 0.7;
     self.img.name      = @"water";
     
     return self;

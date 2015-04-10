@@ -38,7 +38,8 @@
 		D695BD551AD786D100DC3187 /* WLWater1.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD521AD786D100DC3187 /* WLWater1.m */; };
 		D695BD561AD786D100DC3187 /* WLWater2.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD541AD786D100DC3187 /* WLWater2.m */; };
 		D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD5A1AD789CB00DC3187 /* SpaceShip.m */; };
-		D6BB9AC71AD8060A006E8DC7 /* WLCarro1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* WLCarro1.m */; };
+		D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */; };
+		D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +96,10 @@
 		D695BD541AD786D100DC3187 /* WLWater2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLWater2.m; path = Objetos/WLWater2.m; sourceTree = "<group>"; };
 		D695BD591AD789CB00DC3187 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceShip.h; path = Objetos/SpaceShip.h; sourceTree = "<group>"; };
 		D695BD5A1AD789CB00DC3187 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceShip.m; path = Objetos/SpaceShip.m; sourceTree = "<group>"; };
-		D6BB9AC51AD8060A006E8DC7 /* WLCarro1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCarro1.h; sourceTree = "<group>"; };
-		D6BB9AC61AD8060A006E8DC7 /* WLCarro1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLCarro1.m; sourceTree = "<group>"; };
+		D6BB9AC51AD8060A006E8DC7 /* WLAutomovel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAutomovel.h; sourceTree = "<group>"; };
+		D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAutomovel.m; sourceTree = "<group>"; };
+		D6BB9AC81AD8174F006E8DC7 /* WLCarro1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCarro1.h; sourceTree = "<group>"; };
+		D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLCarro1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,8 +277,10 @@
 		D6BB9AC41AD805F0006E8DC7 /* Automovel */ = {
 			isa = PBXGroup;
 			children = (
-				D6BB9AC51AD8060A006E8DC7 /* WLCarro1.h */,
-				D6BB9AC61AD8060A006E8DC7 /* WLCarro1.m */,
+				D6BB9AC51AD8060A006E8DC7 /* WLAutomovel.h */,
+				D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */,
+				D6BB9AC81AD8174F006E8DC7 /* WLCarro1.h */,
+				D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */,
 			);
 			name = Automovel;
 			sourceTree = "<group>";
@@ -406,8 +411,9 @@
 				D695BD441AD77C7700DC3187 /* TelaJogo.m in Sources */,
 				D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */,
 				D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */,
-				D6BB9AC71AD8060A006E8DC7 /* WLCarro1.m in Sources */,
+				D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
+				D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

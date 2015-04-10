@@ -31,6 +31,7 @@
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
        
         telaJogo.scaleMode = SKSceneScaleModeAspectFit;
+        //telaJogo.physicsWorld. = 1.0;
         
         [ self.view presentScene: telaJogo transition: transition ];
     }

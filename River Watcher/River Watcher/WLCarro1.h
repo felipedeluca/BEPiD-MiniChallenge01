@@ -6,11 +6,8 @@
 //  Copyright (c) 2015 Bearded Men and The Lady. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <SpriteKit/SpriteKit.h>
+#import "WLAutomovel.h"
 
-@interface WLCarro1 : NSObject
-
-@property ( nonatomic ) SKSpriteNode * img;
+@interface WLCarro1 : WLAutomovel
 
 @end

@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		065D18B11AD4C07D003AB911 /* peixe-dourado1.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18B01AD4C07D003AB911 /* peixe-dourado1.png */; };
+		065D18B31AD4C232003AB911 /* peixeDourado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 065D18B21AD4C232003AB911 /* peixeDourado.atlas */; };
+		065D18B51AD4C4D9003AB911 /* bot7.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18B41AD4C4D9003AB911 /* bot7.png */; };
+		065D18B71AD4C72B003AB911 /* bot8.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18B61AD4C72B003AB911 /* bot8.png */; };
+		065D18B91AD4CA9C003AB911 /* agua1.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18B81AD4CA9C003AB911 /* agua1.png */; };
+		065D18BB1AD4CB26003AB911 /* agua2.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18BA1AD4CB26003AB911 /* agua2.png */; };
+		065D18BD1AD4CC33003AB911 /* guardreio.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18BC1AD4CC33003AB911 /* guardreio.png */; };
+		065D18BF1AD4D111003AB911 /* esgoto.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 065D18BE1AD4D111003AB911 /* esgoto.atlas */; };
+		065D18C11AD4D7EF003AB911 /* bot9.png in Resources */ = {isa = PBXBuildFile; fileRef = 065D18C01AD4D7EF003AB911 /* bot9.png */; };
+		065F0D301AD59B4700BF8B98 /* bot10.png in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D2F1AD59B4700BF8B98 /* bot10.png */; };
+		065F0D321AD59EA200BF8B98 /* bot4.png in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D311AD59EA200BF8B98 /* bot4.png */; };
+		065F0D341AD59F2F00BF8B98 /* bot3.png in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D331AD59F2F00BF8B98 /* bot3.png */; };
+		065F0D361AD5A41400BF8B98 /* bot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D351AD5A41400BF8B98 /* bot1.png */; };
+		065F0D381AD5A88300BF8B98 /* lixeira.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D371AD5A88300BF8B98 /* lixeira.atlas */; };
+		065F0D3A1AD5B25700BF8B98 /* alga1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D391AD5B25700BF8B98 /* alga1.atlas */; };
+		065F0D3C1AD5B92D00BF8B98 /* algas2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D3B1AD5B92D00BF8B98 /* algas2.atlas */; };
+		065F0D401AD6E90800BF8B98 /* Floraless.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D3E1AD6E90800BF8B98 /* Floraless.ttf */; };
+		065F0D411AD6E90800BF8B98 /* press_start_2p.zip in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D3F1AD6E90800BF8B98 /* press_start_2p.zip */; };
+		065F0D471AD6EFBB00BF8B98 /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D441AD6EFBB00BF8B98 /* FONTLOG.txt */; };
+		065F0D481AD6EFBB00BF8B98 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D451AD6EFBB00BF8B98 /* LICENSE.txt */; };
+		065F0D491AD6EFBB00BF8B98 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D461AD6EFBB00BF8B98 /* PressStart2P.ttf */; };
+		065F0D4B1AD711AD00BF8B98 /* bot2.png in Resources */ = {isa = PBXBuildFile; fileRef = 065F0D4A1AD711AD00BF8B98 /* bot2.png */; };
+		06CD0DA61AD4B0C6004D1174 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD0DA51AD4B0C6004D1174 /* main.m */; };
+		06CD0DA91AD4B0C6004D1174 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD0DA81AD4B0C6004D1174 /* AppDelegate.m */; };
+		06CD0DAC1AD4B0C6004D1174 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD0DAB1AD4B0C6004D1174 /* GameScene.m */; };
+		06CD0DAE1AD4B0C6004D1174 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DAD1AD4B0C6004D1174 /* GameScene.sks */; };
+		06CD0DB11AD4B0C6004D1174 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD0DB01AD4B0C6004D1174 /* GameViewController.m */; };
+		06CD0DB41AD4B0C6004D1174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DB21AD4B0C6004D1174 /* Main.storyboard */; };
+		06CD0DB61AD4B0C6004D1174 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DB51AD4B0C6004D1174 /* Images.xcassets */; };
+		06CD0DB91AD4B0C6004D1174 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DB71AD4B0C6004D1174 /* LaunchScreen.xib */; };
+		06CD0DC51AD4B0C6004D1174 /* TelaInicialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD0DC41AD4B0C6004D1174 /* TelaInicialTests.m */; };
+		06CD0DD31AD4B1F5004D1174 /* TelaDoJogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD0DD21AD4B1F5004D1174 /* TelaDoJogo.m */; };
+		06CD0DD51AD4B239004D1174 /* tela1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DD41AD4B239004D1174 /* tela1.png */; };
+		06CD0DD71AD4B24B004D1174 /* nextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DD61AD4B24B004D1174 /* nextButton.png */; };
+		06CD0DD91AD4B506004D1174 /* telajogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DD81AD4B505004D1174 /* telajogo.png */; };
+		06CD0DDB1AD4B5B9004D1174 /* movimento.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DDA1AD4B5B9004D1174 /* movimento.png */; };
+		06CD0DDD1AD4B8C8004D1174 /* areia1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CD0DDC1AD4B8C7004D1174 /* areia1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06CD0DBF1AD4B0C6004D1174 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06CD0D981AD4B0C6004D1174 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06CD0D9F1AD4B0C6004D1174;
+			remoteInfo = TelaInicial;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		065D18B01AD4C07D003AB911 /* peixe-dourado1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peixe-dourado1.png"; path = "../../../Desktop/minichalenge/spritekit_peixedourado/peixe-dourado1.png"; sourceTree = "<group>"; };
+		065D18B21AD4C232003AB911 /* peixeDourado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = peixeDourado.atlas; path = ../../../Desktop/peixeDourado.atlas; sourceTree = "<group>"; };
+		065D18B41AD4C4D9003AB911 /* bot7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot7.png; path = ../../../Desktop/minichalenge/icones/bot7.png; sourceTree = "<group>"; };
+		065D18B61AD4C72B003AB911 /* bot8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot8.png; path = ../../../Desktop/minichalenge/icones/bot8.png; sourceTree = "<group>"; };
+		065D18B81AD4CA9C003AB911 /* agua1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = agua1.png; path = ../../../Desktop/minichalenge/telas/telajogo/agua1.png; sourceTree = "<group>"; };
+		065D18BA1AD4CB26003AB911 /* agua2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = agua2.png; path = ../../../Desktop/minichalenge/telas/telajogo/agua2.png; sourceTree = "<group>"; };
+		065D18BC1AD4CC33003AB911 /* guardreio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guardreio.png; path = ../../../Desktop/minichalenge/telas/telajogo/guardreio.png; sourceTree = "<group>"; };
+		065D18BE1AD4D111003AB911 /* esgoto.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = esgoto.atlas; path = ../../../Desktop/esgoto.atlas; sourceTree = "<group>"; };
+		065D18C01AD4D7EF003AB911 /* bot9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot9.png; path = ../../../Desktop/minichalenge/icones/bot9.png; sourceTree = "<group>"; };
+		065F0D2F1AD59B4700BF8B98 /* bot10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot10.png; path = ../../../Desktop/minichalenge/icones/bot10.png; sourceTree = "<group>"; };
+		065F0D311AD59EA200BF8B98 /* bot4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot4.png; path = ../../../Desktop/minichalenge/icones/bot4.png; sourceTree = "<group>"; };
+		065F0D331AD59F2F00BF8B98 /* bot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot3.png; path = ../../../Desktop/minichalenge/icones/bot3.png; sourceTree = "<group>"; };
+		065F0D351AD5A41400BF8B98 /* bot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot1.png; path = ../../../Desktop/minichalenge/icones/bot1.png; sourceTree = "<group>"; };
+		065F0D371AD5A88300BF8B98 /* lixeira.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = lixeira.atlas; path = ../../../Desktop/lixeira.atlas; sourceTree = "<group>"; };
+		065F0D391AD5B25700BF8B98 /* alga1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = alga1.atlas; path = ../../../Desktop/alga1.atlas; sourceTree = "<group>"; };
+		065F0D3B1AD5B92D00BF8B98 /* algas2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = algas2.atlas; path = ../../../Desktop/algas2.atlas; sourceTree = "<group>"; };
+		065F0D3E1AD6E90800BF8B98 /* Floraless.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Floraless.ttf; sourceTree = "<group>"; };
+		065F0D3F1AD6E90800BF8B98 /* press_start_2p.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = press_start_2p.zip; sourceTree = "<group>"; };
+		065F0D421AD6ED1600BF8B98 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PressStart2P.ttf; path = press_start_2p/PressStart2P.ttf; sourceTree = "<group>"; };
+		065F0D441AD6EFBB00BF8B98 /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
+		065F0D451AD6EFBB00BF8B98 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		065F0D461AD6EFBB00BF8B98 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
+		065F0D4A1AD711AD00BF8B98 /* bot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot2.png; path = ../../../Desktop/minichalenge/icones/bot2.png; sourceTree = "<group>"; };
+		06CD0DA01AD4B0C6004D1174 /* River Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "River Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06CD0DA41AD4B0C6004D1174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CD0DA51AD4B0C6004D1174 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06CD0DA71AD4B0C6004D1174 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		06CD0DA81AD4B0C6004D1174 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		06CD0DAA1AD4B0C6004D1174 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		06CD0DAB1AD4B0C6004D1174 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		06CD0DAD1AD4B0C6004D1174 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		06CD0DAF1AD4B0C6004D1174 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		06CD0DB01AD4B0C6004D1174 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		06CD0DB31AD4B0C6004D1174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06CD0DB51AD4B0C6004D1174 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06CD0DB81AD4B0C6004D1174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		06CD0DBE1AD4B0C6004D1174 /* River WatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "River WatcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06CD0DC31AD4B0C6004D1174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CD0DC41AD4B0C6004D1174 /* TelaInicialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelaInicialTests.m; sourceTree = "<group>"; };
+		06CD0DD11AD4B1F5004D1174 /* TelaDoJogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaDoJogo.h; sourceTree = "<group>"; };
+		06CD0DD21AD4B1F5004D1174 /* TelaDoJogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaDoJogo.m; sourceTree = "<group>"; };
+		06CD0DD41AD4B239004D1174 /* tela1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tela1.png; path = ../../../Desktop/minichalenge/telas/telainicio/tela1.png; sourceTree = "<group>"; };
+		06CD0DD61AD4B24B004D1174 /* nextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextButton.png; path = "../../ioscreator-master/ScenesSpriteKitTutorial/nextButton.png"; sourceTree = "<group>"; };
+		06CD0DD81AD4B505004D1174 /* telajogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telajogo.png; path = ../../../Desktop/minichalenge/telas/telajogo/telajogo.png; sourceTree = "<group>"; };
+		06CD0DDA1AD4B5B9004D1174 /* movimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movimento.png; path = ../../../Desktop/minichalenge/telas/telainicio/movimento.png; sourceTree = "<group>"; };
+		06CD0DDC1AD4B8C7004D1174 /* areia1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = areia1.png; path = ../../../Desktop/minichalenge/telas/telainicio/areia1.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06CD0D9D1AD4B0C6004D1174 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06CD0DBB1AD4B0C6004D1174 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		065F0D3D1AD6E90800BF8B98 /* fontes */ = {
+			isa = PBXGroup;
+			children = (
+				065F0D3E1AD6E90800BF8B98 /* Floraless.ttf */,
+				065F0D421AD6ED1600BF8B98 /* PressStart2P.ttf */,
+				065F0D3F1AD6E90800BF8B98 /* press_start_2p.zip */,
+			);
+			name = fontes;
+			path = ../../fontes;
+			sourceTree = "<group>";
+		};
+		065F0D431AD6EFBB00BF8B98 /* press_start_2p */ = {
+			isa = PBXGroup;
+			children = (
+				065F0D441AD6EFBB00BF8B98 /* FONTLOG.txt */,
+				065F0D451AD6EFBB00BF8B98 /* LICENSE.txt */,
+				065F0D461AD6EFBB00BF8B98 /* PressStart2P.ttf */,
+			);
+			name = press_start_2p;
+			path = ../../fontes/press_start_2p;
+			sourceTree = "<group>";
+		};
+		06CD0D971AD4B0C6004D1174 = {
+			isa = PBXGroup;
+			children = (
+				06CD0DA21AD4B0C6004D1174 /* River Watcher */,
+				06CD0DC11AD4B0C6004D1174 /* TelaInicialTests */,
+				06CD0DA11AD4B0C6004D1174 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06CD0DA11AD4B0C6004D1174 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06CD0DA01AD4B0C6004D1174 /* River Watcher.app */,
+				06CD0DBE1AD4B0C6004D1174 /* River WatcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06CD0DA21AD4B0C6004D1174 /* River Watcher */ = {
+			isa = PBXGroup;
+			children = (
+				D677970C1AD748710049B529 /* Image */,
+				065F0D431AD6EFBB00BF8B98 /* press_start_2p */,
+				065F0D3D1AD6E90800BF8B98 /* fontes */,
+				06CD0DA71AD4B0C6004D1174 /* AppDelegate.h */,
+				06CD0DA81AD4B0C6004D1174 /* AppDelegate.m */,
+				06CD0DAA1AD4B0C6004D1174 /* GameScene.h */,
+				06CD0DAB1AD4B0C6004D1174 /* GameScene.m */,
+				06CD0DD11AD4B1F5004D1174 /* TelaDoJogo.h */,
+				06CD0DD21AD4B1F5004D1174 /* TelaDoJogo.m */,
+				06CD0DAD1AD4B0C6004D1174 /* GameScene.sks */,
+				06CD0DAF1AD4B0C6004D1174 /* GameViewController.h */,
+				06CD0DB01AD4B0C6004D1174 /* GameViewController.m */,
+				06CD0DB21AD4B0C6004D1174 /* Main.storyboard */,
+				06CD0DB51AD4B0C6004D1174 /* Images.xcassets */,
+				06CD0DB71AD4B0C6004D1174 /* LaunchScreen.xib */,
+				06CD0DA31AD4B0C6004D1174 /* Supporting Files */,
+			);
+			name = "River Watcher";
+			path = TelaInicial;
+			sourceTree = "<group>";
+		};
+		06CD0DA31AD4B0C6004D1174 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				065D18C01AD4D7EF003AB911 /* bot9.png */,
+				06CD0DD41AD4B239004D1174 /* tela1.png */,
+				06CD0DD81AD4B505004D1174 /* telajogo.png */,
+				065D18B01AD4C07D003AB911 /* peixe-dourado1.png */,
+				06CD0DDC1AD4B8C7004D1174 /* areia1.png */,
+				065F0D351AD5A41400BF8B98 /* bot1.png */,
+				065F0D4A1AD711AD00BF8B98 /* bot2.png */,
+				065F0D331AD59F2F00BF8B98 /* bot3.png */,
+				065F0D311AD59EA200BF8B98 /* bot4.png */,
+				065D18B41AD4C4D9003AB911 /* bot7.png */,
+				065F0D2F1AD59B4700BF8B98 /* bot10.png */,
+				065D18B61AD4C72B003AB911 /* bot8.png */,
+				06CD0DDA1AD4B5B9004D1174 /* movimento.png */,
+				065D18B81AD4CA9C003AB911 /* agua1.png */,
+				065D18BA1AD4CB26003AB911 /* agua2.png */,
+				065D18BC1AD4CC33003AB911 /* guardreio.png */,
+				06CD0DD61AD4B24B004D1174 /* nextButton.png */,
+				06CD0DA41AD4B0C6004D1174 /* Info.plist */,
+				06CD0DA51AD4B0C6004D1174 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06CD0DC11AD4B0C6004D1174 /* TelaInicialTests */ = {
+			isa = PBXGroup;
+			children = (
+				06CD0DC41AD4B0C6004D1174 /* TelaInicialTests.m */,
+				06CD0DC21AD4B0C6004D1174 /* Supporting Files */,
+			);
+			path = TelaInicialTests;
+			sourceTree = "<group>";
+		};
+		06CD0DC21AD4B0C6004D1174 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06CD0DC31AD4B0C6004D1174 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D677970C1AD748710049B529 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				065F0D3B1AD5B92D00BF8B98 /* algas2.atlas */,
+				065F0D391AD5B25700BF8B98 /* alga1.atlas */,
+				065F0D371AD5A88300BF8B98 /* lixeira.atlas */,
+				065D18BE1AD4D111003AB911 /* esgoto.atlas */,
+				065D18B21AD4C232003AB911 /* peixeDourado.atlas */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06CD0D9F1AD4B0C6004D1174 /* River Watcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06CD0DC81AD4B0C6004D1174 /* Build configuration list for PBXNativeTarget "River Watcher" */;
+			buildPhases = (
+				06CD0D9C1AD4B0C6004D1174 /* Sources */,
+				06CD0D9D1AD4B0C6004D1174 /* Frameworks */,
+				06CD0D9E1AD4B0C6004D1174 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "River Watcher";
+			productName = TelaInicial;
+			productReference = 06CD0DA01AD4B0C6004D1174 /* River Watcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06CD0DBD1AD4B0C6004D1174 /* River WatcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06CD0DCB1AD4B0C6004D1174 /* Build configuration list for PBXNativeTarget "River WatcherTests" */;
+			buildPhases = (
+				06CD0DBA1AD4B0C6004D1174 /* Sources */,
+				06CD0DBB1AD4B0C6004D1174 /* Frameworks */,
+				06CD0DBC1AD4B0C6004D1174 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06CD0DC01AD4B0C6004D1174 /* PBXTargetDependency */,
+			);
+			name = "River WatcherTests";
+			productName = TelaInicialTests;
+			productReference = 06CD0DBE1AD4B0C6004D1174 /* River WatcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06CD0D981AD4B0C6004D1174 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Gabriela  Gomes Pires";
+				TargetAttributes = {
+					06CD0D9F1AD4B0C6004D1174 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					06CD0DBD1AD4B0C6004D1174 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 06CD0D9F1AD4B0C6004D1174;
+					};
+				};
+			};
+			buildConfigurationList = 06CD0D9B1AD4B0C6004D1174 /* Build configuration list for PBXProject "River Watcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06CD0D971AD4B0C6004D1174;
+			productRefGroup = 06CD0DA11AD4B0C6004D1174 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06CD0D9F1AD4B0C6004D1174 /* River Watcher */,
+				06CD0DBD1AD4B0C6004D1174 /* River WatcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06CD0D9E1AD4B0C6004D1174 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CD0DD71AD4B24B004D1174 /* nextButton.png in Resources */,
+				06CD0DD91AD4B506004D1174 /* telajogo.png in Resources */,
+				065D18BD1AD4CC33003AB911 /* guardreio.png in Resources */,
+				065D18BB1AD4CB26003AB911 /* agua2.png in Resources */,
+				065D18B11AD4C07D003AB911 /* peixe-dourado1.png in Resources */,
+				06CD0DB91AD4B0C6004D1174 /* LaunchScreen.xib in Resources */,
+				06CD0DB61AD4B0C6004D1174 /* Images.xcassets in Resources */,
+				06CD0DDD1AD4B8C8004D1174 /* areia1.png in Resources */,
+				065F0D3C1AD5B92D00BF8B98 /* algas2.atlas in Resources */,
+				065F0D341AD59F2F00BF8B98 /* bot3.png in Resources */,
+				06CD0DAE1AD4B0C6004D1174 /* GameScene.sks in Resources */,
+				065D18B31AD4C232003AB911 /* peixeDourado.atlas in Resources */,
+				065F0D481AD6EFBB00BF8B98 /* LICENSE.txt in Resources */,
+				065F0D4B1AD711AD00BF8B98 /* bot2.png in Resources */,
+				06CD0DD51AD4B239004D1174 /* tela1.png in Resources */,
+				065F0D3A1AD5B25700BF8B98 /* alga1.atlas in Resources */,
+				065F0D491AD6EFBB00BF8B98 /* PressStart2P.ttf in Resources */,
+				065F0D401AD6E90800BF8B98 /* Floraless.ttf in Resources */,
+				065D18C11AD4D7EF003AB911 /* bot9.png in Resources */,
+				065D18B71AD4C72B003AB911 /* bot8.png in Resources */,
+				065F0D301AD59B4700BF8B98 /* bot10.png in Resources */,
+				06CD0DDB1AD4B5B9004D1174 /* movimento.png in Resources */,
+				06CD0DB41AD4B0C6004D1174 /* Main.storyboard in Resources */,
+				065F0D361AD5A41400BF8B98 /* bot1.png in Resources */,
+				065F0D321AD59EA200BF8B98 /* bot4.png in Resources */,
+				065F0D471AD6EFBB00BF8B98 /* FONTLOG.txt in Resources */,
+				065D18B51AD4C4D9003AB911 /* bot7.png in Resources */,
+				065F0D411AD6E90800BF8B98 /* press_start_2p.zip in Resources */,
+				065D18B91AD4CA9C003AB911 /* agua1.png in Resources */,
+				065F0D381AD5A88300BF8B98 /* lixeira.atlas in Resources */,
+				065D18BF1AD4D111003AB911 /* esgoto.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06CD0DBC1AD4B0C6004D1174 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06CD0D9C1AD4B0C6004D1174 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CD0DB11AD4B0C6004D1174 /* GameViewController.m in Sources */,
+				06CD0DD31AD4B1F5004D1174 /* TelaDoJogo.m in Sources */,
+				06CD0DA91AD4B0C6004D1174 /* AppDelegate.m in Sources */,
+				06CD0DAC1AD4B0C6004D1174 /* GameScene.m in Sources */,
+				06CD0DA61AD4B0C6004D1174 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06CD0DBA1AD4B0C6004D1174 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CD0DC51AD4B0C6004D1174 /* TelaInicialTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06CD0DC01AD4B0C6004D1174 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06CD0D9F1AD4B0C6004D1174 /* River Watcher */;
+			targetProxy = 06CD0DBF1AD4B0C6004D1174 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06CD0DB21AD4B0C6004D1174 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06CD0DB31AD4B0C6004D1174 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		06CD0DB71AD4B0C6004D1174 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06CD0DB81AD4B0C6004D1174 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06CD0DC61AD4B0C6004D1174 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		06CD0DC71AD4B0C6004D1174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06CD0DC91AD4B0C6004D1174 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TelaInicial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "River Watcher";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		06CD0DCA1AD4B0C6004D1174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TelaInicial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "River Watcher";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		06CD0DCC1AD4B0C6004D1174 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TelaInicialTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "River WatcherTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelaInicial.app/TelaInicial";
+			};
+			name = Debug;
+		};
+		06CD0DCD1AD4B0C6004D1174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TelaInicialTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "River WatcherTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelaInicial.app/TelaInicial";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06CD0D9B1AD4B0C6004D1174 /* Build configuration list for PBXProject "River Watcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06CD0DC61AD4B0C6004D1174 /* Debug */,
+				06CD0DC71AD4B0C6004D1174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06CD0DC81AD4B0C6004D1174 /* Build configuration list for PBXNativeTarget "River Watcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06CD0DC91AD4B0C6004D1174 /* Debug */,
+				06CD0DCA1AD4B0C6004D1174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06CD0DCB1AD4B0C6004D1174 /* Build configuration list for PBXNativeTarget "River WatcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06CD0DCC1AD4B0C6004D1174 /* Debug */,
+				06CD0DCD1AD4B0C6004D1174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06CD0D981AD4B0C6004D1174 /* Project object */;
+}

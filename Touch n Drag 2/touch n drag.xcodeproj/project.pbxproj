@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2763E4B1AD6E4A900A43428 /* telaT.wav in Resources */ = {isa = PBXBuildFile; fileRef = E2763E4A1AD6E4A900A43428 /* telaT.wav */; };
+		E2763E4D1AD6E4B200A43428 /* inGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = E2763E4C1AD6E4B200A43428 /* inGame.wav */; };
+		E2763E4F1AD6E50F00A43428 /* grabObject.wav in Resources */ = {isa = PBXBuildFile; fileRef = E2763E4E1AD6E50F00A43428 /* grabObject.wav */; };
+		E2763E541AD6F7A500A43428 /* Bottle.m in Sources */ = {isa = PBXBuildFile; fileRef = E2763E531AD6F7A500A43428 /* Bottle.m */; };
+		E2763E561AD7019800A43428 /* destroy1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E2763E551AD7019800A43428 /* destroy1.wav */; };
+		E2ABA9081AD46681003DDEED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA9071AD46681003DDEED /* main.m */; };
+		E2ABA90B1AD46681003DDEED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA90A1AD46681003DDEED /* AppDelegate.m */; };
+		E2ABA90E1AD46681003DDEED /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA90D1AD46681003DDEED /* GameScene.m */; };
+		E2ABA9101AD46681003DDEED /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E2ABA90F1AD46681003DDEED /* GameScene.sks */; };
+		E2ABA9131AD46681003DDEED /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA9121AD46681003DDEED /* GameViewController.m */; };
+		E2ABA9161AD46681003DDEED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2ABA9141AD46681003DDEED /* Main.storyboard */; };
+		E2ABA9181AD46681003DDEED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ABA9171AD46681003DDEED /* Images.xcassets */; };
+		E2ABA91B1AD46681003DDEED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2ABA9191AD46681003DDEED /* LaunchScreen.xib */; };
+		E2ABA9271AD46681003DDEED /* touch_n_dragTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA9261AD46681003DDEED /* touch_n_dragTests.m */; };
+		E2ABA9321AD466BD003DDEED /* Pneu.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA9311AD466BD003DDEED /* Pneu.m */; };
+		E2ABA9351AD469A3003DDEED /* ShipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA9341AD469A3003DDEED /* ShipScene.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2ABA9211AD46681003DDEED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2ABA8FA1AD46681003DDEED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2ABA9011AD46681003DDEED;
+			remoteInfo = "touch n drag";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E2763E4A1AD6E4A900A43428 /* telaT.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = telaT.wav; sourceTree = "<group>"; };
+		E2763E4C1AD6E4B200A43428 /* inGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = inGame.wav; sourceTree = "<group>"; };
+		E2763E4E1AD6E50F00A43428 /* grabObject.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = grabObject.wav; sourceTree = "<group>"; };
+		E2763E521AD6F7A500A43428 /* Bottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bottle.h; sourceTree = "<group>"; };
+		E2763E531AD6F7A500A43428 /* Bottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bottle.m; sourceTree = "<group>"; };
+		E2763E551AD7019800A43428 /* destroy1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = destroy1.wav; sourceTree = "<group>"; };
+		E2ABA9021AD46681003DDEED /* touch n drag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "touch n drag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2ABA9061AD46681003DDEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2ABA9071AD46681003DDEED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2ABA9091AD46681003DDEED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E2ABA90A1AD46681003DDEED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E2ABA90C1AD46681003DDEED /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		E2ABA90D1AD46681003DDEED /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		E2ABA90F1AD46681003DDEED /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E2ABA9111AD46681003DDEED /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		E2ABA9121AD46681003DDEED /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		E2ABA9151AD46681003DDEED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2ABA9171AD46681003DDEED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E2ABA91A1AD46681003DDEED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E2ABA9201AD46681003DDEED /* touch n dragTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "touch n dragTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2ABA9251AD46681003DDEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2ABA9261AD46681003DDEED /* touch_n_dragTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touch_n_dragTests.m; sourceTree = "<group>"; };
+		E2ABA9301AD466BD003DDEED /* Pneu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pneu.h; sourceTree = "<group>"; };
+		E2ABA9311AD466BD003DDEED /* Pneu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pneu.m; sourceTree = "<group>"; };
+		E2ABA9331AD469A3003DDEED /* ShipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipScene.h; sourceTree = "<group>"; };
+		E2ABA9341AD469A3003DDEED /* ShipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipScene.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2ABA8FF1AD46681003DDEED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2ABA91D1AD46681003DDEED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2ABA8F91AD46681003DDEED = {
+			isa = PBXGroup;
+			children = (
+				E2ABA9041AD46681003DDEED /* touch n drag */,
+				E2ABA9231AD46681003DDEED /* touch n dragTests */,
+				E2ABA9031AD46681003DDEED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2ABA9031AD46681003DDEED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABA9021AD46681003DDEED /* touch n drag.app */,
+				E2ABA9201AD46681003DDEED /* touch n dragTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2ABA9041AD46681003DDEED /* touch n drag */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABA9091AD46681003DDEED /* AppDelegate.h */,
+				E2ABA90A1AD46681003DDEED /* AppDelegate.m */,
+				E2ABA90C1AD46681003DDEED /* GameScene.h */,
+				E2ABA90D1AD46681003DDEED /* GameScene.m */,
+				E2ABA9301AD466BD003DDEED /* Pneu.h */,
+				E2ABA9311AD466BD003DDEED /* Pneu.m */,
+				E2763E521AD6F7A500A43428 /* Bottle.h */,
+				E2763E531AD6F7A500A43428 /* Bottle.m */,
+				E2ABA9331AD469A3003DDEED /* ShipScene.h */,
+				E2ABA9341AD469A3003DDEED /* ShipScene.m */,
+				E2ABA90F1AD46681003DDEED /* GameScene.sks */,
+				E2ABA9111AD46681003DDEED /* GameViewController.h */,
+				E2ABA9121AD46681003DDEED /* GameViewController.m */,
+				E2763E4C1AD6E4B200A43428 /* inGame.wav */,
+				E2763E551AD7019800A43428 /* destroy1.wav */,
+				E2763E4A1AD6E4A900A43428 /* telaT.wav */,
+				E2763E4E1AD6E50F00A43428 /* grabObject.wav */,
+				E2ABA9141AD46681003DDEED /* Main.storyboard */,
+				E2ABA9171AD46681003DDEED /* Images.xcassets */,
+				E2ABA9191AD46681003DDEED /* LaunchScreen.xib */,
+				E2ABA9051AD46681003DDEED /* Supporting Files */,
+			);
+			path = "touch n drag";
+			sourceTree = "<group>";
+		};
+		E2ABA9051AD46681003DDEED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABA9061AD46681003DDEED /* Info.plist */,
+				E2ABA9071AD46681003DDEED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2ABA9231AD46681003DDEED /* touch n dragTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABA9261AD46681003DDEED /* touch_n_dragTests.m */,
+				E2ABA9241AD46681003DDEED /* Supporting Files */,
+			);
+			path = "touch n dragTests";
+			sourceTree = "<group>";
+		};
+		E2ABA9241AD46681003DDEED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABA9251AD46681003DDEED /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2ABA9011AD46681003DDEED /* touch n drag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2ABA92A1AD46681003DDEED /* Build configuration list for PBXNativeTarget "touch n drag" */;
+			buildPhases = (
+				E2ABA8FE1AD46681003DDEED /* Sources */,
+				E2ABA8FF1AD46681003DDEED /* Frameworks */,
+				E2ABA9001AD46681003DDEED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "touch n drag";
+			productName = "touch n drag";
+			productReference = E2ABA9021AD46681003DDEED /* touch n drag.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2ABA91F1AD46681003DDEED /* touch n dragTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2ABA92D1AD46681003DDEED /* Build configuration list for PBXNativeTarget "touch n dragTests" */;
+			buildPhases = (
+				E2ABA91C1AD46681003DDEED /* Sources */,
+				E2ABA91D1AD46681003DDEED /* Frameworks */,
+				E2ABA91E1AD46681003DDEED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2ABA9221AD46681003DDEED /* PBXTargetDependency */,
+			);
+			name = "touch n dragTests";
+			productName = "touch n dragTests";
+			productReference = E2ABA9201AD46681003DDEED /* touch n dragTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2ABA8FA1AD46681003DDEED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Kalim;
+				TargetAttributes = {
+					E2ABA9011AD46681003DDEED = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					E2ABA91F1AD46681003DDEED = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = E2ABA9011AD46681003DDEED;
+					};
+				};
+			};
+			buildConfigurationList = E2ABA8FD1AD46681003DDEED /* Build configuration list for PBXProject "touch n drag" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2ABA8F91AD46681003DDEED;
+			productRefGroup = E2ABA9031AD46681003DDEED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2ABA9011AD46681003DDEED /* touch n drag */,
+				E2ABA91F1AD46681003DDEED /* touch n dragTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2ABA9001AD46681003DDEED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2763E4F1AD6E50F00A43428 /* grabObject.wav in Resources */,
+				E2ABA91B1AD46681003DDEED /* LaunchScreen.xib in Resources */,
+				E2ABA9181AD46681003DDEED /* Images.xcassets in Resources */,
+				E2763E4D1AD6E4B200A43428 /* inGame.wav in Resources */,
+				E2763E561AD7019800A43428 /* destroy1.wav in Resources */,
+				E2ABA9101AD46681003DDEED /* GameScene.sks in Resources */,
+				E2ABA9161AD46681003DDEED /* Main.storyboard in Resources */,
+				E2763E4B1AD6E4A900A43428 /* telaT.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2ABA91E1AD46681003DDEED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2ABA8FE1AD46681003DDEED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2ABA9321AD466BD003DDEED /* Pneu.m in Sources */,
+				E2ABA9131AD46681003DDEED /* GameViewController.m in Sources */,
+				E2ABA90B1AD46681003DDEED /* AppDelegate.m in Sources */,
+				E2ABA90E1AD46681003DDEED /* GameScene.m in Sources */,
+				E2ABA9351AD469A3003DDEED /* ShipScene.m in Sources */,
+				E2ABA9081AD46681003DDEED /* main.m in Sources */,
+				E2763E541AD6F7A500A43428 /* Bottle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2ABA91C1AD46681003DDEED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2ABA9271AD46681003DDEED /* touch_n_dragTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2ABA9221AD46681003DDEED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2ABA9011AD46681003DDEED /* touch n drag */;
+			targetProxy = E2ABA9211AD46681003DDEED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2ABA9141AD46681003DDEED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2ABA9151AD46681003DDEED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2ABA9191AD46681003DDEED /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2ABA91A1AD46681003DDEED /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2ABA9281AD46681003DDEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E2ABA9291AD46681003DDEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2ABA92B1AD46681003DDEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "touch n drag/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2ABA92C1AD46681003DDEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "touch n drag/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E2ABA92E1AD46681003DDEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "touch n dragTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/touch n drag.app/touch n drag";
+			};
+			name = Debug;
+		};
+		E2ABA92F1AD46681003DDEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "touch n dragTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/touch n drag.app/touch n drag";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2ABA8FD1AD46681003DDEED /* Build configuration list for PBXProject "touch n drag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2ABA9281AD46681003DDEED /* Debug */,
+				E2ABA9291AD46681003DDEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2ABA92A1AD46681003DDEED /* Build configuration list for PBXNativeTarget "touch n drag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2ABA92B1AD46681003DDEED /* Debug */,
+				E2ABA92C1AD46681003DDEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2ABA92D1AD46681003DDEED /* Build configuration list for PBXNativeTarget "touch n dragTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2ABA92E1AD46681003DDEED /* Debug */,
+				E2ABA92F1AD46681003DDEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2ABA8FA1AD46681003DDEED /* Project object */;
+}

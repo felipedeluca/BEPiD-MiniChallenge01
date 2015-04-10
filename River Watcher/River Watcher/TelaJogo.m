@@ -11,6 +11,8 @@
 #import "WLWater2.h"
 #import "SpaceShip.h"
 #import "WLGarrafaVidro.h"
+#import "WLAutomovel.h"
+#import "WLCarro1.h"
 
 // Configuração da água
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
@@ -25,6 +27,8 @@
 @property ( nonatomic, strong ) WLWater1 *waterTile1B; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
+
+@property ( nonatomic, strong ) WLCarro1 *carro1;//
 
 @end
 //-----------------------------------------------------------------------
@@ -68,10 +72,90 @@
 
     [ self criaCenario ];
     [ self criaAgua ];
+<<<<<<< HEAD
     [ self criaNave ];
+<<<<<<< HEAD
     
 }
 //--------------------------------------------------------------
+=======
+=======
+//    [ self criaNave ];
+    [ self criaAutomoveis ];
+}
+//--------------------------------------------------------------
+-(void)criaAutomoveis {
+    
+    CGFloat positionY = CGRectGetMidY(self.frame) - 40;
+    
+    
+    if ( self.carro1.img == nil ){
+        self.carro1 = [ [WLCarro1 alloc] init ];
+        self.carro1.img.position = CGPointMake( CGRectGetMidX(self.frame) + 600, positionY );
+        self.carro1.img.zPosition = 0.0;
+        
+        [ self addChild: self.carro1.img ];
+    }
+    
+}
+//--------------------------------------------------------------
+-(void)animaAutomovel:(WLAutomovel *)automovel {
+
+    CGFloat intervaloMinPosX = 300; // intervalo de espaço onde é permitido arremessar os objetos
+    CGFloat intervaloMaxPosX = 600; // intervalo de espaço onde é permitido arremessar os objetos
+    
+    // atira objetos se o automóvel estiver em movimento
+    if ( [automovel.img hasActions] ){
+        // Intervalo de posição permitido
+        if ( automovel.img.position.x >= intervaloMinPosX && automovel.img.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
+            NSLog(@"Arremessou!!");
+            WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
+            
+            [ self addChild: garrafaVidro.img ];
+            [ self throwObject: garrafaVidro.img parent: automovel impulse: 50.0 ];
+            automovel.atirouObjeto = TRUE;
+        }
+
+        return;
+    }
+    
+    automovel.atirouObjeto = FALSE;
+    
+    CGFloat leftToRightStartX = -100;
+    CGFloat rightToLeftStartX = self.frame.size.width + automovel.img.size.width;
+    CGFloat duracaoMovimento  = 5.0;
+    CGFloat imageFlip         = 1.0; // aponta o carro para o sentido do movimento
+    CGFloat startPosition     = leftToRightStartX;
+    CGFloat endPosition       = rightToLeftStartX;
+    
+    if ( automovel.img.position.x < 0 ){
+        startPosition = leftToRightStartX;
+        endPosition   = rightToLeftStartX;
+        //imageFlip     = 1.0;
+        
+    }
+    else if ( automovel.img.position.x >= 0 ){
+        startPosition = rightToLeftStartX;
+        endPosition   = leftToRightStartX;
+        imageFlip     = -1.0;
+    }
+    
+    SKAction *movimentoAutomovel = [SKAction sequence:@[
+                                                        [ SKAction waitForDuration: 0.0 ],
+                                                        [ SKAction moveToX: startPosition duration: duracaoMovimento ],
+                                                        [ SKAction moveToX: endPosition   duration: duracaoMovimento ]
+                                                        ]
+                                    ];
+ 
+    
+    [ automovel.img setXScale: imageFlip ];
+    [ automovel.img runAction: movimentoAutomovel ];
+    NSLog( @"Pos X: %.2f", automovel.img.position.x );
+>>>>>>> 0d18c2eeb560b147a656920be8cfe8d0f12c6d0c
+    
+}
+//--------------------------------------------------------------
+>>>>>>> 289dbc38ab2a91957b857edc13ec848303405401
 -(void)criaCenario {
 
     paused = YES;
@@ -86,7 +170,7 @@
 
     //imagem do guardreio na tela do jogo.
     SKSpriteNode *guardreio = [ SKSpriteNode spriteNodeWithImageNamed: @"guardreio" ];
-    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 100 );
+    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 200 );
     //    guardreio.zPosition     = 0.99;
     [ guardreio setScale: 0.55 ];
 
@@ -97,8 +181,12 @@
     
     NSArray *texturesLixeira = @[ lixeira1,lixeira2,lixeira3 ];
     SKSpriteNode *lixeira    = [ SKSpriteNode spriteNodeWithTexture: lixeira1 ];
-    lixeira.position         = CGPointMake( 140, 330);
-    lixeira.zPosition        = 0.9;
+    lixeira.position         = CGPointMake( 200, 130);
+    lixeira.zPosition        = 1.0;
+    lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
+    lixeira.physicsBody.affectedByGravity = NO;
+    lixeira.physicsBody.allowsRotation    = NO;
+    lixeira.physicsBody.linearDamping     = 0.8;
     
     SKAction *movimentoLixeira = [ SKAction animateWithTextures:texturesLixeira timePerFrame: 0.01 ];
     SKAction *repeatLixeira    = [ SKAction repeatActionForever:movimentoLixeira ];
@@ -115,8 +203,8 @@
                                             ];
     SKAction *movimentoVerticalLixeira = [SKAction sequence:@[
                                                               [SKAction waitForDuration:0.0],
-                                                              [SKAction moveToY:370 duration:0.8],
-                                                              [SKAction moveToY:330 duration:0.8]]];
+                                                              [SKAction moveToY:230 duration:0.8],
+                                                              [SKAction moveToY:190 duration:0.8]]];
     
     [ lixeira runAction: [SKAction repeatActionForever: movimentoHorizontalLixeira] ];
     [ lixeira runAction: [SKAction repeatActionForever:movimentoVerticalLixeira] ];
@@ -129,7 +217,7 @@
     
     NSArray *texturesEsgoto = @[ esgoto1, esgoto2, esgoto3 ];
     SKSpriteNode *esg1      = [ SKSpriteNode spriteNodeWithTexture:esgoto1 ];
-    esg1.position           = CGPointMake( 90, 100 );
+    esg1.position           = CGPointMake( 90, 160 );
     esg1.zPosition          = 0.8;
     
     SKAction *movimento = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
@@ -138,7 +226,7 @@
     [ esg1 setScale: 0.5 ];
     
     SKSpriteNode *esg2 = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
-    esg2.position      = CGPointMake( CGRectGetMidX( self.frame ), 100 );
+    esg2.position      = CGPointMake( CGRectGetMidX( self.frame ), 160 );
     esg2.zPosition     = 0.8;
     
     SKAction *movimento2 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
@@ -147,7 +235,7 @@
     [ esg2 setScale: 0.5 ];
     
     SKSpriteNode *esg3   = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
-    esg3.position        = CGPointMake( 890, 100 );
+    esg3.position        = CGPointMake( 890, 160 );
     esg3.zPosition       = 0.8;
     
     SKAction *movimento3 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
@@ -244,12 +332,16 @@
 //--------------------------------------------------------------
 -(void)criaAgua {
     
-    CGFloat offset = - 40.0;
+    CGFloat offset = - 20.0;
 
     self.waterTile2A = [ [WLWater2 alloc] init ];
     self.waterTile2B = [ [WLWater2 alloc] init ];
     self.waterTile2A.img.position = CGPointMake( 0, - (self.size.height / 2.0) + 50 + offset );
     self.waterTile2B.img.position = CGPointMake( self.waterTile2A.img.position.x + self.waterTile2B.img.size.width, self.waterTile2A.img.position.y );
+    
+//    self.waterTile2A.img.zPosition = 1.0;
+//    self.waterTile2B.img.zPosition = 1.5;
+
     [ self addChild: self.waterTile2A.img ];
     [ self addChild: self.waterTile2B.img ];
     
@@ -257,15 +349,19 @@
     self.waterTile1B = [ [WLWater1 alloc] init ];
     self.waterTile1A.img.position = CGPointMake( 0, - (self.size.height / 2.0) + 53 + offset );
     self.waterTile1B.img.position = CGPointMake( self.waterTile1A.img.position.x + self.waterTile1B.img.size.width, self.waterTile1A.img.position.y );
+
+//    self.waterTile1A.img.zPosition = 2.0;
+//    self.waterTile1B.img.zPosition = 2.5;
+    
     [ self addChild: self.waterTile1A.img ];
     [ self addChild: self.waterTile1B.img ];
     
     self.waterPhys = [ [SKSpriteNode alloc] init ];
     self.waterPhys = [[SKSpriteNode alloc] initWithColor:[UIColor cyanColor] size:CGSizeMake(self.size.width, 200)];
-    self.waterPhys.zPosition = 0.0;
+    self.waterPhys.zPosition = 1.0;
 
     self.waterPhys.position = CGPointMake( (self.size.width / 2.0), + 20 + offset);
-    self.waterPhys.alpha = 1.0;
+    self.waterPhys.alpha = 0.0;
     
     [ self addChild: self.waterPhys ];
     
@@ -301,29 +397,29 @@
     
 }
 //----------------------------------------------------------------------------------------
--(void)throwObject:(SKSpriteNode *)obj parent:(SKNode *)parentNode impulse:(CGFloat)throwImpulse {
+-(void)throwObject:(SKSpriteNode *)obj parent:(WLAutomovel *)parentNode impulse:(CGFloat)throwImpulse {
     //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
     
-    obj.position = parentNode.position;
-    obj.physicsBody.velocity = parentNode.physicsBody.velocity;
-    //rock.physicsBody.velocity = CGVectorMake(0, 0);
+    obj.position = parentNode.img.position;
+    obj.physicsBody.velocity = parentNode.img.physicsBody.velocity;
     
-    CGFloat dx = throwImpulse * 1;//cosf(parentNode.zRotation);
-    CGFloat dy = throwImpulse * 3;//sinf(parentNode.zRotation);
+    CGFloat dx = throwImpulse * 5;//cosf(parentNode.zRotation);
+    CGFloat dy = throwImpulse * 20;//sinf(parentNode.zRotation);
     
-    [ obj.physicsBody applyImpulse:CGVectorMake(-dx, dy) ];
+  //  obj.physicsBody.velocity = CGVectorMake(dx, dy);
+    [ obj.physicsBody applyForce: CGVectorMake(dx, dy) ];
 }
 //--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    if ( [node.name isEqualToString: @"Spaceship"] ){
-        WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
-        
-        [ self addChild: garrafaVidro.img ];
-        
-        [ self throwObject: garrafaVidro.img parent: node impulse: 4.0 ];
-        
-    }
+//    if ( [node.name isEqualToString: @"Spaceship"] ){
+//        WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
+//        
+//        [ self addChild: garrafaVidro.img ];
+//        
+//        [ self throwObject: garrafaVidro.img parent: node impulse: 4.0 ];
+//        
+//    }
 
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
@@ -367,6 +463,8 @@
     
     [ self waterSimulation ];
     [ self infiniteScrollingWater ];
+    [ self criaAutomoveis ];
+    [ self animaAutomovel: self.carro1 ];
 }
 //--------------------------------------------------------------
 -(void)infiniteScrollingWater{
@@ -376,12 +474,12 @@
     
     CGFloat sceneWidth = self.size.width + self.waterTile2A.img.size.width;
     
-    if ( self.waterTile2A.img.position.x > sceneWidth ) {
-        x2 = self.waterTile2B.img.position.x;
+    if ( self.waterTile2A.img.position.x + (self.waterTile2A.img.size.width / 2.0) > sceneWidth ) {
+        x2 = self.waterTile2B.img.position.x + 1;
         x1 = x2 - self.waterTile2A.img.size.width;
     }
-    else if ( self.waterTile2B.img.position.x > sceneWidth ) {
-        x1 = self.waterTile2A.img.position.x;
+    else if ( self.waterTile2B.img.position.x + (self.waterTile2B.img.size.width / 2.0) > sceneWidth ) {
+        x1 = self.waterTile2A.img.position.x + 1;
         x2 = x1 - self.waterTile2B.img.size.width;
     }
     else{
@@ -390,11 +488,11 @@
     }
     
     
-    if ( self.waterTile1A.img.position.x > sceneWidth ) {
+    if ( self.waterTile1A.img.position.x + (self.waterTile1A.img.size.width / 2.0) > sceneWidth ) {
         x4 = self.waterTile1B.img.position.x;
         x3 = x4 - self.waterTile1A.img.size.width;
     }
-    else if ( self.waterTile1B.img.position.x > sceneWidth ) {
+    else if ( self.waterTile1B.img.position.x + (self.waterTile1B.img.size.width / 2.0) > sceneWidth ) {
         x3 = self.waterTile1A.img.position.x;
         x4 = x3 - self.waterTile1B.img.size.width;
     }
@@ -403,11 +501,11 @@
         x4 = self.waterTile1B.img.position.x;
     }
     
-    self.waterTile2A.img.position = CGPointMake( x1 + 0.8, self.waterTile2A.img.position.y );
-    self.waterTile2B.img.position = CGPointMake( x2 + 0.8, self.waterTile2A.img.position.y );
+    self.waterTile2A.img.position = CGPointMake( x1 + 1.2, self.waterTile2A.img.position.y );
+    self.waterTile2B.img.position = CGPointMake( x2 + 1.2, self.waterTile2A.img.position.y );
     
-    self.waterTile1A.img.position = CGPointMake( x3 + 0.4, self.waterTile1A.img.position.y );
-    self.waterTile1B.img.position = CGPointMake( x4 + 0.4, self.waterTile1A.img.position.y );
+    self.waterTile1A.img.position = CGPointMake( x3 + 0.6, self.waterTile1A.img.position.y );
+    self.waterTile1B.img.position = CGPointMake( x4 + 0.6, self.waterTile1A.img.position.y );
 }
 //--------------------------------------------------------------
 -(void)waterSimulation{

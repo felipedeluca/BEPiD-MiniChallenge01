@@ -25,7 +25,7 @@
     [ self.img setScale: 0.5 ];
     
     self.img.physicsBody.dynamic = NO;
-    self.img.alpha = 0.5;
+    self.img.alpha = 0.7;
     
     return self;
 }

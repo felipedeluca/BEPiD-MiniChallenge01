@@ -31,6 +31,7 @@
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
        
         telaJogo.scaleMode = SKSceneScaleModeAspectFit;
+        //telaJogo.physicsWorld. = 1.0;
         
         [ self.view presentScene: telaJogo transition: transition ];
     }
@@ -42,7 +43,11 @@
 //--------------------------------------------------------------------
 -(void)ativaTela{
     
+<<<<<<< HEAD
     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+=======
+    //[self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+>>>>>>> c524015e8547f73c2738f6823d4374958754316a
     
     //cenario da tela inicial
     SKSpriteNode *telaInicial = [SKSpriteNode spriteNodeWithImageNamed:@"tela1.png"];

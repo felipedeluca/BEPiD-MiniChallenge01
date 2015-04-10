@@ -15,7 +15,6 @@
 		D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCCA1AD7581800DC3187 /* GameViewController.m */; };
 		D695BCCE1AD7581800DC3187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D695BCCC1AD7581800DC3187 /* Main.storyboard */; };
 		D695BCD01AD7581800DC3187 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D695BCCF1AD7581800DC3187 /* Images.xcassets */; };
-		D695BCD31AD7581800DC3187 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D695BCD11AD7581800DC3187 /* LaunchScreen.xib */; };
 		D695BCDF1AD7581800DC3187 /* River_WatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCDE1AD7581800DC3187 /* River_WatcherTests.m */; };
 		D695BD2F1AD75D0900DC3187 /* Car Passing.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD221AD75D0900DC3187 /* Car Passing.wav */; };
 		D695BD301AD75D0900DC3187 /* CarHorn.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD231AD75D0900DC3187 /* CarHorn.wav */; };
@@ -38,6 +37,7 @@
 		D695BD551AD786D100DC3187 /* WLWater1.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD521AD786D100DC3187 /* WLWater1.m */; };
 		D695BD561AD786D100DC3187 /* WLWater2.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD541AD786D100DC3187 /* WLWater2.m */; };
 		D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD5A1AD789CB00DC3187 /* SpaceShip.m */; };
+		D69CC9141AD856A20043932A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69CC9131AD856A20043932A /* Launch Screen.xib */; };
 		D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */; };
 		D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */; };
 /* End PBXBuildFile section */
@@ -67,7 +67,6 @@
 		D695BCCA1AD7581800DC3187 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		D695BCCD1AD7581800DC3187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D695BCCF1AD7581800DC3187 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D695BCD21AD7581800DC3187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D695BCD81AD7581800DC3187 /* River WatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "River WatcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D695BCDD1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D695BCDE1AD7581800DC3187 /* River_WatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = River_WatcherTests.m; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		D695BD541AD786D100DC3187 /* WLWater2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLWater2.m; path = Objetos/WLWater2.m; sourceTree = "<group>"; };
 		D695BD591AD789CB00DC3187 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceShip.h; path = Objetos/SpaceShip.h; sourceTree = "<group>"; };
 		D695BD5A1AD789CB00DC3187 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceShip.m; path = Objetos/SpaceShip.m; sourceTree = "<group>"; };
+		D69CC9131AD856A20043932A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "River Watcher/Launch Screen.xib"; sourceTree = "<group>"; };
 		D6BB9AC51AD8060A006E8DC7 /* WLAutomovel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAutomovel.h; sourceTree = "<group>"; };
 		D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAutomovel.m; sourceTree = "<group>"; };
 		D6BB9AC81AD8174F006E8DC7 /* WLCarro1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCarro1.h; sourceTree = "<group>"; };
@@ -132,6 +132,7 @@
 		D695BCB11AD7581700DC3187 = {
 			isa = PBXGroup;
 			children = (
+				D69CC9131AD856A20043932A /* Launch Screen.xib */,
 				D695BCBC1AD7581800DC3187 /* River Watcher */,
 				D695BCDB1AD7581800DC3187 /* River WatcherTests */,
 				D695BCBB1AD7581800DC3187 /* Products */,
@@ -158,7 +159,6 @@
 				D695BCC91AD7581800DC3187 /* GameViewController.h */,
 				D695BCCA1AD7581800DC3187 /* GameViewController.m */,
 				D695BCCC1AD7581800DC3187 /* Main.storyboard */,
-				D695BCD11AD7581800DC3187 /* LaunchScreen.xib */,
 				D695BCBD1AD7581800DC3187 /* Supporting Files */,
 			);
 			path = "River Watcher";
@@ -334,6 +334,7 @@
 				TargetAttributes = {
 					D695BCB91AD7581700DC3187 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = Y47E3YFF7P;
 					};
 					D695BCD71AD7581800DC3187 = {
 						CreatedOnToolsVersion = 6.2;
@@ -370,12 +371,12 @@
 				D695BD341AD75D0900DC3187 /* Fall in water.wav in Resources */,
 				D695BD371AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */,
 				D695BD301AD75D0900DC3187 /* CarHorn.wav in Resources */,
+				D69CC9141AD856A20043932A /* Launch Screen.xib in Resources */,
 				D695BD3B1AD75D0900DC3187 /* throw object.wav in Resources */,
 				D695BD311AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav in Resources */,
 				D695BD2F1AD75D0900DC3187 /* Car Passing.wav in Resources */,
 				D695BD381AD75D0900DC3187 /* Put on trash can - 2.wav in Resources */,
 				D695BD4D1AD7838B00DC3187 /* LICENSE.txt in Resources */,
-				D695BCD31AD7581800DC3187 /* LaunchScreen.xib in Resources */,
 				D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */,
 				D695BD391AD75D0900DC3187 /* Destroy.wav in Resources */,
 				D695BD321AD75D0900DC3187 /* Enjoy The Life - In Game.wav in Resources */,
@@ -442,14 +443,6 @@
 				D695BCCD1AD7581800DC3187 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D695BCD11AD7581800DC3187 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D695BCD21AD7581800DC3187 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -537,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "River Watcher/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "River Watcher/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

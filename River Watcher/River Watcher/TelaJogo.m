@@ -64,15 +64,8 @@
 
     [ self criaCenario ];
     [ self criaAgua ];
-<<<<<<< HEAD
-    [ self criaNave ];
-<<<<<<< HEAD
-    
-}
-//--------------------------------------------------------------
-=======
-=======
 //    [ self criaNave ];
+    
     [ self criaAutomoveis ];
 }
 //--------------------------------------------------------------
@@ -143,11 +136,9 @@
     [ automovel.img setXScale: imageFlip ];
     [ automovel.img runAction: movimentoAutomovel ];
     NSLog( @"Pos X: %.2f", automovel.img.position.x );
->>>>>>> 0d18c2eeb560b147a656920be8cfe8d0f12c6d0c
     
 }
 //--------------------------------------------------------------
->>>>>>> 289dbc38ab2a91957b857edc13ec848303405401
 -(void)criaCenario {
     
     paused = YES;

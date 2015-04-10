@@ -41,6 +41,8 @@
     UITouch *touch;
     CGPoint location;
     SKNode *node;
+    SKNode *gui;
+    SKNode *game;
 }
 //-----------------------------------------------------------------------
 -(void)viewWillLayoutSubviews
@@ -57,13 +59,22 @@
         
         [ self createSceneContents ];
         self.contentCreated = YES;
-    }
+        
+        gui = [[SKNode alloc] init];
+        [gui setName:@"gui"];
+        game = [[SKNode alloc] init];
+        [game setName:@"game"];
+}
+    
 }
 //----------------------------------------------------------------------------------------
 -(void)createSceneContents{
 
     [ self criaCenario ];
     [ self criaAgua ];
+<<<<<<< HEAD
+    [ self criaNave ];
+=======
 //    [ self criaNave ];
     [ self criaAutomoveis ];
 }
@@ -135,12 +146,16 @@
     [ automovel.img setXScale: imageFlip ];
     [ automovel.img runAction: movimentoAutomovel ];
     NSLog( @"Pos X: %.2f", automovel.img.position.x );
+>>>>>>> 0d18c2eeb560b147a656920be8cfe8d0f12c6d0c
     
 }
 //--------------------------------------------------------------
 -(void)criaCenario {
-    
+
     paused = YES;
+    audioPaused = YES;
+    [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - In Game.wav" waitForCompletion:YES]]];
+    
     //imagem de fundo da tela do jogo.
     SKSpriteNode *telaInicial = [ SKSpriteNode spriteNodeWithImageNamed: @"telajogo" ];
     telaInicial.position      = CGPointMake( self.size.width / 2, self.size.height / 2 );
@@ -261,21 +276,23 @@
     buttonAudio.name      = @"botaoAudio";
     
     //texto da pontuação
-    self.pontuacao = [ SKLabelNode labelNodeWithFontNamed: @"PressStart2P" ];
+    self.pontuacao = [ SKLabelNode labelNodeWithFontNamed: @"Arial" ];
     self.pontuacao.text      = @"0";
     self.pontuacao.fontColor = [ SKColor redColor ];
     self.pontuacao.fontSize  = 25;
     self.pontuacao.position  = CGPointMake( CGRectGetMidX(self.frame), 720 );
-    //    self.pontuacao.zPosition = 0.90;
+        //self.pontuacao.zPosition = 0.90;
     
     //texto do recorde
-    self.textoRecorde = [ SKLabelNode labelNodeWithFontNamed: @"PressStart2P" ];
-    self.textoRecorde.text      = @"Recorde: ";
-    self.textoRecorde.fontColor = [ SKColor redColor ];
-    self.textoRecorde.fontSize  = 15;
-    self.textoRecorde.position  = CGPointMake( (CGRectGetMidX(self.frame) - 35), 695 );
-    //    self.textoRecorde.zPosition = 0.89;
+    _textoRecorde = [ SKLabelNode labelNodeWithFontNamed: @"Arial" ];
+    _textoRecorde.text      = @"Recorde: ";
+    _textoRecorde.fontColor = [ SKColor redColor ];
+    _textoRecorde.fontSize  = 15;
+    _textoRecorde.position  = CGPointMake( (CGRectGetMidX(self.frame) - 35), 695 );
+       //self.textoRecorde.zPosition = 0.89;
     
+    //adicionando os nodes na tela
+
     [ self addChild: telaInicial ];
     [ self addChild: guardreio ];
     [ self addChild: esg1 ];
@@ -290,10 +307,12 @@
     [ self addChild: buttonPause ];
     [ self addChild: buttonAudio ];
     [ self addChild: lixeira ];
-//    [ self addChild: self.pontuacao ];
-//    [ self addChild: self.textoRecorde ];
+    //[ self addChild: self.pontuacao ];
+   // [ self addChild: _textoRecorde ];
 
+    
 }
+
 //--------------------------------------------------------------
 -(void)criaNave {
 
@@ -344,16 +363,17 @@
 //--------------------------------------------------------------
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
+
     touch    = [ touches anyObject ];
     location = [ touch locationInNode: self ];
     node     = [ self nodeAtPoint: location ];
     
-    // ao clicar no botão irá alterar a imagem (Botão de pause/play)
+     //ao clicar no botão irá alterar a imagem (Botão de pause/play)
     if ( [node.name isEqualToString:@"botaoPause"] ) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){
             [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot3.png"]];
-            //   paused = NO;
             buttonPause.zPosition = 2;
             
         }
@@ -364,13 +384,6 @@
         NSLog(@"botão audio pressionado");
         if(audioPaused == YES){
             [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot1.png"]];
-            audioPaused = NO;
-            buttonAudio.zPosition = 2;
-            
-        }
-        else{
-            [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot2.png"]];
-            audioPaused = YES;
             buttonAudio.zPosition = 2;
             
         }
@@ -405,20 +418,38 @@
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){
-            [self childNodeWithName:@"game"].paused = YES;
-            //self.scene.view.paused = YES;
+            self.paused = YES;
             paused = NO;
             buttonPause.zPosition = 2;
         }
         else{
-            [self childNodeWithName:@"game"].paused = NO;
-            //self.scene.view.paused = NO;
+            self.paused = NO;
             paused = YES;
             [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot4.png"]];
             buttonPause.zPosition = 2;
         }
         
     }
+    
+    if ([node.name isEqualToString:@"botaoAudio"]) {
+        NSLog(@"botao audio pressionado");
+        if (audioPaused == YES) {
+            //self.paused = YES;
+            audioPaused = NO;
+            buttonAudio.zPosition = 2;
+        }
+        else{
+            
+            //self.paused = NO;
+            audioPaused = YES;
+            [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot2.png"]];
+            buttonAudio.zPosition = 2;
+            
+        }
+    }
+    
+    
+
     
 }
 //----------------------------------------------------------------------------------------

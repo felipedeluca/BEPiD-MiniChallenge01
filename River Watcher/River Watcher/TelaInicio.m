@@ -42,9 +42,7 @@
 }
 //--------------------------------------------------------------------
 -(void)ativaTela{
-    
-    [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
-    
+ 
     //cenario da tela inicial
     SKSpriteNode *telaInicial = [SKSpriteNode spriteNodeWithImageNamed:@"tela1.png"];
     telaInicial.position = CGPointMake(self.size.width/2, self.size.height/2);

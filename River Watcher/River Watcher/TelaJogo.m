@@ -146,10 +146,6 @@
 }
 //--------------------------------------------------------------
 
-    NSLog( @"Pos X: %.2f", automovel.img.position.x );
-    
-}
-//--------------------------------------------------------------
 -(void)criaCenario {
     
     paused = YES;
@@ -360,7 +356,6 @@
     location = [ touch locationInNode: self ];
     node     = [ self nodeAtPoint: location ];
     
-<<<<<<< HEAD
     //pegar objeto
 
    // img.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garrafaVidro" ] size: self.size ];
@@ -382,9 +377,6 @@
 
     
      //ao clicar no botão irá alterar a imagem (Botão de pause/play)
-=======
-    // ao clicar no botão irá alterar a imagem (Botão de pause/play)
->>>>>>> a9f46fd92363b375b7c4a69f9969c09f618ec17b
     if ( [node.name isEqualToString:@"botaoPause"] ) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){

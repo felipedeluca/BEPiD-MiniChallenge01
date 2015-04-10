@@ -13,6 +13,8 @@
 #import "WLGarrafaVidro.h"
 #import "WLAutomovel.h"
 #import "WLCarro1.h"
+#import "AutomoveisController.h"
+#import "ObjetosController.h"
 
 // Configuração da água
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
@@ -28,7 +30,8 @@
 @property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
 
-@property ( nonatomic, strong ) WLCarro1 *carro1;//
+@property ( nonatomic ) ObjetosController *objController;
+@property ( nonatomic ) AutomoveisController *autoController;
 
 @end
 //-----------------------------------------------------------------------
@@ -60,104 +63,25 @@
         [ self createSceneContents ];
         self.contentCreated = YES;
         
-<<<<<<< HEAD
         gui = [[SKNode alloc] init];
         [gui setName:@"gui"];
         game = [[SKNode alloc] init];
         [game setName:@"game"];
-=======
-        
->>>>>>> c524015e8547f73c2738f6823d4374958754316a
-}
-    
+    }
 }
 //----------------------------------------------------------------------------------------
 -(void)createSceneContents{
-
+    
     [ self criaCenario ];
     [ self criaAgua ];
-    [ self criaNave ];
-<<<<<<< HEAD
-=======
-    [ self criaAutomoveis ];
-}
-//--------------------------------------------------------------
--(void)criaAutomoveis {
-    
-    CGFloat positionY = CGRectGetMidY(self.frame) - 40;
-    
-    
-    if ( self.carro1.img == nil ){
-        self.carro1 = [ [WLCarro1 alloc] init ];
-        self.carro1.img.position = CGPointMake( CGRectGetMidX(self.frame) + 600, positionY );
-        self.carro1.img.zPosition = 0.0;
-        
-        [ self addChild: self.carro1.img ];
-    }
-    
-}
-//--------------------------------------------------------------
--(void)animaAutomovel:(WLAutomovel *)automovel {
-
-    CGFloat intervaloMinPosX = 300; // intervalo de espaço onde é permitido arremessar os objetos
-    CGFloat intervaloMaxPosX = 600; // intervalo de espaço onde é permitido arremessar os objetos
-    
-    // atira objetos se o automóvel estiver em movimento
-    if ( [automovel.img hasActions] ){
-        // Intervalo de posição permitido
-        if ( automovel.img.position.x >= intervaloMinPosX && automovel.img.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
-            NSLog(@"Arremessou!!");
-            WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
-            garrafaVidro.img.name = @"garrafaVidro";
-            
-            [ self addChild: garrafaVidro.img ];
-            [ self throwObject: garrafaVidro.img parent: automovel impulse: 50.0 ];
-            automovel.atirouObjeto = TRUE;
-        }
-
-        return;
-    }
-    
-    automovel.atirouObjeto = FALSE;
-    
-    CGFloat leftToRightStartX = -100;
-    CGFloat rightToLeftStartX = self.frame.size.width + automovel.img.size.width;
-    CGFloat duracaoMovimento  = 5.0;
-    CGFloat imageFlip         = 1.0; // aponta o carro para o sentido do movimento
-    CGFloat startPosition     = leftToRightStartX;
-    CGFloat endPosition       = rightToLeftStartX;
-    
-    if ( automovel.img.position.x < 0 ){
-        startPosition = leftToRightStartX;
-        endPosition   = rightToLeftStartX;
-        //imageFlip     = 1.0;
-        
-    }
-    else if ( automovel.img.position.x >= 0 ){
-        startPosition = rightToLeftStartX;
-        endPosition   = leftToRightStartX;
-        imageFlip     = -1.0;
-    }
-    
-    SKAction *movimentoAutomovel = [SKAction sequence:@[
-                                                        [ SKAction waitForDuration: 0.0 ],
-                                                        [ SKAction moveToX: startPosition duration: duracaoMovimento ],
-                                                        [ SKAction moveToX: endPosition   duration: duracaoMovimento ]
-                                                        ]
-                                    ];
- 
-    
-    [ automovel.img setXScale: imageFlip ];
-    [ automovel.img runAction: movimentoAutomovel ];
-  //  NSLog( @"Pos X: %.2f", automovel.img.position.x );
-
->>>>>>> c524015e8547f73c2738f6823d4374958754316a
     
 }
 //--------------------------------------------------------------
 
 -(void)criaCenario {
 
+    self.autoController = [[ AutomoveisController alloc ] init];
+    
     paused = YES;
     audioPaused = YES;
     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - In Game.wav" waitForCompletion:YES]]];
@@ -320,16 +244,6 @@
 }
 
 //--------------------------------------------------------------
--(void)criaNave {
-
-//    SKSpriteNode *spaceShip = [ [SpaceShip alloc] init ];
-//    spaceShip.position = CGPointMake( CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) );
-//    spaceShip.zPosition = 0.1;
-//    
-//    [ self addChild: spaceShip ];
-//    
-}
-//--------------------------------------------------------------
 -(void)criaAgua {
     
     CGFloat offset = - 20.0;
@@ -375,8 +289,6 @@
     location = [ touch locationInNode: self ];
     node     = [ self nodeAtPoint: location ];
     
-<<<<<<< HEAD
-=======
     //pegar objeto
 
    // img.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garrafaVidro" ] size: self.size ];
@@ -388,17 +300,13 @@
         [garrafa removeAllActions];
         garrafa.physicsBody.dynamic = NO;
         garrafa.physicsBody.affectedByGravity = NO;
-        
-        
-        
+
         
         [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
     }
 
 
-    
->>>>>>> c524015e8547f73c2738f6823d4374958754316a
-     //ao clicar no botão irá alterar a imagem (Botão de pause/play)
+    //ao clicar no botão irá alterar a imagem (Botão de pause/play)
     if ( [node.name isEqualToString:@"botaoPause"] ) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){
@@ -444,21 +352,6 @@
 
 
 //----------------------------------------------------------------------------------------
--(void)throwObject:(SKSpriteNode *)obj parent:(WLAutomovel *)parentNode impulse:(CGFloat)throwImpulse {
-    //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
-    
-    obj.position = parentNode.img.position;
-    obj.physicsBody.velocity = parentNode.img.physicsBody.velocity;
-    
-    CGFloat dx = throwImpulse * 5;//cosf(parentNode.zRotation);
-    CGFloat dy = throwImpulse * 20;//sinf(parentNode.zRotation);
-    
- 
-    [ obj.physicsBody applyForce: CGVectorMake(dx, dy) ];
-}
-
-
-//--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
 //    if ( [node.name isEqualToString: @"Spaceship"] ){
@@ -523,8 +416,10 @@
     
     [ self waterSimulation ];
     [ self infiniteScrollingWater ];
-    [ self criaAutomoveis ];
-    [ self animaAutomovel: self.carro1 ];
+//    [ self criaAutomoveis ];
+//    [ self animaAutomovel: self.carro1 ];
+    [ self.autoController criaAutomoveis: self ];
+    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
 }
 //--------------------------------------------------------------
 -(void)infiniteScrollingWater{

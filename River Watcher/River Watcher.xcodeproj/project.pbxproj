@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */ = {isa = PBXBuildFile; fileRef = D60870351AD7965100645E27 /* WLGarrafaVidro.m */; };
+		D66A67C61AD86B2700E5D886 /* AutomoveisController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomoveisController.m */; };
+		D66A67C91AD87C9700E5D886 /* ObjetosController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C81AD87C9700E5D886 /* ObjetosController.m */; };
 		D695BCC01AD7581800DC3187 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCBF1AD7581800DC3187 /* main.m */; };
 		D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC21AD7581800DC3187 /* AppDelegate.m */; };
 		D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC51AD7581800DC3187 /* TelaInicio.m */; };
@@ -55,6 +57,10 @@
 /* Begin PBXFileReference section */
 		D60870341AD7965100645E27 /* WLGarrafaVidro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLGarrafaVidro.h; path = Objetos/WLGarrafaVidro.h; sourceTree = "<group>"; };
 		D60870351AD7965100645E27 /* WLGarrafaVidro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLGarrafaVidro.m; path = Objetos/WLGarrafaVidro.m; sourceTree = "<group>"; };
+		D66A67C41AD86B2700E5D886 /* AutomoveisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomoveisController.h; sourceTree = "<group>"; };
+		D66A67C51AD86B2700E5D886 /* AutomoveisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomoveisController.m; sourceTree = "<group>"; };
+		D66A67C71AD87C9700E5D886 /* ObjetosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjetosController.h; sourceTree = "<group>"; };
+		D66A67C81AD87C9700E5D886 /* ObjetosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjetosController.m; sourceTree = "<group>"; };
 		D695BCBA1AD7581800DC3187 /* River Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "River Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D695BCBE1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D695BCBF1AD7581800DC3187 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +135,17 @@
 			name = "Garrafa vidro";
 			sourceTree = "<group>";
 		};
+		D66A67C31AD8694800E5D886 /* Bibliotecas */ = {
+			isa = PBXGroup;
+			children = (
+				D66A67C41AD86B2700E5D886 /* AutomoveisController.h */,
+				D66A67C51AD86B2700E5D886 /* AutomoveisController.m */,
+				D66A67C71AD87C9700E5D886 /* ObjetosController.h */,
+				D66A67C81AD87C9700E5D886 /* ObjetosController.m */,
+			);
+			name = Bibliotecas;
+			sourceTree = "<group>";
+		};
 		D695BCB11AD7581700DC3187 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +168,7 @@
 		D695BCBC1AD7581800DC3187 /* River Watcher */ = {
 			isa = PBXGroup;
 			children = (
+				D66A67C31AD8694800E5D886 /* Bibliotecas */,
 				D695BD501AD7867B00DC3187 /* Objetos */,
 				D695BCE91AD759E300DC3187 /* Telas */,
 				D695BCE81AD759D800DC3187 /* Assets */,
@@ -404,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D695BD551AD786D100DC3187 /* WLWater1.m in Sources */,
+				D66A67C61AD86B2700E5D886 /* AutomoveisController.m in Sources */,
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
 				D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */,
@@ -413,6 +432,7 @@
 				D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */,
 				D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
+				D66A67C91AD87C9700E5D886 /* ObjetosController.m in Sources */,
 				D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

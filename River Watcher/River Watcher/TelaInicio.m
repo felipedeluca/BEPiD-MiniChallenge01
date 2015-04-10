@@ -7,6 +7,7 @@
 //
 
 #import "TelaInicio.h"
+#import "TelaJogo.h"
 
 @implementation TelaInicio
 //--------------------------------------------------------------------
@@ -18,16 +19,20 @@
 }
 //--------------------------------------------------------------------
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
+
+    UITouch *touch   = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SKNode *node = [self nodeAtPoint:location];
+    SKNode *node     = [self nodeAtPoint:location];
     
     // ao clicar no botão irá ocorrer a transição para a tela do jogo(classe TelaDoJogo)
-    if ([node.name isEqualToString:@"botaoJogar"]) {
-        NSLog(@"botão jogar pressionado");
-        SKScene *sampleScene = [[TelaDoJogo alloc] initWithSize:self.size];
-        SKTransition *transition = [SKTransition flipVerticalWithDuration:0.1];
-        [self.view presentScene:sampleScene transition:transition];
+    if ( [node.name isEqualToString:@"botaoJogar"] ) {
+        NSLog( @"botão jogar pressionado" );
+        SKScene *telaJogo     = [ [TelaJogo alloc] initWithSize:self.size ];
+        SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
+       
+        telaJogo.scaleMode = SKSceneScaleModeAspectFit;
+        
+        [ self.view presentScene: telaJogo transition: transition ];
     }
 }
 //--------------------------------------------------------------------

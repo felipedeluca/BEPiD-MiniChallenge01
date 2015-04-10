@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */ = {isa = PBXBuildFile; fileRef = D60870351AD7965100645E27 /* WLGarrafaVidro.m */; };
 		D695BCC01AD7581800DC3187 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCBF1AD7581800DC3187 /* main.m */; };
 		D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC21AD7581800DC3187 /* AppDelegate.m */; };
 		D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC51AD7581800DC3187 /* TelaInicio.m */; };
@@ -29,6 +30,14 @@
 		D695BD391AD75D0900DC3187 /* Put on trash can - 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2C1AD75D0900DC3187 /* Put on trash can - 1.wav */; };
 		D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2D1AD75D0900DC3187 /* Smalltalk - End.wav */; };
 		D695BD3B1AD75D0900DC3187 /* throw object.wav in Resources */ = {isa = PBXBuildFile; fileRef = D695BD2E1AD75D0900DC3187 /* throw object.wav */; };
+		D695BD441AD77C7700DC3187 /* TelaJogo.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD431AD77C7700DC3187 /* TelaJogo.m */; };
+		D695BD4B1AD7838B00DC3187 /* Floraless.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D695BD461AD7838B00DC3187 /* Floraless.ttf */; };
+		D695BD4C1AD7838B00DC3187 /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = D695BD471AD7838B00DC3187 /* FONTLOG.txt */; };
+		D695BD4D1AD7838B00DC3187 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D695BD481AD7838B00DC3187 /* LICENSE.txt */; };
+		D695BD4F1AD7838B00DC3187 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D695BD4A1AD7838B00DC3187 /* PressStart2P.ttf */; };
+		D695BD551AD786D100DC3187 /* WLWater1.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD521AD786D100DC3187 /* WLWater1.m */; };
+		D695BD561AD786D100DC3187 /* WLWater2.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD541AD786D100DC3187 /* WLWater2.m */; };
+		D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD5A1AD789CB00DC3187 /* SpaceShip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60870341AD7965100645E27 /* WLGarrafaVidro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLGarrafaVidro.h; path = Objetos/WLGarrafaVidro.h; sourceTree = "<group>"; };
+		D60870351AD7965100645E27 /* WLGarrafaVidro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLGarrafaVidro.m; path = Objetos/WLGarrafaVidro.m; sourceTree = "<group>"; };
 		D695BCBA1AD7581800DC3187 /* River Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "River Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D695BCBE1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D695BCBF1AD7581800DC3187 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +82,18 @@
 		D695BD2C1AD75D0900DC3187 /* Put on trash can - 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Put on trash can - 1.wav"; sourceTree = "<group>"; };
 		D695BD2D1AD75D0900DC3187 /* Smalltalk - End.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Smalltalk - End.wav"; sourceTree = "<group>"; };
 		D695BD2E1AD75D0900DC3187 /* throw object.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "throw object.wav"; sourceTree = "<group>"; };
+		D695BD421AD77C7700DC3187 /* TelaJogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaJogo.h; sourceTree = "<group>"; };
+		D695BD431AD77C7700DC3187 /* TelaJogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaJogo.m; sourceTree = "<group>"; };
+		D695BD461AD7838B00DC3187 /* Floraless.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Floraless.ttf; sourceTree = "<group>"; };
+		D695BD471AD7838B00DC3187 /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
+		D695BD481AD7838B00DC3187 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D695BD4A1AD7838B00DC3187 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
+		D695BD511AD786D100DC3187 /* WLWater1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLWater1.h; path = Objetos/WLWater1.h; sourceTree = "<group>"; };
+		D695BD521AD786D100DC3187 /* WLWater1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLWater1.m; path = Objetos/WLWater1.m; sourceTree = "<group>"; };
+		D695BD531AD786D100DC3187 /* WLWater2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLWater2.h; path = Objetos/WLWater2.h; sourceTree = "<group>"; };
+		D695BD541AD786D100DC3187 /* WLWater2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLWater2.m; path = Objetos/WLWater2.m; sourceTree = "<group>"; };
+		D695BD591AD789CB00DC3187 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceShip.h; path = Objetos/SpaceShip.h; sourceTree = "<group>"; };
+		D695BD5A1AD789CB00DC3187 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceShip.m; path = Objetos/SpaceShip.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D60870331AD7963200645E27 /* Garrafa vidro */ = {
+			isa = PBXGroup;
+			children = (
+				D60870341AD7965100645E27 /* WLGarrafaVidro.h */,
+				D60870351AD7965100645E27 /* WLGarrafaVidro.m */,
+			);
+			name = "Garrafa vidro";
+			sourceTree = "<group>";
+		};
 		D695BCB11AD7581700DC3187 = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +144,9 @@
 		D695BCBC1AD7581800DC3187 /* River Watcher */ = {
 			isa = PBXGroup;
 			children = (
+				D695BD501AD7867B00DC3187 /* Objetos */,
 				D695BCE91AD759E300DC3187 /* Telas */,
-				D695BCE81AD759D800DC3187 /* Media */,
+				D695BCE81AD759D800DC3187 /* Assets */,
 				D695BCC11AD7581800DC3187 /* AppDelegate.h */,
 				D695BCC21AD7581800DC3187 /* AppDelegate.m */,
 				D695BCC91AD7581800DC3187 /* GameViewController.h */,
@@ -151,13 +184,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D695BCE81AD759D800DC3187 /* Media */ = {
+		D695BCE81AD759D800DC3187 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D695BD451AD7838B00DC3187 /* Fontes */,
 				D695BD211AD75D0900DC3187 /* Audio */,
 				D695BCCF1AD7581800DC3187 /* Images.xcassets */,
 			);
-			name = Media;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		D695BCE91AD759E300DC3187 /* Telas */ = {
@@ -166,6 +200,8 @@
 				D695BCC41AD7581800DC3187 /* TelaInicio.h */,
 				D695BCC51AD7581800DC3187 /* TelaInicio.m */,
 				D695BCC71AD7581800DC3187 /* TelaInicio.sks */,
+				D695BD421AD77C7700DC3187 /* TelaJogo.h */,
+				D695BD431AD77C7700DC3187 /* TelaJogo.m */,
 			);
 			name = Telas;
 			sourceTree = "<group>";
@@ -188,6 +224,47 @@
 				D695BD2E1AD75D0900DC3187 /* throw object.wav */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		D695BD451AD7838B00DC3187 /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				D695BD461AD7838B00DC3187 /* Floraless.ttf */,
+				D695BD471AD7838B00DC3187 /* FONTLOG.txt */,
+				D695BD481AD7838B00DC3187 /* LICENSE.txt */,
+				D695BD4A1AD7838B00DC3187 /* PressStart2P.ttf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
+		D695BD501AD7867B00DC3187 /* Objetos */ = {
+			isa = PBXGroup;
+			children = (
+				D60870331AD7963200645E27 /* Garrafa vidro */,
+				D695BD581AD789A700DC3187 /* Nave */,
+				D695BD571AD7899A00DC3187 /* Agua */,
+			);
+			name = Objetos;
+			sourceTree = "<group>";
+		};
+		D695BD571AD7899A00DC3187 /* Agua */ = {
+			isa = PBXGroup;
+			children = (
+				D695BD511AD786D100DC3187 /* WLWater1.h */,
+				D695BD521AD786D100DC3187 /* WLWater1.m */,
+				D695BD531AD786D100DC3187 /* WLWater2.h */,
+				D695BD541AD786D100DC3187 /* WLWater2.m */,
+			);
+			name = Agua;
+			sourceTree = "<group>";
+		};
+		D695BD581AD789A700DC3187 /* Nave */ = {
+			isa = PBXGroup;
+			children = (
+				D695BD591AD789CB00DC3187 /* SpaceShip.h */,
+				D695BD5A1AD789CB00DC3187 /* SpaceShip.m */,
+			);
+			name = Nave;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D695BD361AD75D0900DC3187 /* OFF - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */,
+				D695BD4F1AD7838B00DC3187 /* PressStart2P.ttf in Resources */,
 				D695BD341AD75D0900DC3187 /* Fall in water.wav in Resources */,
 				D695BD371AD75D0900DC3187 /* ON - bubble_gum_pop-Natalie_Wendt-772662403.wav in Resources */,
 				D695BD301AD75D0900DC3187 /* CarHorn.wav in Resources */,
@@ -278,14 +356,17 @@
 				D695BD311AD75D0900DC3187 /* Click - Stapling Paper-SoundBible.com-238116558.wav in Resources */,
 				D695BD2F1AD75D0900DC3187 /* Car Passing.wav in Resources */,
 				D695BD381AD75D0900DC3187 /* Put on trash can  - 2.wav in Resources */,
+				D695BD4D1AD7838B00DC3187 /* LICENSE.txt in Resources */,
 				D695BCD31AD7581800DC3187 /* LaunchScreen.xib in Resources */,
 				D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */,
 				D695BD391AD75D0900DC3187 /* Put on trash can - 1.wav in Resources */,
 				D695BD321AD75D0900DC3187 /* Enjoy The Life - In Game.wav in Resources */,
 				D695BCD01AD7581800DC3187 /* Images.xcassets in Resources */,
 				D695BD331AD75D0900DC3187 /* Enjoy The Life - TI.wav in Resources */,
+				D695BD4C1AD7838B00DC3187 /* FONTLOG.txt in Resources */,
 				D695BD351AD75D0900DC3187 /* Grab object.wav in Resources */,
 				D695BCC81AD7581800DC3187 /* TelaInicio.sks in Resources */,
+				D695BD4B1AD7838B00DC3187 /* Floraless.ttf in Resources */,
 				D695BCCE1AD7581800DC3187 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,9 +385,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D695BD551AD786D100DC3187 /* WLWater1.m in Sources */,
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
+				D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */,
+				D695BD561AD786D100DC3187 /* WLWater2.m in Sources */,
+				D695BD441AD77C7700DC3187 /* TelaJogo.m in Sources */,
 				D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */,
+				D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +520,7 @@
 				INFOPLIST_FILE = "River Watcher/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -444,6 +531,7 @@
 				INFOPLIST_FILE = "River Watcher/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -500,6 +588,7 @@
 				D695BCE41AD7581800DC3187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D695BCE51AD7581800DC3187 /* Build configuration list for PBXNativeTarget "River WatcherTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +597,7 @@
 				D695BCE71AD7581800DC3187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

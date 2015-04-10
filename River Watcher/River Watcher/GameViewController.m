@@ -42,8 +42,8 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    TelaInicio *scene = [TelaInicio unarchiveFromFile:@"TitleScene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    TelaInicio *scene = [TelaInicio unarchiveFromFile:@"TelaInicio"];
+    scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
     [skView presentScene:scene];

@@ -1,0 +1,403 @@
+//
+//  TelaJogo.m
+//  River Watcher
+//
+//  Created by Felipe R. de Luca on 4/10/15.
+//  Copyright (c) 2015 Bearded Men and The Lady. All rights reserved.
+//
+
+#import "TelaJogo.h"
+#import "WLWater1.h"
+#import "WLWater2.h"
+#import "SpaceShip.h"
+#import "WLGarrafaVidro.h"
+
+// Configuração da água
+#define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
+#define BUOYANCY 0.4 //Slightly increase to make the object "float up faster," more buoyant.
+#define OFFSET 70.0 //Increase to make the object float to the surface higher.
+
+@interface TelaJogo()
+
+@property BOOL contentCreated;
+@property ( nonatomic, strong ) SKSpriteNode *waterPhys; // simulação de física da água
+@property ( nonatomic, strong ) WLWater1 *waterTile1A; // p/ scrolling infinito da água
+@property ( nonatomic, strong ) WLWater1 *waterTile1B; // p/ scrolling infinito da água
+@property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
+@property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
+
+@end
+//-----------------------------------------------------------------------
+@implementation TelaJogo {
+
+    SKSpriteNode* buttonPause;
+    BOOL paused;
+    SKSpriteNode *buttonAudio;
+    BOOL audioPaused;
+    UITouch *touch;
+    CGPoint location;
+    SKNode *node;
+}
+//-----------------------------------------------------------------------
+-(void)viewWillLayoutSubviews
+{
+    SKView * skView   = (SKView *)self.view;
+    UIView *pauseMenu = [[UIView alloc] initWithFrame:buttonPause.frame];
+    
+    [skView addSubview:pauseMenu];
+}
+//-----------------------------------------------------------------------
+-(void)didMoveToView:(SKView *)view {
+    
+    if ( !self.contentCreated ){
+        
+        [ self createSceneContents ];
+        self.contentCreated = YES;
+    }
+}
+//----------------------------------------------------------------------------------------
+-(void)createSceneContents{
+
+    [ self criaCenario ];
+    [ self criaAgua ];
+    [ self criaNave ];
+}
+//--------------------------------------------------------------
+-(void)criaCenario {
+    
+    paused = YES;
+    //imagem de fundo da tela do jogo.
+    SKSpriteNode *telaInicial = [ SKSpriteNode spriteNodeWithImageNamed: @"telajogo" ];
+    telaInicial.position      = CGPointMake( self.size.width / 2, self.size.height / 2 );
+    //    telaInicial.zPosition     = 1.0;
+    [ telaInicial setScale: 0.50 ];
+
+    //imagem do guardreio na tela do jogo.
+    SKSpriteNode *guardreio = [ SKSpriteNode spriteNodeWithImageNamed: @"guardreio" ];
+    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 100 );
+    //    guardreio.zPosition     = 0.99;
+    [ guardreio setScale: 0.55 ];
+
+    //animacao da lixeira
+    SKTexture *lixeira1 = [ SKTexture textureWithImageNamed: @"lixeira" ];
+    SKTexture *lixeira2 = [ SKTexture textureWithImageNamed: @"lixeira2" ];
+    SKTexture *lixeira3 = [ SKTexture textureWithImageNamed: @"lixeira3" ];
+    
+    NSArray *texturesLixeira = @[ lixeira1,lixeira2,lixeira3 ];
+    SKSpriteNode *lixeira    = [ SKSpriteNode spriteNodeWithTexture: lixeira1 ];
+    lixeira.position         = CGPointMake( 140, 330);
+    lixeira.zPosition        = 0.9;
+    
+    SKAction *movimentoLixeira = [ SKAction animateWithTextures:texturesLixeira timePerFrame: 0.01 ];
+    SKAction *repeatLixeira    = [ SKAction repeatActionForever:movimentoLixeira ];
+    [ lixeira runAction:repeatLixeira ];
+    [ lixeira setScale:0.45 ];
+    
+    
+    SKAction *movimentoHorizontalLixeira = [SKAction sequence: @[
+                                                                 [SKAction waitForDuration: 2.0],
+                                                                 [SKAction moveToX: 880 duration: 5.0],
+                                                                 [SKAction waitForDuration: 2.0],
+                                                                 [SKAction moveToX: 140 duration: 5.0]
+                                                                 ]
+                                            ];
+    SKAction *movimentoVerticalLixeira = [SKAction sequence:@[
+                                                              [SKAction waitForDuration:0.0],
+                                                              [SKAction moveToY:370 duration:0.8],
+                                                              [SKAction moveToY:330 duration:0.8]]];
+    
+    [ lixeira runAction: [SKAction repeatActionForever: movimentoHorizontalLixeira] ];
+    [ lixeira runAction: [SKAction repeatActionForever:movimentoVerticalLixeira] ];
+    
+    
+    //animacao do esgoto na tela do jogo.
+    SKTexture *esgoto1 = [ SKTexture textureWithImageNamed: @"esgoto1" ];
+    SKTexture *esgoto2 = [ SKTexture textureWithImageNamed: @"esgoto2" ];
+    SKTexture *esgoto3 = [ SKTexture textureWithImageNamed: @"esgoto3" ];
+    
+    NSArray *texturesEsgoto = @[ esgoto1, esgoto2, esgoto3 ];
+    SKSpriteNode *esg1      = [ SKSpriteNode spriteNodeWithTexture:esgoto1 ];
+    esg1.position           = CGPointMake( 90, 100 );
+    esg1.zPosition          = 0.8;
+    
+    SKAction *movimento = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
+    SKAction *repeat    = [ SKAction repeatActionForever: movimento ];
+    [ esg1 runAction: repeat ];
+    [ esg1 setScale: 0.5 ];
+    
+    SKSpriteNode *esg2 = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
+    esg2.position      = CGPointMake( CGRectGetMidX( self.frame ), 100 );
+    esg2.zPosition     = 0.8;
+    
+    SKAction *movimento2 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
+    SKAction *repeat2    = [ SKAction repeatActionForever: movimento2 ];
+    [ esg2 runAction: repeat2 ];
+    [ esg2 setScale: 0.5 ];
+    
+    SKSpriteNode *esg3   = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
+    esg3.position        = CGPointMake( 890, 100 );
+    esg3.zPosition       = 0.8;
+    
+    SKAction *movimento3 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
+    SKAction *repeat3    = [ SKAction repeatActionForever: movimento3 ];
+    [ esg3 runAction: repeat3 ];
+    [ esg3 setScale: 0.5 ];
+    
+    //caixa da pontuação e recorde.
+    SKSpriteNode *recorde = [SKSpriteNode spriteNodeWithImageNamed:@"bot9"];
+    recorde.position = CGPointMake(CGRectGetMidX(self.frame), 720);
+    [recorde setScale:0.50];
+    
+    //barras de vida
+    SKSpriteNode *vida =  [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
+    SKSpriteNode *vida2 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
+    SKSpriteNode *vida3 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
+    SKSpriteNode *vida4 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
+    SKSpriteNode *vida5 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
+    
+    vida.position  = CGPointMake( 40, 730 );
+    vida2.position = CGPointMake( 80, 730 );
+    vida3.position = CGPointMake( 120, 730 );
+    vida4.position = CGPointMake( 160, 730 );
+    vida5.position = CGPointMake( 200, 730 );
+    
+    [ vida  setScale: 0.5 ];
+    [ vida2 setScale: 0.5 ];
+    [ vida3 setScale: 0.5 ];
+    [ vida4 setScale: 0.5 ];
+    [ vida5 setScale: 0.5 ];
+    
+    //botao de pause e play
+    buttonPause = [ SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot4"] ];
+    [ buttonPause setScale: 0.5 ];
+    buttonPause.position  = CGPointMake(960, 720);
+    //    buttonPause.zPosition = 0.92;
+    buttonPause.name      = @"botaoPause";
+    
+    //botao do audio
+    buttonAudio = [ SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot1"] ];
+    [ buttonAudio setScale: 0.5 ];
+    buttonAudio.position  = CGPointMake( 865, 720 );
+    //    buttonAudio.zPosition = 0.91;
+    buttonAudio.name      = @"botaoAudio";
+    
+    //texto da pontuação
+    self.pontuacao = [ SKLabelNode labelNodeWithFontNamed: @"PressStart2P" ];
+    self.pontuacao.text      = @"0";
+    self.pontuacao.fontColor = [ SKColor redColor ];
+    self.pontuacao.fontSize  = 25;
+    self.pontuacao.position  = CGPointMake( CGRectGetMidX(self.frame), 720 );
+    //    self.pontuacao.zPosition = 0.90;
+    
+    //texto do recorde
+    self.textoRecorde = [ SKLabelNode labelNodeWithFontNamed: @"PressStart2P" ];
+    self.textoRecorde.text      = @"Recorde: ";
+    self.textoRecorde.fontColor = [ SKColor redColor ];
+    self.textoRecorde.fontSize  = 15;
+    self.textoRecorde.position  = CGPointMake( (CGRectGetMidX(self.frame) - 35), 695 );
+    //    self.textoRecorde.zPosition = 0.89;
+    
+    [ self addChild: telaInicial ];
+    [ self addChild: guardreio ];
+    [ self addChild: esg1 ];
+    [ self addChild: esg2 ];
+    [ self addChild: esg3 ];
+    [ self addChild: recorde ];
+    [ self addChild: vida ];
+    [ self addChild: vida2 ];
+    [ self addChild: vida3 ];
+    [ self addChild: vida4 ];
+    [ self addChild: vida5 ];
+    [ self addChild: buttonPause ];
+    [ self addChild: buttonAudio ];
+    [ self addChild: lixeira ];
+//    [ self addChild: self.pontuacao ];
+//    [ self addChild: self.textoRecorde ];
+
+}
+//--------------------------------------------------------------
+-(void)criaNave {
+
+    SKSpriteNode *spaceShip = [ [SpaceShip alloc] init ];
+    spaceShip.position = CGPointMake( CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) );
+    spaceShip.zPosition = 0.1;
+    
+    [ self addChild: spaceShip ];
+    
+}
+//--------------------------------------------------------------
+-(void)criaAgua {
+    
+    CGFloat offset = - 40.0;
+
+    self.waterTile2A = [ [WLWater2 alloc] init ];
+    self.waterTile2B = [ [WLWater2 alloc] init ];
+    self.waterTile2A.img.position = CGPointMake( 0, - (self.size.height / 2.0) + 50 + offset );
+    self.waterTile2B.img.position = CGPointMake( self.waterTile2A.img.position.x + self.waterTile2B.img.size.width, self.waterTile2A.img.position.y );
+    [ self addChild: self.waterTile2A.img ];
+    [ self addChild: self.waterTile2B.img ];
+    
+    self.waterTile1A = [ [WLWater1 alloc] init ];
+    self.waterTile1B = [ [WLWater1 alloc] init ];
+    self.waterTile1A.img.position = CGPointMake( 0, - (self.size.height / 2.0) + 53 + offset );
+    self.waterTile1B.img.position = CGPointMake( self.waterTile1A.img.position.x + self.waterTile1B.img.size.width, self.waterTile1A.img.position.y );
+    [ self addChild: self.waterTile1A.img ];
+    [ self addChild: self.waterTile1B.img ];
+    
+    self.waterPhys = [ [SKSpriteNode alloc] init ];
+    self.waterPhys = [[SKSpriteNode alloc] initWithColor:[UIColor cyanColor] size:CGSizeMake(self.size.width, 200)];
+    self.waterPhys.zPosition = 0.0;
+
+    self.waterPhys.position = CGPointMake( (self.size.width / 2.0), + 20 + offset);
+    self.waterPhys.alpha = 1.0;
+    
+    [ self addChild: self.waterPhys ];
+    
+}
+//--------------------------------------------------------------
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    touch    = [ touches anyObject ];
+    location = [ touch locationInNode: self ];
+    node     = [ self nodeAtPoint: location ];
+    
+    // ao clicar no botão irá alterar a imagem (Botão de pause/play)
+    if ( [node.name isEqualToString:@"botaoPause"] ) {
+        NSLog(@"botão pause pressionado");
+        if(paused == YES){
+            [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot3.png"]];
+            //   paused = NO;
+            buttonPause.zPosition = 2;
+            
+        }
+    }
+    
+    //ao clicar no botão irá alterar a imagem (Com som/sem som)
+    if ([node.name isEqualToString:@"botaoAudio"]) {
+        NSLog(@"botão audio pressionado");
+        if(audioPaused == YES){
+            [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot1.png"]];
+            audioPaused = NO;
+            buttonAudio.zPosition = 2;
+            
+        }
+        else{
+            [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot2.png"]];
+            audioPaused = YES;
+            buttonAudio.zPosition = 2;
+            
+        }
+    }
+    
+}
+//----------------------------------------------------------------------------------------
+-(void)throwObject:(SKSpriteNode *)obj parent:(SKNode *)parentNode impulse:(CGFloat)throwImpulse {
+    //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
+    
+    obj.position = parentNode.position;
+    obj.physicsBody.velocity = parentNode.physicsBody.velocity;
+    //rock.physicsBody.velocity = CGVectorMake(0, 0);
+    
+    CGFloat dx = throwImpulse * 1;//cosf(parentNode.zRotation);
+    CGFloat dy = throwImpulse * 3;//sinf(parentNode.zRotation);
+    
+    [ obj.physicsBody applyImpulse:CGVectorMake(-dx, dy) ];
+}
+//--------------------------------------------------------------
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+
+    if ( [node.name isEqualToString: @"Spaceship"] ){
+        WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
+        
+        [ self addChild: garrafaVidro.img ];
+        
+        [ self throwObject: garrafaVidro.img parent: node impulse: 4.0 ];
+        
+    }
+
+    if ([node.name isEqualToString:@"botaoPause"]) {
+        NSLog(@"botão pause pressionado");
+        if(paused == YES){
+            [self childNodeWithName:@"game"].paused = YES;
+            //self.scene.view.paused = YES;
+            paused = NO;
+            buttonPause.zPosition = 2;
+        }
+        else{
+            [self childNodeWithName:@"game"].paused = NO;
+            //self.scene.view.paused = NO;
+            paused = YES;
+            [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot4.png"]];
+            buttonPause.zPosition = 2;
+        }
+        
+    }
+    
+}
+//----------------------------------------------------------------------------------------
+-(void)update:(NSTimeInterval)currentTime {
+    
+    [ self waterSimulation ];
+    [ self infiniteScrollingWater ];
+}
+//--------------------------------------------------------------
+-(void)infiniteScrollingWater{
+    // scrolling infinito para a água
+    
+    CGFloat x1, x2, x3, x4;
+    
+    CGFloat sceneWidth = self.size.width + self.waterTile2A.img.size.width;
+    
+    if ( self.waterTile2A.img.position.x > sceneWidth ) {
+        x2 = self.waterTile2B.img.position.x;
+        x1 = x2 - self.waterTile2A.img.size.width;
+    }
+    else if ( self.waterTile2B.img.position.x > sceneWidth ) {
+        x1 = self.waterTile2A.img.position.x;
+        x2 = x1 - self.waterTile2B.img.size.width;
+    }
+    else{
+        x1 = self.waterTile2A.img.position.x;
+        x2 = self.waterTile2B.img.position.x;
+    }
+    
+    
+    if ( self.waterTile1A.img.position.x > sceneWidth ) {
+        x4 = self.waterTile1B.img.position.x;
+        x3 = x4 - self.waterTile1A.img.size.width;
+    }
+    else if ( self.waterTile1B.img.position.x > sceneWidth ) {
+        x3 = self.waterTile1A.img.position.x;
+        x4 = x3 - self.waterTile1B.img.size.width;
+    }
+    else{
+        x3 = self.waterTile1A.img.position.x;
+        x4 = self.waterTile1B.img.position.x;
+    }
+    
+    self.waterTile2A.img.position = CGPointMake( x1 + 0.8, self.waterTile2A.img.position.y );
+    self.waterTile2B.img.position = CGPointMake( x2 + 0.8, self.waterTile2A.img.position.y );
+    
+    self.waterTile1A.img.position = CGPointMake( x3 + 0.4, self.waterTile1A.img.position.y );
+    self.waterTile1B.img.position = CGPointMake( x4 + 0.4, self.waterTile1A.img.position.y );
+}
+//--------------------------------------------------------------
+-(void)waterSimulation{
+    //Créditos para o código abaixo: Epic Byte
+    // fonte: http://stackoverflow.com/questions/25344808/simulate-water-make-sprite-float-on-water-in-spritekit
+    // Executa a simulação de água
+    
+    for ( SKSpriteNode *n in self.children ){
+        if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
+            const CGFloat rate      = 0.01; //Controls rate of applied motion. You shouldn't really need to touch this.
+            const CGFloat disp      = ( ((self.waterPhys.position.y + OFFSET) + self.waterPhys.size.height / 2.0) - ((n.position.y) - n.size.height / 2.0)) * BUOYANCY;
+            const CGPoint targetPos = CGPointMake( n.position.x, n.position.y + disp );
+            const CGPoint targetVel = CGPointMake( (targetPos.x - n.position.x) / (1.0 / 60.0), (targetPos.y - n.position.y) / (1.0 / 60.0));
+            const CGVector relVel   = CGVectorMake( targetVel.x - n.physicsBody.velocity.dx * VISCOSITY, targetVel.y - n.physicsBody.velocity.dy * VISCOSITY);
+            n.physicsBody.velocity  = CGVectorMake( n.physicsBody.velocity.dx + relVel.dx * rate, n.physicsBody.velocity.dy + relVel.dy * rate );
+        }
+    }
+}
+//----------------------------------------------------------------
+@end
+

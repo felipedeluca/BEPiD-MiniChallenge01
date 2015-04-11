@@ -42,6 +42,7 @@
 		D69CC9141AD856A20043932A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69CC9131AD856A20043932A /* Launch Screen.xib */; };
 		D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */; };
 		D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */; };
+		D6CC05091AD89CD400240C70 /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CC05081AD89CD400240C70 /* WaterController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAutomovel.m; sourceTree = "<group>"; };
 		D6BB9AC81AD8174F006E8DC7 /* WLCarro1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCarro1.h; sourceTree = "<group>"; };
 		D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLCarro1.m; sourceTree = "<group>"; };
+		D6CC05071AD89CD400240C70 /* WaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterController.h; sourceTree = "<group>"; };
+		D6CC05081AD89CD400240C70 /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				D66A67C51AD86B2700E5D886 /* AutomoveisController.m */,
 				D66A67C71AD87C9700E5D886 /* ObjetosController.h */,
 				D66A67C81AD87C9700E5D886 /* ObjetosController.m */,
+				D6CC05071AD89CD400240C70 /* WaterController.h */,
+				D6CC05081AD89CD400240C70 /* WaterController.m */,
 			);
 			name = Bibliotecas;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				D695BD551AD786D100DC3187 /* WLWater1.m in Sources */,
 				D66A67C61AD86B2700E5D886 /* AutomoveisController.m in Sources */,
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
+				D6CC05091AD89CD400240C70 /* WaterController.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
 				D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */,
 				D695BD561AD786D100DC3187 /* WLWater2.m in Sources */,

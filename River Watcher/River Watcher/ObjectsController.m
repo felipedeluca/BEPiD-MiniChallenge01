@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Bearded Men and The Lady. All rights reserved.
 //
 
-#import "ObjetosController.h"
+#import "ObjectsController.h"
 
-@implementation ObjetosController
+@implementation ObjectsController
 
 //----------------------------------------------------------
--(void)throwObject:(SKSpriteNode *)obj parent:(WLAutomovel *)parentNode impulse:(CGFloat)throwImpulse {
+-(void)throwObject:(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {
     //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
     
     obj.position = parentNode.img.position;

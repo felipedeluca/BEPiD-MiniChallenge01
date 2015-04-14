@@ -7,15 +7,17 @@
 //
 
 #import "TelaJogo.h"
-#import "WLWater1.h"
+#import "RWWater1.h"
 #import "WLWater2.h"
 #import "SpaceShip.h"
-#import "WLGarrafaVidro.h"
-#import "WLAutomovel.h"
-#import "WLCarro1.h"
-#import "AutomoveisController.h"
-#import "ObjetosController.h"
+#import "RWGlassBottle.h"
+#import "RWAutomobile.h"
+#import "RWCar1.h"
+#import "AutomobileController.h"
+#import "ObjectsController.h"
 #import "WaterController.h"
+#import "TrashCanController.h"
+#import "RWBasicObject.h"
 
 // Configuração da água
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
@@ -25,15 +27,11 @@
 @interface TelaJogo()
 
 @property BOOL contentCreated;
-@property ( nonatomic, strong ) SKSpriteNode *waterPhys; // simulação de física da água
-@property ( nonatomic, strong ) WLWater1 *waterTile1A; // p/ scrolling infinito da água
-@property ( nonatomic, strong ) WLWater1 *waterTile1B; // p/ scrolling infinito da água
-@property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
-@property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
 
-@property ( nonatomic ) ObjetosController *objController;
-@property ( nonatomic ) AutomoveisController *autoController;
-@property ( nonatomic ) WaterController *waterController;
+@property ( nonatomic ) ObjectsController    *objController;
+@property ( nonatomic ) AutomobileController *autoController;
+@property ( nonatomic ) WaterController      *waterController;
+@property ( nonatomic ) TrashCanController   *trashCanController;
 
 @end
 //-----------------------------------------------------------------------
@@ -75,16 +73,18 @@
 -(void)createSceneContents{
     
     [ self criaCenario ];
-    [ self.waterController criaAgua: self ];
-    
 }
 //--------------------------------------------------------------
 
 -(void)criaCenario {
 
-    self.autoController  = [[ AutomoveisController alloc ] init];
-    self.waterController = [[ WaterController alloc ] init];
-    
+    // Initializes the object controllers
+    self.autoController     = [ [AutomobileController alloc] init ];
+    self.waterController    = [ [WaterController      alloc] init ];
+    self.trashCanController = [ [TrashCanController   alloc] init ];
+
+    [ self.waterController criaAgua: self ];
+    [ self.trashCanController newTrashCan: self ];
     paused = YES;
     audioPaused = YES;
     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - In Game.wav" waitForCompletion:YES]]];
@@ -100,42 +100,6 @@
     guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 200 );
     //    guardreio.zPosition     = 0.99;
     [ guardreio setScale: 0.55 ];
-    
-    //animacao da lixeira
-    SKTexture *lixeira1 = [ SKTexture textureWithImageNamed: @"lixeira" ];
-    SKTexture *lixeira2 = [ SKTexture textureWithImageNamed: @"lixeira2" ];
-    SKTexture *lixeira3 = [ SKTexture textureWithImageNamed: @"lixeira3" ];
-    
-    NSArray *texturesLixeira = @[ lixeira1,lixeira2,lixeira3 ];
-    lixeira    = [ SKSpriteNode spriteNodeWithTexture: lixeira1 ];
-    lixeira.position         = CGPointMake( 200, 130);
-    lixeira.zPosition        = 1.0;
-    //  lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
-    //lixeira.physicsBody.affectedByGravity = NO;
-    //   lixeira.physicsBody.allowsRotation    = NO;
-    //lixeira.physicsBody.linearDamping     = 0.8;
-    
-    SKAction *movimentoLixeira = [ SKAction animateWithTextures:texturesLixeira timePerFrame: 0.01 ];
-    SKAction *repeatLixeira    = [ SKAction repeatActionForever:movimentoLixeira ];
-    [ lixeira runAction:repeatLixeira ];
-    [ lixeira setScale:0.45 ];
-    
-    
-    SKAction *movimentoHorizontalLixeira = [SKAction sequence: @[
-                                                                 [SKAction waitForDuration: 2.0],
-                                                                 [SKAction moveToX: 880 duration: 5.0],
-                                                                 [SKAction waitForDuration: 2.0],
-                                                                 [SKAction moveToX: 140 duration: 5.0]
-                                                                 ]
-                                            ];
-    SKAction *movimentoVerticalLixeira = [SKAction sequence:@[
-                                                              [SKAction waitForDuration:0.0],
-                                                              [SKAction moveToY:230 duration:0.8],
-                                                              [SKAction moveToY:190 duration:0.8]]];
-    
-    [ lixeira runAction: [SKAction repeatActionForever: movimentoHorizontalLixeira] ];
-    [ lixeira runAction: [SKAction repeatActionForever:movimentoVerticalLixeira] ];
-    
     
     //animacao do esgoto na tela do jogo.
     SKTexture *esgoto1 = [ SKTexture textureWithImageNamed: @"esgoto1" ];
@@ -239,7 +203,7 @@
     [ self addChild: vida5 ];
     [ self addChild: buttonPause ];
     [ self addChild: buttonAudio ];
-    [ self addChild: lixeira ];
+//    [ self addChild: lixeira ];
     //[ self addChild: self.pontuacao ];
     // [ self addChild: _textoRecorde ];    
     
@@ -247,8 +211,6 @@
 //--------------------------------------------------------------
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    
     touch    = [ touches anyObject ];
     location = [ touch locationInNode: self ];
     node     = [ self nodeAtPoint: location ];
@@ -263,7 +225,6 @@
         [garrafa removeAllActions];
         garrafa.physicsBody.dynamic = NO;
         garrafa.physicsBody.affectedByGravity = NO;
-
         
         [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
     }
@@ -290,35 +251,31 @@
     }
     
 }
-
+//--------------------------------------------------------------
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    
     
     SKNode *garrafa = node;
     
     touchFinger = [ touches anyObject ];
     locObj = [ touch locationInNode: self];
-    
-    if ( [node.name isEqualToString: @"garrafaVidro" ] ){
-        //node = [ self nodeAtPoint: locObj ];
-        
-        garrafa.position = locObj;
+
+    if ( [node isKindOfClass: [RWBasicObject class]] ){
+        RWBasicObject *obj = (RWBasicObject*) node;
+//        if ( [obj.img.name isEqualToString: @"garrafaVidro" ] && !obj.inWater ){
+//            //node = [ self nodeAtPoint: locObj ];
+//            
+//            garrafa.position = locObj;
+//        }
     }
-    
-    
-    
-    
 }
 //--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
     
     SKNode *garrafa = node;
     
     if (node.name != nil && [node.name isEqualToString:@"garrafaVidro"]) {
         
-        if((CGRectContainsPoint(lixeira.frame, garrafa.position))){
+        if((CGRectContainsPoint( self.trashCanController.trashCan.img.frame, garrafa.position))){
             
             [garrafa removeFromParent];
             
@@ -361,10 +318,6 @@
             
         }
     }
-    
-    
-    
-    
 }
 //----------------------------------------------------------------------------------------
 -(void)update:(NSTimeInterval)currentTime {

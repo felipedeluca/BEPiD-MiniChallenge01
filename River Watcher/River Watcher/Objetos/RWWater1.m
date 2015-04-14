@@ -6,19 +6,21 @@
 //  Copyright (c) 2015 Felipe R. de Luca. All rights reserved.
 //
 
-#import "WLWater1.h"
+#import "RWWater1.h"
 
-@implementation WLWater1
+@implementation RWWater1
 
 
 //----------------------------------------------------------
 -(instancetype)init {
     
-    return (WLWater1 * ) [ self newWater ];
-
+    if ( self == [super init]){
+        self = (RWWater1 * ) [ self newWater ];
+    }
+    return self;
 }
 //----------------------------------------------------------
--(WLWater1 *)newWater {
+-(RWWater1 *)newWater {
     self.img = [ SKSpriteNode spriteNodeWithImageNamed: @"agua1" ];
     self.img.name = @"water";
     self.img.zPosition = 5.0;

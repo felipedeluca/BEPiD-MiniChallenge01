@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "RWBasicObject.h"
 
-@interface WLAutomovel : NSObject
+@interface RWAutomobile : RWBasicObject
 
-@property ( nonatomic ) SKSpriteNode * img;
+//@property ( nonatomic ) SKSpriteNode * img;
 @property ( nonatomic ) BOOL atirouObjeto;
 
 @end

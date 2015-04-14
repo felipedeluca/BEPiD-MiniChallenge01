@@ -13,9 +13,11 @@
 //----------------------------------------------------------
 -(instancetype)init {
     
-    return (WLWater2 * ) [ self newWater ];
+    if ( self = [super init]){
+        self = (WLWater2 * ) [ self newWater ];
+    }
     
-    //return self;
+    return self;
 }
 //----------------------------------------------------------
 -(WLWater2 *)newWater {

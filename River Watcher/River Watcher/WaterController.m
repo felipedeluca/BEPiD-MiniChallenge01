@@ -16,8 +16,8 @@
 @interface WaterController()
 
 @property ( nonatomic, strong ) SKSpriteNode *waterPhys; // simulação de física da água
-@property ( nonatomic, strong ) WLWater1 *waterTile1A; // p/ scrolling infinito da água
-@property ( nonatomic, strong ) WLWater1 *waterTile1B; // p/ scrolling infinito da água
+@property ( nonatomic, strong ) RWWater1 *waterTile1A; // p/ scrolling infinito da água
+@property ( nonatomic, strong ) RWWater1 *waterTile1B; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
 
@@ -40,8 +40,8 @@
     [ scene addChild: self.waterTile2A.img ];
     [ scene addChild: self.waterTile2B.img ];
     
-    self.waterTile1A = [ [WLWater1 alloc] init ];
-    self.waterTile1B = [ [WLWater1 alloc] init ];
+    self.waterTile1A = [ [RWWater1 alloc] init ];
+    self.waterTile1B = [ [RWWater1 alloc] init ];
     self.waterTile1A.img.position = CGPointMake( 0, - (scene.size.height / 2.0) + 53 + offset );
     self.waterTile1B.img.position = CGPointMake( self.waterTile1A.img.position.x + self.waterTile1B.img.size.width, self.waterTile1A.img.position.y );
     
@@ -104,12 +104,19 @@
 }
 //--------------------------------------------------------------
 -(void)waterSimulation:(SKScene *)scene{
+
     //Créditos para o código abaixo: Epic Byte
     // fonte: http://stackoverflow.com/questions/25344808/simulate-water-make-sprite-float-on-water-in-spritekit
     // Executa a simulação de água
-    
-    for ( SKSpriteNode *n in scene.children ){
+    for ( RWBasicObject *n in [ scene children ] ){
         if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
+            if ( [n.name isEqualToString: @"garrafaVidro"] ){
+                if ( !n.inWater ){
+                    NSLog(@"OBJ POS:%@", [n class] );
+                    n.inWater = YES;
+                }
+            }
+            
             const CGFloat rate      = 0.01; //Controls rate of applied motion. You shouldn't really need to touch this.
             const CGFloat disp      = ( ((self.waterPhys.position.y + OFFSET) + self.waterPhys.size.height / 2.0) - ((n.position.y) - n.size.height / 2.0)) * BUOYANCY;
             const CGPoint targetPos = CGPointMake( n.position.x, n.position.y + disp );

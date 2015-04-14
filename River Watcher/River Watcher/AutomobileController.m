@@ -6,21 +6,21 @@
 //  Copyright (c) 2015 Bearded Men and The Lady. All rights reserved.
 //
 
-#import "AutomoveisController.h"
+#import "AutomobileController.h"
 
-@interface AutomoveisController()
+@interface AutomobileController()
 
-@property ( nonatomic ) ObjetosController *objController;
+@property ( nonatomic ) ObjectsController *objController;
 
 @end
 
 
-@implementation AutomoveisController
+@implementation AutomobileController
 
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController = [ [ObjetosController alloc] init ];
+    self.objController = [ [ObjectsController alloc] init ];
     return self;
 }
 //--------------------------------------------------------------
@@ -29,7 +29,7 @@
     CGFloat positionY = CGRectGetMidY(scene.frame) - 40;
         
     if ( self.carro1.img == nil ){
-        self.carro1 = [ [WLCarro1 alloc] init ];
+        self.carro1 = [ [RWCar1 alloc] init ];
         self.carro1.img.position = CGPointMake( CGRectGetMidX(scene.frame) + 600, positionY );
         self.carro1.img.zPosition = 0.0;
         
@@ -37,7 +37,7 @@
     }
 }
 //----------------------------------------------------------------------------------------
--(void)throwObject:(SKSpriteNode *)obj parent:(WLAutomovel *)parentNode impulse:(CGFloat)throwImpulse {
+-(void)throwObject:(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {
     //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
     
     obj.position = parentNode.img.position;
@@ -50,7 +50,7 @@
     [ obj.physicsBody applyForce: CGVectorMake(dx, dy) ];
 }
 //--------------------------------------------------------------
--(void)animaAutomovel:(SKScene *)scene autoMovel:(WLAutomovel *)automovel {
+-(void)animaAutomovel:(SKScene *)scene autoMovel:(RWAutomobile *)automovel {
     
     CGFloat intervaloMinPosX = 300; // intervalo de espaço onde é permitido arremessar os objetos
     CGFloat intervaloMaxPosX = 600; // intervalo de espaço onde é permitido arremessar os objetos
@@ -60,11 +60,11 @@
         // Intervalo de posição permitido
         if ( automovel.img.position.x >= intervaloMinPosX && automovel.img.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
             NSLog(@"Arremessou!!");
-            WLGarrafaVidro *garrafaVidro = [ [WLGarrafaVidro alloc] init ];
-            garrafaVidro.img.name = @"garrafaVidro";
-            
-            [ scene addChild: garrafaVidro.img ];
-            [ self.objController throwObject: garrafaVidro.img parent: automovel impulse: 50.0 ];
+            RWGlassBottle *garrafaVidro = [ [RWGlassBottle alloc] init ];
+            garrafaVidro.name = @"garrafaVidro";
+ 
+            [ scene addChild: garrafaVidro ];
+            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 50.0 ];
             automovel.atirouObjeto = TRUE;
         }
         

@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import "WLAutomovel.h"
+#import "RWAutomobile.h"
 
-@interface ObjetosController : NSObject
+@interface ObjectsController : NSObject
 
--(void)throwObject:(SKSpriteNode *)obj parent:(WLAutomovel *)parentNode impulse:(CGFloat)throwImpulse;
+-(void)throwObject:(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
 
 @end

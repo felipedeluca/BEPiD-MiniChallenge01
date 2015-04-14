@@ -7,10 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "RWBasicObject.h"
 
-@interface WLWater1 : NSObject;//SKSpriteNode
-
-@property ( nonatomic ) SKSpriteNode *img;
+@interface RWWater1 : RWBasicObject;//SKSpriteNode
 
 //-(void)waterSimulation:(SKSpriteNode *)object waterObject:(SKSpriteNode *)w;
 

@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Bearded Men and The Lady. All rights reserved.
 //
 
-#import "WLAutomovel.h"
+#import "RWAutomobile.h"
 
-@implementation WLAutomovel
+@implementation RWAutomobile
 
 -(instancetype)init {
     
-    return (WLAutomovel * ) [ self newObject ];
+    return (RWAutomobile * ) [ self newObject ];
     
 }
 //----------------------------------------------------------
--(WLAutomovel *)newObject {
+-(RWAutomobile *)newObject {
     //    self.img = [ [SKSpriteNode alloc] initWithColor: [SKColor grayColor]
     //                                                         size: CGSizeMake(100, 100) ];
     self.img = [ SKSpriteNode spriteNodeWithImageNamed: @"carro1" ];

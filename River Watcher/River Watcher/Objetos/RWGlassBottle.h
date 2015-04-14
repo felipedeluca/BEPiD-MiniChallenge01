@@ -7,11 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "RWBasicObject.h"
 
-@interface WLGarrafaVidro : NSObject
-
-@property ( nonatomic ) SKSpriteNode * img;
-
--(WLGarrafaVidro *)newObject;
+@interface RWGlassBottle : RWBasicObject
 
 @end

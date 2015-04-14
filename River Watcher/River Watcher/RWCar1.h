@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Bearded Men and The Lady. All rights reserved.
 //
 
-#import "WLAutomovel.h"
+#import "RWAutomobile.h"
 
-@interface WLCarro1 : WLAutomovel
+@interface RWCar1 : RWAutomobile
 
 @end

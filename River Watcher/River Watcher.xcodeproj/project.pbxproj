@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */ = {isa = PBXBuildFile; fileRef = D60870351AD7965100645E27 /* WLGarrafaVidro.m */; };
-		D66A67C61AD86B2700E5D886 /* AutomoveisController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomoveisController.m */; };
-		D66A67C91AD87C9700E5D886 /* ObjetosController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C81AD87C9700E5D886 /* ObjetosController.m */; };
+		D60870361AD7965100645E27 /* RWGlassBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = D60870351AD7965100645E27 /* RWGlassBottle.m */; };
+		D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomobileController.m */; };
+		D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C81AD87C9700E5D886 /* ObjectsController.m */; };
 		D695BCC01AD7581800DC3187 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCBF1AD7581800DC3187 /* main.m */; };
 		D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC21AD7581800DC3187 /* AppDelegate.m */; };
 		D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC51AD7581800DC3187 /* TelaInicio.m */; };
@@ -36,13 +36,16 @@
 		D695BD4C1AD7838B00DC3187 /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = D695BD471AD7838B00DC3187 /* FONTLOG.txt */; };
 		D695BD4D1AD7838B00DC3187 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D695BD481AD7838B00DC3187 /* LICENSE.txt */; };
 		D695BD4F1AD7838B00DC3187 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D695BD4A1AD7838B00DC3187 /* PressStart2P.ttf */; };
-		D695BD551AD786D100DC3187 /* WLWater1.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD521AD786D100DC3187 /* WLWater1.m */; };
+		D695BD551AD786D100DC3187 /* RWWater1.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD521AD786D100DC3187 /* RWWater1.m */; };
 		D695BD561AD786D100DC3187 /* WLWater2.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD541AD786D100DC3187 /* WLWater2.m */; };
 		D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD5A1AD789CB00DC3187 /* SpaceShip.m */; };
 		D69CC9141AD856A20043932A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69CC9131AD856A20043932A /* Launch Screen.xib */; };
-		D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */; };
-		D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */; };
+		D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */; };
+		D6BB9ACA1AD8174F006E8DC7 /* RWCar1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC91AD8174F006E8DC7 /* RWCar1.m */; };
 		D6CC05091AD89CD400240C70 /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CC05081AD89CD400240C70 /* WaterController.m */; };
+		D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */; };
+		D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C11ADC353000DFDBA5 /* TrashCanController.m */; };
+		D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D60870341AD7965100645E27 /* WLGarrafaVidro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLGarrafaVidro.h; path = Objetos/WLGarrafaVidro.h; sourceTree = "<group>"; };
-		D60870351AD7965100645E27 /* WLGarrafaVidro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLGarrafaVidro.m; path = Objetos/WLGarrafaVidro.m; sourceTree = "<group>"; };
-		D66A67C41AD86B2700E5D886 /* AutomoveisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomoveisController.h; sourceTree = "<group>"; };
-		D66A67C51AD86B2700E5D886 /* AutomoveisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomoveisController.m; sourceTree = "<group>"; };
-		D66A67C71AD87C9700E5D886 /* ObjetosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjetosController.h; sourceTree = "<group>"; };
-		D66A67C81AD87C9700E5D886 /* ObjetosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjetosController.m; sourceTree = "<group>"; };
+		D60870341AD7965100645E27 /* RWGlassBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWGlassBottle.h; path = Objetos/RWGlassBottle.h; sourceTree = "<group>"; };
+		D60870351AD7965100645E27 /* RWGlassBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWGlassBottle.m; path = Objetos/RWGlassBottle.m; sourceTree = "<group>"; };
+		D66A67C41AD86B2700E5D886 /* AutomobileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomobileController.h; sourceTree = "<group>"; };
+		D66A67C51AD86B2700E5D886 /* AutomobileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomobileController.m; sourceTree = "<group>"; };
+		D66A67C71AD87C9700E5D886 /* ObjectsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectsController.h; sourceTree = "<group>"; };
+		D66A67C81AD87C9700E5D886 /* ObjectsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectsController.m; sourceTree = "<group>"; };
 		D695BCBA1AD7581800DC3187 /* River Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "River Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D695BCBE1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D695BCBF1AD7581800DC3187 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,19 +99,25 @@
 		D695BD471AD7838B00DC3187 /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
 		D695BD481AD7838B00DC3187 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		D695BD4A1AD7838B00DC3187 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
-		D695BD511AD786D100DC3187 /* WLWater1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLWater1.h; path = Objetos/WLWater1.h; sourceTree = "<group>"; };
-		D695BD521AD786D100DC3187 /* WLWater1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLWater1.m; path = Objetos/WLWater1.m; sourceTree = "<group>"; };
+		D695BD511AD786D100DC3187 /* RWWater1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWWater1.h; path = Objetos/RWWater1.h; sourceTree = "<group>"; };
+		D695BD521AD786D100DC3187 /* RWWater1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWWater1.m; path = Objetos/RWWater1.m; sourceTree = "<group>"; };
 		D695BD531AD786D100DC3187 /* WLWater2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLWater2.h; path = Objetos/WLWater2.h; sourceTree = "<group>"; };
 		D695BD541AD786D100DC3187 /* WLWater2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLWater2.m; path = Objetos/WLWater2.m; sourceTree = "<group>"; };
 		D695BD591AD789CB00DC3187 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceShip.h; path = Objetos/SpaceShip.h; sourceTree = "<group>"; };
 		D695BD5A1AD789CB00DC3187 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceShip.m; path = Objetos/SpaceShip.m; sourceTree = "<group>"; };
 		D69CC9131AD856A20043932A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "River Watcher/Launch Screen.xib"; sourceTree = "<group>"; };
-		D6BB9AC51AD8060A006E8DC7 /* WLAutomovel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAutomovel.h; sourceTree = "<group>"; };
-		D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAutomovel.m; sourceTree = "<group>"; };
-		D6BB9AC81AD8174F006E8DC7 /* WLCarro1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCarro1.h; sourceTree = "<group>"; };
-		D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLCarro1.m; sourceTree = "<group>"; };
+		D6BB9AC51AD8060A006E8DC7 /* RWAutomobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWAutomobile.h; sourceTree = "<group>"; };
+		D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWAutomobile.m; sourceTree = "<group>"; };
+		D6BB9AC81AD8174F006E8DC7 /* RWCar1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar1.h; sourceTree = "<group>"; };
+		D6BB9AC91AD8174F006E8DC7 /* RWCar1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar1.m; sourceTree = "<group>"; };
 		D6CC05071AD89CD400240C70 /* WaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterController.h; sourceTree = "<group>"; };
 		D6CC05081AD89CD400240C70 /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
+		D6D909BD1ADC305C00DFDBA5 /* RWTrashCan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTrashCan.h; sourceTree = "<group>"; };
+		D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTrashCan.m; sourceTree = "<group>"; };
+		D6D909C01ADC353000DFDBA5 /* TrashCanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashCanController.h; sourceTree = "<group>"; };
+		D6D909C11ADC353000DFDBA5 /* TrashCanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashCanController.m; sourceTree = "<group>"; };
+		D6D909C31ADC4E3000DFDBA5 /* RWBasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBasicObject.h; sourceTree = "<group>"; };
+		D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBasicObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,23 +141,25 @@
 		D60870331AD7963200645E27 /* Garrafa vidro */ = {
 			isa = PBXGroup;
 			children = (
-				D60870341AD7965100645E27 /* WLGarrafaVidro.h */,
-				D60870351AD7965100645E27 /* WLGarrafaVidro.m */,
+				D60870341AD7965100645E27 /* RWGlassBottle.h */,
+				D60870351AD7965100645E27 /* RWGlassBottle.m */,
 			);
 			name = "Garrafa vidro";
 			sourceTree = "<group>";
 		};
-		D66A67C31AD8694800E5D886 /* Bibliotecas */ = {
+		D66A67C31AD8694800E5D886 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D66A67C41AD86B2700E5D886 /* AutomoveisController.h */,
-				D66A67C51AD86B2700E5D886 /* AutomoveisController.m */,
-				D66A67C71AD87C9700E5D886 /* ObjetosController.h */,
-				D66A67C81AD87C9700E5D886 /* ObjetosController.m */,
+				D66A67C41AD86B2700E5D886 /* AutomobileController.h */,
+				D66A67C51AD86B2700E5D886 /* AutomobileController.m */,
+				D66A67C71AD87C9700E5D886 /* ObjectsController.h */,
+				D66A67C81AD87C9700E5D886 /* ObjectsController.m */,
 				D6CC05071AD89CD400240C70 /* WaterController.h */,
 				D6CC05081AD89CD400240C70 /* WaterController.m */,
+				D6D909C01ADC353000DFDBA5 /* TrashCanController.h */,
+				D6D909C11ADC353000DFDBA5 /* TrashCanController.m */,
 			);
-			name = Bibliotecas;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		D695BCB11AD7581700DC3187 = {
@@ -173,8 +184,8 @@
 		D695BCBC1AD7581800DC3187 /* River Watcher */ = {
 			isa = PBXGroup;
 			children = (
-				D66A67C31AD8694800E5D886 /* Bibliotecas */,
-				D695BD501AD7867B00DC3187 /* Objetos */,
+				D66A67C31AD8694800E5D886 /* Controllers */,
+				D695BD501AD7867B00DC3187 /* Objects */,
 				D695BCE91AD759E300DC3187 /* Telas */,
 				D695BCE81AD759D800DC3187 /* Assets */,
 				D695BCC11AD7581800DC3187 /* AppDelegate.h */,
@@ -266,22 +277,24 @@
 			path = Fontes;
 			sourceTree = "<group>";
 		};
-		D695BD501AD7867B00DC3187 /* Objetos */ = {
+		D695BD501AD7867B00DC3187 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				D6D909C61ADC4E3600DFDBA5 /* Basic */,
+				D6D909BC1ADC304000DFDBA5 /* Lixeira */,
 				D6BB9AC41AD805F0006E8DC7 /* Automovel */,
 				D60870331AD7963200645E27 /* Garrafa vidro */,
 				D695BD581AD789A700DC3187 /* Nave */,
 				D695BD571AD7899A00DC3187 /* Agua */,
 			);
-			name = Objetos;
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		D695BD571AD7899A00DC3187 /* Agua */ = {
 			isa = PBXGroup;
 			children = (
-				D695BD511AD786D100DC3187 /* WLWater1.h */,
-				D695BD521AD786D100DC3187 /* WLWater1.m */,
+				D695BD511AD786D100DC3187 /* RWWater1.h */,
+				D695BD521AD786D100DC3187 /* RWWater1.m */,
 				D695BD531AD786D100DC3187 /* WLWater2.h */,
 				D695BD541AD786D100DC3187 /* WLWater2.m */,
 			);
@@ -300,12 +313,30 @@
 		D6BB9AC41AD805F0006E8DC7 /* Automovel */ = {
 			isa = PBXGroup;
 			children = (
-				D6BB9AC51AD8060A006E8DC7 /* WLAutomovel.h */,
-				D6BB9AC61AD8060A006E8DC7 /* WLAutomovel.m */,
-				D6BB9AC81AD8174F006E8DC7 /* WLCarro1.h */,
-				D6BB9AC91AD8174F006E8DC7 /* WLCarro1.m */,
+				D6BB9AC51AD8060A006E8DC7 /* RWAutomobile.h */,
+				D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */,
+				D6BB9AC81AD8174F006E8DC7 /* RWCar1.h */,
+				D6BB9AC91AD8174F006E8DC7 /* RWCar1.m */,
 			);
 			name = Automovel;
+			sourceTree = "<group>";
+		};
+		D6D909BC1ADC304000DFDBA5 /* Lixeira */ = {
+			isa = PBXGroup;
+			children = (
+				D6D909BD1ADC305C00DFDBA5 /* RWTrashCan.h */,
+				D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */,
+			);
+			name = Lixeira;
+			sourceTree = "<group>";
+		};
+		D6D909C61ADC4E3600DFDBA5 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				D6D909C31ADC4E3000DFDBA5 /* RWBasicObject.h */,
+				D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */,
+			);
+			name = Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +388,7 @@
 				TargetAttributes = {
 					D695BCB91AD7581700DC3187 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = Y47E3YFF7P;
 					};
 					D695BCD71AD7581800DC3187 = {
 						CreatedOnToolsVersion = 6.2;
@@ -426,20 +458,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D695BD551AD786D100DC3187 /* WLWater1.m in Sources */,
-				D66A67C61AD86B2700E5D886 /* AutomoveisController.m in Sources */,
+				D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */,
+				D695BD551AD786D100DC3187 /* RWWater1.m in Sources */,
+				D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */,
+				D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */,
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				D6CC05091AD89CD400240C70 /* WaterController.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
-				D60870361AD7965100645E27 /* WLGarrafaVidro.m in Sources */,
+				D60870361AD7965100645E27 /* RWGlassBottle.m in Sources */,
+				D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */,
 				D695BD561AD786D100DC3187 /* WLWater2.m in Sources */,
 				D695BD441AD77C7700DC3187 /* TelaJogo.m in Sources */,
 				D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */,
 				D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */,
-				D6BB9AC71AD8060A006E8DC7 /* WLAutomovel.m in Sources */,
+				D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
-				D66A67C91AD87C9700E5D886 /* ObjetosController.m in Sources */,
-				D6BB9ACA1AD8174F006E8DC7 /* WLCarro1.m in Sources */,
+				D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */,
+				D6BB9ACA1AD8174F006E8DC7 /* RWCar1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,10 +591,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "River Watcher/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -569,10 +606,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "River Watcher/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

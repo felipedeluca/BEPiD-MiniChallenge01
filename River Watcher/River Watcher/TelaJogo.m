@@ -77,7 +77,10 @@
 //--------------------------------------------------------------
 
 -(void)criaCenario {
-
+    
+  
+    self.view.multipleTouchEnabled=NO;
+    
     // Initializes the object controllers
     self.autoController     = [ [AutomobileController alloc] init ];
     self.waterController    = [ [WaterController      alloc] init ];
@@ -87,6 +90,7 @@
     [ self.trashCanController newTrashCan: self ];
     paused = YES;
     audioPaused = YES;
+   
     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - In Game.wav" waitForCompletion:YES]]];
     
     //imagem de fundo da tela do jogo.
@@ -217,18 +221,19 @@
     //NSLog(@"Toquei em %@", node.name);
     
     
-    //pegar objeto
-    
-    if ( [node.name isEqualToString: @"garrafaVidro" ] ){
-        NSLog( @"pegou garrafa!" );
-        SKNode *garrafa = node;
-        [garrafa removeAllActions];
-        garrafa.physicsBody.dynamic = NO;
-        garrafa.physicsBody.affectedByGravity = NO;
-        
-        [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
-    }
 
+    //pegar objeto
+    if(paused == YES){
+        if ( [node.name isEqualToString: @"garrafaVidro" ] ){
+            NSLog( @"pegou garrafa!" );
+            SKNode *garrafa = node;
+            [garrafa removeAllActions];
+            garrafa.physicsBody.dynamic = NO;
+            garrafa.physicsBody.affectedByGravity = NO;
+        
+            [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+        }
+    }
 
     //ao clicar no botão irá alterar a imagem (Botão de pause/play)
     if ( [node.name isEqualToString:@"botaoPause"] ) {
@@ -259,12 +264,16 @@
     touchFinger = [ touches anyObject ];
     locObj = [ touch locationInNode: self];
 
-    if ( [node isKindOfClass: [RWBasicObject class]] ){
+    if(paused == YES){
+        if ( [node isKindOfClass: [RWBasicObject class]] ){
         //RWBasicObject *obj = (RWBasicObject*) node;
-        if ( [garrafa.name isEqualToString: @"garrafaVidro" ] && !garrafa.inWater ){
+            if ( [garrafa.name isEqualToString: @"garrafaVidro" ] && !garrafa.inWater ){
             //node = [ self nodeAtPoint: locObj ];
-//            
-            garrafa.position = locObj;
+                
+                garrafa.position = locObj;
+        
+        
+            }
         }
     }
 }
@@ -275,6 +284,7 @@
     
     if (node.name != nil && [node.name isEqualToString:@"garrafaVidro"]) {
         
+        
         if((CGRectContainsPoint( self.trashCanController.trashCan.img.frame, garrafa.position))){
             
             [garrafa removeFromParent];
@@ -283,9 +293,13 @@
             
             //garrafa = nil;
         }
-        
-    }
+        else {
+            garrafa.physicsBody.affectedByGravity = YES;
+            garrafa.physicsBody.dynamic = YES;
+        }
     NSLog( @"soltou objeto");
+    }
+    
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){

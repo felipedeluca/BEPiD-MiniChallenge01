@@ -110,11 +110,12 @@
     // Executa a simulação de água
     for ( RWBasicObject *n in [ scene children ] ){
         if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
-            if ( [n.name isEqualToString: @"garrafaVidro"] ){
+            if ( [n isKindOfClass: [RWBasicObject class] ] ){
                 if ( !n.inWater ){
                     NSLog(@"OBJ POS:%@", [n class] );
                     n.inWater = YES;
                 }
+                
             }
             
             const CGFloat rate      = 0.01; //Controls rate of applied motion. You shouldn't really need to touch this.

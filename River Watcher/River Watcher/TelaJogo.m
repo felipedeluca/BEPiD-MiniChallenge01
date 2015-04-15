@@ -254,18 +254,18 @@
 //--------------------------------------------------------------
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    SKNode *garrafa = node;
+    RWGlassBottle *garrafa = ( RWGlassBottle* )node;
     
     touchFinger = [ touches anyObject ];
     locObj = [ touch locationInNode: self];
 
     if ( [node isKindOfClass: [RWBasicObject class]] ){
-        RWBasicObject *obj = (RWBasicObject*) node;
-//        if ( [obj.img.name isEqualToString: @"garrafaVidro" ] && !obj.inWater ){
-//            //node = [ self nodeAtPoint: locObj ];
+        //RWBasicObject *obj = (RWBasicObject*) node;
+        if ( [garrafa.name isEqualToString: @"garrafaVidro" ] && !garrafa.inWater ){
+            //node = [ self nodeAtPoint: locObj ];
 //            
-//            garrafa.position = locObj;
-//        }
+            garrafa.position = locObj;
+        }
     }
 }
 //--------------------------------------------------------------

@@ -41,9 +41,9 @@
     
     
     SKAction *horizontalAnimation = [SKAction sequence: @[
-                                                                 [SKAction waitForDuration: 2.0],
+                                                                 //[SKAction waitForDuration: 1.0],
                                                                  [SKAction moveToX: 880 duration: 5.0],
-                                                                 [SKAction waitForDuration: 2.0],
+                                                                 //aas[SKAction waitForDuration: 1.0],
                                                                  [SKAction moveToX: 140 duration: 5.0]
                                                          ]
                                     ];

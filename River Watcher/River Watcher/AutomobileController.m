@@ -19,7 +19,7 @@
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController = [ [ObjectsController alloc] init ];
+    self.objController = [[ObjectsController alloc] init];
     return self;
 }
 //--------------------------------------------------------------
@@ -48,23 +48,29 @@
         self.carro3.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
         self.carro3.zPosition = 0.0;
         
-        [ scene addChild: self.carro3 ];
+        [scene addChild: self.carro3];
     }
     
-    if ( self.carro4 == nil ){
+    if (self.carro4 == nil){
         self.carro4 = [ [RWCar4 alloc] init ];
         self.carro4.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
         self.carro4.zPosition = 0.0;
         
-        [ scene addChild: self.carro4 ];
+        [scene addChild: self.carro4];
     }
     
     if ( self.carro5 == nil ){
-        self.carro5 = [ [RWCar5 alloc] init ];
+        self.carro5 = [[RWCar5 alloc] init];
         self.carro5.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
         self.carro5.zPosition = 0.0;
-        
-        [ scene addChild: self.carro5 ];
+        [scene addChild: self.carro5];
+    }
+    
+    if ( self.carro6 == nil ){
+        self.carro6 = [[RWCar6 alloc] init];
+        self.carro6.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro6.zPosition = 0.0;
+        [scene addChild: self.carro6];
     }
 }
 //----------------------------------------------------------------------------------------

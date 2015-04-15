@@ -30,7 +30,7 @@
     if ( self.carro1 == nil ){
         self.carro1 = [ [RWCar1 alloc] init ];
         self.carro1.position = CGPointMake( CGRectGetMidX(scene.frame) + 600, positionY );
-        self.carro1.zPosition = 1.0;
+        self.carro1.zPosition = 0.0;
         
         [ scene addChild: self.carro1 ];
     }
@@ -41,6 +41,30 @@
         self.carro2.zPosition = 0.0;
         
         [ scene addChild: self.carro2 ];
+    }
+    
+    if ( self.carro3 == nil ){
+        self.carro3 = [ [RWCar3 alloc] init ];
+        self.carro3.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro3.zPosition = 0.0;
+        
+        [ scene addChild: self.carro3 ];
+    }
+    
+    if ( self.carro4 == nil ){
+        self.carro4 = [ [RWCar4 alloc] init ];
+        self.carro4.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro4.zPosition = 0.0;
+        
+        [ scene addChild: self.carro4 ];
+    }
+    
+    if ( self.carro5 == nil ){
+        self.carro5 = [ [RWCar5 alloc] init ];
+        self.carro5.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro5.zPosition = 0.0;
+        
+        [ scene addChild: self.carro5 ];
     }
 }
 //----------------------------------------------------------------------------------------
@@ -92,8 +116,6 @@
                                                         [ SKAction moveToX: endPosition   duration: duracaoMovimento ]
                                                         ]
                                     ];
-    
-    
     [ automovel setXScale: imageFlip ];
     [ automovel runAction: movimentoAutomovel ];
     //  NSLog( @"Pos X: %.2f", automovel.img.position.x );

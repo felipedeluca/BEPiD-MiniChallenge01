@@ -56,7 +56,7 @@
     self.waterPhys.zPosition = 1.0;
     
     self.waterPhys.position = CGPointMake( (scene.size.width / 2.0), + 20 + offset);
-    self.waterPhys.alpha = 0.0;
+    self.waterPhys.alpha = 1.0;
     
     [ scene addChild: self.waterPhys ];
     

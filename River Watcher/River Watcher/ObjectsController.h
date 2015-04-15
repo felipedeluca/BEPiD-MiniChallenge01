@@ -12,6 +12,6 @@
 
 @interface ObjectsController : NSObject
 
--(void)throwObject:(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
+-(void)throwObject:(RWBasicObject *)obj parent:(RWBasicObject *)parentNode impulse:(CGFloat)throwImpulse;
 
 @end

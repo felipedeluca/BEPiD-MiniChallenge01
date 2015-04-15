@@ -11,11 +11,12 @@
 @implementation ObjectsController
 
 //----------------------------------------------------------
--(void)throwObject:(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {
-    //  NSLog( @"Parent %@!", parentNode.physicsBody.velocity );
+-(void)throwObject:(RWBasicObject *)obj parent:(RWBasicObject *)parentNode impulse:(CGFloat)throwImpulse {
+    NSLog( @" Throwing: %@", obj );
     
-    obj.position = parentNode.img.position;
-    obj.physicsBody.velocity = parentNode.img.physicsBody.velocity;
+    obj.position = parentNode.position;
+    [ obj setPosition: CGPointMake( obj.position.x, obj.position.y + 50 ) ];
+    //obj.physicsBody.velocity = CGVectorMake(5, -30);//parentNode.physicsBody.velocity;
     
     CGFloat dx = throwImpulse * 5;//cosf(parentNode.zRotation);
     CGFloat dy = throwImpulse * 20;//sinf(parentNode.zRotation);

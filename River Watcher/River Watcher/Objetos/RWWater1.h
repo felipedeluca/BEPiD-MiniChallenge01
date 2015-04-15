@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "RWBasicObject.h"
 
-@interface RWWater1 : RWBasicObject;//SKSpriteNode
+@interface RWWater1 : SKSpriteNode;//SKSpriteNode
 
 //-(void)waterSimulation:(SKSpriteNode *)object waterObject:(SKSpriteNode *)w;
 

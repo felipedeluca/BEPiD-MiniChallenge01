@@ -18,7 +18,7 @@
 -(void)newTrashCan:(SKScene *)scene {
     
     self.trashCan = [ [RWTrashCan alloc] init ];
-    [ scene addChild: self.trashCan.img ];
+    [ scene addChild: self.trashCan ];
 }
 //--------------------------------------------------------------------------------
 @end

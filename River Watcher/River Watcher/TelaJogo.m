@@ -85,7 +85,7 @@
     self.autoController     = [ [AutomobileController alloc] init ];
     self.waterController    = [ [WaterController      alloc] init ];
     self.trashCanController = [ [TrashCanController   alloc] init ];
-
+//
     [ self.waterController criaAgua: self ];
     [ self.trashCanController newTrashCan: self ];
     paused = YES;
@@ -220,16 +220,14 @@
     node     = [ self nodeAtPoint: location ];
     //NSLog(@"Toquei em %@", node.name);
     
-    
-
     //pegar objeto
     if(paused == YES){
-        if ( [node.name isEqualToString: @"garrafaVidro" ] ){
-            NSLog( @"pegou garrafa!" );
-            SKNode *garrafa = node;
-            [garrafa removeAllActions];
-            garrafa.physicsBody.dynamic = NO;
-            garrafa.physicsBody.affectedByGravity = NO;
+        if ( [node isKindOfClass: [RWBasicObject class]] ){
+            NSLog( @"pegou objeto!" );
+            RWBasicObject *obj = (RWBasicObject *)node;
+            [obj removeAllActions];
+            obj.physicsBody.dynamic = NO;
+            obj.physicsBody.affectedByGravity = NO;
         
             [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
         }
@@ -259,43 +257,37 @@
 //--------------------------------------------------------------
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    RWGlassBottle *garrafa = ( RWGlassBottle* )node;
+    RWBasicObject *obj = ( RWBasicObject* )node;
     
     touchFinger = [ touches anyObject ];
     locObj = [ touch locationInNode: self];
 
     if(paused == YES){
-        if ( [node isKindOfClass: [RWBasicObject class]] ){
-        //RWBasicObject *obj = (RWBasicObject*) node;
-            if ( [garrafa.name isEqualToString: @"garrafaVidro" ] && !garrafa.inWater ){
-            //node = [ self nodeAtPoint: locObj ];
-                
-                garrafa.position = locObj;
-        
-        
-            }
+        if ( [node isKindOfClass: [RWBasicObject class]] && !obj.inWater ){
+            obj.position = locObj;
         }
     }
 }
 //--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    SKNode *garrafa = node;
+    RWBasicObject *obj = (RWBasicObject *)node;
     
-    if (node.name != nil && [node.name isEqualToString:@"garrafaVidro"]) {
+ //   if (node.name != nil && [node.name isEqualToString:@"garrafaVidro"]) {
+      if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] ) {
+    
         
-        
-        if((CGRectContainsPoint( self.trashCanController.trashCan.img.frame, garrafa.position))){
+        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position))){
             
-            [garrafa removeFromParent];
+            [obj removeFromParent];
             
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
             
             //garrafa = nil;
         }
         else {
-            garrafa.physicsBody.affectedByGravity = YES;
-            garrafa.physicsBody.dynamic = YES;
+            obj.physicsBody.affectedByGravity = YES;
+            obj.physicsBody.dynamic = YES;
         }
     NSLog( @"soltou objeto");
     }
@@ -338,15 +330,13 @@
     
     [ self.waterController waterSimulation: self ];
     [ self.waterController infiniteScrollingWater: self ];
-//    [ self criaAutomoveis ];
-//    [ self animaAutomovel: self.carro1 ];
     [ self.autoController criaAutomoveis: self ];
     [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
+//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
+//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
+//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
+//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
+//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
 }
 //--------------------------------------------------------------
 @end

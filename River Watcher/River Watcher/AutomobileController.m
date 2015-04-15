@@ -84,11 +84,11 @@
         // Intervalo de posição permitido
         if ( automovel.position.x >= intervaloMinPosX && automovel.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
             NSLog(@"Arremessou!!");
-            RWGlassBottle *garrafaVidro = [ [RWGlassBottle alloc] init ];
-            garrafaVidro.name = @"garrafaVidro";
+            RWLata *obj = [ [RWLata alloc] init ];
+            obj.name = @"lata";
  
-            [ scene addChild: garrafaVidro ];
-            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 40.0 ];
+            [ scene addChild: obj ];
+            [ self.objController throwObject: obj parent: automovel impulse: 40.0 ];
             automovel.atirouObjeto = TRUE;
         }
         

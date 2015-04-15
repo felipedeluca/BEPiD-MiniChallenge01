@@ -15,22 +15,15 @@
 -(instancetype)init {
     
     if ( self == [super init]){
-        self = (RWWater1 * ) [ self newWater ];
+        self = [ RWWater1 spriteNodeWithImageNamed: @"agua1" ];
+        self.name = @"water";
+        self.zPosition = 5.0;
+        [ self setScale: 0.5 ];
+        
+        self.physicsBody.dynamic = NO;
+        self.alpha = 0.7;
     }
     return self;
 }
 //----------------------------------------------------------
--(RWWater1 *)newWater {
-    self.img = [ SKSpriteNode spriteNodeWithImageNamed: @"agua1" ];
-    self.img.name = @"water";
-    self.img.zPosition = 5.0;
-    [ self.img setScale: 0.5 ];
-    
-    self.img.physicsBody.dynamic = NO;
-    self.img.alpha = 0.7;
-    
-    return self;
-}
-//----------------------------------------------------------
-
 @end

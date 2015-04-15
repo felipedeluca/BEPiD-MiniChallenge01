@@ -10,26 +10,24 @@
 
 @implementation RWAutomobile
 
--(instancetype)init {
-    
-    return (RWAutomobile * ) [ self newObject ];
-    
-}
 //----------------------------------------------------------
--(RWAutomobile *)newObject {
-    //    self.img = [ [SKSpriteNode alloc] initWithColor: [SKColor grayColor]
-    //                                                         size: CGSizeMake(100, 100) ];
-    self.img = [ SKSpriteNode spriteNodeWithImageNamed: @"carro1" ];
-    [ self.img setScale: 0.8 ];
-    self.img.zPosition = 5.5;
-    
-    self.img.name = @"[Automovel]";
-//    self.img.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garafadevidro" ] size: self.img.size ];
-    self.img.physicsBody.dynamic           = NO;
-    self.img.physicsBody.affectedByGravity = NO;
-    
-    self.atirouObjeto = FALSE;
-    //self.img.physicsBody.mass = 0.2;
+-(instancetype)init {
+
+    if ( self = [super init]){
+        self = [ RWAutomobile spriteNodeWithImageNamed: @"carro1" ];
+        
+        self.objTexture = [ SKTexture textureWithImageNamed: @"carro1" ];
+        
+        [ self setScale: 0.8 ];
+        self.zPosition = 5.5;
+        
+        self.name = @"[Automovel]";
+        self.physicsBody = [ SKPhysicsBody bodyWithTexture: self.objTexture size: self.size ];
+        self.physicsBody.dynamic           = NO;
+        self.physicsBody.affectedByGravity = NO;
+        
+        self.atirouObjeto = FALSE;
+    }
     
     return self;
 }

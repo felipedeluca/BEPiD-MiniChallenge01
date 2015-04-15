@@ -18,7 +18,7 @@
 @property ( nonatomic, strong ) RWCar1 *carro1;//
 
 -(void)criaAutomoveis:(SKScene *)scene;
--(void)throwObject   :(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
+//-(void)throwObject   :(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
 -(void)animaAutomovel:(SKScene *)scene autoMovel:(RWAutomobile *)automovel;
 
 @end

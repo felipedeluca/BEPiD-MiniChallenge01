@@ -12,6 +12,7 @@
 @interface RWBasicObject : SKSpriteNode
 
 @property ( nonatomic ) BOOL inWater;
+@property ( nonatomic ) BOOL hold; // Objeto está sendo segurado
 @property ( nonatomic ) SKSpriteNode *img;
 @property ( nonatomic ) SKTexture * objTexture;
 

@@ -34,6 +34,38 @@
         
         [ scene addChild: self.carro1 ];
     }
+    
+    if ( self.carro2 == nil ){
+        self.carro2 = [ [RWCar2 alloc] init ];
+        self.carro2.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro2.zPosition = 0.0;
+        
+        [ scene addChild: self.carro2 ];
+    }
+    
+    if ( self.carro3 == nil ){
+        self.carro3 = [ [RWCar3 alloc] init ];
+        self.carro3.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro3.zPosition = 0.0;
+        
+        [ scene addChild: self.carro3 ];
+    }
+    
+    if ( self.carro4 == nil ){
+        self.carro4 = [ [RWCar4 alloc] init ];
+        self.carro4.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro4.zPosition = 0.0;
+        
+        [ scene addChild: self.carro4 ];
+    }
+    
+    if ( self.carro5 == nil ){
+        self.carro5 = [ [RWCar5 alloc] init ];
+        self.carro5.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro5.zPosition = 0.0;
+        
+        [ scene addChild: self.carro5 ];
+    }
 }
 //----------------------------------------------------------------------------------------
 -(void)animaAutomovel:(SKScene *)scene autoMovel:(RWAutomobile *)automovel {
@@ -50,7 +82,7 @@
             garrafaVidro.name = @"garrafaVidro";
  
             [ scene addChild: garrafaVidro ];
-//            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 40.0 ];
+            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 40.0 ];
             automovel.atirouObjeto = TRUE;
         }
         
@@ -84,8 +116,6 @@
                                                         [ SKAction moveToX: endPosition   duration: duracaoMovimento ]
                                                         ]
                                     ];
-    
-    
     [ automovel setXScale: imageFlip ];
     [ automovel runAction: movimentoAutomovel ];
     //  NSLog( @"Pos X: %.2f", automovel.img.position.x );

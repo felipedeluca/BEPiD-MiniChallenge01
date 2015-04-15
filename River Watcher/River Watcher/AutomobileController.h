@@ -9,6 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 #import <Foundation/Foundation.h>
 #import "RWCar1.h"
+#import "RWCar2.h"
+#import "RWCar3.h"
+#import "RWCar4.h"
+#import "RWCar5.h"
 #import "RWAutomobile.h"
 #import "RWGlassBottle.h"
 #import "ObjectsController.h"
@@ -16,6 +20,10 @@
 @interface AutomobileController : NSObject
 
 @property ( nonatomic, strong ) RWCar1 *carro1;//
+@property (nonatomic, strong) RWCar2 *carro2;
+@property (nonatomic, strong) RWCar3 *carro3;
+@property (nonatomic, strong) RWCar4 *carro4;
+@property (nonatomic, strong) RWCar5 *carro5;
 
 -(void)criaAutomoveis:(SKScene *)scene;
 //-(void)throwObject   :(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;

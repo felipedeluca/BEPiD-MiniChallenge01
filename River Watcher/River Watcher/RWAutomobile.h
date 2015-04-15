@@ -14,5 +14,6 @@
 
 //@property ( nonatomic ) SKSpriteNode * img;
 @property ( nonatomic ) BOOL atirouObjeto;
+@property ( nonatomic ) CGFloat positionOffset;
 
 @end

@@ -27,9 +27,9 @@
         self.physicsBody.affectedByGravity = NO;
         
         self.atirouObjeto = FALSE;
+        self.positionOffset = 50;
     }
-    
-    
+        
     return self;
 }
 

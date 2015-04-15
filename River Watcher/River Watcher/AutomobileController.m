@@ -99,14 +99,14 @@
     CGFloat endPosition       = rightToLeftStartX;
     
     if ( automovel.position.x < 0 ){
-        startPosition = leftToRightStartX;
-        endPosition   = rightToLeftStartX;
+        startPosition = leftToRightStartX - automovel.positionOffset;
+        endPosition   = rightToLeftStartX + automovel.positionOffset;
         //imageFlip     = 1.0;
         
     }
     else if ( automovel.position.x >= 0 ){
-        startPosition = rightToLeftStartX;
-        endPosition   = leftToRightStartX;
+        startPosition = rightToLeftStartX + automovel.positionOffset;
+        endPosition   = leftToRightStartX - automovel.positionOffset;
         imageFlip     = -1.0;
     }
     

@@ -50,6 +50,7 @@
 		D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */; };
 		D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C11ADC353000DFDBA5 /* TrashCanController.m */; };
 		D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */; };
+		D6E8046F1ADF0CA00046BB85 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E8046E1ADF0CA00046BB85 /* Random.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		D6D909C11ADC353000DFDBA5 /* TrashCanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashCanController.m; sourceTree = "<group>"; };
 		D6D909C31ADC4E3000DFDBA5 /* RWBasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBasicObject.h; sourceTree = "<group>"; };
 		D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBasicObject.m; sourceTree = "<group>"; };
+		D6E8046D1ADF0CA00046BB85 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Random.h; path = "River Watcher/Random.h"; sourceTree = "<group>"; };
+		D6E8046E1ADF0CA00046BB85 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Random.m; path = "River Watcher/Random.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,7 @@
 		D695BCBC1AD7581800DC3187 /* River Watcher */ = {
 			isa = PBXGroup;
 			children = (
+				D6E804661ADF09E00046BB85 /* Libraries */,
 				D66A67C31AD8694800E5D886 /* Controllers */,
 				D695BD501AD7867B00DC3187 /* Objects */,
 				D695BCE91AD759E300DC3187 /* Telas */,
@@ -359,6 +363,16 @@
 			name = Basic;
 			sourceTree = "<group>";
 		};
+		D6E804661ADF09E00046BB85 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D6E8046D1ADF0CA00046BB85 /* Random.h */,
+				D6E8046E1ADF0CA00046BB85 /* Random.m */,
+			);
+			name = Libraries;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,6 +495,7 @@
 				D695BD551AD786D100DC3187 /* RWWater1.m in Sources */,
 				D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */,
 				D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */,
+				D6E8046F1ADF0CA00046BB85 /* Random.m in Sources */,
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				D6CC05091AD89CD400240C70 /* WaterController.m in Sources */,
 				067116521ADF04F500B2C0FA /* RWCar4.m in Sources */,

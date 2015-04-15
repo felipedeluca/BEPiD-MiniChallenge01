@@ -342,6 +342,7 @@
 //    [ self animaAutomovel: self.carro1 ];
     [ self.autoController criaAutomoveis: self ];
     [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
+    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
 }
 //--------------------------------------------------------------
 @end

@@ -30,9 +30,17 @@
     if ( self.carro1 == nil ){
         self.carro1 = [ [RWCar1 alloc] init ];
         self.carro1.position = CGPointMake( CGRectGetMidX(scene.frame) + 600, positionY );
-        self.carro1.zPosition = 0.0;
+        self.carro1.zPosition = 1.0;
         
         [ scene addChild: self.carro1 ];
+    }
+    
+    if ( self.carro2 == nil ){
+        self.carro2 = [ [RWCar2 alloc] init ];
+        self.carro2.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro2.zPosition = 0.0;
+        
+        [ scene addChild: self.carro2 ];
     }
 }
 //----------------------------------------------------------------------------------------
@@ -50,7 +58,7 @@
             garrafaVidro.name = @"garrafaVidro";
  
             [ scene addChild: garrafaVidro ];
-//            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 40.0 ];
+            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 40.0 ];
             automovel.atirouObjeto = TRUE;
         }
         

@@ -13,9 +13,11 @@
 #import "RWCar3.h"
 #import "RWCar4.h"
 #import "RWCar5.h"
+#import "RWCar6.h"
 #import "RWAutomobile.h"
 #import "RWGlassBottle.h"
 #import "ObjectsController.h"
+#import "RWLata.h"
 
 @interface AutomobileController : NSObject
 
@@ -24,6 +26,7 @@
 @property (nonatomic, strong) RWCar3 *carro3;
 @property (nonatomic, strong) RWCar4 *carro4;
 @property (nonatomic, strong) RWCar5 *carro5;
+@property (nonatomic, strong) RWCar6 *carro6;
 
 -(void)criaAutomoveis:(SKScene *)scene;
 //-(void)throwObject   :(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;

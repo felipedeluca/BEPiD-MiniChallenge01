@@ -11,7 +11,7 @@
 @implementation ObjectsController
 
 //----------------------------------------------------------
--(void)throwObject:(RWBasicObject *)obj parent:(RWBasicObject *)parentNode impulse:(CGFloat)throwImpulse {
+-(void)throwObject:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {
     NSLog( @" Throwing: %@", obj );
     
     obj.position = parentNode.position;

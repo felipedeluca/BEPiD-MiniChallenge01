@@ -10,7 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "RWBasicObject.h"
 
-@interface RWTrashCan : RWBasicObject
+@interface RWTrashCan : SKSpriteNode
 
 //@property ( nonatomic ) SKSpriteNode * img;
 

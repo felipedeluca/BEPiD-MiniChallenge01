@@ -19,7 +19,7 @@
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController = [ [ObjectsController alloc] init ];
+    self.objController = [[ObjectsController alloc] init];
     return self;
 }
 //--------------------------------------------------------------
@@ -48,23 +48,29 @@
         self.carro3.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
         self.carro3.zPosition = 0.0;
         
-        [ scene addChild: self.carro3 ];
+        [scene addChild: self.carro3];
     }
     
-    if ( self.carro4 == nil ){
+    if (self.carro4 == nil){
         self.carro4 = [ [RWCar4 alloc] init ];
         self.carro4.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
         self.carro4.zPosition = 0.0;
         
-        [ scene addChild: self.carro4 ];
+        [scene addChild: self.carro4];
     }
     
     if ( self.carro5 == nil ){
-        self.carro5 = [ [RWCar5 alloc] init ];
+        self.carro5 = [[RWCar5 alloc] init];
         self.carro5.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
         self.carro5.zPosition = 0.0;
-        
-        [ scene addChild: self.carro5 ];
+        [scene addChild: self.carro5];
+    }
+    
+    if ( self.carro6 == nil ){
+        self.carro6 = [[RWCar6 alloc] init];
+        self.carro6.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro6.zPosition = 0.0;
+        [scene addChild: self.carro6];
     }
 }
 //----------------------------------------------------------------------------------------
@@ -78,11 +84,11 @@
         // Intervalo de posição permitido
         if ( automovel.position.x >= intervaloMinPosX && automovel.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
             NSLog(@"Arremessou!!");
-            RWGlassBottle *garrafaVidro = [ [RWGlassBottle alloc] init ];
-            garrafaVidro.name = @"garrafaVidro";
+            RWLata *obj = [ [RWLata alloc] init ];
+            obj.name = @"lata";
  
-            [ scene addChild: garrafaVidro ];
-            [ self.objController throwObject: garrafaVidro parent: automovel impulse: 40.0 ];
+            [ scene addChild: obj ];
+            [ self.objController throwObject: obj parent: automovel impulse: 40.0 ];
             automovel.atirouObjeto = TRUE;
         }
         
@@ -99,14 +105,14 @@
     CGFloat endPosition       = rightToLeftStartX;
     
     if ( automovel.position.x < 0 ){
-        startPosition = leftToRightStartX;
-        endPosition   = rightToLeftStartX;
+        startPosition = leftToRightStartX - automovel.positionOffset;
+        endPosition   = rightToLeftStartX + automovel.positionOffset;
         //imageFlip     = 1.0;
         
     }
     else if ( automovel.position.x >= 0 ){
-        startPosition = rightToLeftStartX;
-        endPosition   = leftToRightStartX;
+        startPosition = rightToLeftStartX + automovel.positionOffset;
+        endPosition   = leftToRightStartX - automovel.positionOffset;
         imageFlip     = -1.0;
     }
     

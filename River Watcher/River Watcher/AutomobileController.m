@@ -37,7 +37,7 @@
     
     if ( self.carro2 == nil ){
         self.carro2 = [ [RWCar2 alloc] init ];
-        self.carro2.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
+        self.carro2.position = CGPointMake( CGRectGetMidX(scene.frame) - 700, positionY );
         self.carro2.zPosition = 0.0;
         
         [ scene addChild: self.carro2 ];

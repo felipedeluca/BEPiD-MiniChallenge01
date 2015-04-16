@@ -10,12 +10,12 @@
 
 @interface TelaJogo : SKScene
 
+@property (nonatomic, getter = isPaused) BOOL pausarJogo;
 @property (nonatomic, strong) SKLabelNode *pontuacao;
 @property (nonatomic, strong) SKLabelNode *textoRecorde;
-@property (nonatomic, getter = isPaused) BOOL pausarJogo;
 
 
 @end
-
-SKSpriteNode *img;
-SKSpriteNode *lixeira;
+//
+//SKSpriteNode *img;
+//SKSpriteNode *lixeira;

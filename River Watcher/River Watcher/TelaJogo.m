@@ -33,8 +33,11 @@
 @property ( nonatomic ) WaterController      *waterController;
 @property ( nonatomic ) TrashCanController   *trashCanController;
 
+
 @end
+
 //-----------------------------------------------------------------------
+
 @implementation TelaJogo {
     
     SKSpriteNode* buttonPause;
@@ -47,7 +50,9 @@
     SKNode *gui;
     SKNode *game;
 }
-//-----------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------
+
 -(void)viewWillLayoutSubviews
 {
     SKView * skView   = (SKView *)self.view;
@@ -55,12 +60,14 @@
     
     [skView addSubview:pauseMenu];
 }
-//-----------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------
+
 -(void)didMoveToView:(SKView *)view {
     
     if ( !self.contentCreated ){
         
-        [ self createSceneContents ];
+        [ self criaCenario ];
         self.contentCreated = YES;
         
         gui = [[SKNode alloc] init];
@@ -69,16 +76,11 @@
         [game setName:@"game"];
     }
 }
+
 //----------------------------------------------------------------------------------------
--(void)createSceneContents{
-    
-    [ self criaCenario ];
-}
-//--------------------------------------------------------------
 
 -(void)criaCenario {
     
-  
     self.view.multipleTouchEnabled=NO;
     
     // Initializes the object controllers
@@ -126,17 +128,17 @@
     
     SKAction *movimento2 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
     SKAction *repeat2    = [ SKAction repeatActionForever: movimento2 ];
-    [ esg2 runAction: repeat2 ];
-    [ esg2 setScale: 0.5 ];
+    [esg2 runAction: repeat2];
+    [esg2 setScale: 0.5];
     
-    SKSpriteNode *esg3   = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
+    SKSpriteNode *esg3   = [SKSpriteNode spriteNodeWithTexture: esgoto1];
     esg3.position        = CGPointMake( 890, 160 );
     esg3.zPosition       = 0.8;
     
-    SKAction *movimento3 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
-    SKAction *repeat3    = [ SKAction repeatActionForever: movimento3 ];
-    [ esg3 runAction: repeat3 ];
-    [ esg3 setScale: 0.5 ];
+    SKAction *movimento3 = [SKAction animateWithTextures: texturesEsgoto timePerFrame: .35];
+    SKAction *repeat3    = [SKAction repeatActionForever: movimento3];
+    [esg3 runAction: repeat3];
+    [esg3 setScale: 0.5];
     
     //caixa da pontuação e recorde.
     SKSpriteNode *recorde = [SKSpriteNode spriteNodeWithImageNamed:@"bot9"];
@@ -144,80 +146,83 @@
     [recorde setScale:0.50];
     
     //barras de vida
-    SKSpriteNode *vida =  [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
-    SKSpriteNode *vida2 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
-    SKSpriteNode *vida3 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
-    SKSpriteNode *vida4 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
-    SKSpriteNode *vida5 = [ SKSpriteNode spriteNodeWithImageNamed: @"bot10" ];
+    SKSpriteNode *vida =  [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    SKSpriteNode *vida2 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    SKSpriteNode *vida3 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    SKSpriteNode *vida4 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    SKSpriteNode *vida5 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
     
-    vida.position  = CGPointMake( 40, 730 );
-    vida2.position = CGPointMake( 80, 730 );
-    vida3.position = CGPointMake( 120, 730 );
-    vida4.position = CGPointMake( 160, 730 );
-    vida5.position = CGPointMake( 200, 730 );
+    vida.position  = CGPointMake(40,730);
+    vida2.position = CGPointMake(80,730);
+    vida3.position = CGPointMake(120,730);
+    vida4.position = CGPointMake(160,730);
+    vida5.position = CGPointMake(200,730);
     
-    [ vida  setScale: 0.5 ];
-    [ vida2 setScale: 0.5 ];
-    [ vida3 setScale: 0.5 ];
-    [ vida4 setScale: 0.5 ];
-    [ vida5 setScale: 0.5 ];
+    [vida  setScale: 0.5];
+    [vida2 setScale: 0.5];
+    [vida3 setScale: 0.5];
+    [vida4 setScale: 0.5];
+    [vida5 setScale: 0.5];
     
     //botao de pause e play
-    buttonPause = [ SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot4"] ];
-    [ buttonPause setScale: 0.5 ];
+    buttonPause = [SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot4"]];
+    [buttonPause setScale: 0.5];
     buttonPause.position  = CGPointMake(960, 720);
     //    buttonPause.zPosition = 0.92;
     buttonPause.name      = @"botaoPause";
     
     //botao do audio
-    buttonAudio = [ SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot1"] ];
-    [ buttonAudio setScale: 0.5 ];
+    buttonAudio = [SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot1"]];
+    [buttonAudio setScale: 0.5];
     buttonAudio.position  = CGPointMake( 865, 720 );
     //    buttonAudio.zPosition = 0.91;
     buttonAudio.name      = @"botaoAudio";
     
     //texto da pontuação
-    self.pontuacao = [ SKLabelNode labelNodeWithFontNamed: @"Arial" ];
+    self.pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"Arial"];
     self.pontuacao.text      = @"0";
-    self.pontuacao.fontColor = [ SKColor redColor ];
-    self.pontuacao.fontSize  = 25;
-    self.pontuacao.position  = CGPointMake( CGRectGetMidX(self.frame), 720 );
-    //self.pontuacao.zPosition = 0.90;
+    self.pontuacao.name      = @"score";
+    self.pontuacao.fontColor = [SKColor redColor];
+    [self.pontuacao setFontSize:25];
+    self.pontuacao.position  = CGPointMake(CGRectGetMidX(self.frame), 720);
+    self.pontuacao.zPosition = 2;
     
     //texto do recorde
-    _textoRecorde = [ SKLabelNode labelNodeWithFontNamed: @"Arial" ];
-    _textoRecorde.text      = @"Recorde: ";
-    _textoRecorde.fontColor = [ SKColor redColor ];
-    _textoRecorde.fontSize  = 15;
-    _textoRecorde.position  = CGPointMake( (CGRectGetMidX(self.frame) - 35), 695 );
-    //self.textoRecorde.zPosition = 0.89;
+    self.textoRecorde = [[SKLabelNode alloc] initWithFontNamed:@"Arial"];
+    self.textoRecorde.text      = @"Recorde: ";
+    self.textoRecorde.name      = @"Recorde: ";
+    self.textoRecorde.fontColor = [SKColor redColor];
+    [self.textoRecorde setFontSize:15];
+    self.textoRecorde.position  = CGPointMake((CGRectGetMidX(self.frame) - 35), 695);
+    self.textoRecorde.zPosition = 2;
     
     //adicionando os nodes na tela
+    [self addChild: telaInicial];
+    [self addChild: guardreio];
+    [self addChild: esg1];
+    [self addChild: esg2];
+    [self addChild: esg3];
+    [self addChild: recorde];
+    [self addChild: vida];
+    [self addChild: vida2];
+    [self addChild: vida3];
+    [self addChild: vida4];
+    [self addChild: vida5];
+    [self addChild: buttonPause];
+    [self addChild: buttonAudio];
     
-    [ self addChild: telaInicial ];
-    [ self addChild: guardreio ];
-    [ self addChild: esg1 ];
-    [ self addChild: esg2 ];
-    [ self addChild: esg3 ];
-    [ self addChild: recorde ];
-    [ self addChild: vida ];
-    [ self addChild: vida2 ];
-    [ self addChild: vida3 ];
-    [ self addChild: vida4 ];
-    [ self addChild: vida5 ];
-    [ self addChild: buttonPause ];
-    [ self addChild: buttonAudio ];
-//    [ self addChild: lixeira ];
-    //[ self addChild: self.pontuacao ];
-    // [ self addChild: _textoRecorde ];    
+    [self addChild: _pontuacao];
+    [self addChild: _textoRecorde];
     
 }
+
 //--------------------------------------------------------------
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    touch    = [ touches anyObject ];
-    location = [ touch locationInNode: self ];
-    node     = [ self nodeAtPoint: location ];
+    touch    = [touches anyObject];
+    location = [touch locationInNode: self];
+    node     = [self nodeAtPoint: location];
     //NSLog(@"Toquei em %@", node.name);
     
     
@@ -254,9 +259,10 @@
             
         }
     }
-    
 }
+
 //--------------------------------------------------------------
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     RWGlassBottle *garrafa = ( RWGlassBottle* )node;
@@ -277,7 +283,9 @@
         }
     }
 }
+
 //--------------------------------------------------------------
+
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
     SKNode *garrafa = node;
@@ -333,21 +341,24 @@
         }
     }
 }
+
 //----------------------------------------------------------------------------------------
+
 -(void)update:(NSTimeInterval)currentTime {
     
     [ self.waterController waterSimulation: self ];
     [ self.waterController infiniteScrollingWater: self ];
-//    [ self criaAutomoveis ];
-//    [ self animaAutomovel: self.carro1 ];
+    //[ self criaAutomoveis ];
+    //[ self animaAutomovel: self.carro1 ];
     [ self.autoController criaAutomoveis: self ];
     [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
+    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
+    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
+    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
+    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
+    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
 }
+
 //--------------------------------------------------------------
 @end
 

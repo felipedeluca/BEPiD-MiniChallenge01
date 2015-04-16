@@ -9,10 +9,7 @@
 #import "TelaJogo.h"
 #import "RWWater1.h"
 #import "WLWater2.h"
-#import "SpaceShip.h"
 #import "RWGlassBottle.h"
-#import "RWAutomobile.h"
-#import "RWCar1.h"
 #import "AutomobileController.h"
 #import "ObjectsController.h"
 #import "WaterController.h"
@@ -63,12 +60,11 @@
 }
 
 //-----------------------------------------------------------------------------------------
-
 -(void)didMoveToView:(SKView *)view {
     
     if ( !self.contentCreated ){
         
-        [ self criaCenario ];
+        [ self createSceneContents ];
         self.contentCreated = YES;
         
         gui = [[SKNode alloc] init];
@@ -82,6 +78,7 @@
 -(void)createSceneContents{
     
     [ self criaCenario ];
+    NSLog(@"****starting createNewCars...");
     [ self.autoController createNewCars: self amount: 6 ];
 
 }
@@ -221,7 +218,6 @@
     
     [self addChild: _pontuacao];
     [self addChild: _textoRecorde];
-    
 }
 
 //--------------------------------------------------------------

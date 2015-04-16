@@ -24,6 +24,7 @@
         self.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lata" ] size: self.size ];
         self.physicsBody.dynamic           = YES;
         self.physicsBody.affectedByGravity = YES;
+        self.physicsBody.linearDamping     = 1.0;
     }
     
     return self;

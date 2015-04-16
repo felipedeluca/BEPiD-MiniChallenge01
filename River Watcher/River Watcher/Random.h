@@ -11,6 +11,7 @@
 
 @interface Random : NSObject
 
--(CGFloat) skRand:(CGFloat)low high:(CGFloat)high;
+-(CGFloat) floatRand:(CGFloat)low high:(CGFloat)high;
+-(int) intRand:(int)low high:(int)high;
 
 @end

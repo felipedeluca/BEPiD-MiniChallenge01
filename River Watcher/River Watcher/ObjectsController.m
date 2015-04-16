@@ -12,7 +12,7 @@
 
 //----------------------------------------------------------
 -(void)throwObject:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {
-    NSLog( @" Throwing: %@", obj );
+    //NSLog( @" Throwing: %@", obj );
     
     obj.position = parentNode.position;
     [ obj setPosition: CGPointMake( obj.position.x, obj.position.y + 50 ) ];

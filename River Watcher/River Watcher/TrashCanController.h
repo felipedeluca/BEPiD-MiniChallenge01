@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "RWTrashCan.h"
+#import "RWBasicObject.h"
 
 @interface TrashCanController : NSObject
 

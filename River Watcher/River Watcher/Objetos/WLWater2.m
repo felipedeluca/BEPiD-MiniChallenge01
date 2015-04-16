@@ -14,24 +14,16 @@
 -(instancetype)init {
     
     if ( self = [super init]){
-        self = (WLWater2 * ) [ self newWater ];
+        self = [ WLWater2 spriteNodeWithImageNamed: @"agua2" ];
+        [ self setScale: 0.5 ];
+        
+        self.physicsBody.dynamic = NO;
+        self.zPosition = 6.0;
+        self.alpha     = 0.7;
+        self.name      = @"water";
     }
     
     return self;
 }
 //----------------------------------------------------------
--(WLWater2 *)newWater {
-
-    self.img = [ SKSpriteNode spriteNodeWithImageNamed: @"agua2" ];
-    [ self.img setScale: 0.5 ];
-    
-    self.img.physicsBody.dynamic = NO;
-    self.img.zPosition = 6.0;
-    self.img.alpha     = 0.7;
-    self.img.name      = @"water";
-    
-    return self;
-}
-//----------------------------------------------------------
-
 @end

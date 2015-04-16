@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import "RWBasicObject.h"
+//#import "RWBasicObject.h"
 
-@interface RWAutomobile : RWBasicObject
+@interface RWAutomobile : SKSpriteNode
 
 //@property ( nonatomic ) SKSpriteNode * img;
 @property ( nonatomic ) BOOL atirouObjeto;
 @property ( nonatomic ) CGFloat positionOffset;
+@property ( nonatomic ) SKTexture * objTexture;
 
 @end

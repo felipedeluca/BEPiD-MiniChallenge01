@@ -31,25 +31,19 @@
     
     self.waterTile2A = [ [WLWater2 alloc] init ];
     self.waterTile2B = [ [WLWater2 alloc] init ];
-    self.waterTile2A.img.position = CGPointMake( 0, - (scene.size.height / 2.0) + 50 + offset );
-    self.waterTile2B.img.position = CGPointMake( self.waterTile2A.img.position.x + self.waterTile2B.img.size.width, self.waterTile2A.img.position.y );
+    self.waterTile2A.position = CGPointMake( 0, - (scene.size.height / 2.0) + 50 + offset );
+    self.waterTile2B.position = CGPointMake( self.waterTile2A.position.x + self.waterTile2B.size.width, self.waterTile2A.position.y );
     
-    //    self.waterTile2A.img.zPosition = 1.0;
-    //    self.waterTile2B.img.zPosition = 1.5;
-    
-    [ scene addChild: self.waterTile2A.img ];
-    [ scene addChild: self.waterTile2B.img ];
+    [ scene addChild: self.waterTile2A ];
+    [ scene addChild: self.waterTile2B ];
     
     self.waterTile1A = [ [RWWater1 alloc] init ];
     self.waterTile1B = [ [RWWater1 alloc] init ];
-    self.waterTile1A.img.position = CGPointMake( 0, - (scene.size.height / 2.0) + 53 + offset );
-    self.waterTile1B.img.position = CGPointMake( self.waterTile1A.img.position.x + self.waterTile1B.img.size.width, self.waterTile1A.img.position.y );
+    self.waterTile1A.position = CGPointMake( 0, - (scene.size.height / 2.0) + 53 + offset );
+    self.waterTile1B.position = CGPointMake( self.waterTile1A.position.x + self.waterTile1B.size.width, self.waterTile1A.position.y );
     
-    //    self.waterTile1A.img.zPosition = 2.0;
-    //    self.waterTile1B.img.zPosition = 2.5;
-    
-    [ scene addChild: self.waterTile1A.img ];
-    [ scene addChild: self.waterTile1B.img ];
+    [ scene addChild: self.waterTile1A ];
+    [ scene addChild: self.waterTile1B ];
     
     self.waterPhys = [ [SKSpriteNode alloc] init ];
     self.waterPhys = [ [SKSpriteNode alloc] initWithColor:[UIColor cyanColor] size:CGSizeMake(scene.size.width, 200) ];
@@ -67,40 +61,40 @@
     
     CGFloat x1, x2, x3, x4;
     
-    CGFloat sceneWidth = scene.size.width + self.waterTile2A.img.size.width;
+    CGFloat sceneWidth = scene.size.width + self.waterTile2A.size.width;
     
-    if ( self.waterTile2A.img.position.x + (self.waterTile2A.img.size.width / 2.0) > sceneWidth ) {
-        x2 = self.waterTile2B.img.position.x + 1;
-        x1 = x2 - self.waterTile2A.img.size.width;
+    if ( self.waterTile2A.position.x + (self.waterTile2A.size.width / 2.0) > sceneWidth ) {
+        x2 = self.waterTile2B.position.x + 1;
+        x1 = x2 - self.waterTile2A.size.width;
     }
-    else if ( self.waterTile2B.img.position.x + (self.waterTile2B.img.size.width / 2.0) > sceneWidth ) {
-        x1 = self.waterTile2A.img.position.x + 1;
-        x2 = x1 - self.waterTile2B.img.size.width;
+    else if ( self.waterTile2B.position.x + (self.waterTile2B.size.width / 2.0) > sceneWidth ) {
+        x1 = self.waterTile2A.position.x + 1;
+        x2 = x1 - self.waterTile2B.size.width;
     }
     else{
-        x1 = self.waterTile2A.img.position.x;
-        x2 = self.waterTile2B.img.position.x;
+        x1 = self.waterTile2A.position.x;
+        x2 = self.waterTile2B.position.x;
     }
     
     
-    if ( self.waterTile1A.img.position.x + (self.waterTile1A.img.size.width / 2.0) > sceneWidth ) {
-        x4 = self.waterTile1B.img.position.x;
-        x3 = x4 - self.waterTile1A.img.size.width;
+    if ( self.waterTile1A.position.x + (self.waterTile1A.size.width / 2.0) > sceneWidth ) {
+        x4 = self.waterTile1B.position.x;
+        x3 = x4 - self.waterTile1A.size.width;
     }
-    else if ( self.waterTile1B.img.position.x + (self.waterTile1B.img.size.width / 2.0) > sceneWidth ) {
-        x3 = self.waterTile1A.img.position.x;
-        x4 = x3 - self.waterTile1B.img.size.width;
+    else if ( self.waterTile1B.position.x + (self.waterTile1B.size.width / 2.0) > sceneWidth ) {
+        x3 = self.waterTile1A.position.x;
+        x4 = x3 - self.waterTile1B.size.width;
     }
     else{
-        x3 = self.waterTile1A.img.position.x;
-        x4 = self.waterTile1B.img.position.x;
+        x3 = self.waterTile1A.position.x;
+        x4 = self.waterTile1B.position.x;
     }
     
-    self.waterTile2A.img.position = CGPointMake( x1 + 1.2, self.waterTile2A.img.position.y );
-    self.waterTile2B.img.position = CGPointMake( x2 + 1.2, self.waterTile2A.img.position.y );
+    self.waterTile2A.position = CGPointMake( x1 + 1.2, self.waterTile2A.position.y );
+    self.waterTile2B.position = CGPointMake( x2 + 1.2, self.waterTile2A.position.y );
     
-    self.waterTile1A.img.position = CGPointMake( x3 + 0.6, self.waterTile1A.img.position.y );
-    self.waterTile1B.img.position = CGPointMake( x4 + 0.6, self.waterTile1A.img.position.y );
+    self.waterTile1A.position = CGPointMake( x3 + 0.6, self.waterTile1A.position.y );
+    self.waterTile1B.position = CGPointMake( x4 + 0.6, self.waterTile1A.position.y );
 }
 //--------------------------------------------------------------
 -(void)waterSimulation:(TelaJogo *)scene{

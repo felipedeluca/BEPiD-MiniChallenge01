@@ -79,7 +79,6 @@
 }
 
 //----------------------------------------------------------------------------------------
-<<<<<<< HEAD
 -(void)createSceneContents{
     
     [ self criaCenario ];
@@ -87,9 +86,6 @@
 
 }
 //--------------------------------------------------------------
-=======
->>>>>>> 62b4ebd0e5cde9898a32ff0310e56fc9aa7665cc
-
 -(void)criaCenario {
     
     self.view.multipleTouchEnabled=NO;
@@ -354,26 +350,7 @@
     
     [ self.waterController waterSimulation: self ];
     [ self.waterController infiniteScrollingWater: self ];
-<<<<<<< HEAD
     [ self.autoController animateCars: self ];
-=======
-    //[ self criaAutomoveis ];
-    //[ self animaAutomovel: self.carro1 ];
-    [ self.autoController criaAutomoveis: self ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
-    [ self.autoController criaAutomoveis: self ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
-//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
-//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
-//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
-//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
-//    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
->>>>>>> 62b4ebd0e5cde9898a32ff0310e56fc9aa7665cc
 }
 
 //--------------------------------------------------------------

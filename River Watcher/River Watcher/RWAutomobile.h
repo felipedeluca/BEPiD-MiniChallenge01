@@ -16,5 +16,8 @@
 @property ( nonatomic ) BOOL atirouObjeto;
 @property ( nonatomic ) CGFloat positionOffset;
 @property ( nonatomic ) SKTexture * objTexture;
+@property ( nonatomic ) CGFloat animDuration; // Duração do movimento do carro para ir de um ponto a outro
+@property ( nonatomic ) CGFloat animWaitTime; // Duração do movimento do carro para ir de um ponto a outro
+@property ( nonatomic ) CGFloat animWaitForDuration; // Duração do movimento do carro para ir de um ponto a outro
 
 @end

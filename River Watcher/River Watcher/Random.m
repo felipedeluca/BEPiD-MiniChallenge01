@@ -11,8 +11,12 @@
 @implementation Random
 
 //------------------------------------------------------------------
--(CGFloat) skRand:(CGFloat)low high:(CGFloat)high{
+-(CGFloat) floatRand:(CGFloat)low high:(CGFloat)high{
     return ( (rand() / ( CGFloat ) RAND_MAX) * ( high - low ) ) + low;
+}
+//------------------------------------------------------------------
+-(int) intRand:(int)low high:(int)high{
+    return ( (rand() / ( int ) RAND_MAX) * ( high - low ) ) + low;
 }
 //------------------------------------------------------------------
 @end

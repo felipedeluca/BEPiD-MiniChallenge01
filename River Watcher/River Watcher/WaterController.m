@@ -114,6 +114,9 @@
                     if ( !n.inWater ){
                         NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
+                        
+                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
+
                     }
                     
                 }

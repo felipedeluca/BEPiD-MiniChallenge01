@@ -49,6 +49,7 @@
     SKNode *node;
     SKNode *gui;
     SKNode *game;
+    unsigned int  pontos;
 }
 
 //-------------------------------------------------------------------------------------
@@ -189,8 +190,9 @@
     buttonAudio.name      = @"botaoAudio";
     
     //texto da pontuação
-    self.pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"Arial"];
-    self.pontuacao.text      = @"0";
+    self.pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
+    pontos = 0;
+    self.pontuacao.text      = [NSString stringWithFormat:@"%i", pontos];
     self.pontuacao.name      = @"score";
     self.pontuacao.fontColor = [SKColor redColor];
     [self.pontuacao setFontSize:25];
@@ -198,7 +200,7 @@
     self.pontuacao.zPosition = 2;
     
     //texto do recorde
-    self.textoRecorde = [[SKLabelNode alloc] initWithFontNamed:@"Arial"];
+    self.textoRecorde = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
     self.textoRecorde.text      = @"Recorde: ";
     self.textoRecorde.name      = @"Recorde: ";
     self.textoRecorde.fontColor = [SKColor redColor];
@@ -300,8 +302,10 @@
             [obj removeFromParent];
             
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
+            pontos += 10;
+            self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
+           
             
-            //garrafa = nil;
         }
         else {
             obj.physicsBody.affectedByGravity = YES;
@@ -357,7 +361,7 @@
     //[ self animaAutomovel: self.carro1 ];
     [ self.autoController criaAutomoveis: self ];
     [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
+    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
     //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
     //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
     //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];

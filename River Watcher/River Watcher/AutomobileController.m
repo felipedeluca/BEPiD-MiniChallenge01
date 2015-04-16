@@ -7,10 +7,12 @@
 //
 
 #import "AutomobileController.h"
+#import "Random.h"
 
 @interface AutomobileController()
 
 @property ( nonatomic ) ObjectsController *objController;
+@property ( nonatomic ) Random *rGenerator;
 
 @end
 
@@ -19,111 +21,100 @@
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController = [[ObjectsController alloc] init];
+    self.objController = [ [ObjectsController alloc] init ];
+    self.rGenerator    = [ [Random alloc] init ];
+    self.arrayCars     = [ [NSMutableArray alloc] init ];
     return self;
 }
 //--------------------------------------------------------------
--(void)criaAutomoveis:(SKScene *)scene {
+-(void)createNewCars:(SKScene *)scene amount:(int)n {
     
     CGFloat positionY = CGRectGetMidY(scene.frame) - 40;
+
+    for ( int i = 0; i < n; i++ ){
+        RWAutomobile *newCar = [ [RWAutomobile alloc] init ];
         
-    if ( self.carro1 == nil ){
-        self.carro1 = [ [RWCar1 alloc] init ];
-        self.carro1.position = CGPointMake( CGRectGetMidX(scene.frame) + 600, positionY );
-        self.carro1.zPosition = 0.0;
+        int startingDirection = (int)([ self.rGenerator floatRand: -10 high: 1 ]) % 2;
+        if ( startingDirection == 0 )
+            startingDirection = 1;
         
-        [ scene addChild: self.carro1 ];
+        NSLog(@"Starting direction: %d", startingDirection);
+        
+        int textureNumber = ( arc4random() % 6 ) + 1; // numeros entre 1 e 6
+        NSLog(@"Texture loaded: %d", textureNumber);
+        
+        SKTexture *newTexture = [ SKTexture textureWithImageNamed: [NSString stringWithFormat: @"carro%d", textureNumber] ];
+        
+        newCar.position = CGPointMake( CGRectGetMidX(scene.frame) + (700 * startingDirection), positionY );
+        [ newCar setTexture: newTexture ];
+        newCar.zPosition = 0.0;
+        newCar.animDuration = [ self.rGenerator floatRand: 3 high: 10 ] ;
+        newCar.animWaitTime = [ self.rGenerator floatRand: 2 high: 5 ];
+        newCar.animWaitForDuration = [ self.rGenerator floatRand: 1 high: 4 ];
+        
+        NSLog(@"Car created...");
+        [ self.arrayCars addObject: newCar ];
+        [ scene addChild: [self.arrayCars lastObject] ];
     }
     
-    if ( self.carro2 == nil ){
-        self.carro2 = [ [RWCar2 alloc] init ];
-        self.carro2.position = CGPointMake( CGRectGetMidX(scene.frame) - 700, positionY );
-        self.carro2.zPosition = 0.0;
-        
-        [ scene addChild: self.carro2 ];
-    }
-    
-    if ( self.carro3 == nil ){
-        self.carro3 = [ [RWCar3 alloc] init ];
-        self.carro3.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
-        self.carro3.zPosition = 0.0;
-        
-        [scene addChild: self.carro3];
-    }
-    
-    if (self.carro4 == nil){
-        self.carro4 = [ [RWCar4 alloc] init ];
-        self.carro4.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
-        self.carro4.zPosition = 0.0;
-        
-        [scene addChild: self.carro4];
-    }
-    
-    if ( self.carro5 == nil ){
-        self.carro5 = [[RWCar5 alloc] init];
-        self.carro5.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
-        self.carro5.zPosition = 0.0;
-        [scene addChild: self.carro5];
-    }
-    
-    if ( self.carro6 == nil ){
-        self.carro6 = [[RWCar6 alloc] init];
-        self.carro6.position = CGPointMake( CGRectGetMidX(scene.frame) + 700, positionY );
-        self.carro6.zPosition = 0.0;
-        [scene addChild: self.carro6];
-    }
 }
 //----------------------------------------------------------------------------------------
--(void)animaAutomovel:(SKScene *)scene autoMovel:(RWAutomobile *)automovel {
+-(void)animateCars:(SKScene *)scene {
     
-    CGFloat intervaloMinPosX = 300; // intervalo de espaço onde é permitido arremessar os objetos
-    CGFloat intervaloMaxPosX = 600; // intervalo de espaço onde é permitido arremessar os objetos
-    
-    // atira objetos se o automóvel estiver em movimento
-    if ( [automovel hasActions] ){
-        // Intervalo de posição permitido
-        if ( automovel.position.x >= intervaloMinPosX && automovel.position.x <= intervaloMaxPosX && automovel.atirouObjeto == FALSE ){
-            NSLog(@"Arremessou!!");
-            RWLata *obj = [ [RWLata alloc] init ];
-            obj.name = @"lata";
- 
-            [ scene addChild: obj ];
-            [ self.objController throwObject: obj parent: automovel impulse: 40.0 ];
-            automovel.atirouObjeto = TRUE;
+    for ( RWAutomobile *car in self.arrayCars ){
+        //NSLog(@"Animating car: %@", car);
+        
+        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 600 ]; // intervalo de espaço onde é permitido arremessar os objetos
+        CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 ]; // intervalo de espaço onde é permitido arremessar os objetos
+
+        int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
+        
+        // atira objetos se o automóvel estiver em movimento
+        if ( [car hasActions] ){
+            // Intervalo de posição permitido
+            if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance > 8 ){
+                NSLog(@"Arremessou!!");
+                RWLata *obj = [ [RWLata alloc] init ];
+                obj.name = @"lata";
+                
+                [ scene addChild: obj ];
+                [ self.objController throwObject: obj parent: car impulse: 40.0 ];
+                car.atirouObjeto = TRUE;
+            }
         }
+        else {
         
-        return;
-    }
-    
-    automovel.atirouObjeto = FALSE;
-    
-    CGFloat leftToRightStartX = -100;
-    CGFloat rightToLeftStartX = scene.frame.size.width + automovel.size.width;
-    CGFloat duracaoMovimento  = 5.0;
-    CGFloat imageFlip         = 1.0; // aponta o carro para o sentido do movimento
-    CGFloat startPosition     = leftToRightStartX;
-    CGFloat endPosition       = rightToLeftStartX;
-    
-    if ( automovel.position.x < 0 ){
-        startPosition = leftToRightStartX - automovel.positionOffset;
-        endPosition   = rightToLeftStartX + automovel.positionOffset;
-        //imageFlip     = 1.0;
+            car.atirouObjeto = FALSE;
         
-    }
-    else if ( automovel.position.x >= 0 ){
-        startPosition = rightToLeftStartX + automovel.positionOffset;
-        endPosition   = leftToRightStartX - automovel.positionOffset;
-        imageFlip     = -1.0;
+            CGFloat leftToRightStartX = -130;
+            CGFloat rightToLeftStartX = scene.frame.size.width + car.size.width + 30;
+            CGFloat imageFlip         = 1.0; // aponta o carro para o sentido do movimento
+            CGFloat startPosition     = leftToRightStartX;
+            CGFloat endPosition       = rightToLeftStartX;
+        
+            if ( car.position.x < 0 ){
+                startPosition = leftToRightStartX - car.positionOffset;
+                endPosition   = rightToLeftStartX + car.positionOffset;
+                //imageFlip     = 1.0;
+            
+            }
+            else if ( car.position.x >= 0 ){
+                startPosition = rightToLeftStartX + car.positionOffset;
+                endPosition   = leftToRightStartX - car.positionOffset;
+                imageFlip     = -1.0;
+            }
+        
+            SKAction *movimentoAutomovel = [SKAction sequence:@[
+                                                                [ SKAction waitForDuration: car.animWaitTime ],
+                                                                [ SKAction moveToX: startPosition duration: car.animWaitTime ],
+                                                                [ SKAction moveToX: endPosition   duration: car.animDuration]
+                                                                ]
+                                            ];
+            [ car setXScale: imageFlip ];
+            [ car runAction: movimentoAutomovel ];
+        }
     }
     
-    SKAction *movimentoAutomovel = [SKAction sequence:@[
-                                                        [ SKAction waitForDuration: 0.0 ],
-                                                        [ SKAction moveToX: startPosition duration: duracaoMovimento ],
-                                                        [ SKAction moveToX: endPosition   duration: duracaoMovimento ]
-                                                        ]
-                                    ];
-    [ automovel setXScale: imageFlip ];
-    [ automovel runAction: movimentoAutomovel ];
     //  NSLog( @"Pos X: %.2f", automovel.img.position.x );
     
 }

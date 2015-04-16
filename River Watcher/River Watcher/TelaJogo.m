@@ -67,7 +67,7 @@
     
     if ( !self.contentCreated ){
         
-        [ self criaCenario ];
+        [ self createSceneContents ];
         self.contentCreated = YES;
  
     
@@ -75,7 +75,13 @@
 }
 
 //----------------------------------------------------------------------------------------
+-(void)createSceneContents{
+    
+    [ self criaCenario ];
+    [ self.autoController createNewCars: self amount: 6 ];
 
+}
+//--------------------------------------------------------------
 -(void)criaCenario {
     
     self.view.multipleTouchEnabled=NO;
@@ -342,16 +348,7 @@
     
     [ self.waterController waterSimulation: self ];
     [ self.waterController infiniteScrollingWater: self ];
-    //[ self criaAutomoveis ];
-    //[ self animaAutomovel: self.carro1 ];
-    [ self.autoController criaAutomoveis: self ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro1 ];
-    [ self.autoController animaAutomovel: self autoMovel: self.autoController.carro2 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro3 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro4 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro5 ];
-    //[ self.autoController animaAutomovel: self autoMovel: self.autoController.carro6 ];
-   
+    [ self.autoController animateCars: self ];
 
 }
 

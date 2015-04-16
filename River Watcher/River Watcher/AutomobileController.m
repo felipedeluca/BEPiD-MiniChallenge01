@@ -77,8 +77,10 @@
                 RWLata *obj = [ [RWLata alloc] init ];
                 obj.name = @"lata";
                 
+                CGFloat impulseForce = [ self.rGenerator floatRand: 30.0 high: 45.0 ];
+                
                 [ scene addChild: obj ];
-                [ self.objController throwObject: obj parent: car impulse: 40.0 ];
+                [ self.objController throwObject: obj parent: car impulse: impulseForce ];
                 car.atirouObjeto = TRUE;
             }
         }

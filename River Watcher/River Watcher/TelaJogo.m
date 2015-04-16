@@ -9,10 +9,7 @@
 #import "TelaJogo.h"
 #import "RWWater1.h"
 #import "WLWater2.h"
-#import "SpaceShip.h"
 #import "RWGlassBottle.h"
-#import "RWAutomobile.h"
-#import "RWCar1.h"
 #import "AutomobileController.h"
 #import "ObjectsController.h"
 #import "WaterController.h"
@@ -62,15 +59,17 @@
 }
 
 //-----------------------------------------------------------------------------------------
-
 -(void)didMoveToView:(SKView *)view {
     
     if ( !self.contentCreated ){
         
         [ self createSceneContents ];
         self.contentCreated = YES;
+<<<<<<< HEAD
  
     
+=======
+>>>>>>> f83b100e03c8c29e44203b58074be2a4ba841b76
     }
 }
 
@@ -78,6 +77,7 @@
 -(void)createSceneContents{
     
     [ self criaCenario ];
+    NSLog(@"****starting createNewCars...");
     [ self.autoController createNewCars: self amount: 6 ];
 
 }
@@ -85,6 +85,7 @@
 -(void)criaCenario {
     
     self.view.multipleTouchEnabled=NO;
+    [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -7.0 )];
     
     // Initializes the object controllers
     self.autoController     = [ [AutomobileController alloc] init ];
@@ -219,7 +220,6 @@
     
     [self addChild: _pontuacao];
     [self addChild: _textoRecorde];
-    
 }
 
 //--------------------------------------------------------------

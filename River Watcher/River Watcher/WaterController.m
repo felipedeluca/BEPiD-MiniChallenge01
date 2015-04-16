@@ -24,6 +24,8 @@
 @end
 
 @implementation WaterController
+
+int cont = 0;
 //----------------------------------------------------------------------------------------------
 -(void)criaAgua:(TelaJogo *)scene {
     
@@ -115,8 +117,27 @@
                         NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
                         
+                        
                         [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
-
+                        
+                        switch (cont) {
+                            case 0:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 1:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 2:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 3:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 4:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            
+                        }cont ++;
                     }
                     
                 }

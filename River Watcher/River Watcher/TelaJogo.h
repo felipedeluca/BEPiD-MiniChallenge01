@@ -16,6 +16,7 @@
 
 
 @end
-//
-//SKSpriteNode *img;
-//SKSpriteNode *lixeira;
+
+SKSpriteNode *vida1, *vida2, *vida3, *vida4, *vida5;
+
+NSArray *vidas;

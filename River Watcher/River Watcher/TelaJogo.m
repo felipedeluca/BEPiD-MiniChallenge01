@@ -66,11 +66,6 @@
         
         [ self createSceneContents ];
         self.contentCreated = YES;
-        
-        gui = [[SKNode alloc] init];
-        [gui setName:@"gui"];
-        game = [[SKNode alloc] init];
-        [game setName:@"game"];
     }
 }
 
@@ -86,6 +81,7 @@
 -(void)criaCenario {
     
     self.view.multipleTouchEnabled=NO;
+    [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -7.0 )];
     
     // Initializes the object controllers
     self.autoController     = [ [AutomobileController alloc] init ];

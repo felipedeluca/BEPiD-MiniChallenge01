@@ -112,7 +112,7 @@
             if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
                 if ( [n isKindOfClass: [RWBasicObject class] ] ){
                     if ( !n.inWater ){
-                        NSLog(@"OBJ POS:%@", [n class] );
+                       // NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
                         
                         [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
@@ -120,7 +120,7 @@
                     }
                     
                 }
-                NSLog(@"%@", n.name);
+                //NSLog(@"%@", n.name);
                 const CGFloat rate      = 0.01; //Controls rate of applied motion. You shouldn't really need to touch this.
                 const CGFloat disp      = ( ((self.waterPhys.position.y + OFFSET) + self.waterPhys.size.height / 2.0) - ((n.position.y) - n.size.height / 2.0)) * BUOYANCY;
                 const CGPoint targetPos = CGPointMake( n.position.x, n.position.y + disp );

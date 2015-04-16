@@ -7,15 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0671164C1ADF00A100B2C0FA /* RWCar2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671164B1ADF00A100B2C0FA /* RWCar2.m */; };
-		0671164F1ADF04C500B2C0FA /* RWCar3.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671164E1ADF04C500B2C0FA /* RWCar3.m */; };
-		067116521ADF04F500B2C0FA /* RWCar4.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116511ADF04F500B2C0FA /* RWCar4.m */; };
-		067116551ADF051600B2C0FA /* RWCar5.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116541ADF051600B2C0FA /* RWCar5.m */; };
 		067116591ADF0A1500B2C0FA /* RWGarrafaDePlastico.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116581ADF0A1500B2C0FA /* RWGarrafaDePlastico.m */; };
 		0671165D1ADF0A7000B2C0FA /* RWLata.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671165C1ADF0A7000B2C0FA /* RWLata.m */; };
 		067116611ADF0AC000B2C0FA /* RWMadeira.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116601ADF0AC000B2C0FA /* RWMadeira.m */; };
 		067116651ADF0B0400B2C0FA /* RWPneu.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116641ADF0B0400B2C0FA /* RWPneu.m */; };
-		067116681ADF0B5700B2C0FA /* RWCar6.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116671ADF0B5700B2C0FA /* RWCar6.m */; };
 		D60870361AD7965100645E27 /* RWGlassBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = D60870351AD7965100645E27 /* RWGlassBottle.m */; };
 		D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomobileController.m */; };
 		D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C81AD87C9700E5D886 /* ObjectsController.m */; };
@@ -50,7 +45,6 @@
 		D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD5A1AD789CB00DC3187 /* SpaceShip.m */; };
 		D69CC9141AD856A20043932A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69CC9131AD856A20043932A /* Launch Screen.xib */; };
 		D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */; };
-		D6BB9ACA1AD8174F006E8DC7 /* RWCar1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC91AD8174F006E8DC7 /* RWCar1.m */; };
 		D6CC05091AD89CD400240C70 /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CC05081AD89CD400240C70 /* WaterController.m */; };
 		D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */; };
 		D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C11ADC353000DFDBA5 /* TrashCanController.m */; };
@@ -69,14 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0671164A1ADF00A100B2C0FA /* RWCar2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar2.h; sourceTree = "<group>"; };
-		0671164B1ADF00A100B2C0FA /* RWCar2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar2.m; sourceTree = "<group>"; };
-		0671164D1ADF04C500B2C0FA /* RWCar3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar3.h; sourceTree = "<group>"; };
-		0671164E1ADF04C500B2C0FA /* RWCar3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar3.m; sourceTree = "<group>"; };
-		067116501ADF04F500B2C0FA /* RWCar4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar4.h; sourceTree = "<group>"; };
-		067116511ADF04F500B2C0FA /* RWCar4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar4.m; sourceTree = "<group>"; };
-		067116531ADF051600B2C0FA /* RWCar5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar5.h; sourceTree = "<group>"; };
-		067116541ADF051600B2C0FA /* RWCar5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar5.m; sourceTree = "<group>"; };
 		067116571ADF0A1500B2C0FA /* RWGarrafaDePlastico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWGarrafaDePlastico.h; sourceTree = "<group>"; };
 		067116581ADF0A1500B2C0FA /* RWGarrafaDePlastico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWGarrafaDePlastico.m; sourceTree = "<group>"; };
 		0671165B1ADF0A7000B2C0FA /* RWLata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLata.h; sourceTree = "<group>"; };
@@ -85,8 +71,6 @@
 		067116601ADF0AC000B2C0FA /* RWMadeira.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMadeira.m; sourceTree = "<group>"; };
 		067116631ADF0B0400B2C0FA /* RWPneu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPneu.h; sourceTree = "<group>"; };
 		067116641ADF0B0400B2C0FA /* RWPneu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPneu.m; sourceTree = "<group>"; };
-		067116661ADF0B5700B2C0FA /* RWCar6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar6.h; sourceTree = "<group>"; };
-		067116671ADF0B5700B2C0FA /* RWCar6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar6.m; sourceTree = "<group>"; };
 		D60870341AD7965100645E27 /* RWGlassBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWGlassBottle.h; path = Objetos/RWGlassBottle.h; sourceTree = "<group>"; };
 		D60870351AD7965100645E27 /* RWGlassBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWGlassBottle.m; path = Objetos/RWGlassBottle.m; sourceTree = "<group>"; };
 		D66A67C41AD86B2700E5D886 /* AutomobileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomobileController.h; sourceTree = "<group>"; };
@@ -136,8 +120,6 @@
 		D69CC9131AD856A20043932A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "River Watcher/Launch Screen.xib"; sourceTree = "<group>"; };
 		D6BB9AC51AD8060A006E8DC7 /* RWAutomobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWAutomobile.h; sourceTree = "<group>"; };
 		D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWAutomobile.m; sourceTree = "<group>"; };
-		D6BB9AC81AD8174F006E8DC7 /* RWCar1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCar1.h; sourceTree = "<group>"; };
-		D6BB9AC91AD8174F006E8DC7 /* RWCar1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCar1.m; sourceTree = "<group>"; };
 		D6CC05071AD89CD400240C70 /* WaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterController.h; sourceTree = "<group>"; };
 		D6CC05081AD89CD400240C70 /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
 		D6D909BD1ADC305C00DFDBA5 /* RWTrashCan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTrashCan.h; sourceTree = "<group>"; };
@@ -386,18 +368,6 @@
 			children = (
 				D6BB9AC51AD8060A006E8DC7 /* RWAutomobile.h */,
 				D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */,
-				D6BB9AC81AD8174F006E8DC7 /* RWCar1.h */,
-				D6BB9AC91AD8174F006E8DC7 /* RWCar1.m */,
-				0671164A1ADF00A100B2C0FA /* RWCar2.h */,
-				0671164B1ADF00A100B2C0FA /* RWCar2.m */,
-				0671164D1ADF04C500B2C0FA /* RWCar3.h */,
-				0671164E1ADF04C500B2C0FA /* RWCar3.m */,
-				067116501ADF04F500B2C0FA /* RWCar4.h */,
-				067116511ADF04F500B2C0FA /* RWCar4.m */,
-				067116531ADF051600B2C0FA /* RWCar5.h */,
-				067116541ADF051600B2C0FA /* RWCar5.m */,
-				067116661ADF0B5700B2C0FA /* RWCar6.h */,
-				067116671ADF0B5700B2C0FA /* RWCar6.m */,
 			);
 			name = Automovel;
 			sourceTree = "<group>";
@@ -556,10 +526,7 @@
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				067116591ADF0A1500B2C0FA /* RWGarrafaDePlastico.m in Sources */,
 				D6CC05091AD89CD400240C70 /* WaterController.m in Sources */,
-				067116521ADF04F500B2C0FA /* RWCar4.m in Sources */,
-				0671164C1ADF00A100B2C0FA /* RWCar2.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
-				067116681ADF0B5700B2C0FA /* RWCar6.m in Sources */,
 				067116611ADF0AC000B2C0FA /* RWMadeira.m in Sources */,
 				D60870361AD7965100645E27 /* RWGlassBottle.m in Sources */,
 				D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */,
@@ -569,12 +536,9 @@
 				D695BD5B1AD789CB00DC3187 /* SpaceShip.m in Sources */,
 				D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */,
 				0671165D1ADF0A7000B2C0FA /* RWLata.m in Sources */,
-				0671164F1ADF04C500B2C0FA /* RWCar3.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
-				067116551ADF051600B2C0FA /* RWCar5.m in Sources */,
 				D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */,
 				067116651ADF0B0400B2C0FA /* RWPneu.m in Sources */,
-				D6BB9ACA1AD8174F006E8DC7 /* RWCar1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

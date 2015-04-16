@@ -17,6 +17,8 @@
     obj.position = parentNode.position;
     [ obj setPosition: CGPointMake( obj.position.x, obj.position.y + 50 ) ];
     //obj.physicsBody.velocity = CGVectorMake(5, -30);//parentNode.physicsBody.velocity;
+    obj.physicsBody.angularDamping = 0.5;
+    obj.physicsBody.linearDamping  = 1.0;
     
     CGFloat dx = throwImpulse * 5;//cosf(parentNode.zRotation);
     CGFloat dy = throwImpulse * 20;//sinf(parentNode.zRotation);

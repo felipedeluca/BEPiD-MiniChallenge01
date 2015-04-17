@@ -60,11 +60,11 @@
 }
 //----------------------------------------------------------------------------------------
 -(void)animateCars:(SKScene *)scene {
-    
+    [ self.objController destroyObjectsOffScreen: scene ];
     for ( RWAutomobile *car in self.arrayCars ){
         //NSLog(@"Animating car: %@", car);
         
-        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 600 ]; // intervalo de espaço onde é permitido arremessar os objetos
+        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 800 ]; // intervalo de espaço onde é permitido arremessar os objetos
         CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 ]; // intervalo de espaço onde é permitido arremessar os objetos
 
         int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
@@ -73,14 +73,16 @@
         if ( [car hasActions] ){
             // Intervalo de posição permitido
             if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance > 8 ){
+                int imgNumber = [ self.rGenerator floatRand: 1 high: 6 ];
                 NSLog(@"Arremessou!!");
-                RWLata *obj = [ [RWLata alloc] init ];
-                obj.name = @"lata";
                 
-                CGFloat impulseForce = [ self.rGenerator floatRand: 30.0 high: 45.0 ];
+                NSString *imgName = [ NSString stringWithFormat: @"lixo%d", imgNumber ];
+                RWLixo   *lixo    = [ [RWLixo alloc] initWithImageNamed: imgName ];
+                                
+                CGFloat impulseForce = [ self.rGenerator floatRand: 130.0 high: 150.0 ];
                 
-                [ scene addChild: obj ];
-                [ self.objController throwObject: obj parent: car impulse: impulseForce ];
+                [ scene addChild: lixo ];
+                [ self.objController throwObject: scene object: lixo parent: car impulse: impulseForce ];
                 car.atirouObjeto = TRUE;
             }
         }

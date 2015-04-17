@@ -13,15 +13,15 @@
 -(instancetype)init {
     
     if ( self = [super init]){
-        self = [ RWLata spriteNodeWithImageNamed: @"lata" ];
+        self = [ RWLata spriteNodeWithImageNamed: @"lixo3" ];
         
-        self.objTexture = [ SKTexture textureWithImageNamed: @"lata" ];
+        self.objTexture = [ SKTexture textureWithImageNamed: @"lixo3" ];
         
         [ self setScale: 0.3 ];
         self.zPosition = 5.5;
         
         self.name = @"[WLLata]";
-        self.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lata" ] size: self.size ];
+        self.physicsBody = [ SKPhysicsBody bodyWithTexture: self.objTexture size: self.size ];
         self.physicsBody.dynamic           = YES;
         self.physicsBody.affectedByGravity = YES;
         self.physicsBody.linearDamping     = 1.0;

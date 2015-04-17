@@ -13,15 +13,15 @@
 -(instancetype)init {
     
     if ( self = [super init]){
-        self = [ RWGarrafaDePlastico spriteNodeWithImageNamed: @"garafadeplastico" ];
+        self = [ RWGarrafaDePlastico spriteNodeWithImageNamed: @"lixo1" ];
         
-        self.objTexture = [ SKTexture textureWithImageNamed: @"garafadeplastico" ];
+        self.objTexture = [ SKTexture textureWithImageNamed: @"lixo1" ];
         
         [ self setScale: 0.3 ];
         self.zPosition = 5.5;
         
         self.name = @"[WLGarrafaPlastico]";
-        self.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garafadeplastico" ] size: self.size ];
+        self.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixo1" ] size: self.size ];
         self.physicsBody.dynamic           = YES;
         self.physicsBody.affectedByGravity = YES;
     }

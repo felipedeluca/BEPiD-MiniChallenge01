@@ -13,15 +13,15 @@
 -(instancetype)init {
     
     if ( self = [super init]){
-        self = [ RWGlassBottle spriteNodeWithImageNamed: @"garafadevidro" ];
+        self = [ RWGlassBottle spriteNodeWithImageNamed: @"lixo2" ];
 
-        self.objTexture = [ SKTexture textureWithImageNamed: @"garafadevidro" ];
+        self.objTexture = [ SKTexture textureWithImageNamed: @"lixo2" ];
         
         [ self setScale: 0.3 ];
         self.zPosition = 5.5;
         
         self.name = @"[WLGarrafaVidro]";
-        self.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"garafadevidro" ] size: self.size ];
+        self.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixo2" ] size: self.size ];
         self.physicsBody.dynamic           = YES;
         self.physicsBody.affectedByGravity = YES;
     }

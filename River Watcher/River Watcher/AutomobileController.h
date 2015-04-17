@@ -12,6 +12,7 @@
 #import "RWGlassBottle.h"
 #import "ObjectsController.h"
 #import "RWLata.h"
+#import "RWLixo.h"
 
 @interface AutomobileController : NSObject
 

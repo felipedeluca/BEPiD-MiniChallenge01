@@ -20,6 +20,7 @@
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
 #define BUOYANCY 0.4 //Slightly increase to make the object "float up faster," more buoyant.
 #define OFFSET 70.0 //Increase to make the object float to the surface higher.
+#define simulationSpeed 0.5
 
 @interface TelaJogo()
 
@@ -29,7 +30,6 @@
 @property ( nonatomic ) AutomobileController *autoController;
 @property ( nonatomic ) WaterController      *waterController;
 @property ( nonatomic ) TrashCanController   *trashCanController;
-
 
 @end
 
@@ -81,7 +81,8 @@
 -(void)criaCenario {
     
     self.view.multipleTouchEnabled=NO;
-    [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -7.0 )];
+    [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -9.81 )];
+    [ self.scene.physicsWorld setSpeed: simulationSpeed ];
     
     // Initializes the object controllers
     self.autoController     = [ [AutomobileController alloc] init ];
@@ -231,9 +232,8 @@
             NSLog( @"pegou objeto!" );
             RWBasicObject *obj = (RWBasicObject *)node;
             [obj removeAllActions];
-            obj.physicsBody.dynamic = NO;
+            obj.physicsBody.dynamic           = NO;
             obj.physicsBody.affectedByGravity = NO;
-        
             [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
         }
     }
@@ -297,7 +297,7 @@
         }
         else {
             obj.physicsBody.affectedByGravity = YES;
-            obj.physicsBody.dynamic = YES;
+            obj.physicsBody.dynamic           = YES;
         }
     NSLog( @"soltou objeto");
     }
@@ -305,12 +305,14 @@
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
         if(paused == YES){
+            [ self.scene.physicsWorld setSpeed: 0.0 ];
             self.paused = YES;
             paused = NO;
             buttonPause.zPosition = 2;
         }
         else{
             self.paused = NO;
+            [ self.scene.physicsWorld setSpeed: simulationSpeed ];
             paused = YES;
             [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot4.png"]];
             buttonPause.zPosition = 2;
@@ -330,8 +332,7 @@
             //self.paused = NO;
             audioPaused = YES;
             [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot2.png"]];
-            buttonAudio.zPosition = 2;
-            
+            buttonAudio.zPosition = 2;            
         }
     }
 }

@@ -10,9 +10,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "RWAutomobile.h"
 #import "RWBasicObject.h"
+#import "RWLixo.h"
 
 @interface ObjectsController : NSObject
 
--(void)throwObject:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
+-(void)throwObject:(SKScene *)scene object:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
+-(void)destroyObjectsOffScreen:(SKScene *)scene;
+
 
 @end

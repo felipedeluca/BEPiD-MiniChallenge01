@@ -20,19 +20,43 @@
 @property ( nonatomic, strong ) RWWater1 *waterTile1B; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
+@property ( nonatomic ) CGFloat waterPolutionLevel; //
 
 @end
 
 @implementation WaterController
 //----------------------------------------------------------------------------------------------
+-(void)increaseWaterPollution {
+    SKColor *pollutedColor = [ SKColor brownColor ];
+    self.waterPolutionLevel += 0.1;
+
+    SKAction *changeColor = [SKAction sequence:@[[ SKAction colorizeWithColor: pollutedColor
+                                                             colorBlendFactor: self.waterPolutionLevel
+                                                                     duration: 2.0 ],
+                                                 [ SKAction fadeAlphaBy: (self.waterPolutionLevel / 100.0) duration: 2.0 ]
+                                                 ]
+                             ];
+    self.waterTile1A.alpha += self.waterPolutionLevel / 10.0;
+    self.waterTile1B.alpha += self.waterPolutionLevel / 10.0;
+    self.waterTile2A.alpha += self.waterPolutionLevel / 100.0;
+    self.waterTile2B.alpha += self.waterPolutionLevel / 100.0;
+    
+    [ self.waterTile1A runAction: changeColor ];
+    [ self.waterTile1B runAction: changeColor ];
+    [ self.waterTile2A runAction: changeColor ];
+    [ self.waterTile2B runAction: changeColor ];
+}
+//----------------------------------------------------------------------------------------------
 -(void)criaAgua:(TelaJogo *)scene {
+    
+    self.waterPolutionLevel = 0.0;
     
     CGFloat offset = - 20.0;
     
     self.waterTile2A = [ [WLWater2 alloc] init ];
     self.waterTile2B = [ [WLWater2 alloc] init ];
     self.waterTile2A.position = CGPointMake( 0, - (scene.size.height / 2.0) + 50 + offset );
-    self.waterTile2B.position = CGPointMake( self.waterTile2A.position.x + self.waterTile2B.size.width, self.waterTile2A.position.y );
+    self.waterTile2B.position = CGPointMake( self.waterTile2A.position.x + self.waterTile2B.size.width -0.3, self.waterTile2A.position.y);
     
     [ scene addChild: self.waterTile2A ];
     [ scene addChild: self.waterTile2B ];
@@ -40,17 +64,17 @@
     self.waterTile1A = [ [RWWater1 alloc] init ];
     self.waterTile1B = [ [RWWater1 alloc] init ];
     self.waterTile1A.position = CGPointMake( 0, - (scene.size.height / 2.0) + 53 + offset );
-    self.waterTile1B.position = CGPointMake( self.waterTile1A.position.x + self.waterTile1B.size.width, self.waterTile1A.position.y );
+    self.waterTile1B.position = CGPointMake( self.waterTile1A.position.x + self.waterTile1B.size.width, self.waterTile1A.position.y);
     
     [ scene addChild: self.waterTile1A ];
     [ scene addChild: self.waterTile1B ];
     
     self.waterPhys = [ [SKSpriteNode alloc] init ];
-    self.waterPhys = [ [SKSpriteNode alloc] initWithColor:[UIColor cyanColor] size:CGSizeMake(scene.size.width, 200) ];
+    self.waterPhys = [ [SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(scene.size.width, 100) ];
     self.waterPhys.zPosition = 1.0;
     
     self.waterPhys.position = CGPointMake( (scene.size.width / 2.0), + 20 + offset);
-    self.waterPhys.alpha = 1.0;
+    self.waterPhys.alpha = 0.0;
     
     [ scene addChild: self.waterPhys ];
     
@@ -63,20 +87,6 @@
     
     CGFloat sceneWidth = scene.size.width + self.waterTile2A.size.width;
     
-    if ( self.waterTile2A.position.x + (self.waterTile2A.size.width / 2.0) > sceneWidth ) {
-        x2 = self.waterTile2B.position.x + 1;
-        x1 = x2 - self.waterTile2A.size.width;
-    }
-    else if ( self.waterTile2B.position.x + (self.waterTile2B.size.width / 2.0) > sceneWidth ) {
-        x1 = self.waterTile2A.position.x + 1;
-        x2 = x1 - self.waterTile2B.size.width;
-    }
-    else{
-        x1 = self.waterTile2A.position.x;
-        x2 = self.waterTile2B.position.x;
-    }
-    
-    
     if ( self.waterTile1A.position.x + (self.waterTile1A.size.width / 2.0) > sceneWidth ) {
         x4 = self.waterTile1B.position.x;
         x3 = x4 - self.waterTile1A.size.width;
@@ -88,6 +98,20 @@
     else{
         x3 = self.waterTile1A.position.x;
         x4 = self.waterTile1B.position.x;
+    }
+    
+    if ( self.waterTile2A.position.x + (self.waterTile2A.size.width / 2.0) > sceneWidth ) {
+        x2 = self.waterTile2B.position.x;
+        x1 = x2 - self.waterTile2A.size.width +
+        0.3;
+    }
+    else if ( self.waterTile2B.position.x + (self.waterTile2B.size.width / 2.0) > sceneWidth ) {
+        x1 = self.waterTile2A.position.x;
+        x2 = x1 - self.waterTile2B.size.width +0.3;
+    }
+    else{
+        x1 = self.waterTile2A.position.x;
+        x2 = self.waterTile2B.position.x;
     }
     
     self.waterTile2A.position = CGPointMake( x1 + 1.2, self.waterTile2A.position.y );
@@ -114,9 +138,9 @@
                     if ( !n.inWater ){
                        // NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
-                        
-                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
-
+                        [ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];
+                        [ self increaseWaterPollution ];
+                        //[ self.waterTile1A color ]
                     }
                     
                 }
@@ -129,8 +153,6 @@
                 n.physicsBody.velocity  = CGVectorMake( n.physicsBody.velocity.dx + relVel.dx * rate, n.physicsBody.velocity.dy + relVel.dy * rate );
             }
         }
-        
-        
     }
 }
 //----------------------------------------------------------------

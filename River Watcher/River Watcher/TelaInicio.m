@@ -43,7 +43,9 @@
 //--------------------------------------------------------------------
 -(void)ativaTela{
     
-    [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+    //[self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+    
+     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]withKey: @"music"];
     
     self.view.multipleTouchEnabled = NO;
     
@@ -169,6 +171,15 @@
 
 
 }
+
+-(void)willMoveFromView:(SKView *)view {
+    
+    [self removeActionForKey:@"music"];
+    
+}
+
+
+
 //--------------------------------------------------------------------
 
 @end

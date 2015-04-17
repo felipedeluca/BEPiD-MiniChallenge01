@@ -16,6 +16,7 @@
 
 @class TelaJogo;
 int gameOVer;
+int cont;
 
 @interface WaterController : NSObject
 

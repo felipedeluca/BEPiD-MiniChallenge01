@@ -25,7 +25,6 @@
 
 @implementation WaterController
 
-int cont = 0;
 //----------------------------------------------------------------------------------------------
 -(void)criaAgua:(TelaJogo *)scene {
     

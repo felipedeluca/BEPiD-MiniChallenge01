@@ -80,6 +80,7 @@
 //--------------------------------------------------------------
 -(void)criaCenario {
     
+
     self.view.multipleTouchEnabled=NO;
     [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -7.0 )];
     
@@ -345,9 +346,15 @@
         
         telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
         //telaJogo.physicsWorld. = 1.0;
-        
         [ self.view presentScene: telaGameOver transition: transition ];
     }
+}
+
+
+-(void)willMoveFromView:(SKView *)view {
+    gameOVer = 0;
+    pontos = 0;
+    cont = 0;
 }
 
 //----------------------------------------------------------------------------------------

@@ -8,12 +8,11 @@
 
 #import "TelaFinal.h"
 #import "TelaJogo.h"
-
+#import "WaterController.h"
 @implementation TelaFinal
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    
     //imagem de fundo da tela perdeu.
     SKSpriteNode *telaPerdeu = [SKSpriteNode spriteNodeWithImageNamed:@"tela3.png"];
     telaPerdeu.position = CGPointMake(self.size.width/2, (self.size.height/2));
@@ -157,7 +156,7 @@
             
         case 4:
             self.texto1 = [SKLabelNode labelNodeWithFontNamed:@"Floraless"];
-            self.texto1.text = @"Você sabia que um toco de cigarro";
+            self.texto1.text = @"Você sabia que uma bituca de cigarro";
             self.texto1.fontColor = [SKColor whiteColor];
             self.texto1.fontSize = 30;
             self.texto1.position = CGPointMake(CGRectGetMidX(self.frame), 500);
@@ -292,6 +291,25 @@
     [self addChild:self.texto3];
     [self addChild:botaoVoltarProJogo];
     [self addChild:botaoRanking];
+}
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch   = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node     = [self nodeAtPoint:location];
+    
+    // ao clicar no botão irá ocorrer a transição para a tela do jogo(classe TelaDoJogo)
+    if ( [node.name isEqualToString:@"botaoVoltar"] ) {
+        NSLog( @"botão voltar pressionado" );
+        SKScene *telaJogo     = [ [TelaJogo alloc] initWithSize:self.size ];
+        SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
+        
+        telaJogo.scaleMode = SKSceneScaleModeAspectFit;
+        //telaJogo.physicsWorld. = 1.0;
+        [ self.view presentScene: telaJogo transition: transition ];
+    }
 }
 
 

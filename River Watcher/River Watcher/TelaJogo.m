@@ -10,7 +10,6 @@
 #import "TelaFinal.h"
 #import "RWWater1.h"
 #import "WLWater2.h"
-#import "RWGlassBottle.h"
 #import "AutomobileController.h"
 #import "ObjectsController.h"
 #import "WaterController.h"
@@ -288,12 +287,13 @@
       if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] ) {
     
         
-        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position))){
+        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position)) && !obj.inWater ){
             
             [obj removeFromParent];
             
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
             pontos += 10;
+            self.autoController.difficultRatio = (pontos / 100.0);
             self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
            
             

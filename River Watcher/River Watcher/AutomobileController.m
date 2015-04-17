@@ -24,6 +24,7 @@
     self.objController = [ [ObjectsController alloc] init ];
     self.rGenerator    = [ [Random alloc] init ];
     self.arrayCars     = [ [NSMutableArray alloc] init ];
+    self.difficultRatio = 0.0;
     return self;
 }
 //--------------------------------------------------------------
@@ -64,17 +65,22 @@
     for ( RWAutomobile *car in self.arrayCars ){
         //NSLog(@"Animating car: %@", car);
         
-        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 800 ]; // intervalo de espaço onde é permitido arremessar os objetos
-        CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 ]; // intervalo de espaço onde é permitido arremessar os objetos
+        CGFloat maxDiffRatio = 8;
+        if ( self.difficultRatio < 8 )
+            maxDiffRatio = self.difficultRatio;
+
+        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 900 ]; // intervalo de espaço onde é permitido arremessar os objetos
+        CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 +(maxDiffRatio * 10) ]; // intervalo de espaço onde é permitido arremessar os objetos
 
         int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){
             // Intervalo de posição permitido
-            if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance > 8 ){
+            
+            if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance >= (9 - maxDiffRatio) ){
                 int imgNumber = [ self.rGenerator floatRand: 1 high: 6 ];
-                NSLog(@"Arremessou!!");
+                NSLog(@"Arremessou! Chance de arremesso: %f", 9 - maxDiffRatio);
                 
                 NSString *imgName = [ NSString stringWithFormat: @"lixo%d", imgNumber ];
                 RWLixo   *lixo    = [ [RWLixo alloc] initWithImageNamed: imgName ];

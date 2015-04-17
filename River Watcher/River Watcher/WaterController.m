@@ -29,7 +29,7 @@
 //----------------------------------------------------------------------------------------------
 -(void)increaseWaterPollution {
     SKColor *pollutedColor = [ SKColor brownColor ];
-    self.waterPolutionLevel += 0.1;
+    self.waterPolutionLevel += 0.2;
 
     SKAction *changeColor = [SKAction sequence:@[[ SKAction colorizeWithColor: pollutedColor
                                                              colorBlendFactor: self.waterPolutionLevel
@@ -140,12 +140,8 @@
                     if ( !n.inWater ){
                        // NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
-<<<<<<< HEAD
                         [ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];
                         [ self increaseWaterPollution ];
-                        //[ self.waterTile1A color ]
-=======
-                        
                         
                         [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
@@ -170,12 +166,7 @@
                         
                         cont ++;
                         gameOVer = cont;
-                        
->>>>>>> 08e57060ae61fcb3ced1e76988a6023013880abe
                     }
-                    
-                    
-                    
                 }
                 //NSLog(@"%@", n.name);
                 const CGFloat rate      = 0.01; //Controls rate of applied motion. You shouldn't really need to touch this.

@@ -9,14 +9,13 @@
 #import <SpriteKit/SpriteKit.h>
 #import <Foundation/Foundation.h>
 #import "RWAutomobile.h"
-#import "RWGlassBottle.h"
 #import "ObjectsController.h"
-#import "RWLata.h"
 #import "RWLixo.h"
 
 @interface AutomobileController : NSObject
 
 @property ( nonatomic, strong ) NSMutableArray *arrayCars;
+@property ( nonatomic ) CGFloat difficultRatio;
 
 -(void)createNewCars:(SKScene *)scene amount:(int)n;
 //-(void)throwObject   :(SKSpriteNode *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;

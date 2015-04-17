@@ -43,7 +43,9 @@
 //--------------------------------------------------------------------
 -(void)ativaTela{
     
-    [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+    //[self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+    
+     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]withKey: @"music"];
     
     self.view.multipleTouchEnabled = NO;
     
@@ -76,6 +78,7 @@
     SKSpriteNode *areia = [SKSpriteNode spriteNodeWithImageNamed:@"areia1.png"];
     areia.position = CGPointMake((self.size.width/2)-30, (self.size.height/2) - 345);
     [areia setScale:0.57];
+    areia.zPosition = 2.0;
     
     //animação do peixe dourado da tela inicial
     SKTexture * pd1 = [ SKTexture textureWithImageNamed: @"peixe-dourado1" ];
@@ -132,7 +135,7 @@
     
     NSArray *texturesAlga2 = @[ alg1, alg2, alg3, alg4, alg5, alg6, alg7, alg8, alg9 ];
     SKSpriteNode *alga02   = [SKSpriteNode spriteNodeWithTexture:alg9];
-    alga02.zPosition       = 2.0;
+    alga02.zPosition       = 1.5;
     alga02.position        = CGPointMake(800, 195);
     
     SKAction *movimentoAlga2 = [SKAction animateWithTextures:texturesAlga2 timePerFrame:0.15];
@@ -168,6 +171,15 @@
 
 
 }
+
+-(void)willMoveFromView:(SKView *)view {
+    
+    [self removeActionForKey:@"music"];
+    
+}
+
+
+
 //--------------------------------------------------------------------
 
 @end

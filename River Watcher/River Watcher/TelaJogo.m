@@ -7,6 +7,7 @@
 //
 
 #import "TelaJogo.h"
+#import "TelaFinal.h"
 #import "RWWater1.h"
 #import "WLWater2.h"
 #import "RWGlassBottle.h"
@@ -44,9 +45,8 @@
     UITouch *touch, *touchFinger;
     CGPoint location, locObj;
     SKNode *node;
-    SKNode *gui;
-    SKNode *game;
     unsigned int  pontos;
+  
 }
 
 //-------------------------------------------------------------------------------------
@@ -80,6 +80,7 @@
 //--------------------------------------------------------------
 -(void)criaCenario {
     
+
     self.view.multipleTouchEnabled=NO;
     [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -9.81 )];
     [ self.scene.physicsWorld setSpeed: simulationSpeed ];
@@ -147,23 +148,25 @@
     [recorde setScale:0.50];
     
     //barras de vida
-    SKSpriteNode *vida =  [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
-    SKSpriteNode *vida2 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
-    SKSpriteNode *vida3 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
-    SKSpriteNode *vida4 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
-    SKSpriteNode *vida5 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    vida1 = [SKSpriteNode spriteNodeWithImageNamed:@"bot10"];
+    vida2 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    vida3 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    vida4 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
+    vida5 = [SKSpriteNode spriteNodeWithImageNamed: @"bot10"];
     
-    vida.position  = CGPointMake(40,730);
-    vida2.position = CGPointMake(80,730);
+    vida5.position  = CGPointMake(40,730);
+    vida4.position = CGPointMake(80,730);
     vida3.position = CGPointMake(120,730);
-    vida4.position = CGPointMake(160,730);
-    vida5.position = CGPointMake(200,730);
+    vida2.position = CGPointMake(160,730);
+    vida1.position = CGPointMake(200,730);
     
-    [vida  setScale: 0.5];
+    [vida1  setScale: 0.5];
     [vida2 setScale: 0.5];
     [vida3 setScale: 0.5];
     [vida4 setScale: 0.5];
     [vida5 setScale: 0.5];
+    
+    vidas = @[vida1, vida2, vida3, vida4, vida5];
     
     //botao de pause e play
     buttonPause = [SKSpriteNode spriteNodeWithTexture: [SKTexture textureWithImageNamed: @"bot4"]];
@@ -205,7 +208,7 @@
     [self addChild: esg2];
     [self addChild: esg3];
     [self addChild: recorde];
-    [self addChild: vida];
+    [self addChild: vida1];
     [self addChild: vida2];
     [self addChild: vida3];
     [self addChild: vida4];
@@ -337,13 +340,33 @@
     }
 }
 
+-(void)Placar{
+    if(gameOVer == 5){
+        SKScene *telaGameOver     = [[TelaFinal alloc] initWithSize:self.size ];
+        SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
+        
+        telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
+        //telaJogo.physicsWorld. = 1.0;
+        [ self.view presentScene: telaGameOver transition: transition ];
+    }
+}
+
+
+-(void)willMoveFromView:(SKView *)view {
+    gameOVer = 0;
+    pontos = 0;
+    cont = 0;
+}
+
 //----------------------------------------------------------------------------------------
 
 -(void)update:(NSTimeInterval)currentTime {
     
-    [ self.waterController waterSimulation: self ];
-    [ self.waterController infiniteScrollingWater: self ];
-    [ self.autoController animateCars: self ];
+    [self.waterController waterSimulation: self ];
+    [self.waterController infiniteScrollingWater: self ];
+    [self.autoController animateCars: self ];
+    [self Placar];
+
 }
 
 //--------------------------------------------------------------

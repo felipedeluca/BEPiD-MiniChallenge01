@@ -11,6 +11,7 @@
 		0671165D1ADF0A7000B2C0FA /* RWLata.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671165C1ADF0A7000B2C0FA /* RWLata.m */; };
 		067116611ADF0AC000B2C0FA /* RWMadeira.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116601ADF0AC000B2C0FA /* RWMadeira.m */; };
 		067116651ADF0B0400B2C0FA /* RWPneu.m in Sources */ = {isa = PBXBuildFile; fileRef = 067116641ADF0B0400B2C0FA /* RWPneu.m */; };
+		06F0C26C1AE0650F00E54D44 /* TelaFinal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0C26B1AE0650F00E54D44 /* TelaFinal.m */; };
 		D60870361AD7965100645E27 /* RWGlassBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = D60870351AD7965100645E27 /* RWGlassBottle.m */; };
 		D63405FC1AE06C6400818E42 /* RWLixo.m in Sources */ = {isa = PBXBuildFile; fileRef = D63405FB1AE06C6400818E42 /* RWLixo.m */; };
 		D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomobileController.m */; };
@@ -45,11 +46,11 @@
 		D695BD561AD786D100DC3187 /* WLWater2.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BD541AD786D100DC3187 /* WLWater2.m */; };
 		D69CC9141AD856A20043932A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69CC9131AD856A20043932A /* Launch Screen.xib */; };
 		D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */; };
-		D6CC05091AD89CD400240C70 /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CC05081AD89CD400240C70 /* WaterController.m */; };
 		D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */; };
 		D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C11ADC353000DFDBA5 /* TrashCanController.m */; };
 		D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */; };
 		D6E8046F1ADF0CA00046BB85 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E8046E1ADF0CA00046BB85 /* Random.m */; };
+		E238DBDF1AE19D6B003C78FC /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = E238DBDE1AE19D6B003C78FC /* WaterController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		067116601ADF0AC000B2C0FA /* RWMadeira.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMadeira.m; sourceTree = "<group>"; };
 		067116631ADF0B0400B2C0FA /* RWPneu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPneu.h; sourceTree = "<group>"; };
 		067116641ADF0B0400B2C0FA /* RWPneu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPneu.m; sourceTree = "<group>"; };
+		06F0C26A1AE0650F00E54D44 /* TelaFinal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaFinal.h; sourceTree = "<group>"; };
+		06F0C26B1AE0650F00E54D44 /* TelaFinal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaFinal.m; sourceTree = "<group>"; };
 		D60870341AD7965100645E27 /* RWGlassBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWGlassBottle.h; path = Objetos/RWGlassBottle.h; sourceTree = "<group>"; };
 		D60870351AD7965100645E27 /* RWGlassBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWGlassBottle.m; path = Objetos/RWGlassBottle.m; sourceTree = "<group>"; };
 		D63405FA1AE06C6400818E42 /* RWLixo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLixo.h; sourceTree = "<group>"; };
@@ -121,7 +124,6 @@
 		D6BB9AC51AD8060A006E8DC7 /* RWAutomobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWAutomobile.h; sourceTree = "<group>"; };
 		D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWAutomobile.m; sourceTree = "<group>"; };
 		D6CC05071AD89CD400240C70 /* WaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterController.h; sourceTree = "<group>"; };
-		D6CC05081AD89CD400240C70 /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
 		D6D909BD1ADC305C00DFDBA5 /* RWTrashCan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTrashCan.h; sourceTree = "<group>"; };
 		D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTrashCan.m; sourceTree = "<group>"; };
 		D6D909C01ADC353000DFDBA5 /* TrashCanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashCanController.h; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBasicObject.m; sourceTree = "<group>"; };
 		D6E8046D1ADF0CA00046BB85 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Random.h; path = "River Watcher/Random.h"; sourceTree = "<group>"; };
 		D6E8046E1ADF0CA00046BB85 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Random.m; path = "River Watcher/Random.m"; sourceTree = "<group>"; };
+		E238DBDE1AE19D6B003C78FC /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +215,7 @@
 				D66A67C71AD87C9700E5D886 /* ObjectsController.h */,
 				D66A67C81AD87C9700E5D886 /* ObjectsController.m */,
 				D6CC05071AD89CD400240C70 /* WaterController.h */,
-				D6CC05081AD89CD400240C70 /* WaterController.m */,
+				E238DBDE1AE19D6B003C78FC /* WaterController.m */,
 				D6D909C01ADC353000DFDBA5 /* TrashCanController.h */,
 				D6D909C11ADC353000DFDBA5 /* TrashCanController.m */,
 			);
@@ -300,6 +303,8 @@
 				D695BCC71AD7581800DC3187 /* TelaInicio.sks */,
 				D695BD421AD77C7700DC3187 /* TelaJogo.h */,
 				D695BD431AD77C7700DC3187 /* TelaJogo.m */,
+				06F0C26A1AE0650F00E54D44 /* TelaFinal.h */,
+				06F0C26B1AE0650F00E54D44 /* TelaFinal.m */,
 			);
 			name = Telas;
 			sourceTree = "<group>";
@@ -526,7 +531,6 @@
 				D6E8046F1ADF0CA00046BB85 /* Random.m in Sources */,
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				067116591ADF0A1500B2C0FA /* RWGarrafaDePlastico.m in Sources */,
-				D6CC05091AD89CD400240C70 /* WaterController.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
 				067116611ADF0AC000B2C0FA /* RWMadeira.m in Sources */,
 				D60870361AD7965100645E27 /* RWGlassBottle.m in Sources */,
@@ -536,8 +540,10 @@
 				D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */,
 				D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */,
 				0671165D1ADF0A7000B2C0FA /* RWLata.m in Sources */,
+				06F0C26C1AE0650F00E54D44 /* TelaFinal.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
 				D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */,
+				E238DBDF1AE19D6B003C78FC /* WaterController.m in Sources */,
 				067116651ADF0B0400B2C0FA /* RWPneu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,6 +25,7 @@
 @end
 
 @implementation WaterController
+
 //----------------------------------------------------------------------------------------------
 -(void)increaseWaterPollution {
     SKColor *pollutedColor = [ SKColor brownColor ];
@@ -130,6 +131,7 @@
     // Edit -> Tomar cuidado com o uso de isKindOfClass. A chamada por um tipo dentor de array interpreta ela como o tipo enviado, e ela automaticamente é tratada como acerto na verificação.
     // Sempre chamem por um id, sem tipo, e verifiquem o ID. No caso de sucesso, apenas, transformem na classe que vocês querem.
     
+    
     for (id d in [ scene children ] ){
         if([d isKindOfClass: [RWBasicObject class] ]){
             RWBasicObject* n = d;
@@ -138,10 +140,41 @@
                     if ( !n.inWater ){
                        // NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
+<<<<<<< HEAD
                         [ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];
                         [ self increaseWaterPollution ];
                         //[ self.waterTile1A color ]
+=======
+                        
+                        
+                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
+                        
+                        switch (cont) {
+                            case 0:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 1:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 2:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 3:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            case 4:
+                                [vidas [cont] removeFromParent];
+                                break;
+                            
+                        }
+                        
+                        cont ++;
+                        gameOVer = cont;
+                        
+>>>>>>> 08e57060ae61fcb3ced1e76988a6023013880abe
                     }
+                    
+                    
                     
                 }
                 //NSLog(@"%@", n.name);

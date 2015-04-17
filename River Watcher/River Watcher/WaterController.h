@@ -12,12 +12,14 @@
 #import "RWBasicObject.h"
 #import "RWGlassBottle.h"
 #import "TelaJogo.h"
+#import "TelaFinal.h"
 
 @class TelaJogo;
+int gameOVer;
+
 @interface WaterController : NSObject
 
 -(void)criaAgua:(TelaJogo *)scene;
 -(void)infiniteScrollingWater:(TelaJogo *)scene;
 -(void)waterSimulation:(TelaJogo *)scene;
-
 @end

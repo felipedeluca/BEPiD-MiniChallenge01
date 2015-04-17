@@ -7,6 +7,7 @@
 //
 
 #import "TelaJogo.h"
+#import "TelaFinal.h"
 #import "RWWater1.h"
 #import "WLWater2.h"
 #import "RWGlassBottle.h"
@@ -65,11 +66,6 @@
         
         [ self createSceneContents ];
         self.contentCreated = YES;
-<<<<<<< HEAD
- 
-    
-=======
->>>>>>> f83b100e03c8c29e44203b58074be2a4ba841b76
     }
 }
 
@@ -342,13 +338,26 @@
     }
 }
 
+-(void)Placar{
+    if(gameOVer == 5){
+        SKScene *telaGameOver     = [[TelaFinal alloc] initWithSize:self.size ];
+        SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
+        
+        telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
+        //telaJogo.physicsWorld. = 1.0;
+        
+        [ self.view presentScene: telaGameOver transition: transition ];
+    }
+}
+
 //----------------------------------------------------------------------------------------
 
 -(void)update:(NSTimeInterval)currentTime {
     
-    [ self.waterController waterSimulation: self ];
-    [ self.waterController infiniteScrollingWater: self ];
-    [ self.autoController animateCars: self ];
+    [self.waterController waterSimulation: self ];
+    [self.waterController infiniteScrollingWater: self ];
+    [self.autoController animateCars: self ];
+    [self Placar];
 
 }
 

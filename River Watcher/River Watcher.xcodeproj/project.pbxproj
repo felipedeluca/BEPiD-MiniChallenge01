@@ -138,13 +138,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D63405FD1AE06C6D00818E42 /* Lixo */ = {
+		D63405FD1AE06C6D00818E42 /* Garbage */ = {
 			isa = PBXGroup;
 			children = (
 				D63405FA1AE06C6400818E42 /* RWLixo.h */,
 				D63405FB1AE06C6400818E42 /* RWLixo.m */,
 			);
-			name = Lixo;
+			name = Garbage;
 			sourceTree = "<group>";
 		};
 		D66A67C31AD8694800E5D886 /* Controllers */ = {
@@ -283,16 +283,16 @@
 		D695BD501AD7867B00DC3187 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				D63405FD1AE06C6D00818E42 /* Lixo */,
+				D63405FD1AE06C6D00818E42 /* Garbage */,
 				D6D909C61ADC4E3600DFDBA5 /* Basic */,
-				D6D909BC1ADC304000DFDBA5 /* Lixeira */,
-				D6BB9AC41AD805F0006E8DC7 /* Automovel */,
-				D695BD571AD7899A00DC3187 /* Agua */,
+				D6D909BC1ADC304000DFDBA5 /* Trash Can */,
+				D6BB9AC41AD805F0006E8DC7 /* Automobile */,
+				D695BD571AD7899A00DC3187 /* Water */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
 		};
-		D695BD571AD7899A00DC3187 /* Agua */ = {
+		D695BD571AD7899A00DC3187 /* Water */ = {
 			isa = PBXGroup;
 			children = (
 				D695BD511AD786D100DC3187 /* RWWater1.h */,
@@ -300,25 +300,25 @@
 				D695BD531AD786D100DC3187 /* WLWater2.h */,
 				D695BD541AD786D100DC3187 /* WLWater2.m */,
 			);
-			name = Agua;
+			name = Water;
 			sourceTree = "<group>";
 		};
-		D6BB9AC41AD805F0006E8DC7 /* Automovel */ = {
+		D6BB9AC41AD805F0006E8DC7 /* Automobile */ = {
 			isa = PBXGroup;
 			children = (
 				D6BB9AC51AD8060A006E8DC7 /* RWAutomobile.h */,
 				D6BB9AC61AD8060A006E8DC7 /* RWAutomobile.m */,
 			);
-			name = Automovel;
+			name = Automobile;
 			sourceTree = "<group>";
 		};
-		D6D909BC1ADC304000DFDBA5 /* Lixeira */ = {
+		D6D909BC1ADC304000DFDBA5 /* Trash Can */ = {
 			isa = PBXGroup;
 			children = (
 				D6D909BD1ADC305C00DFDBA5 /* RWTrashCan.h */,
 				D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */,
 			);
-			name = Lixeira;
+			name = "Trash Can";
 			sourceTree = "<group>";
 		};
 		D6D909C61ADC4E3600DFDBA5 /* Basic */ = {

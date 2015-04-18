@@ -91,7 +91,7 @@
 //
     [ self.waterController criaAgua: self ];
     [ self.trashCanController newTrashCan: self ];
-    paused = YES;
+    paused = NO;
     audioPaused = YES;
    
     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - In Game.wav" waitForCompletion:YES]]];
@@ -103,9 +103,9 @@
     [ telaInicial setScale: 0.50 ];
     
     //imagem do guardreio na tela do jogo.
-    SKSpriteNode *guardreio = [ SKSpriteNode spriteNodeWithImageNamed: @"guardreio" ];
-    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 200 );
-    //    guardreio.zPosition     = 0.99;
+    SKSpriteNode *guardreio = [ SKSpriteNode spriteNodeWithImageNamed: @"guardrail" ];
+    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 120 );
+    guardreio.zPosition     = 4.0;
     [ guardreio setScale: 0.55 ];
     
     //animacao do esgoto na tela do jogo.
@@ -116,7 +116,7 @@
     NSArray *texturesEsgoto = @[ esgoto1, esgoto2, esgoto3 ];
     SKSpriteNode *esg1      = [ SKSpriteNode spriteNodeWithTexture:esgoto1 ];
     esg1.position           = CGPointMake( 90, 160 );
-    esg1.zPosition          = 0.8;
+    esg1.zPosition          = 4.5;
     
     SKAction *movimento = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
     SKAction *repeat    = [ SKAction repeatActionForever: movimento ];
@@ -125,7 +125,7 @@
     
     SKSpriteNode *esg2 = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
     esg2.position      = CGPointMake( CGRectGetMidX( self.frame ), 160 );
-    esg2.zPosition     = 0.8;
+    esg2.zPosition     = 4.5;
     
     SKAction *movimento2 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
     SKAction *repeat2    = [ SKAction repeatActionForever: movimento2 ];
@@ -134,7 +134,7 @@
     
     SKSpriteNode *esg3   = [SKSpriteNode spriteNodeWithTexture: esgoto1];
     esg3.position        = CGPointMake( 890, 160 );
-    esg3.zPosition       = 0.8;
+    esg3.zPosition       = 4.5;
     
     SKAction *movimento3 = [SKAction animateWithTextures: texturesEsgoto timePerFrame: .35];
     SKAction *repeat3    = [SKAction repeatActionForever: movimento3];
@@ -220,7 +220,6 @@
 }
 
 //--------------------------------------------------------------
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     touch    = [touches anyObject];
@@ -229,7 +228,7 @@
     //NSLog(@"Toquei em %@", node.name);
     
     //pegar objeto
-    if(paused == YES){
+    if(paused == NO){
         if ( [node isKindOfClass: [RWBasicObject class]] ){
             NSLog( @"pegou objeto!" );
             RWBasicObject *obj = (RWBasicObject *)node;
@@ -243,7 +242,7 @@
     //ao clicar no botão irá alterar a imagem (Botão de pause/play)
     if ( [node.name isEqualToString:@"botaoPause"] ) {
         NSLog(@"botão pause pressionado");
-        if(paused == YES){
+        if(paused == NO){
             [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot3.png"]];
             buttonPause.zPosition = 2;
             
@@ -262,7 +261,6 @@
 }
 
 //--------------------------------------------------------------
-
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     RWBasicObject *obj = ( RWBasicObject* )node;
@@ -270,7 +268,7 @@
     touchFinger = [ touches anyObject ];
     locObj = [ touch locationInNode: self];
 
-    if(paused == YES){
+    if(paused == NO){
         if ( [node isKindOfClass: [RWBasicObject class]] && !obj.inWater ){
             obj.position = locObj;
         }
@@ -278,7 +276,6 @@
 }
 
 //--------------------------------------------------------------
-
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
     RWBasicObject *obj = (RWBasicObject *)node;
@@ -307,16 +304,16 @@
     
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
-        if(paused == YES){
+        if(paused == NO){
             [ self.scene.physicsWorld setSpeed: 0.0 ];
             self.paused = YES;
-            paused = NO;
+            paused = YES;
             buttonPause.zPosition = 2;
         }
         else{
             self.paused = NO;
             [ self.scene.physicsWorld setSpeed: simulationSpeed ];
-            paused = YES;
+            paused = NO;
             [buttonPause setTexture:[SKTexture textureWithImageNamed:@"bot4.png"]];
             buttonPause.zPosition = 2;
         }
@@ -354,13 +351,16 @@
 
 -(void)willMoveFromView:(SKView *)view {
     gameOVer = 0;
-    pontos = 0;
-    cont = 0;
+    pontos   = 0;
+    cont     = 0;
 }
 
 //----------------------------------------------------------------------------------------
 
 -(void)update:(NSTimeInterval)currentTime {
+    
+    if ( paused == YES )
+        return;
     
     [self.waterController waterSimulation: self ];
     [self.waterController infiniteScrollingWater: self ];

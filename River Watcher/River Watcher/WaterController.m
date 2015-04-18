@@ -29,7 +29,7 @@
 //----------------------------------------------------------------------------------------------
 -(void)increaseWaterPollution {
     SKColor *pollutedColor = [ SKColor brownColor ];
-    self.waterPolutionLevel += 0.2;
+    self.waterPolutionLevel += 0.3;
 
     SKAction *changeColor = [SKAction sequence:@[[ SKAction colorizeWithColor: pollutedColor
                                                              colorBlendFactor: self.waterPolutionLevel

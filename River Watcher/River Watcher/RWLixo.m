@@ -18,7 +18,7 @@
         self.objTexture = [ SKTexture textureWithImageNamed: name ];
 
         [ self setScale: 0.3 ];
-        self.zPosition = 5.5;
+        self.zPosition = 22.0;
         
         self.name = name;
         self.physicsBody = [ SKPhysicsBody bodyWithTexture: self.objTexture size: self.size ];
@@ -27,6 +27,7 @@
         self.physicsBody.linearDamping     = 1.0;
         self.physicsBody.angularDamping    = 1.0;
         self.physicsBody.restitution       = 0.01;
+        self.physicsBody.usesPreciseCollisionDetection = YES;
 //        NSLog(@"OBJ: %@    MASS: %f", self.name, self.physicsBody.mass);
     }
     

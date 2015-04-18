@@ -18,7 +18,7 @@
         [ self setScale: 0.5 ];
         
         self.physicsBody.dynamic = NO;
-        self.zPosition = 6.0;
+        self.zPosition = 23.0;
         self.alpha     = 0.7;
         self.name      = @"water";
     }

@@ -25,6 +25,7 @@
         self.physicsBody = [ SKPhysicsBody bodyWithTexture: self.objTexture size: self.size ];
         self.physicsBody.dynamic           = NO;
         self.physicsBody.affectedByGravity = NO;
+        self.physicsBody.usesPreciseCollisionDetection = YES;
         
         self.atirouObjeto = FALSE;
     }

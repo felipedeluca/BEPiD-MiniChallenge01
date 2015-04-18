@@ -61,6 +61,7 @@
 }
 //----------------------------------------------------------------------------------------
 -(void)animateCars:(SKScene *)scene {
+    
     [ self.objController destroyObjectsOffScreen: scene ];
     for ( RWAutomobile *car in self.arrayCars ){
         //NSLog(@"Animating car: %@", car);
@@ -69,10 +70,14 @@
         if ( self.difficultRatio < 8 )
             maxDiffRatio = self.difficultRatio;
 
-        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 900 ]; // intervalo de espaço onde é permitido arremessar os objetos
-        CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 +(maxDiffRatio * 10) ]; // intervalo de espaço onde é permitido arremessar os objetos
+        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 1000 ]; // intervalo de espaço onde é permitido arremessar os objetos
+        CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 +(maxDiffRatio * 15) ]; // intervalo de espaço onde é permitido arremessar os objetos
 
         int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
+        
+        if (car.position.x >= 0 && car.position.x <= scene.size.width && throwingChance == 3) {
+            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
+        }
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){

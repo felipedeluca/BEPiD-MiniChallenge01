@@ -28,24 +28,34 @@
 
 //----------------------------------------------------------------------------------------------
 -(void)increaseWaterPollution {
-    SKColor *pollutedColor = [ SKColor brownColor ];
-    self.waterPolutionLevel += 0.3;
-
-    SKAction *changeColor = [SKAction sequence:@[[ SKAction colorizeWithColor: pollutedColor
-                                                             colorBlendFactor: self.waterPolutionLevel
-                                                                     duration: 2.0 ],
-                                                 [ SKAction fadeAlphaBy: (self.waterPolutionLevel / 100.0) duration: 2.0 ]
-                                                 ]
-                             ];
-    self.waterTile1A.alpha += self.waterPolutionLevel / 10.0;
-    self.waterTile1B.alpha += self.waterPolutionLevel / 10.0;
-    self.waterTile2A.alpha += self.waterPolutionLevel / 100.0;
-    self.waterTile2B.alpha += self.waterPolutionLevel / 100.0;
+    self.waterPolutionLevel += 0.15;
+    NSLog(@"Pollution level: %f", self.waterPolutionLevel);
     
-    [ self.waterTile1A runAction: changeColor ];
-    [ self.waterTile1B runAction: changeColor ];
-    [ self.waterTile2A runAction: changeColor ];
-    [ self.waterTile2B runAction: changeColor ];
+//    CGFloat blendFactor = [self.waterTile1A colorBlendFactor];
+    
+//    CGFloat blendSteps = 0.2;
+    
+    SKAction *polluteWater = [ SKAction colorizeWithColorBlendFactor: self.waterPolutionLevel duration: 3.0 ];
+    
+    [ self.waterTile1A runAction: polluteWater ];
+    [ self.waterTile1B runAction: polluteWater ];
+    [ self.waterTile2A runAction: polluteWater ];
+    [ self.waterTile2B runAction: polluteWater ];
+
+    self.waterTile1A.alpha += 0.025;
+    self.waterTile1B.alpha += 0.025;
+    self.waterTile2A.alpha += 0.025;
+    self.waterTile2B.alpha += 0.025;
+
+//    int animationSteps = self.waterPolutionLevel - blendFactor; // Quantidade de iterações no looping
+//    
+//    for ( int i = 0; i <= animationSteps * 10 ; i++ ){
+//        self.waterTile1A.colorBlendFactor += blendSteps;
+//        self.waterTile1B.colorBlendFactor += blendSteps;
+//
+//        self.waterTile2A.colorBlendFactor += blendSteps;
+//        self.waterTile2B.colorBlendFactor += blendSteps;
+//    }
 }
 //----------------------------------------------------------------------------------------------
 -(void)criaAgua:(TelaJogo *)scene {
@@ -76,6 +86,13 @@
     
     self.waterPhys.position = CGPointMake( (scene.size.width / 2.0), + 20 + offset);
     self.waterPhys.alpha = 0.0;
+    
+    SKColor *pollutedColor = [ SKColor brownColor ];
+    
+    self.waterTile1A.color = pollutedColor;
+    self.waterTile1B.color = pollutedColor;
+    self.waterTile2A.color = pollutedColor;
+    self.waterTile2B.color = pollutedColor;
     
     [ scene addChild: self.waterPhys ];
     
@@ -146,25 +163,26 @@
                         [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
                         switch (cont) {
-                            case 0:
-                                [vidas [cont] removeFromParent];
-                                break;
                             case 1:
-                                [vidas [cont] removeFromParent];
+                                [vidas [cont-1] removeFromParent];
                                 break;
                             case 2:
-                                [vidas [cont] removeFromParent];
+                                [vidas [cont-1] removeFromParent];
                                 break;
                             case 3:
-                                [vidas [cont] removeFromParent];
+                                [vidas [cont-1] removeFromParent];
                                 break;
                             case 4:
-                                [vidas [cont] removeFromParent];
+                                [vidas [cont-1] removeFromParent];
+                                break;
+                            case 5:
+                                [vidas [cont-1] removeFromParent];
                                 break;
                             
                         }
-                        
-                        cont ++;
+                        livesFactor += 0.5;
+                        cont = livesFactor; // Perde uma vida a cada dois objetos na água
+                        //NSLog(@"CONT: %d", cont);
                         gameOVer = cont;
                     }
                 }

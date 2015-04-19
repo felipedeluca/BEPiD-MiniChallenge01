@@ -14,7 +14,9 @@
 #import "TelaFinal.h"
 
 @class TelaJogo;
+
 int gameOVer;
+CGFloat livesFactor;
 int cont;
 
 @interface WaterController : NSObject

@@ -11,10 +11,14 @@
 #import "RWAutomobile.h"
 #import "ObjectsController.h"
 #import "RWLixo.h"
+#import "Random.h"
+#import "Config.h"
 
 @interface AutomobileController : NSObject
 
 @property ( nonatomic, strong ) NSMutableArray *arrayCars;
+@property ( nonatomic ) CGFloat currentGameDifficult;// = 10;
+@property ( nonatomic ) CGFloat maxGameDifficult;//     = 100;
 @property ( nonatomic ) CGFloat difficultRatio;
 
 -(void)createNewCars:(SKScene *)scene amount:(int)n;

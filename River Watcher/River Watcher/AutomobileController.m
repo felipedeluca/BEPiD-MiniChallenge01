@@ -7,12 +7,12 @@
 //
 
 #import "AutomobileController.h"
-#import "Random.h"
 
 @interface AutomobileController()
 
 @property ( nonatomic ) ObjectsController *objController;
 @property ( nonatomic ) Random *rGenerator;
+@property ( nonatomic ) int fpsCounter;
 
 @end
 
@@ -21,16 +21,18 @@
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController = [ [ObjectsController alloc] init ];
-    self.rGenerator    = [ [Random alloc] init ];
-    self.arrayCars     = [ [NSMutableArray alloc] init ];
-    self.difficultRatio = 0.0;
+    self.objController    = [ [ObjectsController alloc] init ];
+    self.rGenerator       = [ [Random alloc] init ];
+    self.arrayCars        = [ [NSMutableArray alloc] init ];
+    self.fpsCounter       = 1;
+    self.currentGameDifficult = 30;
+    self.maxGameDifficult     = 100;
     return self;
 }
 //--------------------------------------------------------------
 -(void)createNewCars:(SKScene *)scene amount:(int)n {
     
-    CGFloat positionY = CGRectGetMidY(scene.frame) - 40;
+    CGFloat positionY = CGRectGetMidY(scene.frame) - 65;
 
     for ( int i = 0; i < n; i++ ){
         RWAutomobile *newCar = [ [RWAutomobile alloc] init ];
@@ -66,31 +68,45 @@
     for ( RWAutomobile *car in self.arrayCars ){
         //NSLog(@"Animating car: %@", car);
         
-        CGFloat maxDiffRatio = 8;
-        if ( self.difficultRatio < 8 )
-            maxDiffRatio = self.difficultRatio;
-
-        CGFloat intervaloMinPosX = [ self.rGenerator floatRand: 0 high: 1000 ]; // intervalo de espaço onde é permitido arremessar os objetos
-        CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 +(maxDiffRatio * 15) ]; // intervalo de espaço onde é permitido arremessar os objetos
-
-        int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
+        self.fpsCounter += 1;
+        if ( self.fpsCounter >= 21 )
+            self.fpsCounter = 1;
         
-        if (car.position.x >= 0 && car.position.x <= scene.size.width && throwingChance == 3) {
-            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
-        }
+        CGFloat willingToThrow      = ([ self.rGenerator floatRand: 0.0 high: 10000.0 ] / 10000); // Desejo de jogar o lixo
+        CGFloat throwingProbability = ( (self.currentGameDifficult - log10(self.currentGameDifficult)) / self.maxGameDifficult ) / 2; // Fator de impedimento: maior o número, mais chances de jogar
+        
+        CGFloat courageToThrow = (willingToThrow * throwingProbability) * (self.fpsCounter / 20); // Probabilidade por frame a cada 1/3 de segundo.
+        
+        CGFloat throwOportunity = ([ self.rGenerator floatRand: 0.0 high: 10000.0] / 10000.0 );
+        
+        CGFloat minOportunity   = throwOportunity - ( throwingProbability / self.maxGameDifficult );
+        CGFloat maxOportunity   = throwOportunity + ( throwingProbability / self.maxGameDifficult );
+        
+        BOOL throwObject = FALSE;
+
+        if ( (courageToThrow >= minOportunity) && (courageToThrow <= maxOportunity) )
+            throwObject = TRUE;
+        
+        
+//        if (car.position.x >= 0 && car.position.x <= scene.size.width && throwingChance == 1.0) {
+//            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
+//        }
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){
             // Intervalo de posição permitido
             
-            if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance >= (9 - maxDiffRatio) ){
+            if ( car.position.x >= 0.0 && car.position.x <= scene.size.width && throwObject && self.objController.objectsInTheAir <= self.objController.maxObjectsInTheAir ){
+//                self.objController.objectsInTheAir += 1;
+                
+                NSLog(@"--Arremessou! Chances: %.3f   DIFICULDADE: %.3f   MIN: %.3f  CORAGEM: %.3f   MAX: %.3f", throwingProbability * 100, self.currentGameDifficult, minOportunity, courageToThrow, maxOportunity );
+ 
                 int imgNumber = [ self.rGenerator floatRand: 1 high: 6 ];
-                NSLog(@"Arremessou! Chance de arremesso: %f", 9 - maxDiffRatio);
                 
                 NSString *imgName = [ NSString stringWithFormat: @"lixo%d", imgNumber ];
                 RWLixo   *lixo    = [ [RWLixo alloc] initWithImageNamed: imgName ];
                                 
-                CGFloat impulseForce = [ self.rGenerator floatRand: 130.0 high: 150.0 ];
+                CGFloat impulseForce = [ self.rGenerator floatRand: 145.0 high: 150.0 ];
                 
                 [ scene addChild: lixo ];
                 [ self.objController throwObject: scene object: lixo parent: car impulse: impulseForce ];
@@ -127,6 +143,7 @@
                                             ];
             [ car setXScale: imageFlip ];
             [ car runAction: movimentoAutomovel ];
+            
         }
     }
     

@@ -17,7 +17,7 @@
         self = [ RWLixo spriteNodeWithImageNamed: name ];
         self.objTexture = [ SKTexture textureWithImageNamed: name ];
 
-        [ self setScale: 0.3 ];
+        [ self setScale: 0.15 ];
         self.zPosition = 22.0;
         
         self.name = name;
@@ -28,7 +28,7 @@
         self.physicsBody.angularDamping    = 1.0;
         self.physicsBody.restitution       = 0.01;
         self.physicsBody.usesPreciseCollisionDetection = YES;
-//        NSLog(@"OBJ: %@    MASS: %f", self.name, self.physicsBody.mass);
+        //        NSLog(@"OBJ: %@    MASS: %f", self.name, self.physicsBody.mass);
     }
     
     return self;

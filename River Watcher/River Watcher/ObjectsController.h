@@ -14,8 +14,10 @@
 
 @interface ObjectsController : NSObject
 
+@property ( nonatomic ) int maxObjectsInTheAir;
+@property ( nonatomic ) int objectsInTheAir;
+
 -(void)throwObject:(SKScene *)scene object:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
 -(void)destroyObjectsOffScreen:(SKScene *)scene;
-
 
 @end

@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "Config.h"
+
 @interface TelaJogo : SKScene
 
 @property (nonatomic, getter = isPaused) BOOL pausarJogo;

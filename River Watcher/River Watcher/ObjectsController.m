@@ -7,8 +7,24 @@
 //
 
 #import "ObjectsController.h"
+#import "Random.h"
+
+@interface ObjectsController()
+
+@property ( nonatomic ) Random *rGenerator;
+
+@end
 
 @implementation ObjectsController
+//----------------------------------------------------------
+-(instancetype)init {
+
+    self.rGenerator = [ [Random alloc] init ];
+    self.maxObjectsInTheAir = 5;
+    self.objectsInTheAir    = 0;
+    
+    return self;
+}
 //----------------------------------------------------------
 -(void)destroyObjectsOffScreen:(SKScene *)scene {
     
@@ -24,22 +40,30 @@
 }
 //----------------------------------------------------------
 -(void)throwObject:(SKScene *)scene object:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {
-  //  NSLog( @" Throwing: %@", obj );    
-    obj.position = parentNode.position;
-    [ obj setPosition: CGPointMake( obj.position.x, obj.position.y + 90 ) ];
-    //obj.physicsBody.velocity = CGVectorMake(5, -30);//parentNode.physicsBody.velocity;
+  //  NSLog( @" Throwing: %@", obj );
+    [ obj setPosition: CGPointMake( parentNode.position.x, parentNode.position.y + 50 ) ];
+    obj.physicsBody.velocity = parentNode.physicsBody.velocity;
     
     CGFloat objThrowDirectionX = -1.00;
 
     if ( obj.position.x <= (scene.size.width / 2.00) )
         objThrowDirectionX = 1;
 
+    CGFloat massDivider = [ self.rGenerator floatRand: 0.8 high: 2.0 ];
     
-    CGFloat dx = throwImpulse * 500 * objThrowDirectionX * ( obj.physicsBody.mass / 1.00 );//cosf(parentNode.zRotation);
-    CGFloat dy = throwImpulse * 1000 * ( obj.physicsBody.mass / 1.00 );//sinf(parentNode.zRotation);
- //   NSLog(@"OBJ: %@   yImpulse: %f", obj.name, dy );
-    [ obj.physicsBody applyAngularImpulse: (dx / 1000000) * (-1) ];
+    obj.physicsBody.mass = [ self.rGenerator floatRand: 0.2 high: 4.0 ];
+    CGFloat dx = throwImpulse * 500 * objThrowDirectionX * ( obj.physicsBody.mass / 1.00 );
+    CGFloat dy = (throwImpulse * 1000 * ( obj.physicsBody.mass / massDivider )) - (obj.physicsBody.mass * 10);
+    
+    obj.physicsBody.angularDamping = 4.00 / obj.physicsBody.mass; // Menor a massa, mais o objeto gira no ar
+    
+//    NSLog(@"OBJ: %@   Body Mass: %f   Força: %f", obj.name, obj.physicsBody.mass, dy );
+    [ obj.physicsBody applyAngularImpulse: ((dx + (obj.physicsBody.mass * 10.0) ) / 100000000) * (-1) ];
     [ obj.physicsBody applyForce: CGVectorMake( dx, dy) ];
+
+    SKAction *scaleObject = [ SKAction scaleTo: 0.3 duration: dy / 100000 ];
+    [ obj runAction: scaleObject ];
+
 }
 //--------------------------------------------------------------
 @end

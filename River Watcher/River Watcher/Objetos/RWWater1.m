@@ -17,7 +17,7 @@
     if ( self == [super init]){
         self = [ RWWater1 spriteNodeWithImageNamed: @"agua1" ];
         self.name = @"water";
-        self.zPosition = 5.0;
+        self.zPosition = 22.0;
         [ self setScale: 0.5 ];
         
         self.physicsBody.dynamic = NO;

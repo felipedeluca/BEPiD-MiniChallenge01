@@ -22,9 +22,10 @@
         self.zPosition = 5.5;
         
         self.name = @"[Automovel]";
-        self.physicsBody = [ SKPhysicsBody bodyWithTexture: self.objTexture size: self.size ];
+        //self.physicsBody = [ SKPhysicsBody bodyWithTexture: self.objTexture size: self.size ];
         self.physicsBody.dynamic           = NO;
         self.physicsBody.affectedByGravity = NO;
+        self.physicsBody.pinned            = YES;
         self.physicsBody.usesPreciseCollisionDetection = YES;
         
         self.atirouObjeto = FALSE;

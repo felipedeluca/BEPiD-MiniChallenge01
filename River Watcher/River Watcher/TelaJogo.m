@@ -125,7 +125,7 @@
     
     //imagem do guardreio na tela do jogo.
     SKSpriteNode *guardreio = [ SKSpriteNode spriteNodeWithImageNamed: @"guardrail" ];
-    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 120 );
+    guardreio.position      = CGPointMake( (self.size.width / 2) + 1, 80 );
     guardreio.zPosition     = 4.0;
     [ guardreio setScale: 0.55 ];
     
@@ -136,31 +136,31 @@
     
     NSArray *texturesEsgoto = @[ esgoto1, esgoto2, esgoto3 ];
     SKSpriteNode *esg1      = [ SKSpriteNode spriteNodeWithTexture:esgoto1 ];
-    esg1.position           = CGPointMake( 90, 160 );
+    esg1.position           = CGPointMake( 90, guardreio.position.y + 30 );
     esg1.zPosition          = 4.5;
     
     SKAction *movimento = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
     SKAction *repeat    = [ SKAction repeatActionForever: movimento ];
     [ esg1 runAction: repeat ];
-    [ esg1 setScale: 0.5 ];
+   // [ esg1 setScale: 1.0 ];
     
     SKSpriteNode *esg2 = [ SKSpriteNode spriteNodeWithTexture: esgoto1 ];
-    esg2.position      = CGPointMake( CGRectGetMidX( self.frame ), 160 );
+    esg2.position      = CGPointMake( CGRectGetMidX( self.frame ), guardreio.position.y + 30 );
     esg2.zPosition     = 4.5;
     
     SKAction *movimento2 = [ SKAction animateWithTextures: texturesEsgoto timePerFrame: .35 ];
     SKAction *repeat2    = [ SKAction repeatActionForever: movimento2 ];
     [esg2 runAction: repeat2];
-    [esg2 setScale: 0.5];
+   // [esg2 setScale: 1.0];
     
     SKSpriteNode *esg3   = [SKSpriteNode spriteNodeWithTexture: esgoto1];
-    esg3.position        = CGPointMake( 890, 160 );
+    esg3.position        = CGPointMake( 890, guardreio.position.y + 30 );
     esg3.zPosition       = 4.5;
     
     SKAction *movimento3 = [SKAction animateWithTextures: texturesEsgoto timePerFrame: .35];
     SKAction *repeat3    = [SKAction repeatActionForever: movimento3];
     [esg3 runAction: repeat3];
-    [esg3 setScale: 0.5];
+  //  [esg3 setScale: 1.0];
     
     //caixa da pontuação e recorde.
     SKSpriteNode *recorde = [SKSpriteNode spriteNodeWithImageNamed:@"bot9"];
@@ -310,14 +310,19 @@
             
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
             pontos += 10;
-            self.autoController.difficultRatio = (pontos / 100.0);
+            if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
+                self.autoController.currentGameDifficult += 0.5;
+            
             self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
            
-            
         }
         else {
+            SKAction *scaleObj = [ SKAction scaleTo: 0.3 duration: 1.0 ]; // continua a aumentar de tamanho
+            [ obj runAction: scaleObj ];
+
             obj.physicsBody.affectedByGravity = YES;
             obj.physicsBody.dynamic           = YES;
+
         }
     NSLog( @"soltou objeto");
     }
@@ -367,7 +372,11 @@
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
         
         telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
+<<<<<<< HEAD
 
+=======
+        [ self.physicsWorld setSpeed: 0.0 ];
+>>>>>>> 43e25d94b53bb9d75d064559c45fed7e86818b89
         [ self.view presentScene: telaGameOver transition: transition ];
     }
 }
@@ -377,6 +386,7 @@
     gameOVer = 0;
     pontos   = 0;
     cont     = 0;
+    livesFactor = 0.0;
 }
 
 //----------------------------------------------------------------------------------------

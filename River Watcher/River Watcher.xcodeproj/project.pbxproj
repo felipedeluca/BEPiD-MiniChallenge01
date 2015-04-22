@@ -117,6 +117,7 @@
 		D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBasicObject.m; sourceTree = "<group>"; };
 		D6E8046D1ADF0CA00046BB85 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Random.h; path = "River Watcher/Random.h"; sourceTree = "<group>"; };
 		D6E8046E1ADF0CA00046BB85 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Random.m; path = "River Watcher/Random.m"; sourceTree = "<group>"; };
+		D6F981E21AE2E75D007A18F2 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		E238DBDE1AE19D6B003C78FC /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +153,7 @@
 			children = (
 				D66A67C41AD86B2700E5D886 /* AutomobileController.h */,
 				D66A67C51AD86B2700E5D886 /* AutomobileController.m */,
+				D6F981E21AE2E75D007A18F2 /* Config.h */,
 				D66A67C71AD87C9700E5D886 /* ObjectsController.h */,
 				D66A67C81AD87C9700E5D886 /* ObjectsController.m */,
 				D6CC05071AD89CD400240C70 /* WaterController.h */,

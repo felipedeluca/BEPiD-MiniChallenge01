@@ -109,6 +109,7 @@
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     audioPlayer.numberOfLoops = -1;
+    audioPlayer.volume = 0.5;
     
 //    if(audioPlayer == nil)
 //        NSLog([error description]);
@@ -252,12 +253,15 @@
     //pegar objeto
     if(paused == NO){
         if ( [node isKindOfClass: [RWBasicObject class]] ){
-            NSLog( @"pegou objeto!" );
             RWBasicObject *obj = (RWBasicObject *)node;
-            [obj removeAllActions];
-            obj.physicsBody.dynamic           = NO;
-            obj.physicsBody.affectedByGravity = NO;
-            [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+            if ( !obj.inWater ){
+                NSLog( @"pegou objeto!" );
+                
+                [obj removeAllActions];
+                obj.physicsBody.dynamic           = NO;
+                obj.physicsBody.affectedByGravity = NO;
+                [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+            }
         }
     }
 
@@ -370,9 +374,10 @@
 }
 //----------------------------------------------------------------------------------------
 -(void)Placar{
-    if(gameOVer == 5){
+    if(gameOVer == 10){
         SKScene *telaGameOver     = [[TelaFinal alloc] initWithSize:self.size ];
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
+        self.objController.numObjectsFlying = 0;
         
         telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
         [ self.physicsWorld setSpeed: 0.0 ];

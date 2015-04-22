@@ -173,25 +173,40 @@
                         [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
                         switch (cont) {
+                            case 0:
+                                [vidas[cont] setTexture:[SKTexture textureWithImageNamed:@"bot11.png"]];
+                                break;
                             case 1:
-                                [vidas [cont-1] removeFromParent];
+                                [vidas[cont-1] removeFromParent];
                                 break;
                             case 2:
-                                [vidas [cont-1] removeFromParent];
+                                [vidas[cont-1] setTexture:[SKTexture textureWithImageNamed:@"bot11.png"]];
                                 break;
                             case 3:
-                                [vidas [cont-1] removeFromParent];
+                                [vidas [cont-2] removeFromParent];
                                 break;
                             case 4:
-                                [vidas [cont-1] removeFromParent];
+                                 [vidas[cont-2] setTexture:[SKTexture textureWithImageNamed:@"bot11.png"]];
                                 break;
                             case 5:
-                                [vidas [cont-1] removeFromParent];
+                                [vidas [cont-3] removeFromParent];
+                                break;
+                            case 6:
+                                [vidas[cont-3] setTexture:[SKTexture textureWithImageNamed:@"bot11.png"]];
+                                break;
+                            case 7:
+                                [vidas [cont-4] removeFromParent];
+                                break;
+                            case 8:
+                                [vidas[cont-4] setTexture:[SKTexture textureWithImageNamed:@"bot11.png"]];
+                                break;
+                            case 9:
+                                [vidas [cont-5] removeFromParent];
                                 break;
                             
                         }
-                        livesFactor += 0.5;
-                        cont = livesFactor; // Perde uma vida a cada dois objetos na água
+                        //livesFactor += 0.5;
+                        cont++; // Perde uma vida a cada dois objetos na água
                         //NSLog(@"CONT: %d", cont);
                         gameOVer = cont;
                     }

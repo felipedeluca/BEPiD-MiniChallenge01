@@ -88,20 +88,27 @@
         if ( (courageToThrow >= minOportunity) && (courageToThrow <= maxOportunity) )
             throwObject = TRUE;
         
-        if ( willPlayHorn == 20 && !car.didPlayHorn && car.position.x >= 0.0 && car.position.x <= scene.size.width){
+        if ( willPlayHorn == 20 && !car.didPlayAnySound && car.position.x >= 0.0 && car.position.x <= scene.size.width){
             NSLog(@"Will play horn: %d", willPlayHorn);
-            car.didPlayHorn = YES;
+            car.didPlayAnySound = YES;
             [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
+        }
+        else if ( ((int)willPlayHorn % 50 == 0) && !car.didPlayAnySound && car.position.x >= 0.0 && car.position.x <= scene.size.width){
+            NSLog(@"Will play horn: %d", willPlayHorn);
+            car.didPlayAnySound = YES;
+            [car runAction:[SKAction playSoundFileNamed:@"Car Passing.wav" waitForCompletion:YES]];
         }
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){
             // Intervalo de posição permitido
-            if ( car.position.x >= 0.0 && car.position.x <= scene.size.width && throwObject && self.objController.numObjectsFlying <= self.objController.maxObjectsFlying ){
-                self.objController.numObjectsFlying += 1;
+            if ( car.position.x >= 0.0 && car.position.x <= scene.size.width && throwObject && self.objController.numObjectsFlying < self.objController.maxObjectsFlying ){
                 
                 NSLog(@"--Arremessou! Chances: %.3f   DIFICULDADE: %.3f   MIN: %.3f  CORAGEM: %.3f   MAX: %.3f", throwingProbability * 100, self.currentGameDifficult, minOportunity, courageToThrow, maxOportunity );
                 NSLog( @"Flying Objects: %d", self.objController.numObjectsFlying );
+                self.objController.numObjectsFlying += 1;
+
+                [car runAction:[SKAction playSoundFileNamed:@"throw object.wav" waitForCompletion:YES]];
 
                 int imgNumber = [ self.rGenerator floatRand: 1 high: 6 ];
                 
@@ -128,14 +135,14 @@
             if ( car.position.x < 0 ){
                 startPosition = leftToRightStartX - car.positionOffset;
                 endPosition   = rightToLeftStartX + car.positionOffset;
-                car.didPlayHorn = NO;
+                car.didPlayAnySound = NO;
             
             }
             else if ( car.position.x >= 0 ){
                 startPosition = rightToLeftStartX + car.positionOffset;
                 endPosition   = leftToRightStartX - car.positionOffset;
                 imageFlip     = -1.0;
-                car.didPlayHorn = NO;
+                car.didPlayAnySound = NO;
             }
         
             SKAction *movimentoAutomovel = [SKAction sequence:@[

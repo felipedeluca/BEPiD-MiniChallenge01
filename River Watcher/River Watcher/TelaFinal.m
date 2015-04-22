@@ -48,7 +48,7 @@
     areiaFinal.zPosition = 2.0;
     
     //imagem pneu da tela perdeu
-    SKSpriteNode *pneu = [SKSpriteNode spriteNodeWithImageNamed:@"lixo5.png"];
+    SKSpriteNode *pneu = [SKSpriteNode spriteNodeWithImageNamed:@"lixo4.png"];
     pneu.position = CGPointMake((self.size.width/2)+90, 80);
     [pneu setScale:0.5];
     

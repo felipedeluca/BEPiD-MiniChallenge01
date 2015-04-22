@@ -16,5 +16,6 @@
 @property ( nonatomic ) BOOL isInTheAir;
 //@property ( nonatomic ) SKSpriteNode * img;
 @property ( nonatomic ) SKTexture * objTexture;
+@property ( nonatomic ) int scoreValue;
 
 @end

@@ -119,7 +119,9 @@
                 
                 [ scene addChild: lixo ];
                 [ self.objController throwObject: scene object: lixo parent: car impulse: impulseForce ];
+                
                 car.atirouObjeto = TRUE;
+                lixo.scoreValue = 50 / imgNumber;
             }
         }
         else {

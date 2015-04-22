@@ -51,7 +51,6 @@
             }
         }
     }
-    
 }
 //----------------------------------------------------------
 -(void)throwObject:(SKScene *)scene object:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse {

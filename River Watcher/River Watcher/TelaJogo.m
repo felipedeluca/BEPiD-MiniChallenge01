@@ -316,7 +316,7 @@
             self.objController.numObjectsFlying -= 1;
             
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
-            pontos += 10;
+            pontos += obj.scoreValue;
             if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
                 self.autoController.currentGameDifficult += 0.5;
             

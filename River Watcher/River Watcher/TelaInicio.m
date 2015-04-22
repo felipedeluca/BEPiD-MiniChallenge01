@@ -8,6 +8,14 @@
 
 #import "TelaInicio.h"
 #import "TelaJogo.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface TelaInicio ()
+{
+    AVAudioPlayer *audioPlayer;
+}
+
+@end
 
 @implementation TelaInicio
 //--------------------------------------------------------------------
@@ -43,9 +51,17 @@
 //--------------------------------------------------------------------
 -(void)ativaTela{
     
-    //[self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Enjoy The Life - TI.wav", [[NSBundle mainBundle] resourcePath]]];
     
-     [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - TI.wav" waitForCompletion:YES]]withKey: @"music"];
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = -1;
+    
+//    if(audioPlayer == nil)
+//        NSLog([error description]);
+//    else
+    [audioPlayer play];
+    
     
     self.view.multipleTouchEnabled = NO;
     

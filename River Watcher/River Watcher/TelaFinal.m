@@ -9,9 +9,31 @@
 #import "TelaFinal.h"
 #import "TelaJogo.h"
 #import "WaterController.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface TelaFinal ()
+{
+    AVAudioPlayer *audioPlayer;
+}
+
+@end
 @implementation TelaFinal
 
 -(void)didMoveToView:(SKView *)view {
+    
+    //play song
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Smalltalk - End.wav", [[NSBundle mainBundle] resourcePath]]];
+    
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = -1;
+//    
+//    if(audioPlayer == nil)
+//        NSLog([error description]);
+//    else
+    [audioPlayer play];
+    
+    
     /* Setup your scene here */
     //imagem de fundo da tela perdeu.
     SKSpriteNode *telaPerdeu = [SKSpriteNode spriteNodeWithImageNamed:@"tela3.png"];

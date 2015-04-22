@@ -74,16 +74,19 @@
         CGFloat intervaloMaxPosX = [ self.rGenerator floatRand: intervaloMinPosX + 10 high: intervaloMinPosX + 100 +(maxDiffRatio * 15) ]; // intervalo de espaço onde é permitido arremessar os objetos
 
         int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
-        
-        if (car.position.x >= 0 && car.position.x <= scene.size.width && throwingChance == 3) {
-            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
-        }
+//        
+//        if (car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance >= (9 - maxDiffRatio)) {
+//            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
+//        }
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){
             // Intervalo de posição permitido
             
             if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance >= (9 - maxDiffRatio) ){
+                
+                [car runAction:[SKAction playSoundFileNamed:@"throw object.wav" waitForCompletion:YES]];
+                
                 int imgNumber = [ self.rGenerator floatRand: 1 high: 6 ];
                 NSLog(@"Arremessou! Chance de arremesso: %f", 9 - maxDiffRatio);
                 

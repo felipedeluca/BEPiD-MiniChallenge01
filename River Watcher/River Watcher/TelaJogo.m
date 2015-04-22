@@ -15,6 +15,14 @@
 #import "WaterController.h"
 #import "TrashCanController.h"
 #import "RWBasicObject.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface TelaJogo ()
+{
+    AVAudioPlayer *audioPlayer;
+}
+
+@end
 
 // Configuração da água
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
@@ -94,7 +102,20 @@
     paused = NO;
     audioPaused = YES;
    
-    [self runAction: [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"Enjoy The Life - In Game.wav" waitForCompletion:YES]]];
+    //play song
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Enjoy The Life - In Game.wav", [[NSBundle mainBundle] resourcePath]]];
+    
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = -1;
+    
+//    if(audioPlayer == nil)
+//        NSLog([error description]);
+//    else
+    
+    [audioPlayer play];
+    
+    
     
     //imagem de fundo da tela do jogo.
     SKSpriteNode *telaInicial = [ SKSpriteNode spriteNodeWithImageNamed: @"telajogo" ];
@@ -280,7 +301,6 @@
     
     RWBasicObject *obj = (RWBasicObject *)node;
     
- //   if (node.name != nil && [node.name isEqualToString:@"garrafaVidro"]) {
       if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] ) {
     
         
@@ -326,13 +346,17 @@
             //self.paused = YES;
             audioPaused = NO;
             buttonAudio.zPosition = 2;
+            
+            [audioPlayer play];
         }
         else{
             
             //self.paused = NO;
             audioPaused = YES;
             [buttonAudio setTexture:[SKTexture textureWithImageNamed:@"bot2.png"]];
-            buttonAudio.zPosition = 2;            
+            buttonAudio.zPosition = 2;
+            
+            [audioPlayer stop];
         }
     }
 }
@@ -343,7 +367,7 @@
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
         
         telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
-        //telaJogo.physicsWorld. = 1.0;
+
         [ self.view presentScene: telaGameOver transition: transition ];
     }
 }

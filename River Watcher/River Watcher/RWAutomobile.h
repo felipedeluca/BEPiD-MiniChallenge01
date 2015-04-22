@@ -14,6 +14,7 @@
 
 //@property ( nonatomic ) SKSpriteNode * img;
 @property ( nonatomic ) BOOL atirouObjeto;
+@property ( nonatomic ) BOOL didPlayHorn;
 @property ( nonatomic ) CGFloat positionOffset;
 @property ( nonatomic ) SKTexture * objTexture;
 @property ( nonatomic ) CGFloat animDuration; // Duração do movimento do carro para ir de um ponto a outro

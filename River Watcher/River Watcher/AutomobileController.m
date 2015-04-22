@@ -73,6 +73,7 @@
             self.fpsCounter = 1;
         
         CGFloat willingToThrow      = ([ self.rGenerator floatRand: 0.0 high: 10000.0 ] / 10000); // Desejo de jogar o lixo
+        int willPlayHorn            = [ self.rGenerator floatRand: 0 high: 200 ]; // Vai tocar a busina
         CGFloat throwingProbability = ( (self.currentGameDifficult - log10(self.currentGameDifficult)) / self.maxGameDifficult ) / 2; // Fator de impedimento: maior o número, mais chances de jogar
         
         CGFloat courageToThrow = (willingToThrow * throwingProbability) * (self.fpsCounter / 20); // Probabilidade por frame a cada 1/3 de segundo.
@@ -86,6 +87,12 @@
 
         if ( (courageToThrow >= minOportunity) && (courageToThrow <= maxOportunity) )
             throwObject = TRUE;
+        
+        if ( willPlayHorn == 20 && !car.didPlayHorn && car.position.x >= 0.0 && car.position.x <= scene.size.width){
+            NSLog(@"Will play horn: %d", willPlayHorn);
+            car.didPlayHorn = YES;
+            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
+        }
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){
@@ -121,13 +128,14 @@
             if ( car.position.x < 0 ){
                 startPosition = leftToRightStartX - car.positionOffset;
                 endPosition   = rightToLeftStartX + car.positionOffset;
-                //imageFlip     = 1.0;
+                car.didPlayHorn = NO;
             
             }
             else if ( car.position.x >= 0 ){
                 startPosition = rightToLeftStartX + car.positionOffset;
                 endPosition   = leftToRightStartX - car.positionOffset;
                 imageFlip     = -1.0;
+                car.didPlayHorn = NO;
             }
         
             SKAction *movimentoAutomovel = [SKAction sequence:@[

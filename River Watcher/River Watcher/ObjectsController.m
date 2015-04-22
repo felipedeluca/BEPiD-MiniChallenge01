@@ -17,11 +17,26 @@
 
 @implementation ObjectsController
 //----------------------------------------------------------
++(instancetype) InitObjController {
+    static ObjectsController *objController;
+    
+    if ( !objController ){
+        objController = [ [self alloc] initPrivate ];
+    }
+    
+    return objController;
+}
+//----------------------------------------------------------
 -(instancetype)init {
-
+    return nil;
+}
+//----------------------------------------------------------
+-(instancetype)initPrivate {
+    
+    self = [ super init ];
     self.rGenerator = [ [Random alloc] init ];
-    self.maxObjectsInTheAir = 5;
-    self.objectsInTheAir    = 0;
+    self.maxObjectsFlying = 4;
+    self.numObjectsFlying = 0;
     
     return self;
 }

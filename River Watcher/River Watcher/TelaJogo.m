@@ -82,6 +82,7 @@
     [ self criaCenario ];
     NSLog(@"****starting createNewCars...");
     [ self.autoController createNewCars: self amount: 6 ];
+    self.objController = [ ObjectsController InitObjController ];
 
 }
 //--------------------------------------------------------------
@@ -119,7 +120,7 @@
     
     //imagem de fundo da tela do jogo.
     SKSpriteNode *telaInicial = [ SKSpriteNode spriteNodeWithImageNamed: @"telajogo" ];
-    telaInicial.position      = CGPointMake( self.size.width / 2, self.size.height / 2 );
+    telaInicial.position      = CGPointMake( self.size.width / 2, (self.size.height / 2) + 60 );
     //    telaInicial.zPosition     = 1.0;
     [ telaInicial setScale: 0.50 ];
     
@@ -308,6 +309,8 @@
             
             [obj removeFromParent];
             
+            self.objController.numObjectsFlying -= 1;
+            
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
             pontos += 10;
             if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
@@ -365,32 +368,25 @@
         }
     }
 }
-
+//----------------------------------------------------------------------------------------
 -(void)Placar{
     if(gameOVer == 5){
         SKScene *telaGameOver     = [[TelaFinal alloc] initWithSize:self.size ];
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
         
         telaGameOver.scaleMode = SKSceneScaleModeAspectFit;
-<<<<<<< HEAD
-
-=======
         [ self.physicsWorld setSpeed: 0.0 ];
->>>>>>> 43e25d94b53bb9d75d064559c45fed7e86818b89
         [ self.view presentScene: telaGameOver transition: transition ];
     }
 }
-
-
+//----------------------------------------------------------------------------------------
 -(void)willMoveFromView:(SKView *)view {
     gameOVer = 0;
     pontos   = 0;
     cont     = 0;
     livesFactor = 0.0;
 }
-
 //----------------------------------------------------------------------------------------
-
 -(void)update:(NSTimeInterval)currentTime {
     
     if ( paused == YES )
@@ -402,7 +398,6 @@
     [self Placar];
 
 }
-
 //--------------------------------------------------------------
 @end
 

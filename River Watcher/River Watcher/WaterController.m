@@ -7,6 +7,7 @@
 //
 
 #import "WaterController.h"
+#import "ObjectsController.h"
 
 // Configuração da água
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
@@ -21,11 +22,19 @@
 @property ( nonatomic, strong ) WLWater2 *waterTile2A; // p/ scrolling infinito da água
 @property ( nonatomic, strong ) WLWater2 *waterTile2B; // p/ scrolling infinito da água
 @property ( nonatomic ) CGFloat waterPolutionLevel; //
+@property ( nonatomic ) ObjectsController *objController;
 
 @end
 
 @implementation WaterController
 
+//----------------------------------------------------------------------------------------------
+-(instancetype)init {
+    
+    self.objController = [ ObjectsController InitObjController ];
+    
+    return self;
+}
 //----------------------------------------------------------------------------------------------
 -(void)increaseWaterPollution {
     self.waterPolutionLevel += 0.15;
@@ -155,6 +164,7 @@
             if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
                 if ( [n isKindOfClass: [RWBasicObject class] ] ){
                     if ( !n.inWater ){
+                        self.objController.numObjectsFlying -= 1;
                        // NSLog(@"OBJ POS:%@", [n class] );
                         n.inWater = YES;
                         [ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];

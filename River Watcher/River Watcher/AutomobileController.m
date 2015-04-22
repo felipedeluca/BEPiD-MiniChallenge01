@@ -21,11 +21,11 @@
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController    = [ [ObjectsController alloc] init ];
+    self.objController    = [ ObjectsController InitObjController ];
     self.rGenerator       = [ [Random alloc] init ];
     self.arrayCars        = [ [NSMutableArray alloc] init ];
     self.fpsCounter       = 1;
-    self.currentGameDifficult = 30;
+    self.currentGameDifficult = 60;
     self.maxGameDifficult     = 100;
     return self;
 }
@@ -84,36 +84,18 @@
         
         BOOL throwObject = FALSE;
 
-<<<<<<< HEAD
-        int throwingChance = [ self.rGenerator floatRand: 0 high: 10 ];
-//        
-//        if (car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance >= (9 - maxDiffRatio)) {
-=======
         if ( (courageToThrow >= minOportunity) && (courageToThrow <= maxOportunity) )
             throwObject = TRUE;
-        
-        
-//        if (car.position.x >= 0 && car.position.x <= scene.size.width && throwingChance == 1.0) {
->>>>>>> 43e25d94b53bb9d75d064559c45fed7e86818b89
-//            [car runAction:[SKAction playSoundFileNamed:@"CarHorn.wav" waitForCompletion:YES]];
-//        }
         
         // atira objetos se o automóvel estiver em movimento
         if ( [car hasActions] ){
             // Intervalo de posição permitido
-            
-<<<<<<< HEAD
-            if ( car.position.x >= intervaloMinPosX && car.position.x <= intervaloMaxPosX && car.atirouObjeto == FALSE && throwingChance >= (9 - maxDiffRatio) ){
-                
-                [car runAction:[SKAction playSoundFileNamed:@"throw object.wav" waitForCompletion:YES]];
-                
-=======
-            if ( car.position.x >= 0.0 && car.position.x <= scene.size.width && throwObject && self.objController.objectsInTheAir <= self.objController.maxObjectsInTheAir ){
-//                self.objController.objectsInTheAir += 1;
+            if ( car.position.x >= 0.0 && car.position.x <= scene.size.width && throwObject && self.objController.numObjectsFlying <= self.objController.maxObjectsFlying ){
+                self.objController.numObjectsFlying += 1;
                 
                 NSLog(@"--Arremessou! Chances: %.3f   DIFICULDADE: %.3f   MIN: %.3f  CORAGEM: %.3f   MAX: %.3f", throwingProbability * 100, self.currentGameDifficult, minOportunity, courageToThrow, maxOportunity );
- 
->>>>>>> 43e25d94b53bb9d75d064559c45fed7e86818b89
+                NSLog( @"Flying Objects: %d", self.objController.numObjectsFlying );
+
                 int imgNumber = [ self.rGenerator floatRand: 1 high: 6 ];
                 
                 NSString *imgName = [ NSString stringWithFormat: @"lixo%d", imgNumber ];

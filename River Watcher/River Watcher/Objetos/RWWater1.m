@@ -21,7 +21,7 @@
         [ self setScale: 0.5 ];
         
         self.physicsBody.dynamic = NO;
-        self.alpha = 0.7;
+        self.alpha = 1.0;
     }
     return self;
 }

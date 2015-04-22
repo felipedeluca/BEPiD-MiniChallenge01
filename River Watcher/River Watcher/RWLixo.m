@@ -28,6 +28,8 @@
         self.physicsBody.angularDamping    = 1.0;
         self.physicsBody.restitution       = 0.01;
         self.physicsBody.usesPreciseCollisionDetection = YES;
+        
+        self.isInTheAir = YES;
         //        NSLog(@"OBJ: %@    MASS: %f", self.name, self.physicsBody.mass);
     }
     

@@ -298,6 +298,18 @@
                                         CGRectGetMidY(self.frame)-25);
     botaoRanking.name = @"botaoRanking";
     
+    
+    SKLabelNode *textoFinal;
+    
+    textoFinal = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
+    textoFinal.text      = [NSString stringWithFormat:@"Recorde:%li", highScore];
+    textoFinal.fontColor = [SKColor redColor];
+    [textoFinal setFontSize:10];
+    textoFinal.position  = CGPointMake(CGRectGetMidX(self.frame), 695);
+    textoFinal.zPosition = 2;
+    
+
+    
     //adicionando na tela
     [self addChild:telaPerdeu];
     [self addChild:pneu];
@@ -314,6 +326,7 @@
     [self addChild:self.texto3];
     [self addChild:botaoVoltarProJogo];
     [self addChild:botaoRanking];
+    [self addChild:textoFinal];
 }
 
 

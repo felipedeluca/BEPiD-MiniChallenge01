@@ -111,8 +111,8 @@
     //logo da tela
     SKSpriteNode *logo = [SKSpriteNode spriteNodeWithImageNamed:@"logo2.png"];
     logo.position = CGPointMake(CGRectGetMidX(self.frame),
-                                CGRectGetMidY(self.frame)+220);
-    [logo setScale:0.3];
+                                CGRectGetMidY(self.frame)+155);
+    [logo setScale:0.45];
     logo.zPosition = 2.0;
     
     //animação do peixe dourado da tela inicial
@@ -181,10 +181,10 @@
     
     //botao jogar
     SKSpriteNode *botaoJogar = [SKSpriteNode spriteNodeWithImageNamed:@"jogar.png"];
-    [botaoJogar setScale:0.5];
+    [botaoJogar setScale:0.4];
     
     botaoJogar.position = CGPointMake(CGRectGetMidX(self.frame),
-                                      CGRectGetMidY(self.frame)-35);
+                                      CGRectGetMidY(self.frame)-100);
     botaoJogar.name = @"botaoJogar";
     
 //    //botao ranking

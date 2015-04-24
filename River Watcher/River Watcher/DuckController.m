@@ -33,17 +33,17 @@
 -(void)duckOnWater:(RWDuck *)duck {
     NSLog(@"##### Pato na água!!!");
     
-    [duck removeAllActions];
     duck.physicsBody.dynamic            = NO;
     duck.physicsBody.affectedByGravity  = NO;
-    duck.physicsBody.collisionBitMask   = waterContactCategory;
+    duck.physicsBody.collisionBitMask   = 0;
     duck.physicsBody.contactTestBitMask = 0;
-  //  duck.physicsBody = nil;
+    duck.physicsBody = nil;
     duck.rescued     = NO;
     duck.isMoving    = NO;
     duck.isFalling   = NO;
     duck.alreadyFloating = YES;
     
+    [duck removeAllActions];
     SKAction *rotateAction = [ SKAction rotateToAngle: 0.0 duration: 0 ];
     [ duck runAction: rotateAction ];
     

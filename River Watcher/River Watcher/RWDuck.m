@@ -40,7 +40,7 @@
         SKTexture *swimmingFrame1 = [ SKTexture textureWithImageNamed: @"pato" ];
         self.swimmingAnimation = [ [NSArray alloc] initWithObjects: swimmingFrame1, nil ];
 
-        [ self setScale: 0.08 ];
+        [ self setScale: 0.09 ];
         self.zPosition = 22.0;
         self.isMoving  = NO;
         

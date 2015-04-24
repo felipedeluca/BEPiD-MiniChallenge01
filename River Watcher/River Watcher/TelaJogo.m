@@ -255,8 +255,6 @@
 //--------------------------------------------------------------
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-
     touch    = [touches anyObject];
     location = [touch locationInNode: self];
     node     = [self nodeAtPoint: location];

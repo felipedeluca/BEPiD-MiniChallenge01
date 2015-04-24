@@ -13,6 +13,7 @@
 #import "RWLixo.h"
 #import "RWDuck.h"
 #import "RWPoow.h"
+#import "RWHeart.h"
 
 static const uint32_t garbageContactCategory =  0x1 << 0;
 static const uint32_t waterContactCategory   =  0x1 << 1;
@@ -25,6 +26,7 @@ static const uint32_t duckContactCategory    =  0x1 << 2;
 
 -(void)throwObject:(SKScene *)scene object:(RWBasicObject *)obj parent:(RWAutomobile *)parentNode impulse:(CGFloat)throwImpulse;
 -(void)destroyObjectsOffScreen:(SKScene *)scene;
+-(void)animateHeart:(SKScene *)scene object:(RWBasicObject *)obj;
 -(void)animatePoow:(SKScene *)scene object:(RWBasicObject *)obj;
 
 +(instancetype)InitObjController;

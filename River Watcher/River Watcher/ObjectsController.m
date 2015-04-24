@@ -80,6 +80,15 @@
 
 }
 //--------------------------------------------------------------
+-(void)animateHeart:(SKScene *)scene object:(RWBasicObject *)obj {
+    
+    RWHeart *newHeart = [ [RWHeart alloc] init ];
+    [ newHeart setPosition: CGPointMake( obj.position.x , obj.position.y + 10.0) ];
+    [ scene addChild: newHeart ];
+    [ newHeart animateHeart ];
+    
+}
+//--------------------------------------------------------------
 -(void)animatePoow:(SKScene *)scene object:(RWBasicObject *)obj {
     
     RWPoow *newPoow = [ [RWPoow alloc] init ];

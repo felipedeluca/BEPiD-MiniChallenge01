@@ -55,6 +55,7 @@
 -(void)rescueTheDuck:(RWDuck *)duck {
 
     NSLog(@"##### Salvou o pato!!");
+    [ self.objController animateHeart: self.parentScene object: duck ];
     [duck removeAllActions];
     [duck runAction: [SKAction playSoundFileNamed:@"duck hit.wav" waitForCompletion:YES]];
     duck.physicsBody.dynamic           = NO;

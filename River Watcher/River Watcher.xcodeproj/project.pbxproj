@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06F0C26C1AE0650F00E54D44 /* TelaFinal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0C26B1AE0650F00E54D44 /* TelaFinal.m */; };
+		D60803161AEAD0DB00F141E6 /* RWHeart.m in Sources */ = {isa = PBXBuildFile; fileRef = D60803151AEAD0DB00F141E6 /* RWHeart.m */; };
 		D63405FC1AE06C6400818E42 /* RWLixo.m in Sources */ = {isa = PBXBuildFile; fileRef = D63405FB1AE06C6400818E42 /* RWLixo.m */; };
 		D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomobileController.m */; };
 		D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C81AD87C9700E5D886 /* ObjectsController.m */; };
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		06F0C26A1AE0650F00E54D44 /* TelaFinal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaFinal.h; sourceTree = "<group>"; };
 		06F0C26B1AE0650F00E54D44 /* TelaFinal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaFinal.m; sourceTree = "<group>"; };
+		D60803141AEAD0DB00F141E6 /* RWHeart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHeart.h; sourceTree = "<group>"; };
+		D60803151AEAD0DB00F141E6 /* RWHeart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHeart.m; sourceTree = "<group>"; };
 		D63405FA1AE06C6400818E42 /* RWLixo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLixo.h; sourceTree = "<group>"; };
 		D63405FB1AE06C6400818E42 /* RWLixo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWLixo.m; sourceTree = "<group>"; };
 		D66A67C41AD86B2700E5D886 /* AutomobileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomobileController.h; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 			children = (
 				D68310871AEAC3F7008A2852 /* RWPoow.h */,
 				D68310881AEAC3F7008A2852 /* RWPoow.m */,
+				D60803141AEAD0DB00F141E6 /* RWHeart.h */,
+				D60803151AEAD0DB00F141E6 /* RWHeart.m */,
 			);
 			name = Feedback;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 			files = (
 				D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */,
 				D695BD551AD786D100DC3187 /* RWWater1.m in Sources */,
+				D60803161AEAD0DB00F141E6 /* RWHeart.m in Sources */,
 				D63405FC1AE06C6400818E42 /* RWLixo.m in Sources */,
 				D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */,
 				D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */,

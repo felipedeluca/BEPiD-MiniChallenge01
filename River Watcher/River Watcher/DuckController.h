@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 //#import "RWBasicObject.h"
 #import "RWDuck.h"
+#import "TelaJogo.h"
 
 @interface DuckController : NSObject
 

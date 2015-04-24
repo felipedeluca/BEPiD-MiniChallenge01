@@ -137,8 +137,17 @@
             [duck runAction:[SKAction playSoundFileNamed:@"duck flying.wav" waitForCompletion:YES]];
         }
         
-        if ( duck.isInTheWater && !duck.alreadyFloating )
-            [ self duckOnWater: duck ];
+        if ( duck.isInTheWater && !duck.alreadyFloating ){
+            [ self duckOnWater: duck ];            
+            int tempScore = (pontos * duck.scoreValue) / 100;
+            
+            if ( pontos - tempScore > 0 )
+                pontos = pontos - tempScore;
+            else
+                pontos = 0;
+            
+            [ self.objController animateScore: scene object: duck score: -tempScore ];
+        }
 
         if ( duck.isMoving == NO ){
             

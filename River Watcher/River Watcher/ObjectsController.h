@@ -28,6 +28,7 @@ static const uint32_t duckContactCategory    =  0x1 << 2;
 -(void)destroyObjectsOffScreen:(SKScene *)scene;
 -(void)animateHeart:(SKScene *)scene object:(RWBasicObject *)obj;
 -(void)animatePoow:(SKScene *)scene object:(RWBasicObject *)obj;
+-(void)animateScore:(SKScene *)scene object:(RWBasicObject *)obj score:(int)s;
 
 +(instancetype)InitObjController;
 

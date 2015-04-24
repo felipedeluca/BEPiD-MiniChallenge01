@@ -159,13 +159,17 @@
 
                         [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
-                        if ( [n isKindOfClass: [RWDuck class ]] && pontos > 0 ){ // Perde X% de pontos se o pato cair na água
-                            int tempScore = (pontos * n.scoreValue) / 100;
-                            if ( pontos - tempScore > 0 )
-                                pontos = pontos - tempScore;
-                            else
-                                pontos = 0;
-                        }
+//                        if ( [n isKindOfClass: [RWDuck class ]] && pontos > 0 ){ // Perde X% de pontos se o pato cair na água
+//                            NSLog(@"PATO CAIU!");
+//                            int tempScore = (pontos * n.scoreValue) / 100;
+//                            
+//                            if ( pontos - tempScore > 0 )
+//                                pontos = pontos - tempScore;
+//                            else
+//                                pontos = 0;
+//                            
+//                            [ self.objController animateScore: scene object: n score: pontos ];
+//                        }
                         
                         self.objController.numObjectsFlying -= 1;
                        // NSLog(@"OBJ POS:%@", [n class] );

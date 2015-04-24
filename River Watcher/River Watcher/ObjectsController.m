@@ -98,6 +98,52 @@
     
 }
 //--------------------------------------------------------------
+-(void)animateScore:(SKScene *)scene object:(RWBasicObject *)obj score:(int)s {
 
+    NSLog(@"ANIMATED SCORE: %d", s);
+    
+    SKLabelNode *labelScore;
+    labelScore = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
+    
+    if ( s <= 0 ){
+        labelScore.fontColor = [ SKColor brownColor ];
+        labelScore.text = [NSString stringWithFormat:@"%d", s];
+    }
+    else{
+        labelScore.fontColor = [ SKColor blueColor ];
+        labelScore.text = [NSString stringWithFormat:@"+%d", s];
+    }
+    
+    [labelScore setFontSize:40];
+    labelScore.position = obj.position;
+    labelScore.zPosition = 30;
+
+    SKAction *labelAction = [ SKAction sequence: @[
+                                                   [SKAction scaleBy: 1.2 duration: 3.0],
+                                                   ]];
+    
+    SKAction *verticalAction = [ SKAction moveBy: CGVectorMake(0.0, 200.0) duration: 3.0 ];
+    
+    SKAction *delayBeforeAction = [ SKAction waitForDuration: 0.0 ];
+    SKAction *fadeOut = [ SKAction sequence: @[
+                                               [SKAction waitForDuration: 1.0 ],
+                                               [SKAction fadeAlphaTo: 0.0 duration: 3.0]
+                                               ]];
+    
+    [ scene addChild: labelScore ];
+    
+    [ labelScore runAction: delayBeforeAction
+          completion:^{
+              [ labelScore runAction: fadeOut ];
+              [ labelScore runAction: verticalAction ];
+              [ labelScore runAction: labelAction
+                    completion:^{
+                        [ labelScore removeAllActions ];
+                        [ labelScore removeFromParent ];
+                    }];
+          }];
+    
+    
+}
 //--------------------------------------------------------------
 @end

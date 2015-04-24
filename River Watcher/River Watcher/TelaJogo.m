@@ -250,9 +250,43 @@
     
     [self addChild: _pontuacao];
     [self addChild: _textoRecorde];
+    
+    [self destroiNaLixeira];
+    
+    
+   
 }
 
 //--------------------------------------------------------------
+-(void)destroiNaLixeira{
+    
+    RWBasicObject *obj = (RWBasicObject *)node;
+    
+    if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] && ![node isKindOfClass: [RWDuck class]] ) {
+        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position)) && !obj.isInTheWater ){
+            
+            [obj removeFromParent];
+            
+            self.objController.numObjectsFlying -= 1;
+            
+            [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
+            pontos += obj.scoreValue;
+            if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
+                self.autoController.currentGameDifficult += 0.5;
+        }
+        else {
+            SKAction *scaleObj = [ SKAction scaleTo: 0.3 duration: 1.0 ]; // continua a aumentar de tamanho
+            [ obj runAction: scaleObj ];
+            
+            obj.physicsBody.affectedByGravity = YES;
+            obj.physicsBody.dynamic           = YES;
+            
+        }
+        NSLog( @"soltou objeto");
+    }
+
+}
+//------------------------------------------------------------
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     touch    = [touches anyObject];
@@ -335,30 +369,7 @@
 //--------------------------------------------------------------
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    RWBasicObject *obj = (RWBasicObject *)node;
-    
-      if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] && ![node isKindOfClass: [RWDuck class]] ) {
-        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position)) && !obj.isInTheWater ){
-            
-            [obj removeFromParent];
-            
-            self.objController.numObjectsFlying -= 1;
-            
-            [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
-            pontos += obj.scoreValue;
-            if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
-                self.autoController.currentGameDifficult += 0.5;
-        }
-        else {
-            SKAction *scaleObj = [ SKAction scaleTo: 0.3 duration: 1.0 ]; // continua a aumentar de tamanho
-            [ obj runAction: scaleObj ];
-
-            obj.physicsBody.affectedByGravity = YES;
-            obj.physicsBody.dynamic           = YES;
-
-        }
-    NSLog( @"soltou objeto");
-    }
+    [ self destroiNaLixeira ];
     
     if ([node.name isEqualToString:@"botaoPause"]) {
         NSLog(@"botão pause pressionado");
@@ -464,7 +475,8 @@
     [ self.waterController infiniteScrollingWater: self ];
     [ self.autoController animateCars: self ];
     [ self.duckController animateDuck ];
-    [ self Placar];
+    [ self Placar ];
+   
 
 }
 //--------------------------------------------------------------

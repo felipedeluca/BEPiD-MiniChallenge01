@@ -99,6 +99,22 @@
     [areia setScale:0.57];
     areia.zPosition = 2.0;
     
+    //Creditos
+    SKLabelNode *autores;
+    autores = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
+    autores.text = [NSString stringWithFormat:@"Copyright ©2015 Adailson, Felipe, Gabriela, Vicenzo. All rights reserved"];
+    autores.fontColor = [SKColor blackColor];
+    [autores setFontSize:20];
+    autores.position = CGPointMake(CGRectGetMidX(self.frame),(self.size.height/2) - 370);
+    autores.zPosition = 2;
+
+    //logo da tela
+    SKSpriteNode *logo = [SKSpriteNode spriteNodeWithImageNamed:@"logo2.png"];
+    logo.position = CGPointMake(CGRectGetMidX(self.frame),
+                                CGRectGetMidY(self.frame)+220);
+    [logo setScale:0.3];
+    logo.zPosition = 2.0;
+    
     //animação do peixe dourado da tela inicial
     SKTexture * pd1 = [ SKTexture textureWithImageNamed: @"peixe-dourado1" ];
     SKTexture * pd2 = [ SKTexture textureWithImageNamed: @"peixe-dourado2" ];
@@ -168,7 +184,7 @@
     [botaoJogar setScale:0.5];
     
     botaoJogar.position = CGPointMake(CGRectGetMidX(self.frame),
-                                      CGRectGetMidY(self.frame));
+                                      CGRectGetMidY(self.frame)-35);
     botaoJogar.name = @"botaoJogar";
     
 //    //botao ranking
@@ -184,8 +200,10 @@
     [self addChild:alga01];
     [self addChild:alga02];
     [self addChild:areia];
+    [self addChild:autores];
     [self addChild:peixeDourado];
     [self addChild:botaoJogar];
+    [self addChild:logo];
     //[self addChild:botaoRanking];
 
 

@@ -10,7 +10,7 @@
 
 #import "Config.h"
 
-@interface TelaJogo : SKScene
+@interface TelaJogo : SKScene <SKPhysicsContactDelegate>
 
 @property (nonatomic, getter = isPaused) BOOL pausarJogo;
 @property (nonatomic, strong) SKLabelNode *pontuacao;
@@ -22,3 +22,4 @@
 SKSpriteNode *vida1, *vida2, *vida3, *vida4, *vida5;
 
 NSArray *vidas;
+unsigned int  pontos;

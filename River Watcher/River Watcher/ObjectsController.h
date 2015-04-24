@@ -11,6 +11,11 @@
 #import "RWAutomobile.h"
 #import "RWBasicObject.h"
 #import "RWLixo.h"
+#import "RWDuck.h"
+
+static const uint32_t garbageContactCategory =  0x1 << 0;
+static const uint32_t waterContactCategory   =  0x1 << 1;
+static const uint32_t duckContactCategory    =  0x1 << 2;
 
 @interface ObjectsController : NSObject
 

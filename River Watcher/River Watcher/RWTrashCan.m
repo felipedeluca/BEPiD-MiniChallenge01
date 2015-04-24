@@ -22,10 +22,6 @@
         self = [ RWTrashCan spriteNodeWithTexture: trashCanSpriteC ];
         self.position         = CGPointMake( 200, 130);
         self.zPosition        = 20.0;
-        //  lixeira.physicsBody = [ SKPhysicsBody bodyWithTexture: [ SKTexture textureWithImageNamed: @"lixeira" ] size: lixeira.size ];
-        //lixeira.physicsBody.affectedByGravity = NO;
-        //   lixeira.physicsBody.allowsRotation    = NO;
-        //lixeira.physicsBody.linearDamping     = 0.8;
         
         SKAction *trashCanAnimation     = [ SKAction animateWithTextures: trashCanTextures timePerFrame: 0.01 ];
         SKAction *trashCanRepeatForever = [ SKAction repeatActionForever: trashCanAnimation ];

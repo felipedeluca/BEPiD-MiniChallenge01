@@ -20,6 +20,12 @@
 @end
 
 SKSpriteNode *vida1, *vida2, *vida3, *vida4, *vida5;
+NSArray *vidas;
 
+<<<<<<< HEAD
 NSArray *vidas;
 unsigned int  pontos;
+=======
+long highScore;
+unsigned int pontos;
+>>>>>>> 4edf5bf2386a74049fc87025f7a8be89345ee05a

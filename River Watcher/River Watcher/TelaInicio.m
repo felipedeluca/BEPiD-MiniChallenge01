@@ -35,6 +35,11 @@
     // ao clicar no botão irá ocorrer a transição para a tela do jogo(classe TelaDoJogo)
     if ( [node.name isEqualToString:@"botaoJogar"] ) {
         NSLog( @"botão jogar pressionado" );
+        
+       
+         [node runAction: [SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+
+        
         SKScene *telaJogo     = [ [TelaJogo alloc] initWithSize:self.size ];
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
        
@@ -58,7 +63,7 @@
     audioPlayer.numberOfLoops = -1;
     audioPlayer.volume = 0.5;
     
-    [audioPlayer play];
+    [audioPlayer stop];
     
     
     self.view.multipleTouchEnabled = NO;

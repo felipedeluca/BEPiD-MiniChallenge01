@@ -56,6 +56,10 @@
     UITouch *touch, *touchFinger;
     CGPoint location, locObj;
     SKNode *node;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 4edf5bf2386a74049fc87025f7a8be89345ee05a
   
 }
 
@@ -218,9 +222,11 @@
     //    buttonAudio.zPosition = 0.91;
     buttonAudio.name      = @"botaoAudio";
     
+    [self Placar];
+    
     //texto da pontuação
     self.pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
-    pontos = 0;
+    
     self.pontuacao.text      = [NSString stringWithFormat:@"%i", pontos];
     self.pontuacao.name      = @"score";
     self.pontuacao.fontColor = [SKColor redColor];
@@ -230,11 +236,10 @@
     
     //texto do recorde
     self.textoRecorde = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
-    self.textoRecorde.text      = @"Recorde: ";
-    self.textoRecorde.name      = @"Recorde: ";
+    self.textoRecorde.text      = [NSString stringWithFormat:@"Recorde:%li", highScore];
     self.textoRecorde.fontColor = [SKColor redColor];
-    [self.textoRecorde setFontSize:15];
-    self.textoRecorde.position  = CGPointMake((CGRectGetMidX(self.frame) - 35), 695);
+    [self.textoRecorde setFontSize:10];
+    self.textoRecorde.position  = CGPointMake(CGRectGetMidX(self.frame), 695);
     self.textoRecorde.zPosition = 2;
     
     //adicionando os nodes na tela
@@ -259,11 +264,14 @@
 //--------------------------------------------------------------
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
+
     touch    = [touches anyObject];
     location = [touch locationInNode: self];
     node     = [self nodeAtPoint: location];
-    //NSLog(@"Toquei em %@", node.name);
     
+    //NSLog(@"Toquei em %@", node.name);
+ 
     //pegar objeto
     if(paused == NO){
         if ( [node isKindOfClass: [RWBasicObject class]] ){
@@ -298,7 +306,7 @@
             }
         }
     }
-
+ 
     //ao clicar no botão irá alterar a imagem (Botão de pause/play)
     if ( [node.name isEqualToString:@"botaoPause"] ) {
         NSLog(@"botão pause pressionado");
@@ -406,6 +414,21 @@
 }
 //----------------------------------------------------------------------------------------
 -(void)Placar{
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    highScore = [userDefaults integerForKey:@"HighScore"];
+    
+    //[userDefaults removeObjectForKey:@"HighScore"];
+    
+    if(pontos > highScore){
+        [userDefaults setInteger:pontos forKey:@"HighScore"];
+        [userDefaults synchronize];
+        highScore = pontos;
+        
+        
+    }
+    
+    
     if(gameOVer == 10){
         SKScene *telaGameOver     = [[TelaFinal alloc] initWithSize:self.size ];
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];

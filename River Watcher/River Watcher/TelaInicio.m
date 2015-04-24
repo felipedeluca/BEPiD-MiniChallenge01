@@ -63,7 +63,7 @@
     audioPlayer.numberOfLoops = -1;
     audioPlayer.volume = 0.5;
     
-    [audioPlayer stop];
+    [audioPlayer play];
     
     
     self.view.multipleTouchEnabled = NO;

@@ -56,11 +56,6 @@
     UITouch *touch, *touchFinger;
     CGPoint location, locObj;
     SKNode *node;
-<<<<<<< HEAD
-=======
-    
->>>>>>> 4edf5bf2386a74049fc87025f7a8be89345ee05a
-  
 }
 
 //-------------------------------------------------------------------------------------
@@ -359,9 +354,6 @@
             pontos += obj.scoreValue;
             if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
                 self.autoController.currentGameDifficult += 0.5;
-            
-            self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
-           
         }
         else {
             SKAction *scaleObj = [ SKAction scaleTo: 0.3 duration: 1.0 ]; // continua a aumentar de tamanho
@@ -424,8 +416,6 @@
         [userDefaults setInteger:pontos forKey:@"HighScore"];
         [userDefaults synchronize];
         highScore = pontos;
-        
-        
     }
     
     
@@ -471,6 +461,8 @@
     if ( paused == YES )
         return;
     
+    self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
+
     [ self.waterController waterSimulation: self ];
     [ self.waterController infiniteScrollingWater: self ];
     [ self.autoController animateCars: self ];

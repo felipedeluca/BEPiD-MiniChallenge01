@@ -49,6 +49,7 @@
         self.name = name;
         
         self.flightDirection = -1; // Negativo = direita->esquerda / Positivo = esquerda->direita
+        self.isInTheWater = NO;
         self.scoreValue = 40; // Perde 40% do total de pontos
         self.isInTheAir = YES;
         self.isFalling  = NO;

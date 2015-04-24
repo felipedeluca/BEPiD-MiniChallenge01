@@ -36,9 +36,9 @@
     [duck removeAllActions];
     duck.physicsBody.dynamic            = NO;
     duck.physicsBody.affectedByGravity  = NO;
-    duck.physicsBody.collisionBitMask   = 0;
+    duck.physicsBody.collisionBitMask   = waterContactCategory;
     duck.physicsBody.contactTestBitMask = 0;
-    duck.physicsBody = nil;
+  //  duck.physicsBody = nil;
     duck.rescued     = NO;
     duck.isMoving    = NO;
     duck.isFalling   = NO;

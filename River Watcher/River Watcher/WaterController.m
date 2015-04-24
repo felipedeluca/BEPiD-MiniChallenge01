@@ -156,8 +156,10 @@
             if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
                 if ( [n isKindOfClass: [RWBasicObject class] ] ){
                     if ( !n.isInTheWater ){
+
+                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
-                        if ( [n isKindOfClass: [RWDuck class ]] ){ // Perde X% de pontos se o pato cair na água
+                        if ( [n isKindOfClass: [RWDuck class ]] && pontos > 0 ){ // Perde X% de pontos se o pato cair na água
                             pontos -= ( (n.scoreValue * 100) / pontos );
                         }
                         
@@ -166,8 +168,6 @@
                         n.isInTheWater = YES;
                         //[ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];
                         [ self increaseWaterPollution ];
-                        
-                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
                         switch (cont) {
                             case 0:

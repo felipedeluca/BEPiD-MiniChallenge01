@@ -34,11 +34,11 @@
         
         // Animação do pato surpreso
         SKTexture *surprisedFrame1 = [ SKTexture textureWithImageNamed: @"pato4" ];
-        self.surprisedAnimation = [ [NSArray alloc] initWithObjects: surprisedFrame1, nil ];
+        self.surprisedAnimation    = [ [NSArray alloc] initWithObjects: surprisedFrame1, nil ];
         
-        // Animação do nadando
+        // Animação do pato nadando
         SKTexture *swimmingFrame1 = [ SKTexture textureWithImageNamed: @"pato" ];
-        self.swimmingAnimation = [ [NSArray alloc] initWithObjects: swimmingFrame1, nil ];
+        self.swimmingAnimation    = [ [NSArray alloc] initWithObjects: swimmingFrame1, nil ];
 
         [ self setScale: 0.09 ];
         self.zPosition = 22.0;

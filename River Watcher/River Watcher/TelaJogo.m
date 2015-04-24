@@ -448,6 +448,7 @@
     
     if ( duck != nil && !duck.isFalling && !duck.rescued && !duck.isInTheWater ){
         duck.physicsBody.affectedByGravity = YES;
+        [ self.objController animatePoow: self object:duck ];
         [ self.duckController animateFall: duck ];
         [ self runAction: [SKAction playSoundFileNamed:@"duck hit.wav" waitForCompletion:YES ]];
     }

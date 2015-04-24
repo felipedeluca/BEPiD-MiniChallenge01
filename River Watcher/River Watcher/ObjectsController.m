@@ -80,4 +80,13 @@
 
 }
 //--------------------------------------------------------------
+-(void)animatePoow:(SKScene *)scene object:(RWBasicObject *)obj {
+    
+    RWPoow *newPoow = [ [RWPoow alloc] init ];
+    [ newPoow setPosition: obj.position ];
+    [ scene addChild: newPoow ];
+    [ newPoow animatePoow ];
+    
+}
+//--------------------------------------------------------------
 @end

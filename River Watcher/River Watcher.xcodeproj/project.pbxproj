@@ -11,6 +11,7 @@
 		D63405FC1AE06C6400818E42 /* RWLixo.m in Sources */ = {isa = PBXBuildFile; fileRef = D63405FB1AE06C6400818E42 /* RWLixo.m */; };
 		D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomobileController.m */; };
 		D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C81AD87C9700E5D886 /* ObjectsController.m */; };
+		D68310891AEAC3F7008A2852 /* RWPoow.m in Sources */ = {isa = PBXBuildFile; fileRef = D68310881AEAC3F7008A2852 /* RWPoow.m */; };
 		D695BCC01AD7581800DC3187 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCBF1AD7581800DC3187 /* main.m */; };
 		D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC21AD7581800DC3187 /* AppDelegate.m */; };
 		D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */ = {isa = PBXBuildFile; fileRef = D695BCC51AD7581800DC3187 /* TelaInicio.m */; };
@@ -72,6 +73,8 @@
 		D66A67C51AD86B2700E5D886 /* AutomobileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomobileController.m; sourceTree = "<group>"; };
 		D66A67C71AD87C9700E5D886 /* ObjectsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectsController.h; sourceTree = "<group>"; };
 		D66A67C81AD87C9700E5D886 /* ObjectsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectsController.m; sourceTree = "<group>"; };
+		D68310871AEAC3F7008A2852 /* RWPoow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPoow.h; sourceTree = "<group>"; };
+		D68310881AEAC3F7008A2852 /* RWPoow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPoow.m; sourceTree = "<group>"; };
 		D695BCBA1AD7581800DC3187 /* River Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "River Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D695BCBE1AD7581800DC3187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D695BCBF1AD7581800DC3187 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -176,6 +179,15 @@
 				D6E564F11AE961F70007BED7 /* DuckController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D68310861AEAC3D1008A2852 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D68310871AEAC3F7008A2852 /* RWPoow.h */,
+				D68310881AEAC3F7008A2852 /* RWPoow.m */,
+			);
+			name = Feedback;
 			sourceTree = "<group>";
 		};
 		D695BCB11AD7581700DC3187 = {
@@ -302,6 +314,7 @@
 		D695BD501AD7867B00DC3187 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				D68310861AEAC3D1008A2852 /* Feedback */,
 				D6E564EC1AE95EC30007BED7 /* Duck */,
 				D63405FD1AE06C6D00818E42 /* Garbage */,
 				D6D909C61ADC4E3600DFDBA5 /* Basic */,
@@ -499,6 +512,7 @@
 				D695BCCB1AD7581800DC3187 /* GameViewController.m in Sources */,
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
 				D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */,
+				D68310891AEAC3F7008A2852 /* RWPoow.m in Sources */,
 				D695BD561AD786D100DC3187 /* WLWater2.m in Sources */,
 				D6E564F21AE961F70007BED7 /* DuckController.m in Sources */,
 				D695BD441AD77C7700DC3187 /* TelaJogo.m in Sources */,

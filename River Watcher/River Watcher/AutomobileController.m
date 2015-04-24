@@ -25,7 +25,7 @@
     self.rGenerator       = [ [Random alloc] init ];
     self.arrayCars        = [ [NSMutableArray alloc] init ];
     self.fpsCounter       = 1;
-    self.currentGameDifficult = 60;
+    self.currentGameDifficult = 40;
     self.maxGameDifficult     = 100;
     return self;
 }

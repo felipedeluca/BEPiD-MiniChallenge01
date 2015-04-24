@@ -193,7 +193,7 @@
 
 -(void)willMoveFromView:(SKView *)view {
     
-    [self removeActionForKey:@"music"];
+    [audioPlayer stop];
     
 }
 

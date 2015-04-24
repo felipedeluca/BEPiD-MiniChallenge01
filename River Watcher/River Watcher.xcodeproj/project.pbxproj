@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0641D2131AEAC078004F86F1 /* jogar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0641D2121AEAC078004F86F1 /* jogar.png */; };
 		06F0C26C1AE0650F00E54D44 /* TelaFinal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0C26B1AE0650F00E54D44 /* TelaFinal.m */; };
 		D63405FC1AE06C6400818E42 /* RWLixo.m in Sources */ = {isa = PBXBuildFile; fileRef = D63405FB1AE06C6400818E42 /* RWLixo.m */; };
 		D66A67C61AD86B2700E5D886 /* AutomobileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A67C51AD86B2700E5D886 /* AutomobileController.m */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0641D2121AEAC078004F86F1 /* jogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jogar.png; path = "../../../../Downloads/Arquivo Comprimido/jogar.png"; sourceTree = "<group>"; };
 		06F0C26A1AE0650F00E54D44 /* TelaFinal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaFinal.h; sourceTree = "<group>"; };
 		06F0C26B1AE0650F00E54D44 /* TelaFinal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaFinal.m; sourceTree = "<group>"; };
 		D63405FA1AE06C6400818E42 /* RWLixo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLixo.h; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				D695BD451AD7838B00DC3187 /* Fontes */,
 				D695BD211AD75D0900DC3187 /* Audio */,
 				D695BCCF1AD7581800DC3187 /* Images.xcassets */,
+				0641D2121AEAC078004F86F1 /* jogar.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */,
 				D695BD391AD75D0900DC3187 /* Destroy.wav in Resources */,
 				D695BD321AD75D0900DC3187 /* Enjoy The Life - In Game.wav in Resources */,
+				0641D2131AEAC078004F86F1 /* jogar.png in Resources */,
 				D695BCD01AD7581800DC3187 /* Images.xcassets in Resources */,
 				D695BD331AD75D0900DC3187 /* Enjoy The Life - TI.wav in Resources */,
 				E2B420C81AEAB43700E460BF /* duck flying.wav in Resources */,

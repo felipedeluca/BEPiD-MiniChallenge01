@@ -164,7 +164,7 @@
     
     
     //botao jogar
-    SKSpriteNode *botaoJogar = [SKSpriteNode spriteNodeWithImageNamed:@"bot7.png"];
+    SKSpriteNode *botaoJogar = [SKSpriteNode spriteNodeWithImageNamed:@"jogar.png"];
     [botaoJogar setScale:0.5];
     
     botaoJogar.position = CGPointMake(CGRectGetMidX(self.frame),

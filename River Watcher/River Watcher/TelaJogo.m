@@ -415,7 +415,7 @@
     }
     
     
-    if(gameOVer == 10){
+    if(gameOVer == 1){
         SKScene *telaGameOver     = [[TelaFinal alloc] initWithSize:self.size ];
         SKTransition *transition = [ SKTransition flipVerticalWithDuration:0.1 ];
         self.objController.numObjectsFlying = 0;

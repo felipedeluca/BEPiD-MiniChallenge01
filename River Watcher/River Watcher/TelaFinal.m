@@ -109,9 +109,27 @@
     alga02.zPosition = 1.0;
     
     //onda da tela final
+    
+    SKAction *movimentoHorizontalOndaFinal = [ SKAction sequence: @[
+                                                               [SKAction waitForDuration: 0.0],
+                                                               [SKAction moveToX: (self.size.width/2)+25 duration: 1.0],
+                                                               [SKAction waitForDuration: 0.0],
+                                                               [SKAction moveToX: (self.size.width/2)-25 duration: 1.0]
+                                                               ]
+                                         ];
+
+    
     SKSpriteNode *ondaFinal = [SKSpriteNode spriteNodeWithImageNamed:@"movimento2.png"];
     ondaFinal.position = CGPointMake(self.size.width/2, self.size.height/2);
     [ondaFinal setScale:0.55];
+    SKAction *movimentoVerticalOndaFinal = [SKAction sequence:@[
+                                                           [SKAction waitForDuration:0.0],
+                                                           [SKAction moveToY:self.size.height/2+25 duration:1.0],
+                                                           [SKAction moveToY:(self.size.height/2)duration:1.0]]];
+    
+    [ondaFinal runAction: [SKAction repeatActionForever: movimentoHorizontalOndaFinal]];
+    [ondaFinal runAction: [SKAction repeatActionForever: movimentoVerticalOndaFinal]];
+
     
     //caixa da pontuação e recorde.
     SKSpriteNode *recorde = [SKSpriteNode spriteNodeWithImageNamed:@"bot9.png"];
@@ -313,6 +331,8 @@
     [pontuacao setFontSize:25];
     pontuacao.position  = CGPointMake(CGRectGetMidX(self.frame), 720);
     pontuacao.zPosition = 2;
+    
+    
     
     
 

@@ -284,16 +284,16 @@
     SKSpriteNode *botaoVoltarProJogo = [SKSpriteNode spriteNodeWithImageNamed:@"bot6.png"];
     [botaoVoltarProJogo setScale:0.5];
     
-    botaoVoltarProJogo.position = CGPointMake(CGRectGetMidX(self.frame)+60,
+    botaoVoltarProJogo.position = CGPointMake(CGRectGetMidX(self.frame),
                                               CGRectGetMidY(self.frame)-25);
     botaoVoltarProJogo.name = @"botaoVoltar";
     
-    SKSpriteNode *botaoRanking = [SKSpriteNode spriteNodeWithImageNamed:@"bot5.png"];
-    [botaoRanking setScale:0.5];
+//    SKSpriteNode *botaoRanking = [SKSpriteNode spriteNodeWithImageNamed:@"bot5.png"];
+//    [botaoRanking setScale:0.5];
     
-    botaoRanking.position = CGPointMake(CGRectGetMidX(self.frame)-50,
-                                        CGRectGetMidY(self.frame)-25);
-    botaoRanking.name = @"botaoRanking";
+//    botaoRanking.position = CGPointMake(CGRectGetMidX(self.frame)-50,
+//                                        CGRectGetMidY(self.frame)-25);
+//    botaoRanking.name = @"botaoRanking";
     
     
     SKLabelNode *textoFinal;
@@ -332,7 +332,7 @@
     [self addChild:self.texto2];
     [self addChild:self.texto3];
     [self addChild:botaoVoltarProJogo];
-    [self addChild:botaoRanking];
+//    [self addChild:botaoRanking];
     [self addChild:textoFinal];
     [self addChild:pontuacao];
 }

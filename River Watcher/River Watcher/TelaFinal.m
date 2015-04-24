@@ -45,7 +45,7 @@
     areiaFinal.zPosition = 2.0;
     
     //imagem pneu da tela perdeu
-    SKSpriteNode *pneu = [SKSpriteNode spriteNodeWithImageNamed:@"lixo4.png"];
+    SKSpriteNode *pneu = [SKSpriteNode spriteNodeWithImageNamed:@"lixo2.png"];
     pneu.position = CGPointMake((self.size.width/2)+90, 80);
     [pneu setScale:0.5];
     
@@ -298,12 +298,22 @@
     
     SKLabelNode *textoFinal;
     
-    textoFinal = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
-    textoFinal.text      = [NSString stringWithFormat:@"Recorde:%li", highScore];
+    textoFinal = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
+    textoFinal.text      = [NSString stringWithFormat:@"Recorde: %li", highScore];
     textoFinal.fontColor = [SKColor redColor];
-    [textoFinal setFontSize:10];
+    [textoFinal setFontSize:15];
     textoFinal.position  = CGPointMake(CGRectGetMidX(self.frame), 695);
     textoFinal.zPosition = 2;
+    
+    SKLabelNode *pontuacao;
+    
+    pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
+    pontuacao.text      = [NSString stringWithFormat:@"%i", pontos];
+    pontuacao.fontColor = [SKColor redColor];
+    [pontuacao setFontSize:25];
+    pontuacao.position  = CGPointMake(CGRectGetMidX(self.frame), 720);
+    pontuacao.zPosition = 2;
+    
     
 
     
@@ -324,6 +334,7 @@
     [self addChild:botaoVoltarProJogo];
     [self addChild:botaoRanking];
     [self addChild:textoFinal];
+    [self addChild:pontuacao];
 }
 
 
@@ -343,6 +354,12 @@
         //telaJogo.physicsWorld. = 1.0;
         [ self.view presentScene: telaJogo transition: transition ];
     }
+}
+
+-(void)willMoveFromView:(SKView *)view {
+    
+    [audioPlayer stop];
+    
 }
 
 

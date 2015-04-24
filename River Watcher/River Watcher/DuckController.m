@@ -56,6 +56,7 @@
 
     NSLog(@"##### Salvou o pato!!");
     [duck removeAllActions];
+    [duck runAction: [SKAction playSoundFileNamed:@"duck hit.wav" waitForCompletion:YES]];
     duck.physicsBody.dynamic           = NO;
     duck.physicsBody.affectedByGravity = NO;
     duck.physicsBody = nil;
@@ -125,10 +126,16 @@
 -(void)animateDuck {
     
     SKScene *scene = self.parentScene;
-
+    int willPlayDuck            = [ self.rGenerator floatRand: 0 high: 200 ];
 
     for ( RWDuck *duck in self.duckArray ){
 
+        if ( ((int)willPlayDuck % 50 == 0) && !duck.didPlayAnySound && duck.position.x >= 0.0 && duck.position.x <= scene.size.width){
+            NSLog(@"Will play horn: %d", willPlayDuck);
+            duck.didPlayAnySound = YES;
+            [duck runAction:[SKAction playSoundFileNamed:@"duck flying.wav" waitForCompletion:YES]];
+        }
+        
         if ( duck.isInTheWater && !duck.alreadyFloating )
             [ self duckOnWater: duck ];
 

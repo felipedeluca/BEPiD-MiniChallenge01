@@ -124,10 +124,6 @@
     audioPlayer.numberOfLoops = -1;
     audioPlayer.volume = 0.5;
     
-//    if(audioPlayer == nil)
-//        NSLog([error description]);
-//    else
-    
     [audioPlayer play];
     
     
@@ -220,7 +216,7 @@
     [self Placar];
     
     //texto da pontuação
-    self.pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
+    self.pontuacao = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
     
     self.pontuacao.text      = [NSString stringWithFormat:@"%i", pontos];
     self.pontuacao.name      = @"score";
@@ -230,10 +226,10 @@
     self.pontuacao.zPosition = 2;
     
     //texto do recorde
-    self.textoRecorde = [[SKLabelNode alloc] initWithFontNamed:@"PressStart2P"];
-    self.textoRecorde.text      = [NSString stringWithFormat:@"Recorde:%li", highScore];
+    self.textoRecorde = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
+    self.textoRecorde.text      = [NSString stringWithFormat:@"Recorde: %li", highScore];
     self.textoRecorde.fontColor = [SKColor redColor];
-    [self.textoRecorde setFontSize:10];
+    [self.textoRecorde setFontSize:15];
     self.textoRecorde.position  = CGPointMake(CGRectGetMidX(self.frame), 695);
     self.textoRecorde.zPosition = 2;
     
@@ -435,6 +431,7 @@
     pontos   = 0;
     cont     = 0;
     livesFactor = 0.0;
+    [audioPlayer stop];
 }
 //----------------------------------------------------------------------------------------
 - (void)didBeginContact:(SKPhysicsContact *)contact {
@@ -452,6 +449,7 @@
     if ( duck != nil && !duck.isFalling && !duck.rescued && !duck.isInTheWater ){
         duck.physicsBody.affectedByGravity = YES;
         [ self.duckController animateFall: duck ];
+        [ self runAction: [SKAction playSoundFileNamed:@"duck hit.wav" waitForCompletion:YES ]];
     }
     
 }

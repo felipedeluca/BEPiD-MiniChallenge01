@@ -63,7 +63,7 @@
     audioPlayer.numberOfLoops = -1;
     audioPlayer.volume = 0.5;
     
-    [audioPlayer stop];
+    [audioPlayer play];
     
     
     self.view.multipleTouchEnabled = NO;
@@ -193,7 +193,7 @@
 
 -(void)willMoveFromView:(SKView *)view {
     
-    [self removeActionForKey:@"music"];
+    [audioPlayer stop];
     
 }
 

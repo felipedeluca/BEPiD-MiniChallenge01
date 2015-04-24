@@ -44,6 +44,8 @@
 		D6D909BF1ADC305C00DFDBA5 /* RWTrashCan.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909BE1ADC305C00DFDBA5 /* RWTrashCan.m */; };
 		D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C11ADC353000DFDBA5 /* TrashCanController.m */; };
 		D6D909C51ADC4E3000DFDBA5 /* RWBasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */; };
+		D6E564EF1AE95EFE0007BED7 /* RWDuck.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E564EE1AE95EFE0007BED7 /* RWDuck.m */; };
+		D6E564F21AE961F70007BED7 /* DuckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E564F11AE961F70007BED7 /* DuckController.m */; };
 		D6E8046F1ADF0CA00046BB85 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E8046E1ADF0CA00046BB85 /* Random.m */; };
 		E238DBDF1AE19D6B003C78FC /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = E238DBDE1AE19D6B003C78FC /* WaterController.m */; };
 /* End PBXBuildFile section */
@@ -115,6 +117,10 @@
 		D6D909C11ADC353000DFDBA5 /* TrashCanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashCanController.m; sourceTree = "<group>"; };
 		D6D909C31ADC4E3000DFDBA5 /* RWBasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBasicObject.h; sourceTree = "<group>"; };
 		D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBasicObject.m; sourceTree = "<group>"; };
+		D6E564ED1AE95EFE0007BED7 /* RWDuck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDuck.h; sourceTree = "<group>"; };
+		D6E564EE1AE95EFE0007BED7 /* RWDuck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDuck.m; sourceTree = "<group>"; };
+		D6E564F01AE961F70007BED7 /* DuckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuckController.h; sourceTree = "<group>"; };
+		D6E564F11AE961F70007BED7 /* DuckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuckController.m; sourceTree = "<group>"; };
 		D6E8046D1ADF0CA00046BB85 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Random.h; path = "River Watcher/Random.h"; sourceTree = "<group>"; };
 		D6E8046E1ADF0CA00046BB85 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Random.m; path = "River Watcher/Random.m"; sourceTree = "<group>"; };
 		D6F981E21AE2E75D007A18F2 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 				E238DBDE1AE19D6B003C78FC /* WaterController.m */,
 				D6D909C01ADC353000DFDBA5 /* TrashCanController.h */,
 				D6D909C11ADC353000DFDBA5 /* TrashCanController.m */,
+				D6E564F01AE961F70007BED7 /* DuckController.h */,
+				D6E564F11AE961F70007BED7 /* DuckController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 		D695BD501AD7867B00DC3187 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				D6E564EC1AE95EC30007BED7 /* Duck */,
 				D63405FD1AE06C6D00818E42 /* Garbage */,
 				D6D909C61ADC4E3600DFDBA5 /* Basic */,
 				D6D909BC1ADC304000DFDBA5 /* Trash Can */,
@@ -330,6 +339,15 @@
 				D6D909C41ADC4E3000DFDBA5 /* RWBasicObject.m */,
 			);
 			name = Basic;
+			sourceTree = "<group>";
+		};
+		D6E564EC1AE95EC30007BED7 /* Duck */ = {
+			isa = PBXGroup;
+			children = (
+				D6E564ED1AE95EFE0007BED7 /* RWDuck.h */,
+				D6E564EE1AE95EFE0007BED7 /* RWDuck.m */,
+			);
+			name = Duck;
 			sourceTree = "<group>";
 		};
 		D6E804661ADF09E00046BB85 /* Libraries */ = {
@@ -470,11 +488,13 @@
 				D695BCC31AD7581800DC3187 /* AppDelegate.m in Sources */,
 				D6D909C21ADC353000DFDBA5 /* TrashCanController.m in Sources */,
 				D695BD561AD786D100DC3187 /* WLWater2.m in Sources */,
+				D6E564F21AE961F70007BED7 /* DuckController.m in Sources */,
 				D695BD441AD77C7700DC3187 /* TelaJogo.m in Sources */,
 				D695BCC61AD7581800DC3187 /* TelaInicio.m in Sources */,
 				D6BB9AC71AD8060A006E8DC7 /* RWAutomobile.m in Sources */,
 				06F0C26C1AE0650F00E54D44 /* TelaFinal.m in Sources */,
 				D695BCC01AD7581800DC3187 /* main.m in Sources */,
+				D6E564EF1AE95EFE0007BED7 /* RWDuck.m in Sources */,
 				D66A67C91AD87C9700E5D886 /* ObjectsController.m in Sources */,
 				E238DBDF1AE19D6B003C78FC /* WaterController.m in Sources */,
 			);

@@ -10,7 +10,7 @@
 
 #import "Config.h"
 
-@interface TelaJogo : SKScene
+@interface TelaJogo : SKScene <SKPhysicsContactDelegate>
 
 @property (nonatomic, getter = isPaused) BOOL pausarJogo;
 @property (nonatomic, strong) SKLabelNode *pontuacao;

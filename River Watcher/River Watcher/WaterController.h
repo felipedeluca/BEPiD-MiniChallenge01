@@ -12,6 +12,9 @@
 #import "RWBasicObject.h"
 #import "TelaJogo.h"
 #import "TelaFinal.h"
+#import "ObjectsController.h"
+#import "RWDuck.h"
+#import "DuckController.h"
 
 @class TelaJogo;
 

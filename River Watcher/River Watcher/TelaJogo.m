@@ -15,6 +15,9 @@
 #import "WaterController.h"
 #import "TrashCanController.h"
 #import "RWBasicObject.h"
+#import "DuckController.h"
+#import "RWDuck.h"
+
 #import <AVFoundation/AVFoundation.h>
 
 @interface TelaJogo ()
@@ -34,10 +37,11 @@
 
 @property BOOL contentCreated;
 
-@property ( nonatomic ) ObjectsController    *objController;
-@property ( nonatomic ) AutomobileController *autoController;
-@property ( nonatomic ) WaterController      *waterController;
-@property ( nonatomic ) TrashCanController   *trashCanController;
+@property ( nonatomic ) ObjectsController    * objController;
+@property ( nonatomic ) AutomobileController * autoController;
+@property ( nonatomic ) WaterController      * waterController;
+@property ( nonatomic ) TrashCanController   * trashCanController;
+@property ( nonatomic ) DuckController       * duckController;
 
 @end
 
@@ -52,8 +56,6 @@
     UITouch *touch, *touchFinger;
     CGPoint location, locObj;
     SKNode *node;
-    
-  
 }
 
 //-------------------------------------------------------------------------------------
@@ -80,8 +82,15 @@
 -(void)createSceneContents{
     
     [ self criaCenario ];
-    NSLog(@"****starting createNewCars...");
+    NSLog(@"****Creating cars...");
     [ self.autoController createNewCars: self amount: 6 ];
+    NSLog(@"****Creating duck...");
+    [ self.duckController newDuck ];
+    NSLog(@"****Creating  water...");
+    [ self.waterController criaAgua: self ];
+    NSLog(@"****Creating  trash can...");
+    [ self.trashCanController newTrashCan: self ];
+    
     self.objController = [ ObjectsController InitObjController ];
 
 }
@@ -90,16 +99,20 @@
     
 
     self.view.multipleTouchEnabled=NO;
-    [ self.scene.physicsWorld setGravity: CGVectorMake( 0.0, -9.81 )];
-    [ self.scene.physicsWorld setSpeed: simulationSpeed ];
+    
+    [ self.physicsWorld setGravity: CGVectorMake( 0.0, -9.81 )];
+    [ self.physicsWorld setSpeed: simulationSpeed ];
+    self.physicsWorld.contactDelegate   = self;
+    self.physicsBody.collisionBitMask   = 0;
+    self.physicsBody.contactTestBitMask = 0;
     
     // Initializes the object controllers
     self.autoController     = [ [AutomobileController alloc] init ];
     self.waterController    = [ [WaterController      alloc] init ];
     self.trashCanController = [ [TrashCanController   alloc] init ];
+    self.duckController     = [ [DuckController       alloc] init ];
+    self.duckController.parentScene = self;
 //
-    [ self.waterController criaAgua: self ];
-    [ self.trashCanController newTrashCan: self ];
     paused = NO;
     audioPaused = YES;
    
@@ -257,14 +270,34 @@
     //pegar objeto
     if(paused == NO){
         if ( [node isKindOfClass: [RWBasicObject class]] ){
+            
             RWBasicObject *obj = (RWBasicObject *)node;
-            if ( !obj.inWater ){
-                NSLog( @"pegou objeto!" );
-                
-                [obj removeAllActions];
-                obj.physicsBody.dynamic           = NO;
-                obj.physicsBody.affectedByGravity = NO;
-                [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+
+            if ( !obj.isInTheWater ){
+                if ( [obj isKindOfClass: [RWDuck class]] ){
+                    RWDuck *duck = (RWDuck *)obj;
+                    if ( duck.isFalling ){
+                        [ self.duckController rescueTheDuck: duck ];
+                    }
+                }
+                else {
+                    NSLog( @"pegou objeto!" );
+                    
+                    [obj removeAllActions];
+                    
+                    // Animação do objeto quando é pego pelo usuário
+                    SKAction *scaleObject = [SKAction sequence:@[
+                                                                [ SKAction scaleTo: 0.4 duration: 0.06 ],
+                                                                [ SKAction scaleTo: 0.3 duration: 0.06 ],
+                                                                ]];
+
+                    
+                    [ obj runAction: scaleObject ];
+                    
+                    obj.physicsBody.dynamic           = NO;
+                    obj.physicsBody.affectedByGravity = NO;
+                    [node runAction:[SKAction playSoundFileNamed:@"Grab object.wav" waitForCompletion:YES]];
+                }
             }
         }
     }
@@ -299,7 +332,7 @@
     locObj = [ touch locationInNode: self];
 
     if(paused == NO){
-        if ( [node isKindOfClass: [RWBasicObject class]] && !obj.inWater ){
+        if ( [node isKindOfClass: [RWBasicObject class]] && !obj.isInTheWater && ![node isKindOfClass: [RWDuck class]] ){
             obj.position = locObj;
         }
     }
@@ -310,10 +343,8 @@
     
     RWBasicObject *obj = (RWBasicObject *)node;
     
-      if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] ) {
-    
-        
-        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position)) && !obj.inWater ){
+      if ( node.name != nil && [node isKindOfClass: [RWBasicObject class]] && ![node isKindOfClass: [RWDuck class]] ) {
+        if((CGRectContainsPoint( self.trashCanController.trashCan.frame, obj.position)) && !obj.isInTheWater ){
             
             [obj removeFromParent];
             
@@ -323,9 +354,6 @@
             pontos += obj.scoreValue;
             if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
                 self.autoController.currentGameDifficult += 0.5;
-            
-            self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
-           
         }
         else {
             SKAction *scaleObj = [ SKAction scaleTo: 0.3 duration: 1.0 ]; // continua a aumentar de tamanho
@@ -388,8 +416,6 @@
         [userDefaults setInteger:pontos forKey:@"HighScore"];
         [userDefaults synchronize];
         highScore = pontos;
-        
-        
     }
     
     
@@ -411,15 +437,37 @@
     livesFactor = 0.0;
 }
 //----------------------------------------------------------------------------------------
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    NSLog(@"CONTATO! ObjA: %@   ObjB: %@", contact.bodyA.node.name, contact.bodyB.node.name );
+    
+    RWDuck *duck = nil;
+    
+    if ( [contact.bodyA.node isKindOfClass: [RWDuck class]] ){
+        duck = (RWDuck *) contact.bodyA.node;
+    }
+    else if ( [contact.bodyB.node isKindOfClass: [RWDuck class]] ){
+        duck = (RWDuck *) contact.bodyB.node;
+    }
+    
+    if ( duck != nil && !duck.isFalling && !duck.rescued && !duck.isInTheWater ){
+        duck.physicsBody.affectedByGravity = YES;
+        [ self.duckController animateFall: duck ];
+    }
+    
+}
+//----------------------------------------------------------------------------------------
 -(void)update:(NSTimeInterval)currentTime {
     
     if ( paused == YES )
         return;
     
-    [self.waterController waterSimulation: self ];
-    [self.waterController infiniteScrollingWater: self ];
-    [self.autoController animateCars: self ];
-    [self Placar];
+    self.pontuacao.text = [NSString stringWithFormat:@"%i", pontos];
+
+    [ self.waterController waterSimulation: self ];
+    [ self.waterController infiniteScrollingWater: self ];
+    [ self.autoController animateCars: self ];
+    [ self.duckController animateDuck ];
+    [ self Placar];
 
 }
 //--------------------------------------------------------------

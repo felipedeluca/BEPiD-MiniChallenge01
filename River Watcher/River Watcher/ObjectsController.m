@@ -35,7 +35,7 @@
     
     self = [ super init ];
     self.rGenerator = [ [Random alloc] init ];
-    self.maxObjectsFlying = 4;
+    self.maxObjectsFlying = 3;
     self.numObjectsFlying = 0;
     
     return self;

@@ -7,7 +7,6 @@
 //
 
 #import "WaterController.h"
-#import "ObjectsController.h"
 
 // Configuração da água
 #define VISCOSITY 6.0 //Increase to make the water "thicker/stickier," creating more friction.
@@ -56,15 +55,6 @@
     self.waterTile2A.alpha += 0.025;
     self.waterTile2B.alpha += 0.025;
 
-//    int animationSteps = self.waterPolutionLevel - blendFactor; // Quantidade de iterações no looping
-//    
-//    for ( int i = 0; i <= animationSteps * 10 ; i++ ){
-//        self.waterTile1A.colorBlendFactor += blendSteps;
-//        self.waterTile1B.colorBlendFactor += blendSteps;
-//
-//        self.waterTile2A.colorBlendFactor += blendSteps;
-//        self.waterTile2B.colorBlendFactor += blendSteps;
-//    }
 }
 //----------------------------------------------------------------------------------------------
 -(void)criaAgua:(TelaJogo *)scene {
@@ -102,6 +92,8 @@
     self.waterTile1B.color = pollutedColor;
     self.waterTile2A.color = pollutedColor;
     self.waterTile2B.color = pollutedColor;
+    
+    self.waterPhys.physicsBody.categoryBitMask = waterContactCategory;
     
     [ scene addChild: self.waterPhys ];
     
@@ -163,14 +155,19 @@
             RWBasicObject* n = d;
             if ( CGRectContainsPoint(self.waterPhys.frame, CGPointMake(n.position.x, n.position.y - n.size.height/2.0)) ) {
                 if ( [n isKindOfClass: [RWBasicObject class] ] ){
-                    if ( !n.inWater ){
+                    if ( !n.isInTheWater ){
+
+                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
+                        
+                        if ( [n isKindOfClass: [RWDuck class ]] && pontos > 0 ){ // Perde X% de pontos se o pato cair na água
+                            pontos -= ( (n.scoreValue * 100) / pontos );
+                        }
+                        
                         self.objController.numObjectsFlying -= 1;
                        // NSLog(@"OBJ POS:%@", [n class] );
-                        n.inWater = YES;
-                        [ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];
+                        n.isInTheWater = YES;
+                        //[ n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES] ];
                         [ self increaseWaterPollution ];
-                        
-                        [n runAction:[SKAction playSoundFileNamed:@"Fall in water.wav" waitForCompletion:YES]];
                         
                         switch (cont) {
                             case 0:

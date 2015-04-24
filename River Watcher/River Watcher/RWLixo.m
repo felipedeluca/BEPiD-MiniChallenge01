@@ -7,6 +7,7 @@
 //
 
 #import "RWLixo.h"
+#import "ObjectsController.h"
 
 @implementation RWLixo
 //----------------------------------------------------------
@@ -28,6 +29,9 @@
         self.physicsBody.angularDamping    = 1.0;
         self.physicsBody.restitution       = 0.01;
         self.physicsBody.usesPreciseCollisionDetection = YES;
+        self.physicsBody.categoryBitMask    = garbageContactCategory;
+        self.physicsBody.contactTestBitMask = duckContactCategory ;
+        self.physicsBody.collisionBitMask   = duckContactCategory | waterContactCategory | garbageContactCategory;
         
         self.scoreValue = 10;
         self.isInTheAir = YES;

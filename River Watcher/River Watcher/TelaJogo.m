@@ -271,6 +271,9 @@
             
             [self runAction: [SKAction playSoundFileNamed:@"Destroy.wav" waitForCompletion:YES]];
             pontos += obj.scoreValue;
+            
+            [ self.objController animateScore: self object: obj score: obj.scoreValue ];
+            
             if ( self.autoController.currentGameDifficult < self.autoController.maxGameDifficult )
                 self.autoController.currentGameDifficult += 0.5;
         }

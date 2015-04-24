@@ -114,20 +114,20 @@
         labelScore.text = [NSString stringWithFormat:@"+%d", s];
     }
     
-    [labelScore setFontSize:40];
+    [labelScore setFontSize: 35];
     labelScore.position = obj.position;
     labelScore.zPosition = 30;
 
     SKAction *labelAction = [ SKAction sequence: @[
-                                                   [SKAction scaleBy: 1.2 duration: 3.0],
+                                                   [SKAction scaleBy: 1.2 duration: 2.0],
                                                    ]];
     
-    SKAction *verticalAction = [ SKAction moveBy: CGVectorMake(0.0, 200.0) duration: 3.0 ];
+    SKAction *verticalAction = [ SKAction moveBy: CGVectorMake(0.0, 200.0) duration: 2.0 ];
     
     SKAction *delayBeforeAction = [ SKAction waitForDuration: 0.0 ];
     SKAction *fadeOut = [ SKAction sequence: @[
                                                [SKAction waitForDuration: 1.0 ],
-                                               [SKAction fadeAlphaTo: 0.0 duration: 3.0]
+                                               [SKAction fadeAlphaTo: 0.0 duration: 2.0]
                                                ]];
     
     [ scene addChild: labelScore ];

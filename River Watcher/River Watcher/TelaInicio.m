@@ -164,19 +164,19 @@
     
     
     //botao jogar
-    SKSpriteNode *botaoJogar = [SKSpriteNode spriteNodeWithImageNamed:@"bot7.png"];
+    SKSpriteNode *botaoJogar = [SKSpriteNode spriteNodeWithImageNamed:@"jogar.png"];
     [botaoJogar setScale:0.5];
     
     botaoJogar.position = CGPointMake(CGRectGetMidX(self.frame),
-                                      CGRectGetMidY(self.frame)+80);
+                                      CGRectGetMidY(self.frame));
     botaoJogar.name = @"botaoJogar";
     
-    //botao ranking
-    SKSpriteNode *botaoRanking = [SKSpriteNode spriteNodeWithImageNamed:@"bot8.png"];
-    [botaoRanking setScale:0.5];
-    botaoRanking.position = CGPointMake(CGRectGetMidX(self.frame),
-                                        CGRectGetMidY(self.frame)-10);
-    botaoRanking.name = @"botaoRanking";
+//    //botao ranking
+//    SKSpriteNode *botaoRanking = [SKSpriteNode spriteNodeWithImageNamed:@"bot8.png"];
+//    [botaoRanking setScale:0.5];
+//    botaoRanking.position = CGPointMake(CGRectGetMidX(self.frame),
+//                                        CGRectGetMidY(self.frame)-10);
+//    botaoRanking.name = @"botaoRanking";
     
     //adicionando os nodes na tela
     [self addChild:telaInicial];
@@ -186,7 +186,7 @@
     [self addChild:areia];
     [self addChild:peixeDourado];
     [self addChild:botaoJogar];
-    [self addChild:botaoRanking];
+    //[self addChild:botaoRanking];
 
 
 }

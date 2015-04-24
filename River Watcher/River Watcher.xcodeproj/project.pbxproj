@@ -51,6 +51,7 @@
 		E238DBDF1AE19D6B003C78FC /* WaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = E238DBDE1AE19D6B003C78FC /* WaterController.m */; };
 		E2B420C61AEAB42E00E460BF /* duck hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E2B420C51AEAB42E00E460BF /* duck hit.wav */; };
 		E2B420C81AEAB43700E460BF /* duck flying.wav in Resources */ = {isa = PBXBuildFile; fileRef = E2B420C71AEAB43700E460BF /* duck flying.wav */; };
+		E2B420CC1AEAC48200E460BF /* jogar.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B420CB1AEAC48200E460BF /* jogar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		E238DBDE1AE19D6B003C78FC /* WaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterController.m; sourceTree = "<group>"; };
 		E2B420C51AEAB42E00E460BF /* duck hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "duck hit.wav"; sourceTree = "<group>"; };
 		E2B420C71AEAB43700E460BF /* duck flying.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "duck flying.wav"; sourceTree = "<group>"; };
+		E2B420CB1AEAC48200E460BF /* jogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jogar.png; path = Images.xcassets/jogar.imageset/jogar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				D695BD451AD7838B00DC3187 /* Fontes */,
 				D695BD211AD75D0900DC3187 /* Audio */,
 				D695BCCF1AD7581800DC3187 /* Images.xcassets */,
+				E2B420CB1AEAC48200E460BF /* jogar.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				D695BD3A1AD75D0900DC3187 /* Smalltalk - End.wav in Resources */,
 				D695BD391AD75D0900DC3187 /* Destroy.wav in Resources */,
 				D695BD321AD75D0900DC3187 /* Enjoy The Life - In Game.wav in Resources */,
+				E2B420CC1AEAC48200E460BF /* jogar.png in Resources */,
 				D695BCD01AD7581800DC3187 /* Images.xcassets in Resources */,
 				D695BD331AD75D0900DC3187 /* Enjoy The Life - TI.wav in Resources */,
 				E2B420C81AEAB43700E460BF /* duck flying.wav in Resources */,
@@ -641,7 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -656,7 +660,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

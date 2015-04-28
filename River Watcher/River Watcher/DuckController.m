@@ -23,10 +23,13 @@
 //----------------------------------------------------------
 -(instancetype)init {
     
-    self.objController    = [ ObjectsController InitObjController ];
-    self.rGenerator       = [ [Random alloc] init ];
-    self.duckArray        = [ [NSMutableArray alloc] init ];
-    self.fpsCounter       = 1;
+    self = [super init];
+    
+    self.objController = [ ObjectsController InitObjController ];
+    self.rGenerator    = [ [Random alloc] init ];
+    self.duckArray     = [ [NSMutableArray alloc] init ];
+    self.fpsCounter    = 1;
+        
     return self;
 }
 //----------------------------------------------------------
@@ -159,12 +162,12 @@
             CGFloat rightToLeftStartX = scene.frame.size.width + duck.size.width + 30;
             CGFloat imageFlip         = duck.xScale; // aponta o pato para o sentido do movimento
             
-            CGFloat startPosition     = leftToRightStartX;
+            //CGFloat startPosition;
             CGFloat endPosition       = rightToLeftStartX;
             
             if ( duck.position.x <= 0 ){
                 
-                startPosition = leftToRightStartX - duck.positionOffset;
+               // startPosition = leftToRightStartX - duck.positionOffset;
                 endPosition   = rightToLeftStartX + duck.positionOffset;
                 
                 if ( duck.isFalling) // sai da tela caindo
@@ -172,7 +175,7 @@
             }
             else if ( duck.position.x >= 0 ){
                 
-                startPosition = rightToLeftStartX + duck.positionOffset;
+                //startPosition = rightToLeftStartX + duck.positionOffset;
                 endPosition   = leftToRightStartX - duck.positionOffset;
                 imageFlip     = -duck.xScale;
                 

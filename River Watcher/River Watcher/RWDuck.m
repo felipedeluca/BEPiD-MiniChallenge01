@@ -13,33 +13,36 @@
 //----------------------------------------------------------
 -(instancetype)initWithImageNamed:(NSString *)name{
     
-    if ( self = [super init]){
-        
+    self = [ super init ];
+//    
+    if ( self ){
+
         self = [ RWDuck spriteNodeWithImageNamed: @"pato3" ];
         self.objTexture = [ SKTexture textureWithImageNamed: @"pato3" ];
-        
-        // Animação de voo
-        SKTexture *flyingFrame1 = [ SKTexture textureWithImageNamed: @"pato1" ];
-        SKTexture *flyingFrame2 = [ SKTexture textureWithImageNamed: @"pato2" ];
-        SKTexture *flyingFrame3 = [ SKTexture textureWithImageNamed: @"pato3" ];
-        self.flyingAnimation = [ [NSArray alloc] initWithObjects: flyingFrame1, flyingFrame2, flyingFrame3, nil ];
-        
-        [ self loopAnimateWings ];
-        
-        // Animação de queda
-        SKTexture *fallingFrame1 = [ SKTexture textureWithImageNamed: @"pato5" ];
-        SKTexture *fallingFrame2 = [ SKTexture textureWithImageNamed: @"pato6" ];
-        SKTexture *fallingFrame3 = [ SKTexture textureWithImageNamed: @"pato7" ];
-        self.fallingAnimation = [ [NSArray alloc] initWithObjects: fallingFrame1, fallingFrame2, fallingFrame3, nil ];
-        
-        // Animação do pato surpreso
-        SKTexture *surprisedFrame1 = [ SKTexture textureWithImageNamed: @"pato4" ];
-        self.surprisedAnimation    = [ [NSArray alloc] initWithObjects: surprisedFrame1, nil ];
-        
-        // Animação do pato nadando
-        SKTexture *swimmingFrame1 = [ SKTexture textureWithImageNamed: @"pato" ];
-        self.swimmingAnimation    = [ [NSArray alloc] initWithObjects: swimmingFrame1, nil ];
 
+//        // Animação de voo
+//        SKTexture *flyingFrame1 = [ SKTexture textureWithImageNamed: @"pato1" ];
+//        SKTexture *flyingFrame2 = [ SKTexture textureWithImageNamed: @"pato2" ];
+//        SKTexture *flyingFrame3 = [ SKTexture textureWithImageNamed: @"pato3" ];
+//        self.flyingAnimation = [ [NSArray alloc] initWithObjects: flyingFrame1, flyingFrame2, flyingFrame3, nil ];
+//
+//        [ self loopAnimateWings ];
+//        
+//        // Animação de queda
+//        SKTexture *fallingFrame1 = [ SKTexture textureWithImageNamed: @"pato5" ];
+//        SKTexture *fallingFrame2 = [ SKTexture textureWithImageNamed: @"pato6" ];
+//        SKTexture *fallingFrame3 = [ SKTexture textureWithImageNamed: @"pato7" ];
+//        self.fallingAnimation = [ [NSArray alloc] initWithObjects: fallingFrame1, fallingFrame2, fallingFrame3, nil ];
+//        
+//        // Animação do pato surpreso
+//        SKTexture *surprisedFrame1 = [ SKTexture textureWithImageNamed: @"pato4" ];
+//        self.surprisedAnimation    = [ [NSArray alloc] initWithObjects: surprisedFrame1, nil ];
+//        
+//        // Animação do pato nadando
+//        SKTexture *swimmingFrame1 = [ SKTexture textureWithImageNamed: @"pato" ];
+//        self.swimmingAnimation    = [ [NSArray alloc] initWithObjects: swimmingFrame1, nil ];
+        [ self criaAnimacoes ];
+        
         [ self setScale: 0.09 ];
         self.zPosition = 22.5;
         self.isMoving  = NO;
@@ -59,6 +62,30 @@
     }
     
     return self;
+}
+//----------------------------------------------------------
+-(void)criaAnimacoes {
+    // Animação de voo
+    SKTexture *flyingFrame1 = [ SKTexture textureWithImageNamed: @"pato1" ];
+    SKTexture *flyingFrame2 = [ SKTexture textureWithImageNamed: @"pato2" ];
+    SKTexture *flyingFrame3 = [ SKTexture textureWithImageNamed: @"pato3" ];
+    self.flyingAnimation = [ [NSArray alloc] initWithObjects: flyingFrame1, flyingFrame2, flyingFrame3, nil ];
+    
+    [ self loopAnimateWings ];
+    
+    // Animação de queda
+    SKTexture *fallingFrame1 = [ SKTexture textureWithImageNamed: @"pato5" ];
+    SKTexture *fallingFrame2 = [ SKTexture textureWithImageNamed: @"pato6" ];
+    SKTexture *fallingFrame3 = [ SKTexture textureWithImageNamed: @"pato7" ];
+    self.fallingAnimation = [ [NSArray alloc] initWithObjects: fallingFrame1, fallingFrame2, fallingFrame3, nil ];
+    
+    // Animação do pato surpreso
+    SKTexture *surprisedFrame1 = [ SKTexture textureWithImageNamed: @"pato4" ];
+    self.surprisedAnimation    = [ [NSArray alloc] initWithObjects: surprisedFrame1, nil ];
+    
+    // Animação do pato nadando
+    SKTexture *swimmingFrame1 = [ SKTexture textureWithImageNamed: @"pato" ];
+    self.swimmingAnimation    = [ [NSArray alloc] initWithObjects: swimmingFrame1, nil ];
 }
 //----------------------------------------------------------
 -(void)setDuckPhysics {

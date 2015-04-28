@@ -14,7 +14,7 @@
 //----------------------------------------------------------
 -(instancetype)init {
     
-    if ( self == [super init]){
+    if ( self = [super init]){
         self = [ RWWater1 spriteNodeWithImageNamed: @"agua1" ];
         self.name = @"water";
         self.zPosition = 22.0;
@@ -22,8 +22,11 @@
         
         self.physicsBody.dynamic = NO;
         self.alpha = 1.0;
+        
+        return self;
     }
-    return self;
+    
+    return nil;
 }
 //----------------------------------------------------------
 @end

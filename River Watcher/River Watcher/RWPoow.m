@@ -17,8 +17,7 @@
         self = [ RWPoow spriteNodeWithImageNamed: @"poow" ];
         
         [ self setScale: 0.3 ];
-        self.zPosition = 28.0;
-        
+        self.zPosition = 28.0;        
         self.name = @"[Poow!]";
         
     }

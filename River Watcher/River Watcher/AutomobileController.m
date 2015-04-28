@@ -21,13 +21,18 @@
 //--------------------------------------------------------------
 -(instancetype)init {
 
-    self.objController    = [ ObjectsController InitObjController ];
-    self.rGenerator       = [ [Random alloc] init ];
-    self.arrayCars        = [ [NSMutableArray alloc] init ];
-    self.fpsCounter       = 1;
-    self.currentGameDifficult = 40;
-    self.maxGameDifficult     = 100;
-    return self;
+    if ( self = [super init] ){
+        self.objController    = [ ObjectsController InitObjController ];
+        self.rGenerator       = [ [Random alloc] init ];
+        self.arrayCars        = [ [NSMutableArray alloc] init ];
+        self.fpsCounter       = 1;
+        self.currentGameDifficult = 40;
+        self.maxGameDifficult     = 100;
+        
+        return self;
+    }
+    
+    return nil;
 }
 //--------------------------------------------------------------
 -(void)createNewCars:(SKScene *)scene amount:(int)n {

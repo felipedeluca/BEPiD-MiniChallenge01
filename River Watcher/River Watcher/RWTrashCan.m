@@ -12,7 +12,7 @@
 //------------------------------------------------------------------------------------
 -(instancetype)init {
     
-    if ( self == [super init]){
+    if ( self = [super init]){
 
         SKTexture *trashCanSpriteA = [ SKTexture textureWithImageNamed: @"lixeira" ];
         SKTexture *trashCanSpriteB = [ SKTexture textureWithImageNamed: @"lixeira2" ];
@@ -47,9 +47,10 @@
         [ self runAction: [SKAction repeatActionForever: horizontalAnimation] ];
         [ self runAction: [SKAction repeatActionForever: verticalAnimation] ];
     
+        return self;
     }
     
-    return self;
+    return nil;
 }
 //------------------------------------------------------------------------------------
 @end

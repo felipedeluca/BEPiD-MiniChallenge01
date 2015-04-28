@@ -105,6 +105,8 @@
     self.physicsWorld.contactDelegate   = self;
     self.physicsBody.collisionBitMask   = 0;
     self.physicsBody.contactTestBitMask = 0;
+    self.physicsBody.restitution = 0.01;
+    self.physicsBody = [ SKPhysicsBody bodyWithEdgeFromPoint: CGPointMake( 0, 0) toPoint: CGPointMake( self.scene.frame.size.width, 0 )];
     
     // Initializes the object controllers
     self.autoController     = [ [AutomobileController alloc] init ];

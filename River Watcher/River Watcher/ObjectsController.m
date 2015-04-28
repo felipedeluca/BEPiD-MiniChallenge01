@@ -110,7 +110,7 @@
         labelScore.text = [NSString stringWithFormat:@"%d", s];
     }
     else{
-        labelScore.fontColor = [ SKColor blueColor ];
+        labelScore.fontColor = [ SKColor orangeColor ];
         labelScore.text = [NSString stringWithFormat:@"+%d", s];
     }
     

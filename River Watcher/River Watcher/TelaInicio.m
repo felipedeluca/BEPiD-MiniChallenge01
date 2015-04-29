@@ -98,15 +98,6 @@
     areia.position = CGPointMake((self.size.width/2)-30, (self.size.height/2) - 345);
     [areia setScale:0.57];
     areia.zPosition = 2.0;
-    
-    //Creditos
-    SKLabelNode *autores;
-    autores = [[SKLabelNode alloc] initWithFontNamed:@"Floraless"];
-    autores.text = [NSString stringWithFormat:@"Copyright ©2015 Adailson, Felipe, Gabriela, Vicenzo. All rights reserved"];
-    autores.fontColor = [SKColor blackColor];
-    [autores setFontSize:20];
-    autores.position = CGPointMake(CGRectGetMidX(self.frame),(self.size.height/2) - 370);
-    autores.zPosition = 2;
 
     //logo da tela
     SKSpriteNode *logo = [SKSpriteNode spriteNodeWithImageNamed:@"logo2.png"];
@@ -200,7 +191,6 @@
     [self addChild:alga01];
     [self addChild:alga02];
     [self addChild:areia];
-    [self addChild:autores];
     [self addChild:peixeDourado];
     [self addChild:botaoJogar];
     [self addChild:logo];
